@@ -1,0 +1,59 @@
+\section{Introduction}
+\label{sec:intro}
+
+The temperature anisotropies of the cosmic microwave background (CMB), as mapped by the Planck satellite~\citep{Planck2018VI}, encode a remarkably simple statistical portrait of the early universe: the fluctuations are nearly Gaussian, their angular power spectrum exhibits a series of acoustic peaks at multipoles $\ell \sim 220, 540, 810, \ldots$, and the comoving sound horizon at recombination is finite.
+In the standard $\Lambda$CDM paradigm, these features arise from quantum fluctuations amplified by inflation and processed by the baryon--photon plasma prior to decoupling.
+
+Recently, a phenomenological framework called \emph{Discrete Symplectic Cosmology} (DSC) was proposed~\citep{Wang2026}, in which cosmic evolution is modeled as a non-autonomous dynamical system on a Planck-scale lattice $\Z^3 \times \N$.
+Three structural assumptions---discrete spacetime, symplectic evolution, and a Berry--Keating spectral correspondence---motivate an adiabatic cooling law of the form
+\begin{equation}
+  \mu(n) = \mudyn + \frac{\kopt}{\ln^2(n + c_0)}\,,
+  \label{eq:cooling}
+\end{equation}
+where $n$ is the discrete Planck time, $\mudyn$ is the asymptotic critical value, $\kopt$ is related to Feigenbaum scaling, and $c_0$ regularizes small $n$.
+This $1/\ln^2$ functional form is slower than any power law and is singled out by the Riemann zero spectral density~\citep{Wang2026}.
+The framework yields a dynamical cosmological term $\Lambda(t) = \Lambda_\infty + \gamma / \ln^2(t/\tP)$ and a Hubble relaxation law $H(t) = \Hinfty + \beta / \ln^2(t/\tP)$, providing a candidate mechanism for modifying the early expansion rate without introducing new scalar fields.
+
+However, the original DSC work validates the cooling law only through one-dimensional H\'enon map surrogates.
+The question of whether spatially-extended lattice dynamics---evolving under the DSC cooling law---can reproduce the \emph{spatial} statistical features of the CMB remains open.
+We stress that the present work is \emph{exploratory}: the lattice simulations are effective surrogate models, not direct implementations of Planck-scale quantum gravity.
+The goal is to investigate what phenomenological features emerge from the DSC dynamical assumptions, not to claim a complete alternative to $\Lambda$CDM.
+In particular: does a symplectic lattice produce Gaussian fluctuations?
+Do acoustic oscillation peaks emerge?
+Is the acoustic horizon finite?
+
+In this paper, we address these questions by implementing St\"ormer--Verlet symplectic integrators on two- and three-dimensional lattices with DSC-motivated cooling.
+Our main findings are:
+
+\begin{enumerate}
+  \item \textbf{Near-Gaussian one-point statistics.}
+  Symplectic lattice evolution produces temperature fluctuations with skewness $\approx +0.07$ and excess kurtosis $\approx -0.28$ (ensemble of 20 runs), consistent with Gaussianity.
+  An ablation study shows that a dissipative coupled-map-lattice (CML) baseline produces kurtosis $= -1.60$ and fails to match $\Lambda$CDM spectral shape (Pearson $r = 0.74$ vs.\ $r = 0.96$ for the symplectic model).
+
+  \item \textbf{Acoustic-like oscillation peaks.}
+  The scaled power spectrum $D(k) = k^2 P(k)$ exhibits 5--6 peaks from pure symplectic wave propagation.
+  A three-parameter phenomenological fit aligns all peak positions to a mock $\Lambda$CDM reference (MSE $= 8.9 \times 10^{-5}$).
+
+  \item \textbf{Finite acoustic horizon via freeze-out.}
+  The $1/\ln^2(t)$ decay of the effective sound speed causes wavefronts to asymptotically freeze, producing a finite comoving horizon $r_s \approx 38$ lattice units without requiring abrupt decoupling.
+
+  \item \textbf{Parameter recovery via simulation-based inference.}
+  A Bayesian optimization twin experiment recovers all three lattice parameters ($c^2$, drag, $\kopt$) from the power spectrum.
+
+  \item \textbf{Planck-comparable full-sky maps.}
+  Three-dimensional lattice evolution projected onto a HEALPix sphere produces CMB-like full-sky maps with pixel distributions close to the Planck SMICA map (skewness $-0.075 \pm 0.009$ vs.\ Planck $-0.036$).
+
+  \item \textbf{Differentiable inverse reconstruction.}
+  The DSC physics engine is fully differentiable: gradient-based optimization recovers the 3D primordial field from Planck sky data with pixel correlation $r = 0.98$.
+  While naive 2D-only optimization hits the fundamental line-of-sight degeneracy ($r < 0$ on held-out hemisphere), we show that sparse volumetric priors (mock 3D survey anchors) partially break this degeneracy, and the reconstructed 3D field spontaneously obeys the $P(k) \propto k^{-3}$ gravity scaling.
+
+  \item \textbf{Full cosmic timeline with V-shape transition.}
+  Evolving the reconstructed initial conditions beyond the CMB epoch with nonlinear gravitational terms reveals a V-shape thermodynamic transition: the $1/\ln^2(t)$ cooling naturally smooths primordial chaos (decreasing field variance), while subsequent Jeans instability rebuilds structural complexity into a cosmic web---providing a smoothing mechanism analogous to inflation without an ad-hoc scalar field.
+\end{enumerate}
+
+The remainder of this paper is organized as follows.
+\Cref{sec:background} summarizes the DSC theoretical framework.
+\Cref{sec:methods} describes the numerical methods.
+\Cref{sec:results} presents the simulation results.
+\Cref{sec:discussion} discusses the physical interpretation and relation to standard cosmology.
+\Cref{sec:limitations} lists limitations, and \Cref{sec:conclusion} concludes.

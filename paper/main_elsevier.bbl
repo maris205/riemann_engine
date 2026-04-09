@@ -1,0 +1,86 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Planck2018VI}
+{Planck Collaboration}, {Planck 2018 results. VI. Cosmological parameters},
+  Astronomy \& Astrophysics 641 (2020) A6.
+\newblock \href {https://doi.org/10.1051/0004-6361/201833910}
+  {\path{doi:10.1051/0004-6361/201833910}}.
+
+\bibitem{Wang2026}
+L.~Wang, {Discrete Symplectic Cosmology: A Phenomenological Framework for
+  Time-dependent Vacuum Energy from Planck-Lattice Spectral Statistics}, v2.0
+  (2026).
+\newblock \href {https://doi.org/10.5281/zenodo.19429778}
+  {\path{doi:10.5281/zenodo.19429778}}.
+
+\bibitem{Hairer2006}
+E.~Hairer, C.~Lubich, G.~Wanner, {Geometric Numerical Integration:
+  Structure-Preserving Algorithms for Ordinary Differential Equations}, 2nd
+  Edition, Springer, 2006.
+\newblock \href {https://doi.org/10.1007/3-540-30666-8}
+  {\path{doi:10.1007/3-540-30666-8}}.
+
+\bibitem{Kloeden2011}
+P.~E. Kloeden, M.~Rasmussen, {Nonautonomous Dynamical Systems}, American
+  Mathematical Society, 2011.
+\newblock \href {https://doi.org/10.1090/surv/176}
+  {\path{doi:10.1090/surv/176}}.
+
+\bibitem{Bohigas1984}
+O.~Bohigas, M.-J. Giannoni, C.~Schmit, {Characterization of chaotic quantum
+  spectra and universality of level fluctuation laws}, Physical Review Letters
+  52 (1984) 1--4.
+\newblock \href {https://doi.org/10.1103/PhysRevLett.52.1}
+  {\path{doi:10.1103/PhysRevLett.52.1}}.
+
+\bibitem{BerryKeating1999}
+M.~V. Berry, J.~P. Keating, {The Riemann zeros and eigenvalue asymptotics},
+  SIAM Review 41 (1999) 236--266.
+\newblock \href {https://doi.org/10.1137/S0036144598347497}
+  {\path{doi:10.1137/S0036144598347497}}.
+
+\bibitem{Gorski2005}
+K.~M. G{\'o}rski, E.~Hivon, A.~J. Banday, B.~D. Wandelt, F.~K. Hansen,
+  M.~Reinecke, M.~Bartelmann, {HEALPix: A Framework for High-Resolution
+  Discretization and Fast Analysis of Data Distributed on the Sphere}, The
+  Astrophysical Journal 622 (2005) 759--771.
+\newblock \href {https://doi.org/10.1086/427976} {\path{doi:10.1086/427976}}.
+
+\bibitem{Kaneko1992}
+K.~Kaneko, {Overview of coupled map lattices}, Chaos 2 (1992) 279--282.
+\newblock \href {https://doi.org/10.1063/1.165869}
+  {\path{doi:10.1063/1.165869}}.
+
+\bibitem{Akiba2019}
+T.~Akiba, S.~Sano, T.~Yanase, T.~Ohta, M.~Koyama, {Optuna: A Next-generation
+  Hyperparameter Optimization Framework}, in: Proceedings of the 25th ACM
+  SIGKDD International Conference on Knowledge Discovery \& Data Mining, 2019,
+  pp. 2623--2631.
+\newblock \href {https://doi.org/10.1145/3292500.3330701}
+  {\path{doi:10.1145/3292500.3330701}}.
+
+\bibitem{Regge1961}
+T.~Regge, {General relativity without coordinates}, Il Nuovo Cimento 19 (1961)
+  558--571.
+\newblock \href {https://doi.org/10.1007/BF02733251}
+  {\path{doi:10.1007/BF02733251}}.
+
+\bibitem{Bombelli1987}
+L.~Bombelli, J.~Lee, D.~Meyer, R.~D. Sorkin, {Space-time as a causal set},
+  Physical Review Letters 59 (1987) 521--524.
+\newblock \href {https://doi.org/10.1103/PhysRevLett.59.521}
+  {\path{doi:10.1103/PhysRevLett.59.521}}.
+
+\bibitem{Alsing2019}
+J.~Alsing, B.~Wandelt, S.~Feeney, {Massive optimal data compression and density
+  estimation for scalable, likelihood-free inference in cosmology}, Monthly
+  Notices of the Royal Astronomical Society 488 (2019) 4440--4458.
+\newblock \href {https://doi.org/10.1093/mnras/stz1960}
+  {\path{doi:10.1093/mnras/stz1960}}.
+
+\end{thebibliography}

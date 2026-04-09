@@ -1,0 +1,60 @@
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{lineno}
+
+\input{math_commands}
+
+\graphicspath{{../figures/}}
+
+\journal{Results in Physics}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Differentiable Discrete Symplectic Cosmology: Forward Simulation and Inverse Reconstruction of CMB-like Fluctuations}
+
+\author[hust]{Liang Wang\corref{cor1}}
+\ead{wangliang.f@gmail.com}
+\cortext[cor1]{Corresponding author}
+\address[hust]{School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, 430070, P.R. China}
+
+\input{sections/0_abstract}
+
+\begin{keyword}
+cosmic microwave background \sep symplectic dynamics \sep lattice simulation \sep differentiable physics \sep inverse reconstruction \sep adiabatic cooling
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\input{sections/1_introduction}
+\input{sections/2_background}
+\input{sections/3_methods}
+\input{sections/4_results}
+\input{sections/5_discussion}
+\input{sections/6_limitations}
+\input{sections/7_conclusion}
+
+\section*{Acknowledgments}
+The Planck SMICA map used in this work is based on observations obtained with Planck (\url{http://www.esa.int/Planck}), an ESA science mission with instruments and contributions directly funded by ESA Member States, NASA, and Canada.
+
+\section*{Data Availability Statement}
+Code associated with this project is available at \url{https://github.com/maris205/riemann_engine}.
+The Planck SMICA map (\texttt{COM\_CMB\_IQU-smica\_2048\_R3.00\_full.fits}) is publicly available from the ESA Planck Legacy Archive.
+
+\appendix
+\input{sections/A_appendix}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

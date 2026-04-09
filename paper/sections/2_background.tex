@@ -1,0 +1,130 @@
+\section{Theoretical Background}
+\label{sec:background}
+
+\subsection{The DSC framework}
+\label{sec:dsc}
+
+Discrete Symplectic Cosmology (DSC)~\citep{Wang2026} models cosmic evolution as a non-autonomous dynamical system on a four-dimensional lattice $\calL = \Z^3 \times \N$, where spatial sites are separated by the Planck length $\lP = \sqrt{\hbar G/c^3} \approx 1.616 \times 10^{-35}$\,m and temporal ticks by the Planck time $\tP = \sqrt{\hbar G/c^5} \approx 5.391 \times 10^{-44}$\,s.
+Three assumptions define the framework:
+
+\paragraph{Assumption 1 (Discrete spacetime).}
+Spacetime is a cubic lattice at the Planck scale.  Each site $(\bm{x}, n) \in \Z^3 \times \N$ carries a local state $\phi_n(\bm{x}) \in \calM$, where $\calM$ is a finite-dimensional phase-space manifold.
+
+\paragraph{Assumption 2 (Symplectic evolution).}
+The one-step evolution map $F_n : \Phi_n \mapsto \Phi_{n+1}$ is a symplectomorphism with respect to a discrete symplectic 2-form $\omega$:
+\begin{equation}
+  F_n^* \omega = \omega \quad \forall\, n\,.
+  \label{eq:symp}
+\end{equation}
+Concretely, this requires $\det DF_n = 1$ (Liouville's theorem on the lattice), ensuring three properties: (i) unitarity---phase-space volume is preserved; (ii) reversibility---$F_n$ is invertible, consistent with CPT symmetry; and (iii) energy-error boundedness---by the backward error analysis of symplectic integrators~\citep{Hairer2006}, $F_n$ is the \emph{exact} flow of a nearby Hamiltonian, preventing secular energy drift over cosmological timescales.
+
+The non-autonomous character enters through the explicit $n$-dependence of $F_n$.  Following the theory of non-autonomous dynamical systems~\citep{Kloeden2011}, the sequence $\{F_n\}_{n \in \N}$ is viewed as a process (or two-parameter semigroup) and studied via its pullback attractors.
+
+\paragraph{Assumption 3 (Berry--Keating spectral correspondence).}
+The quantized dynamics on the symplectic lattice belong to the GUE universality class of random matrix theory~\citep{Bohigas1984}.
+The spectral density of the lattice Hamiltonian then satisfies the Riemann--von Mangoldt formula~\citep{BerryKeating1999}:
+\begin{equation}
+  \rho(E) = \frac{1}{2\pi}\ln\!\left(\frac{E}{2\pi}\right) + O\!\left(\frac{1}{E}\right)\,.
+  \label{eq:rvm}
+\end{equation}
+This assumption is motivated by three lines of evidence: (i) the Berry--Keating program, which seeks a self-adjoint operator whose eigenvalues are the Riemann zeta zeros and whose classical limit is a chaotic Hamiltonian with symplectic structure; (ii) the numerical spectral isomorphism between period-doubling renormalization flow and Riemann zero statistics~\citep{Wang2026}; and (iii) the GUE level-spacing distribution observed in area-preserving H\'enon maps at the onset of chaos.
+
+\subsection{Derivation of the $1/\ln^2$ cooling law}
+\label{sec:cooling_derivation}
+
+The $1/\ln^2$ functional form is not arbitrary; it follows from the spectral density \cref{eq:rvm}.
+The mean level spacing of the quantized lattice Hamiltonian is
+\begin{equation}
+  \Delta E(n) \sim \frac{1}{\rho(n)} \sim \frac{2\pi}{\ln(n)}\,,
+  \label{eq:spacing}
+\end{equation}
+where $n = t/\tP$ is the Planck tick number.
+The residual vacuum energy fluctuation---identified with the variance of the zero-point energy around the ground state---scales as the square of the level spacing:
+\begin{equation}
+  \delta\rho_{\mathrm{vac}}(n) \propto (\Delta E)^2 \sim \frac{1}{\ln^2(n)}\,.
+  \label{eq:vac}
+\end{equation}
+Identifying this fluctuation with the time-dependent part of the control parameter yields
+\begin{equation}
+  \mu(n) = \mudyn + \frac{\kopt}{\ln^2(n + c_0)}\,,
+  \label{eq:cooling_full}
+\end{equation}
+where $\mudyn \approx 1.5437$ is the asymptotic critical value (the 2D effective critical baseline), $\kopt \approx \alpha_F/2 \approx 1.248$ is conjectured to relate to the Feigenbaum spatial rescaling constant $\alpha_F = 2.5029\ldots$, and $c_0 = 10$ regularizes the logarithmic divergence at $n = 0$.
+
+This is the \emph{physically motivated} cooling schedule: $p = 2$ is singled out among the family $\epsilon(n) = k/\ln^p(n)$ as the unique exponent for which (a) the time-averaged Lyapunov exponent $\bar{\lambda}(N) \to 0$ as $N \to \infty$ (asymptotic criticality), and (b) the cumulative perturbation $\sum \sqrt{\epsilon(n)}$ diverges (non-trivial exploration), while (c) the Riemann zero density provides the physical value $p = 2$~\citep{Wang2026}.
+
+The framework yields two key cosmological consequences:
+\begin{itemize}
+  \item A dynamical cosmological term~\citep{Wang2026}:
+  \begin{equation}
+    \Lambda(t) = \Lambda_\infty + \frac{\gamma}{\ln^2(t/\tP)}\,,
+    \label{eq:lambda}
+  \end{equation}
+  entering the Friedmann equation as a time-dependent vacuum energy density.
+  \item A Hubble relaxation law:
+  \begin{equation}
+    H(t) = \Hinfty + \frac{\beta}{\ln^2(t/\tP)}\,,
+    \label{eq:hubble}
+  \end{equation}
+  predicting monotone relaxation toward an asymptotic rate $\Hinfty = \sqrt{\Lambda_\infty/3} < H_0$.
+\end{itemize}
+
+\subsection{From H\'enon maps to St\"ormer--Verlet}
+\label{sec:sv}
+
+The original DSC paper validates the cooling law using the area-preserving H\'enon map ($b = -1$, $\det DF = 1$) as a one-dimensional surrogate.
+In the present work, we extend to spatially coupled $d$-dimensional lattices ($d = 2, 3$) using the St\"ormer--Verlet symplectic integrator:
+\begin{equation}
+  \phi_{n+1} = 2\phi_n - \phi_{n-1} + \ceff(n)\,\nabla^2_{\mathrm{lat}} \phi_n - \eta\,(\phi_n - \phi_{n-1})\,,
+  \label{eq:sv}
+\end{equation}
+where $\nabla^2_{\mathrm{lat}}$ is the discrete Laplacian with periodic boundary conditions, $\eta$ is a Hubble drag coefficient, and the effective sound speed squared decays as
+\begin{equation}
+  \ceff(n) = \frac{c^2_{\mathrm{base}}}{\ln^2(n + c_0)}\,,
+  \label{eq:ceff}
+\end{equation}
+encoding the DSC cooling law in the wave propagation speed.
+
+\Cref{eq:sv} is the discrete wave equation with a time-dependent propagation speed.
+The lattice field $\phi_n(\bm{x})$ plays the role of an effective scalar perturbation; we do not claim it represents any specific metric or fluid variable.
+The connection to the H\'enon map is direct: in one spatial dimension without coupling ($\nabla^2 \to 0$, $\eta \to 0$) and with an on-site potential $V(\phi) = a(n)\phi^2$, \cref{eq:sv} reduces to the area-preserving H\'enon map.
+
+\paragraph{Symplecticity in the non-autonomous setting.}
+For $\eta = 0$, the St\"ormer--Verlet map \cref{eq:sv} is exactly symplectic at each step.
+Writing the update in first-order form $(\phi_n, \phi_{n-1}) \mapsto (\phi_{n+1}, \phi_n)$, the per-site Jacobian is
+\begin{equation}
+  DF_n = \begin{pmatrix} 2 - \eta & \eta - 1 \\ 1 & 0 \end{pmatrix}\,,
+  \label{eq:jac}
+\end{equation}
+whose determinant is $\det DF_n = 1 - \eta$.
+For $\eta = 0$, this is exactly unity (symplectic); for $\eta = 0.015$ (our baseline), the per-step phase-space contraction is 1.5\%.
+Over 45 evolution steps, the cumulative volume factor is $(1 - 0.015)^{45} \approx 0.51$, representing moderate contraction (\cref{fig:symplecticity}).
+The Laplacian coupling does not modify this determinant because $\nabla^2_{\mathrm{lat}}$ is a linear operator with trace zero.
+
+This quantifies the sense in which the damped system is ``nearly symplectic'': it is exactly symplectic at each step modulo a $(1-\eta)$ contraction factor that is close to unity for small $\eta$.
+For the undamped ($\eta = 0$) case used in the acoustic-peak experiments (\cref{sec:peaks}), the evolution is \emph{exactly} symplectic.
+By the backward error analysis of symplectic integrators~\citep{Hairer2006}, the undamped map is the exact flow of a modified Hamiltonian $\tilde{H}$ satisfying $|\tilde{H} - H| = O(c_{\mathrm{eff}}^2)$, preventing secular energy drift.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig14_symplecticity.pdf}
+  \caption{Quantification of symplecticity.
+  (a)~Per-step Jacobian determinant $\det(DF_n) = 1 - \eta$ as a function of drag.
+  (b)~Cumulative phase-space contraction $(1-\eta)^{N_{\mathrm{steps}}}$ for different evolution lengths.
+  At $\eta = 0.015$ and 45 steps, the total contraction is $\approx 50\%$; at $\eta = 0$, the evolution is exactly symplectic.}
+  \label{fig:symplecticity}
+\end{figure}
+
+\subsection{Acoustic freeze-out}
+\label{sec:freezeout_theory}
+
+Because $\ceff(n) \to 0$ as $n \to \infty$, the group velocity of perturbations on the lattice decays.
+A perturbation launched at time $n_0$ propagates a comoving distance
+\begin{equation}
+  r_s = \int_{n_0}^{\infty} c_s(n)\, dn = \int_{n_0}^{\infty} \frac{c_{\mathrm{base}}}{\ln(n + c_0)}\, dn\,,
+  \label{eq:rs}
+\end{equation}
+which diverges logarithmically---so the formal horizon is infinite.
+However, the integrand decays so slowly that the wavefront velocity drops below any fixed threshold $v_{\min}$ after a finite number of steps $n^* \sim \exp(c_{\mathrm{base}}/v_{\min})$, producing an \emph{effective} finite acoustic horizon $r_s^{\mathrm{eff}}$ that is well-defined for any finite simulation.
+This is the DSC analog of baryon--photon decoupling in $\Lambda$CDM: the lattice does not require an abrupt phase transition to generate a finite sound horizon; instead, the $1/\ln^2$ cooling provides gradual, asymptotic freeze-out.
+We note that the formal divergence of $r_s$ distinguishes the DSC mechanism from standard recombination, where the integral converges; the ``finite horizon'' reported in \cref{sec:horizon} refers to this effective, threshold-dependent quantity.

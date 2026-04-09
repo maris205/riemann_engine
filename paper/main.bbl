@@ -1,0 +1,179 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{12}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {{Planck Collaboration}}(2020)}]{Planck2018VI}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{Planck 2018
+  results. VI. Cosmological parameters}},\ }\href
+  {https://doi.org/10.1051/0004-6361/201833910} {\bibfield  {journal} {\bibinfo
+   {journal} {Astronomy \& Astrophysics}\ }\textbf {\bibinfo {volume} {641}},\
+  \bibinfo {pages} {A6} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wang}(2026)}]{Wang2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Wang}},\ }\href {https://doi.org/10.5281/zenodo.19429778} {\bibinfo {title}
+  {{Discrete Symplectic Cosmology: A Phenomenological Framework for
+  Time-dependent Vacuum Energy from Planck-Lattice Spectral Statistics}}}
+  (\bibinfo {year} {2026}),\ \bibinfo {note} {v2.0}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hairer}\ \emph {et~al.}(2006)\citenamefont {Hairer},
+  \citenamefont {Lubich},\ and\ \citenamefont {Wanner}}]{Hairer2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Hairer}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Lubich}},\
+  and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Wanner}},\ }\href
+  {https://doi.org/10.1007/3-540-30666-8} {\emph {\bibinfo {title} {{Geometric
+  Numerical Integration: Structure-Preserving Algorithms for Ordinary
+  Differential Equations}}}},\ \bibinfo {edition} {2nd}\ ed.\ (\bibinfo
+  {publisher} {Springer},\ \bibinfo {year} {2006})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kloeden}\ and\ \citenamefont
+  {Rasmussen}(2011)}]{Kloeden2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~E.}\ \bibnamefont
+  {Kloeden}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Rasmussen}},\ }\href {https://doi.org/10.1090/surv/176} {\emph {\bibinfo
+  {title} {{Nonautonomous Dynamical Systems}}}}\ (\bibinfo  {publisher}
+  {American Mathematical Society},\ \bibinfo {year} {2011})\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bohigas}\ \emph {et~al.}(1984)\citenamefont
+  {Bohigas}, \citenamefont {Giannoni},\ and\ \citenamefont
+  {Schmit}}]{Bohigas1984}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Bohigas}}, \bibinfo {author} {\bibfnamefont {M.-J.}\ \bibnamefont
+  {Giannoni}},\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Schmit}},\ }\bibfield  {title} {\bibinfo {title} {{Characterization of
+  chaotic quantum spectra and universality of level fluctuation laws}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.52.1} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume} {52}},\
+  \bibinfo {pages} {1} (\bibinfo {year} {1984})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Berry}\ and\ \citenamefont
+  {Keating}(1999)}]{BerryKeating1999}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~V.}\ \bibnamefont
+  {Berry}}\ and\ \bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Keating}},\ }\bibfield  {title} {\bibinfo {title} {{The Riemann zeros and
+  eigenvalue asymptotics}},\ }\href {https://doi.org/10.1137/S0036144598347497}
+  {\bibfield  {journal} {\bibinfo  {journal} {SIAM Review}\ }\textbf {\bibinfo
+  {volume} {41}},\ \bibinfo {pages} {236} (\bibinfo {year} {1999})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {G{\'o}rski}\ \emph {et~al.}(2005)\citenamefont
+  {G{\'o}rski}, \citenamefont {Hivon}, \citenamefont {Banday}, \citenamefont
+  {Wandelt}, \citenamefont {Hansen}, \citenamefont {Reinecke},\ and\
+  \citenamefont {Bartelmann}}]{Gorski2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~M.}\ \bibnamefont
+  {G{\'o}rski}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Hivon}},
+  \bibinfo {author} {\bibfnamefont {A.~J.}\ \bibnamefont {Banday}}, \bibinfo
+  {author} {\bibfnamefont {B.~D.}\ \bibnamefont {Wandelt}}, \bibinfo {author}
+  {\bibfnamefont {F.~K.}\ \bibnamefont {Hansen}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Reinecke}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Bartelmann}},\ }\bibfield  {title}
+  {\bibinfo {title} {{HEALPix: A Framework for High-Resolution Discretization
+  and Fast Analysis of Data Distributed on the Sphere}},\ }\href
+  {https://doi.org/10.1086/427976} {\bibfield  {journal} {\bibinfo  {journal}
+  {The Astrophysical Journal}\ }\textbf {\bibinfo {volume} {622}},\ \bibinfo
+  {pages} {759} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kaneko}(1992)}]{Kaneko1992}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Kaneko}},\ }\bibfield  {title} {\bibinfo {title} {{Overview of coupled map
+  lattices}},\ }\href {https://doi.org/10.1063/1.165869} {\bibfield  {journal}
+  {\bibinfo  {journal} {Chaos}\ }\textbf {\bibinfo {volume} {2}},\ \bibinfo
+  {pages} {279} (\bibinfo {year} {1992})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Akiba}\ \emph {et~al.}(2019)\citenamefont {Akiba},
+  \citenamefont {Sano}, \citenamefont {Yanase}, \citenamefont {Ohta},\ and\
+  \citenamefont {Koyama}}]{Akiba2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Akiba}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Sano}},
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Yanase}}, \bibinfo
+  {author} {\bibfnamefont {T.}~\bibnamefont {Ohta}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Koyama}},\ }\bibfield  {title} {\bibinfo
+  {title} {{Optuna: A Next-generation Hyperparameter Optimization Framework}},\
+  }in\ \href {https://doi.org/10.1145/3292500.3330701} {\emph {\bibinfo
+  {booktitle} {Proceedings of the 25th ACM SIGKDD International Conference on
+  Knowledge Discovery \& Data Mining}}}\ (\bibinfo {year} {2019})\ pp.\
+  \bibinfo {pages} {2623--2631}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Regge}(1961)}]{Regge1961}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Regge}},\ }\bibfield  {title} {\bibinfo {title} {{General relativity without
+  coordinates}},\ }\href {https://doi.org/10.1007/BF02733251} {\bibfield
+  {journal} {\bibinfo  {journal} {Il Nuovo Cimento}\ }\textbf {\bibinfo
+  {volume} {19}},\ \bibinfo {pages} {558} (\bibinfo {year} {1961})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bombelli}\ \emph {et~al.}(1987)\citenamefont
+  {Bombelli}, \citenamefont {Lee}, \citenamefont {Meyer},\ and\ \citenamefont
+  {Sorkin}}]{Bombelli1987}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Bombelli}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Lee}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Meyer}},\ and\ \bibinfo
+  {author} {\bibfnamefont {R.~D.}\ \bibnamefont {Sorkin}},\ }\bibfield  {title}
+  {\bibinfo {title} {{Space-time as a causal set}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.59.521} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume} {59}},\
+  \bibinfo {pages} {521} (\bibinfo {year} {1987})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Alsing}\ \emph {et~al.}(2019)\citenamefont {Alsing},
+  \citenamefont {Wandelt},\ and\ \citenamefont {Feeney}}]{Alsing2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Alsing}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Wandelt}},\
+  and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Feeney}},\
+  }\bibfield  {title} {\bibinfo {title} {{Massive optimal data compression and
+  density estimation for scalable, likelihood-free inference in cosmology}},\
+  }\href {https://doi.org/10.1093/mnras/stz1960} {\bibfield  {journal}
+  {\bibinfo  {journal} {Monthly Notices of the Royal Astronomical Society}\
+  }\textbf {\bibinfo {volume} {488}},\ \bibinfo {pages} {4440} (\bibinfo {year}
+  {2019})}\BibitemShut {NoStop}%
+\end{thebibliography}%

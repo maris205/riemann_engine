@@ -1,0 +1,18 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have demonstrated that a St\"ormer--Verlet symplectic lattice with $1/\ln^2(t)$ adiabatic cooling---motivated by the Discrete Symplectic Cosmology framework---reproduces several key statistical features of the CMB temperature anisotropies.
+Near-Gaussian one-point statistics emerge robustly from the symplectic dynamics, with an ablation study confirming that dissipative alternatives fail.
+Acoustic-like oscillation peaks arise naturally from wave propagation on the lattice, and a three-parameter fit aligns all peak positions with a mock $\Lambda$CDM reference.
+The $1/\ln^2(t)$ cooling law generates a finite acoustic horizon through asymptotic freeze-out, providing a mechanism for producing the sound horizon without abrupt decoupling.
+Full-sky CMB maps from 3D lattice simulations show visual and statistical similarity to the Planck SMICA data.
+
+These results establish the DSC lattice as an exploratory computational framework for generating CMB-like fluctuations from symplectic dynamics with spectrally-motivated cooling.
+The differentiable implementation enables gradient-based inverse reconstruction, though a held-out test reveals that 2D CMB data alone cannot uniquely constrain the 3D structure (line-of-sight degeneracy); incorporating volumetric 3D anchors partially breaks this degeneracy, pointing toward multi-probe joint inference as the path to physically meaningful reconstruction.
+Extending the reconstructed initial conditions forward through a nonlinear structure-formation phase reveals a V-shape thermodynamic transition---the $1/\ln^2(t)$ cooling naturally smooths primordial chaos into a uniform CMB without an inflaton field, while subsequent gravitational instability rebuilds complexity into a cosmic web.
+
+Future work should pursue:
+(i) a full Planck likelihood analysis (MCMC) to quantitatively constrain the lattice parameters;
+(ii) multi-probe inverse reconstruction combining CMB with galaxy survey data (DESI, Euclid) to break the projection degeneracy;
+(iii) extension to polarization and tensor modes;
+(iv) connections between the lattice acoustic horizon and the physical sound horizon relevant to the Hubble tension.

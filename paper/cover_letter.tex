@@ -1,0 +1,34 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\signature{Liang Wang}
+\address{School of Artificial Intelligence and Automation\\Huazhong University of Science and Technology\\Wuhan 430070, P.R. China\\wangliang.f@gmail.com}
+
+\begin{document}
+
+\begin{letter}{Editorial Office\\Results in Physics}
+
+\opening{Dear Editor,}
+
+We would like to submit our manuscript entitled \textbf{``Differentiable Discrete Symplectic Cosmology: Forward Simulation and Inverse Reconstruction of CMB-like Fluctuations''} for consideration in \textit{Results in Physics}.
+
+This paper presents a differentiable computational framework based on symplectic lattice dynamics with a $1/\ln^2(t)$ adiabatic cooling law, capable of generating temperature fluctuation fields that reproduce key statistical features of the cosmic microwave background (CMB). Our main results include:
+
+\begin{itemize}
+\item Near-Gaussian statistics from symplectic evolution, validated by a 20-run ensemble and ablation against a dissipative baseline;
+\item Acoustic-like oscillation peaks emerging naturally from lattice wave propagation;
+\item A fully differentiable physics engine (implemented in JAX) that enables gradient-based inverse reconstruction of 3D primordial fields from real Planck SMICA data, achieving pixel correlation $r = 0.98$;
+\item A full cosmic timeline simulation from Big Bang to cosmic web, revealing a V-shape thermodynamic transition driven by the cooling law.
+\end{itemize}
+
+All simulation code and Jupyter notebooks are publicly available. The manuscript has not been published elsewhere and is not under consideration by another journal.
+
+We believe this work is well suited for \textit{Results in Physics} given its emphasis on numerical experiments, quantitative comparison with observational data, and the novel application of differentiable programming to cosmological simulation.
+
+Thank you for your consideration.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}

@@ -1,0 +1,351 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Emergent near-Gaussian statistics}
+\label{sec:gauss}
+
+\Cref{fig:ensemble} shows the ensemble statistics from 20 independent DSC runs on a $300 \times 300$ lattice (45 steps, $c^2 = 0.45$, no drag).
+The skewness distribution is centered at $+0.07 \pm 0.30$ and the excess kurtosis at $-0.28 \pm 0.24$, both consistent with zero at the $1\sigma$ level.
+The Q--Q plot (\cref{fig:ensemble}d) confirms that the one-point distribution closely follows a standard normal, with deviations confined to the tails ($|T| > 3\sigma$).
+
+\Cref{tab:gaussianity} compares the Gaussianity metrics across models.
+The symplectic lattice achieves statistics comparable to an ideal Gaussian field, while the dissipative CML baseline departs strongly ($\gamma_2 = -1.60$, reflecting a bimodal distribution; see \cref{sec:ablation}).
+
+\input{../figures/TABLE_gaussianity}
+
+\subsection{Ablation: symplectic outperforms dissipative dynamics}
+\label{sec:ablation}
+
+\Cref{fig:ablation} presents a side-by-side comparison of the dissipative CML (\cref{eq:cml}) and the symplectic St\"ormer--Verlet integrator (\cref{eq:sv}).
+The dissipative model (top row) produces temperature maps dominated by topological defects---``island'' structures corresponding to domain walls in the logistic-map phase space.
+The resulting pixel histogram is multimodal (kurtosis $= -1.60$), and the power spectrum $D(k)$ is spectrally flat with no acoustic oscillation features.
+
+In contrast, the symplectic model (bottom row) produces smooth, multi-scale temperature fluctuations.
+The histogram closely follows a Gaussian (skewness $= +0.22$, kurtosis $= -0.75$), and $D(k)$ shows acoustic-like oscillation peaks with an overall spectral shape that correlates with the mock $\Lambda$CDM reference at $r = 0.96$ (Pearson, log--log).
+The dissipative model achieves only $r = 0.74$.
+
+This ablation demonstrates that phase-space volume preservation (Assumption~2 of the DSC framework) is not merely a theoretical nicety: it qualitatively determines whether the lattice dynamics produce CMB-like statistics.
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig2_ablation.pdf}
+  \caption{Ablation study: dissipative coupled map lattice (top) vs.\ symplectic St\"ormer--Verlet integrator (bottom).
+  (a,d)~Temperature maps. (b,e)~Pixel histograms with Gaussian reference (dashed). (c,f)~Power spectra $D(k)$ with mock $\Lambda$CDM.
+  The dissipative model produces topological defects and multimodal statistics, while the symplectic model restores near-Gaussian fluctuations with acoustic structure.}
+  \label{fig:ablation}
+\end{figure*}
+
+\subsection{Acoustic-like oscillation peaks}
+\label{sec:peaks}
+
+\Cref{fig:peaks} shows the scaled power spectrum $D(k)$ from a single symplectic run ($N = 300$, 45 steps, no drag).
+The DSC spectrum exhibits clear oscillatory modulation, with peaks detected at $k = 2, 8, 18, 26, 36$ by \texttt{scipy.signal.find\_peaks}.
+For comparison, the mock $\Lambda$CDM spectrum (\cref{eq:mock}) has peaks at $k = 5, 17, 29, 41$.
+
+The physical origin of these peaks is wave interference on the symplectic lattice: the St\"ormer--Verlet integrator supports undamped wave propagation, and the periodic boundary conditions create standing-wave modes.
+The peak spacing is set by the lattice sound speed $c_s = \sqrt{\ceff}$ and the domain size $N$.
+We emphasize that these peaks emerge from the lattice dynamics without any parameter tuning to match $\Lambda$CDM; they are a consequence of wave propagation in a bounded domain with a decaying sound speed.
+The analogy to BAO peaks in $\Lambda$CDM is structural (both arise from standing waves), but the peak positions differ quantitatively because the underlying medium and boundary conditions are different.
+
+\Cref{tab:peaks} lists the peak positions.
+While the DSC and $\Lambda$CDM peaks differ in absolute position and spacing, both exhibit the same qualitative pattern: a dominant first peak followed by harmonics with decreasing amplitude, modulated by high-$k$ damping.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig3_acoustic_peaks.pdf}
+  \caption{Acoustic-like oscillation peaks in the DSC power spectrum $D(k)$ (blue) compared to mock $\Lambda$CDM (black dashed).
+  Triangles mark detected peak positions.
+  Peaks emerge from wave propagation on the symplectic lattice without parameter tuning.}
+  \label{fig:peaks}
+\end{figure}
+
+\input{../figures/TABLE_peaks}
+
+When the three lattice parameters ($c^2_{\mathrm{base}}$, $\eta$, $\kopt$) are tuned via Bayesian optimization (\cref{sec:twin}), all six peaks can be aligned simultaneously with MSE $= 8.9 \times 10^{-5}$, demonstrating that the DSC lattice has sufficient expressive power to match the $\Lambda$CDM spectral shape.
+
+\subsection{Acoustic freeze-out and finite horizon}
+\label{sec:horizon}
+
+\Cref{fig:freezeout} visualizes the freeze-out mechanism.
+A point perturbation at the lattice center is evolved for 300 steps with the DSC cooling (\cref{eq:ceff}).
+The wavefront radius---defined as the 95th percentile of the radial extent of above-threshold pixels---grows rapidly at early times when $\ceff$ is large, then decelerates as $\ceff \to 0$, asymptotically saturating at $r_s \approx 38$ lattice units.
+
+The effective sound speed $\ceff(n) = 0.45 / \ln^2(n + 2)$ drops below $10^{-3}$ by $n \approx 100$ and below $10^{-4}$ by $n \approx 300$.
+This produces a ``bending light cone'' (\cref{fig:freezeout}f): the causal structure of the lattice is not a straight cone (as in flat spacetime) but curves toward a finite asymptotic radius.
+
+This mechanism is the DSC analog of recombination-era decoupling in $\Lambda$CDM: instead of the sound speed dropping abruptly when photons and baryons decouple, the DSC sound speed decays gradually via the $1/\ln^2$ law.
+The resulting acoustic horizon is set by the integral of $c_s(n)$, which converges because $c_s \sim 1/\ln(n)$ decays (though only logarithmically).
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig5_freezeout.pdf}
+  \caption{Acoustic freeze-out from $1/\ln^2(t)$ cooling.
+  Top: wavefront snapshots at $t = 0, 5, 30, 100, 300$.
+  (e)~Wavefront radius (blue) saturates at $r_s \approx 38$; effective sound speed $c^2_{\mathrm{eff}}$ (red dashed) decays to zero.
+  (f)~Causal structure showing the bending light cone.}
+  \label{fig:freezeout}
+\end{figure*}
+
+\subsection{Parameter recovery via twin experiment}
+\label{sec:twin}
+
+\Cref{fig:twin} shows the twin experiment results.
+The Bayesian optimizer converges rapidly: the MSE drops by two orders of magnitude in the first 50 trials and reaches $8.9 \times 10^{-5}$ after 100 trials.
+The recovered parameters $(c^2 = 0.592, \eta = 0.016, \kopt = 2.336)$ differ from the ground truth $(0.650, 0.015, 2.100)$, indicating a degeneracy between $c^2$ and $\kopt$ (both affect the overall amplitude and spacing of acoustic peaks).
+Despite this parameter degeneracy, the recovered $D(k)$ overlays the ground truth almost exactly (\cref{fig:twin}b), confirming that the spectral shape is well-determined even when individual parameters are not.
+
+This twin experiment establishes that:
+(i) the DSC power spectrum carries sufficient information to constrain the lattice parameters;
+(ii) the optimization landscape is smooth enough for gradient-free Bayesian methods;
+(iii) different parameter combinations can produce nearly identical spectra, suggesting the existence of degeneracy directions in parameter space.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig4_twin_experiment.pdf}
+  \caption{Twin experiment for parameter recovery.
+  (a)~Bayesian optimization convergence.
+  (b)~Recovered $D(k)$ (red) overlaid on ground truth (black dashed).
+  The inset shows true vs.\ recovered parameters; the spectral shape is well-determined despite a $c^2$--$\kopt$ degeneracy.}
+  \label{fig:twin}
+\end{figure}
+
+\subsection{Comparison with Planck SMICA data}
+\label{sec:planck}
+
+\Cref{fig:planck} compares a forward DSC simulation (3D, $96^3$ lattice, 45 steps) with the real Planck SMICA temperature map, downgraded to $\nside = 64$.
+
+The full-sky Mollweide maps (\cref{fig:planck}a,b) show qualitatively similar morphology: both exhibit multi-scale red--blue fluctuations with large cold and hot patches spanning tens of degrees.
+The pixel histograms (\cref{fig:planck}e) overlap closely: both peak near zero and follow a Gaussian envelope.
+The Gaussianity comparison (\cref{fig:planck}f) shows that the DSC skewness ($-0.075 \pm 0.009$) is close to Planck ($-0.036$).
+
+However, the kurtosis differs in sign: DSC gives $+0.29 \pm 0.04$ (slightly heavy tails) while Planck gives $-0.49$ (slightly light tails).
+This tension is discussed in \cref{sec:limitations}.
+
+The angular power spectra $D_\ell$ (\cref{fig:planck}d) show different detailed structure: the Planck spectrum exhibits the well-known acoustic peak series, while the DSC forward simulation (without parameter optimization) produces a smoother, monotonically varying spectrum in $\ell$-space.
+The 2D $D(k)$ comparison (\cref{sec:peaks}) is more favorable because the Fourier-space peak structure is preserved before sphere projection.
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig8_planck_comparison.pdf}
+  \caption{DSC 3D forward simulation vs.\ real Planck SMICA data.
+  (a)~Planck SMICA (Nside = 64). (b)~DSC $96^3 \to$ sphere.
+  (c)~3D cosmic web (MIP) with observation sphere (cyan).
+  (d)~Angular power spectrum. (e)~Pixel distributions. (f)~Gaussianity metrics with error bars.
+  Skewness is close ($-0.075$ vs.\ $-0.036$); kurtosis sign differs ($+0.29$ vs.\ $-0.49$).}
+  \label{fig:planck}
+\end{figure*}
+
+\subsection{Parameter robustness}
+\label{sec:robust}
+
+\Cref{fig:sensitivity} shows the sensitivity of Gaussianity metrics and spectral correlation to the three main parameters.
+The skewness and excess kurtosis remain close to zero across $c^2 \in [0.1, 0.8]$, $\eta \in [0, 0.06]$, and evolution steps $\in [20, 130]$, indicating that near-Gaussianity is a robust property of the symplectic evolution rather than a fine-tuned coincidence.
+
+The spectral correlation with mock $\Lambda$CDM is high ($r > 0.95$) for $c^2 \in [0.2, 0.7]$ and drops sharply outside this range, defining a ``sweet spot'' for CMB-like spectral shape.
+The drag coefficient $\eta$ has a moderate effect: $r$ decreases monotonically with increasing drag (from $r \approx 0.98$ at $\eta = 0$ to $r \approx 0.85$ at $\eta = 0.06$), because drag suppresses the high-$k$ oscillations that contribute to the acoustic peak structure.
+The number of evolution steps matters primarily below 30 steps, after which the statistics stabilize.
+
+\subsection{Null test: Gaussian random field baseline}
+\label{sec:grf}
+
+A natural concern is whether the reported statistics are trivially achievable by \emph{any} field with matched power spectrum, regardless of dynamics.
+To test this, we construct two Gaussian random field (GRF) baselines:
+(i) a GRF whose power spectrum is set equal to the DSC output spectrum (``GRF-matched''), and
+(ii) a GRF whose power spectrum follows the mock $\Lambda$CDM form \cref{eq:mock} (``GRF-$\Lambda$CDM'').
+Both are exactly Gaussian by construction.
+
+The GRF-$\Lambda$CDM field achieves near-perfect spectral correlation ($r = 0.99$) with the $\Lambda$CDM reference, as expected since its spectrum is the reference.
+The GRF-matched field has the same $D(k)$ as DSC by construction ($r \approx 0.82$).
+Both GRFs have skewness and kurtosis closer to zero than DSC (skewness $\approx 0.03$--$0.04$, kurtosis $\approx -0.1$--$-0.6$), consistent with their exactly Gaussian nature.
+
+The key distinction is that the GRFs are \emph{static constructions} with no underlying dynamics---they are defined solely by their power spectrum and Gaussian statistics.
+The DSC lattice, by contrast, \emph{generates} its power spectrum and near-Gaussian statistics from a deterministic symplectic evolution law.
+The scientific content of the DSC framework is not that it produces a Gaussian field (any GRF can do that), but that a specific physical dynamics---symplectic evolution with $1/\ln^2$ cooling---produces a field whose statistical properties approximate those of the CMB.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig10_grf_baseline.pdf}
+  \caption{Gaussian random field (GRF) null test.
+  Top: temperature maps and histograms for GRF-matched (left) and GRF-$\Lambda$CDM (right).
+  Bottom: power spectra $D(k)$ comparison.
+  GRFs are exactly Gaussian by construction; the DSC lattice \emph{generates} comparable statistics from deterministic symplectic dynamics.}
+  \label{fig:grf}
+\end{figure}
+
+\subsection{Lattice-size convergence}
+\label{sec:convergence}
+
+\Cref{fig:convergence} shows the dependence of Gaussianity metrics and spectral correlation on lattice size $N$, averaged over 5 independent seeds per size.
+Both skewness and kurtosis fluctuate around zero at all sizes, with decreasing variance as $N$ increases (consistent with central-limit-theorem scaling $\sigma \propto 1/\sqrt{N^2}$).
+The spectral correlation $r$ converges to $\approx 0.80$ for $N \geq 200$ and stabilizes, indicating that the reported results are not artifacts of a particular lattice size.
+The convergence threshold $N \approx 200$ corresponds to a lattice large enough to contain several acoustic wavelengths at the characteristic scale $\lambda \sim 2\pi/k_{\mathrm{peak}} \approx 25$--$50$ sites.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig12_convergence.pdf}
+  \caption{Convergence of Gaussianity metrics and spectral correlation with lattice size $N$ (5 seeds each).
+  (a)~Skewness and kurtosis remain near zero at all sizes.
+  (b)~Spectral correlation converges to $r \approx 0.80$ for $N \geq 200$.}
+  \label{fig:convergence}
+\end{figure}
+
+\subsection{Quantitative comparison with Planck \texorpdfstring{$C_\ell$}{C\_l}}
+\label{sec:chi2}
+
+To move beyond visual comparison, we compute the angular power spectrum $D_\ell = \ell(\ell+1)C_\ell / 2\pi$ from the DSC 3D forward simulation (5-run ensemble, $96^3$ lattice) and compare directly to the Planck SMICA spectrum.
+After normalizing the DSC $D_\ell$ to match the Planck amplitude in the range $\ell \in [10, 80]$, we compute a reduced $\chi^2$ statistic using cosmic-variance uncertainties $\sigma_\ell = \sqrt{2/(2\ell+1)}\,D_\ell^{\mathrm{Planck}}$ combined in quadrature with the DSC ensemble scatter.
+
+The results are: $\chi^2/\mathrm{dof} = 3.3$ for $\ell \in [2, 50]$ and $\chi^2/\mathrm{dof} = 5.0$ for $\ell \in [2, 100]$.
+These values substantially exceed unity, confirming that the DSC forward simulation (without parameter optimization) does \emph{not} provide a statistically acceptable fit to the Planck $C_\ell$ at the level of individual multipoles.
+The discrepancy is dominated by the absence of acoustic peaks in the forward-simulated angular spectrum $D_\ell$, which are present in the 2D $D(k)$ (\cref{sec:peaks}) but washed out by the sphere-projection averaging.
+
+This quantitative gap motivates the differentiable inverse approach (\cref{sec:inverse}), which circumvents the forward-model limitations by directly optimizing the 3D initial conditions against Planck data.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig11_planck_Cl_chi2.pdf}
+  \caption{Angular power spectrum $D_\ell$ comparison: Planck SMICA (red) vs.\ DSC 3D forward simulation ensemble (blue, with $\pm 1\sigma$ band).
+  The forward simulation captures the overall amplitude and low-$\ell$ trend but misses the acoustic peak structure, yielding $\chi^2/\mathrm{dof} \approx 3.3$ ($\ell = 2$--$50$).}
+  \label{fig:chi2}
+\end{figure}
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig7_sensitivity.pdf}
+  \caption{Parameter sensitivity analysis.
+  Top: skewness and excess kurtosis vs.\ $c^2$, drag, and steps.
+  Bottom: Pearson spectral correlation with mock $\Lambda$CDM.
+  Gaussianity is robust; spectral correlation is high for $c^2 \in [0.2, 0.7]$ and low drag.}
+  \label{fig:sensitivity}
+\end{figure*}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig6_ensemble.pdf}
+  \caption{Ensemble statistics from 20 independent DSC runs.
+  (a)~Mean $D(k)$ with $\pm 1\sigma$ band.
+  (b,c)~Skewness and kurtosis distributions.
+  (d)~Q--Q plot confirming near-Gaussian one-point statistics.}
+  \label{fig:ensemble}
+\end{figure}
+
+\subsection{Differentiable inverse reconstruction from Planck data}
+\label{sec:inverse}
+
+A stronger test of the DSC physics engine is whether it can be run \emph{in reverse}: given a 2D CMB observation, can gradient-based optimization recover the 3D initial conditions that produced it?
+
+We implement a differentiable DSC forward model in JAX.
+The 3D state ($64^3$ voxels, $262{,}144$ free parameters) is evolved for 25 St\"ormer--Verlet steps, projected onto a HEALPix sphere ($\nside = 16$, 3072 pixels) via trilinear interpolation, and compared to the real Planck SMICA map.
+The loss function is $\mathcal{L} = \text{MSE}_{\text{valid}} + 0.002 \cdot \text{TV}$, where TV is total-variation regularization on the 3D field.
+We optimize with Adam (learning rate $0.2$, 150 epochs).
+
+\Cref{fig:inverse} shows the results.
+The reconstructed full-sky map (\cref{fig:inverse}b) reproduces the large-scale structure of the Planck target (\cref{fig:inverse}a), achieving a pixel-level Pearson correlation of $r = 0.982$.
+The loss converges by two orders of magnitude within 25 epochs (\cref{fig:inverse}d).
+The inferred 3D cosmic web (\cref{fig:inverse}c) shows coherent filamentary structure within the observation sphere.
+
+The reconstructed map preserves the Gaussianity of the target: the Planck skewness is $-0.13$, the reconstruction gives $+0.05$; the Planck kurtosis is $-0.42$, the reconstruction gives $-0.81$ (both negative, matching in sign).
+At higher resolution ($\nside = 32$, 12{,}288 pixels), the correlation remains high ($r = 0.929$) with finer spatial detail resolved.
+
+This inverse reconstruction demonstrates that the DSC physics engine is fully differentiable and smooth enough for gradient-based optimization---a necessary property for any future inference pipeline.
+On GPU with $128^3$ voxels and $\nside = 64$ (49{,}152 pixels), the reconstruction achieves near-perfect agreement with Planck at sub-percent MSE levels~\citep{Wang2026}.
+However, in all configurations the parameter count exceeds the number of observed pixels (e.g., $2.1 \times 10^6$ parameters vs.\ $4.9 \times 10^4$ pixels for the GPU version), making the inverse problem severely underdetermined.
+
+\paragraph{Held-out generalization test.}
+To assess whether the reconstruction genuinely captures spatial structure or merely overfits the observed pixels, we perform a hemisphere held-out test: the optimizer sees only the \emph{northern} hemisphere ($\theta < \pi/2$, 1504 valid pixels) while the southern hemisphere (1568 pixels) is withheld.
+The result is revealing: the training-set correlation is $r_{\mathrm{train}} = 0.975$, but the held-out correlation drops to $r_{\mathrm{test}} = -0.17$ (\cref{fig:heldout}).
+This indicates that the inverse reconstruction, while achieving high fidelity on observed pixels, does not generalize to unobserved sky regions.
+
+This is not unexpected: recovering a 3D volume from a single 2D spherical shell is an inherently ill-posed inverse problem, regardless of resolution.
+With $262{,}144$ free parameters and only $1504$ training pixels, the system is vastly underdetermined, and the same limitation applies at higher resolution (the GPU version has a parameter-to-pixel ratio of $43{:}1$).
+The reconstruction should therefore be interpreted as a \emph{demonstration of differentiable physics engine capability}---showing that the DSC forward model is smooth enough for gradient-based optimization---rather than as evidence that the inferred 3D structure is physically unique.
+Meaningful 3D reconstruction from CMB data would require additional constraints such as lensing, polarization, or multi-frequency observations.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig13_heldout.pdf}
+  \caption{Held-out generalization test for inverse reconstruction.
+  (a)~Training set (northern hemisphere): $r = 0.975$.
+  (b)~Held-out test set (southern hemisphere): $r = -0.17$.
+  (c)~Summary. The high training correlation but poor test correlation indicates that the reconstruction does not uniquely determine the 3D structure from a single hemisphere.}
+  \label{fig:heldout}
+\end{figure}
+
+\paragraph{Breaking the degeneracy with 3D anchors.}
+The projection degeneracy can be partially broken by incorporating volumetric constraints---analogous to how galaxy redshift surveys (DESI, Euclid) provide 3D position data inside the CMB sphere.
+We test this in a twin experiment: a known 3D initial field ($48^3$) is evolved, projected to a sky ($\nside = 16$), and then reconstructed from (A) northern-hemisphere CMB only, or (B) northern-hemisphere CMB plus 25\% randomly sampled 3D anchor points from the evolved volume.
+
+\Cref{fig:degeneracy} shows the results.
+Without 3D anchors (top row), the southern-hemisphere test correlation collapses to $r = -0.06$, confirming the projection degeneracy.
+With 25\% 3D anchors (bottom row), the test correlation rises to $r = 0.41$---still imperfect, but the reconstruction now carries genuine predictive signal about the unobserved hemisphere.
+This demonstrates that the DSC differentiable engine naturally supports multi-probe joint inference: when volumetric constraints from galaxy surveys are incorporated alongside CMB data, the line-of-sight degeneracy begins to break and the inferred 3D structure becomes physically meaningful.
+
+\paragraph{Physical validation of the reconstructed 3D field.}
+To verify that the gradient-based reconstruction produces physically meaningful internal structure rather than arbitrary numerical artifacts, we extract the 3D matter power spectrum $P(k)$ of the inferred $64^3$ field (\cref{fig:3dpk}).
+Without any explicit Fourier-space regularization in the loss function, the reconstructed 3D field spontaneously exhibits a power-law spectrum with slope $P(k) \propto k^{-3.3}$, close to the theoretical gravity scaling $P(k) \propto k^{-3}$ expected for hierarchical structure formation.
+This suggests that the symplectic dynamics implicitly regularize the null space of the ill-posed inverse problem, biasing the inferred 3D cosmic web toward physically valid correlation structures even when the 2D-to-3D mapping is underdetermined.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig17_3d_power_spectrum.pdf}
+  \caption{3D matter power spectrum $P(k)$ of the reconstructed initial conditions ($64^3$ lattice).
+  The high-$k$ tail follows $P(k) \propto k^{-3.3}$ (green circles), close to the theoretical gravity scaling $k^{-3}$ (cyan dashed), despite no Fourier-space regularization in the loss function.}
+  \label{fig:3dpk}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig15_degeneracy_breaking.pdf}
+  \caption{Breaking the projection degeneracy with 3D anchors (twin experiment, $48^3$ lattice).
+  Top: 2D-only reconstruction perfectly fits the training hemisphere ($r = 1.00$) but fails on the held-out hemisphere ($r = -0.06$).
+  Bottom: adding 25\% volumetric anchor points raises the held-out correlation to $r = 0.41$, demonstrating that multi-probe constraints partially resolve the line-of-sight degeneracy.}
+  \label{fig:degeneracy}
+\end{figure}
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig9_inverse_reconstruction.pdf}
+  \caption{Differentiable inverse reconstruction of the Planck SMICA CMB map.
+  (a)~Planck SMICA target ($\nside = 16$).
+  (b)~DSC reconstruction from $64^3$ initial conditions optimized via 150 Adam epochs.
+  (c)~Inferred 3D cosmic web (maximum intensity projection) with observation sphere (cyan dashed).
+  (d)~Loss convergence; final pixel correlation $r = 0.982$.
+  The DSC physics engine is fully differentiable, enabling gradient-based recovery of 3D structure from 2D sky observations.}
+  \label{fig:inverse}
+\end{figure*}
+
+\subsection{Full cosmic timeline: Big Bang to cosmic web}
+\label{sec:timeline}
+
+A natural extension of the inverse reconstruction is to evolve the inferred Big Bang initial state beyond the CMB epoch into the nonlinear structure-formation era, testing whether the DSC framework produces a physically coherent full cosmic timeline.
+
+We implement a two-phase forward simulation from the reconstructed $128^3$ primordial field:
+\begin{itemize}
+  \item \textbf{Phase~I (BB $\to$ CMB):} St\"ormer--Verlet evolution with $1/\ln^2(t)$ cooling and Hubble drag ($\eta = 0.015$) for 30 steps, smoothing the chaotic initial fluctuations into a near-uniform CMB-epoch field.
+  \item \textbf{Phase~II (CMB $\to$ late universe):} Continued symplectic evolution with an additional Allen--Cahn nonlinearity $+\alpha\phi - \beta\phi^3$ ($\alpha = 0.05$, $\beta = 0.01$), modeling the onset of gravitational (Jeans) instability.
+  The cubic saturation prevents runaway growth while allowing phase separation into high-density clusters and filamentary structures.
+\end{itemize}
+
+\Cref{fig:timeline} shows the results.
+The structural complexity of the field, quantified by the spatial variance $\sigma^2(\phi)$, traces a characteristic \emph{V-shape} across cosmic time:
+the variance drops sharply during Phase~I as the $1/\ln^2$ cooling smooths the primordial chaos (variance ratio $\sim 2\times$), reaches a minimum at the CMB epoch, then rises steeply during Phase~II as gravitational instability amplifies density contrasts (growth factor $\sim 40\times$).
+
+The maximum intensity projections of the 3D field (\cref{fig:timeline}c--g) show the expected morphological sequence: isotropic random noise at $t = 0$ (Big Bang), smooth large-scale modes at the CMB epoch, and filamentary/clumpy structures at late times resembling the cosmic web.
+Thresholding the late-time field reveals distinct populations of high-density clusters and intermediate-density filaments, qualitatively consistent with the large-scale structure observed in galaxy surveys.
+
+The V-shape transition is noteworthy because the same $1/\ln^2(t)$ cooling that produces acoustic freeze-out (\cref{sec:horizon}) and near-Gaussian CMB statistics (\cref{sec:gauss}) also naturally smooths primordial chaos---suggesting a phenomenological analogy with the smoothing role of cosmic inflation.
+In the standard $\Lambda$CDM paradigm, the smoothness of the CMB is attributed to an inflationary epoch driven by a hypothetical scalar field; in the DSC framework, the logarithmic cooling law derived from Riemann spectral statistics provides a qualitatively similar smoothing effect as an intrinsic property of the lattice dynamics.
+Whether this analogy can be made quantitatively precise remains an open question (see \cref{sec:discussion}).
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig16_cosmic_timeline.pdf}
+  \caption{Full cosmic timeline from DSC lattice dynamics ($128^3$).
+  (a)~Planck SMICA target. (b)~DSC reconstructed CMB.
+  (c)~Big Bang initial state ($t = 0$). (d)~CMB epoch ($t \sim 380$k~yr).
+  (e)~Late universe with cosmic web ($t \sim 13.8$~Gyr). (f)~Galaxy clusters (high-density regions).
+  (g)~Dark matter filaments (intermediate density).
+  (h)~V-shape phase transition: field variance drops during adiabatic cooling (Phase~I) and rises during gravitational structure formation (Phase~II).
+  The $1/\ln^2(t)$ cooling naturally smooths primordial chaos without an inflaton field.}
+  \label{fig:timeline}
+\end{figure*}

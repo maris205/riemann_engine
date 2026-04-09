@@ -1,0 +1,41 @@
+\section{Limitations}
+\label{sec:limitations}
+
+Several limitations must be acknowledged.
+
+\begin{enumerate}
+  \item \textbf{Kurtosis tension.}
+  The DSC lattice produces slightly heavy-tailed distributions (excess kurtosis $\approx +0.3$), while the Planck SMICA map has light tails ($\approx -0.5$).
+  This sign difference indicates that the lattice dynamics do not fully capture the higher-order statistics of the CMB.
+  The weak nonlinear term ($-\alpha\phi^2$) used in 3D simulations contributes to this discrepancy; reducing $\alpha$ improves the kurtosis but at the cost of less pronounced cosmic web structure.
+
+  \item \textbf{Three free parameters.}
+  Matching the acoustic peak positions to $\Lambda$CDM requires fitting $c^2_{\mathrm{base}}$, $\eta$, and $\kopt$.
+  The DSC framework does not predict their values from first principles (beyond the conjecture $\kopt \approx \alpha_F / 2$).
+  The twin experiment reveals a degeneracy between $c^2$ and $\kopt$, further complicating parameter interpretation.
+
+  \item \textbf{Mock $\Lambda$CDM comparison.}
+  Our power spectrum comparisons use the analytic mock \cref{eq:mock} rather than the full Planck best-fit $C_\ell$.
+  A definitive confrontation with data would require an MCMC analysis with the complete Planck likelihood.
+
+  \item \textbf{Surrogate lattice.}
+  The 2D and 3D simulations are effective models, not direct implementations of the Planck-scale lattice $\Z^3 \times \N$.
+  The connection between lattice-unit quantities (e.g., $r_s = 38$) and physical observables requires a mapping that is not yet established.
+
+  \item \textbf{No polarization or tensor modes.}
+  We study only scalar (temperature) fluctuations.
+  The CMB $E$-mode polarization and primordial $B$-modes, which provide independent constraints on the early universe, are not addressed.
+
+  \item \textbf{Conjectural physical basis.}
+  The derivation chain from the Berry--Keating spectral correspondence to the $1/\ln^2$ cooling law involves three conjectural steps (Assumptions 1--3 in \cref{sec:dsc}).
+  These are physically motivated but not rigorously proven.
+  The present work should be viewed as exploring the \emph{consequences} of these assumptions in a computational setting, not as establishing their validity.
+
+  \item \textbf{Inverse reconstruction does not generalize.}
+  The held-out test (\cref{sec:inverse}) shows that the 3D reconstruction from a single hemisphere does not predict the unseen hemisphere ($r_{\mathrm{test}} = -0.17$).
+  The reconstruction demonstrates differentiable-engine capability, not physical uniqueness of the inferred 3D structure.
+
+  \item \textbf{Quantitative $C_\ell$ mismatch.}
+  The forward simulation yields $\chi^2/\mathrm{dof} \approx 3.3$ against Planck ($\ell = 2$--$50$), far from a statistically acceptable fit.
+  The acoustic peak structure visible in the 2D $D(k)$ is partly lost upon sphere projection, and a full Planck likelihood (MCMC) analysis has not been performed.
+\end{enumerate}
