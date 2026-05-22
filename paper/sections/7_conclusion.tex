@@ -1,18 +1,18 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-We have demonstrated that a St\"ormer--Verlet symplectic lattice with $1/\ln^2(t)$ adiabatic cooling---motivated by the Discrete Symplectic Cosmology framework---reproduces several key statistical features of the CMB temperature anisotropies.
+We have explored whether a St\"ormer--Verlet symplectic lattice with $1/\ln^2(t)$ adiabatic cooling---motivated by the Discrete Symplectic Cosmology framework and its connections to time-varying cosmological parameters~\citep{WangEvolution,Wang2026}---can reproduce statistical features of the CMB temperature anisotropies.
 Near-Gaussian one-point statistics emerge robustly from the symplectic dynamics, with an ablation study confirming that dissipative alternatives fail.
-Acoustic-like oscillation peaks arise naturally from wave propagation on the lattice, and a three-parameter fit aligns all peak positions with a mock $\Lambda$CDM reference.
-The $1/\ln^2(t)$ cooling law generates a finite acoustic horizon through asymptotic freeze-out, providing a mechanism for producing the sound horizon without abrupt decoupling.
-Full-sky CMB maps from 3D lattice simulations show visual and statistical similarity to the Planck SMICA data.
+Acoustic-like oscillation peaks arise from wave propagation on the lattice, and a three-parameter fit aligns peak positions with a toy analytic reference.
+The $1/\ln^2(t)$ cooling law generates an effective acoustic freeze-out scale through asymptotic deceleration of wave propagation, providing a mechanism for producing a sound horizon without abrupt decoupling (though the formal horizon integral diverges).
+Full-sky CMB maps from 3D lattice simulations show visual and statistical similarity to the Planck SMICA data, though quantitative comparison yields $\chi^2/\mathrm{dof} \approx 3.3$, indicating a substantial gap between phenomenological similarity and quantitative agreement with the observed angular power spectrum.
 
-These results establish the DSC lattice as an exploratory computational framework for generating CMB-like fluctuations from symplectic dynamics with spectrally-motivated cooling.
-The differentiable implementation enables gradient-based inverse reconstruction, though a held-out test reveals that 2D CMB data alone cannot uniquely constrain the 3D structure (line-of-sight degeneracy); incorporating volumetric 3D anchors partially breaks this degeneracy, pointing toward multi-probe joint inference as the path to physically meaningful reconstruction.
-Extending the reconstructed initial conditions forward through a nonlinear structure-formation phase reveals a V-shape thermodynamic transition---the $1/\ln^2(t)$ cooling naturally smooths primordial chaos into a uniform CMB without an inflaton field, while subsequent gravitational instability rebuilds complexity into a cosmic web.
+These results establish the DSC lattice as an exploratory proof-of-concept for generating CMB-like fluctuations from symplectic dynamics with spectrally-motivated cooling.
+The differentiable implementation enables gradient-based inverse reconstruction, though a held-out hemisphere test ($r = -0.17$) confirms that the severely underdetermined inverse problem does not uniquely constrain the 3D structure from 2D sky data alone; incorporating volumetric 3D anchors partially breaks this degeneracy.
+Extending the reconstructed initial conditions forward through a nonlinear structure-formation phase reveals a V-shape thermodynamic transition that bears a qualitative resemblance to the smoothing role of inflation, though the mechanisms operate at fundamentally different scales.
 
 Future work should pursue:
-(i) a full Planck likelihood analysis (MCMC) to quantitatively constrain the lattice parameters;
-(ii) multi-probe inverse reconstruction combining CMB with galaxy survey data (DESI, Euclid) to break the projection degeneracy;
+(i) a full Planck likelihood analysis (MCMC) to quantitatively constrain the lattice parameters against the observed $C_\ell$~\citep{Planck2018V};
+(ii) multi-probe inverse reconstruction combining CMB with galaxy survey data (DESI~\citep{DESI2024}, Euclid) to break the projection degeneracy;
 (iii) extension to polarization and tensor modes;
-(iv) connections between the lattice acoustic horizon and the physical sound horizon relevant to the Hubble tension.
+(iv) connections between the lattice acoustic horizon and the physical sound horizon relevant to the Hubble tension~\citep{DiValentino2021}.

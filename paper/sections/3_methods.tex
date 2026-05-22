@@ -63,13 +63,14 @@ We supplement these with Kolmogorov--Smirnov and Shapiro--Wilk tests (on 5000-el
 \paragraph{Spectral correlation.}
 To compare DSC and $\Lambda$CDM spectral shapes, we compute the Pearson correlation coefficient between $\ln D(k)_{\mathrm{DSC}}$ and $\ln D(k)_{\Lambda\mathrm{CDM}}$ over the range $k \in [2, 60]$, after normalizing both to equal integrated power.
 
-\paragraph{Mock $\Lambda$CDM reference.}
-For 2D power spectrum comparisons, we use
+\paragraph{Toy analytic reference spectrum.}
+For 2D power spectrum shape comparisons, we use a simplified analytic formula
 \begin{equation}
-  D(k)_{\Lambda\mathrm{CDM}} = e^{-(k/35)^2}\!\left[1 + 1.2\sin^2\!\left(\frac{\pi k}{12}\right)\right]\frac{50}{k + 10}\,,
+  D(k)_{\mathrm{ref}} = e^{-(k/35)^2}\!\left[1 + 1.2\sin^2\!\left(\frac{\pi k}{12}\right)\right]\frac{50}{k + 10}\,,
   \label{eq:mock}
 \end{equation}
-which captures the acoustic oscillation peaks and Silk damping of the true CMB spectrum in a simplified analytic form.
+which captures the qualitative features of acoustic oscillation peaks and Silk damping in a simplified form.
+We stress that this is a toy reference used only for qualitative shape comparison; quantitative benchmarking against the observed CMB is performed in \cref{sec:chi2} using the real Planck SMICA angular power spectrum~\citep{Planck2018V}.
 
 \subsection{Simulation-based inference}
 \label{sec:sbi}

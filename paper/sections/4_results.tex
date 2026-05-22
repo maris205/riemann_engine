@@ -21,7 +21,7 @@ The dissipative model (top row) produces temperature maps dominated by topologic
 The resulting pixel histogram is multimodal (kurtosis $= -1.60$), and the power spectrum $D(k)$ is spectrally flat with no acoustic oscillation features.
 
 In contrast, the symplectic model (bottom row) produces smooth, multi-scale temperature fluctuations.
-The histogram closely follows a Gaussian (skewness $= +0.22$, kurtosis $= -0.75$), and $D(k)$ shows acoustic-like oscillation peaks with an overall spectral shape that correlates with the mock $\Lambda$CDM reference at $r = 0.96$ (Pearson, log--log).
+The histogram closely follows a Gaussian (skewness $= +0.22$, kurtosis $= -0.75$), and $D(k)$ shows acoustic-like oscillation peaks with an overall spectral shape that correlates with the toy analytic reference at $r = 0.96$ (Pearson, log--log).
 The dissipative model achieves only $r = 0.74$.
 
 This ablation demonstrates that phase-space volume preservation (Assumption~2 of the DSC framework) is not merely a theoretical nicety: it qualitatively determines whether the lattice dynamics produce CMB-like statistics.
@@ -30,7 +30,7 @@ This ablation demonstrates that phase-space volume preservation (Assumption~2 of
   \centering
   \includegraphics[width=\textwidth]{fig2_ablation.pdf}
   \caption{Ablation study: dissipative coupled map lattice (top) vs.\ symplectic St\"ormer--Verlet integrator (bottom).
-  (a,d)~Temperature maps. (b,e)~Pixel histograms with Gaussian reference (dashed). (c,f)~Power spectra $D(k)$ with mock $\Lambda$CDM.
+  (a,d)~Temperature maps. (b,e)~Pixel histograms with Gaussian reference (dashed). (c,f)~Power spectra $D(k)$ with toy analytic reference.
   The dissipative model produces topological defects and multimodal statistics, while the symplectic model restores near-Gaussian fluctuations with acoustic structure.}
   \label{fig:ablation}
 \end{figure*}
@@ -40,7 +40,7 @@ This ablation demonstrates that phase-space volume preservation (Assumption~2 of
 
 \Cref{fig:peaks} shows the scaled power spectrum $D(k)$ from a single symplectic run ($N = 300$, 45 steps, no drag).
 The DSC spectrum exhibits clear oscillatory modulation, with peaks detected at $k = 2, 8, 18, 26, 36$ by \texttt{scipy.signal.find\_peaks}.
-For comparison, the mock $\Lambda$CDM spectrum (\cref{eq:mock}) has peaks at $k = 5, 17, 29, 41$.
+For comparison, the toy analytic reference spectrum (\cref{eq:mock}) has peaks at $k = 5, 17, 29, 41$.
 
 The physical origin of these peaks is wave interference on the symplectic lattice: the St\"ormer--Verlet integrator supports undamped wave propagation, and the periodic boundary conditions create standing-wave modes.
 The peak spacing is set by the lattice sound speed $c_s = \sqrt{\ceff}$ and the domain size $N$.
@@ -53,7 +53,7 @@ While the DSC and $\Lambda$CDM peaks differ in absolute position and spacing, bo
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig3_acoustic_peaks.pdf}
-  \caption{Acoustic-like oscillation peaks in the DSC power spectrum $D(k)$ (blue) compared to mock $\Lambda$CDM (black dashed).
+  \caption{Acoustic-like oscillation peaks in the DSC power spectrum $D(k)$ (blue) compared to toy analytic reference (black dashed).
   Triangles mark detected peak positions.
   Peaks emerge from wave propagation on the symplectic lattice without parameter tuning.}
   \label{fig:peaks}
@@ -63,7 +63,7 @@ While the DSC and $\Lambda$CDM peaks differ in absolute position and spacing, bo
 
 When the three lattice parameters ($c^2_{\mathrm{base}}$, $\eta$, $\kopt$) are tuned via Bayesian optimization (\cref{sec:twin}), all six peaks can be aligned simultaneously with MSE $= 8.9 \times 10^{-5}$, demonstrating that the DSC lattice has sufficient expressive power to match the $\Lambda$CDM spectral shape.
 
-\subsection{Acoustic freeze-out and finite horizon}
+\subsection{Acoustic freeze-out and effective horizon}
 \label{sec:horizon}
 
 \Cref{fig:freezeout} visualizes the freeze-out mechanism.
@@ -141,7 +141,7 @@ The 2D $D(k)$ comparison (\cref{sec:peaks}) is more favorable because the Fourie
 \Cref{fig:sensitivity} shows the sensitivity of Gaussianity metrics and spectral correlation to the three main parameters.
 The skewness and excess kurtosis remain close to zero across $c^2 \in [0.1, 0.8]$, $\eta \in [0, 0.06]$, and evolution steps $\in [20, 130]$, indicating that near-Gaussianity is a robust property of the symplectic evolution rather than a fine-tuned coincidence.
 
-The spectral correlation with mock $\Lambda$CDM is high ($r > 0.95$) for $c^2 \in [0.2, 0.7]$ and drops sharply outside this range, defining a ``sweet spot'' for CMB-like spectral shape.
+The spectral correlation with toy analytic reference is high ($r > 0.95$) for $c^2 \in [0.2, 0.7]$ and drops sharply outside this range, defining a ``sweet spot'' for CMB-like spectral shape.
 The drag coefficient $\eta$ has a moderate effect: $r$ decreases monotonically with increasing drag (from $r \approx 0.98$ at $\eta = 0$ to $r \approx 0.85$ at $\eta = 0.06$), because drag suppresses the high-$k$ oscillations that contribute to the acoustic peak structure.
 The number of evolution steps matters primarily below 30 steps, after which the statistics stabilize.
 
@@ -151,7 +151,7 @@ The number of evolution steps matters primarily below 30 steps, after which the 
 A natural concern is whether the reported statistics are trivially achievable by \emph{any} field with matched power spectrum, regardless of dynamics.
 To test this, we construct two Gaussian random field (GRF) baselines:
 (i) a GRF whose power spectrum is set equal to the DSC output spectrum (``GRF-matched''), and
-(ii) a GRF whose power spectrum follows the mock $\Lambda$CDM form \cref{eq:mock} (``GRF-$\Lambda$CDM'').
+(ii) a GRF whose power spectrum follows the toy analytic reference form \cref{eq:mock} (``GRF-ref'').
 Both are exactly Gaussian by construction.
 
 The GRF-$\Lambda$CDM field achieves near-perfect spectral correlation ($r = 0.99$) with the $\Lambda$CDM reference, as expected since its spectrum is the reference.
@@ -214,7 +214,7 @@ This quantitative gap motivates the differentiable inverse approach (\cref{sec:i
   \includegraphics[width=\textwidth]{fig7_sensitivity.pdf}
   \caption{Parameter sensitivity analysis.
   Top: skewness and excess kurtosis vs.\ $c^2$, drag, and steps.
-  Bottom: Pearson spectral correlation with mock $\Lambda$CDM.
+  Bottom: Pearson spectral correlation with toy analytic reference.
   Gaussianity is robust; spectral correlation is high for $c^2 \in [0.2, 0.7]$ and low drag.}
   \label{fig:sensitivity}
 \end{figure*}
@@ -330,8 +330,12 @@ We implement a two-phase forward simulation from the reconstructed $128^3$ primo
 The structural complexity of the field, quantified by the spatial variance $\sigma^2(\phi)$, traces a characteristic \emph{V-shape} across cosmic time:
 the variance drops sharply during Phase~I as the $1/\ln^2$ cooling smooths the primordial chaos (variance ratio $\sim 2\times$), reaches a minimum at the CMB epoch, then rises steeply during Phase~II as gravitational instability amplifies density contrasts (growth factor $\sim 40\times$).
 
-The maximum intensity projections of the 3D field (\cref{fig:timeline}c--g) show the expected morphological sequence: isotropic random noise at $t = 0$ (Big Bang), smooth large-scale modes at the CMB epoch, and filamentary/clumpy structures at late times resembling the cosmic web.
-Thresholding the late-time field reveals distinct populations of high-density clusters and intermediate-density filaments, qualitatively consistent with the large-scale structure observed in galaxy surveys.
+The maximum intensity projections of the 3D field (\cref{fig:timeline}c--f) show the expected morphological sequence: isotropic random noise at $t = 0$ (Big Bang), smooth large-scale modes at the CMB epoch, an intermediate ``dark ages'' state, and filamentary/clumpy structures at late times resembling the cosmic web.
+Thresholding the late-time field reveals distinct populations of high-density clusters (\cref{fig:timeline}g) and intermediate-density filaments (\cref{fig:timeline}h), qualitatively consistent with the large-scale structure observed in galaxy surveys.
+
+The spatial difference fields provide additional physical insight.
+The dissipation trace $|\phi_{\mathrm{CMB}} - \phi_{\mathrm{BB}}|$ (\cref{fig:timeline}i) reveals where the $1/\ln^2$ cooling most strongly erased primordial structure during Phase~I, while the gravity trace $|\phi_{\mathrm{galaxy}} - \phi_{\mathrm{CMB}}|$ (\cref{fig:timeline}j) highlights the regions where gravitational instability drove the largest density contrasts during Phase~II.
+Together, these traces visualize the two competing mechanisms---adiabatic smoothing and gravitational amplification---that produce the V-shape transition.
 
 The V-shape transition is noteworthy because the same $1/\ln^2(t)$ cooling that produces acoustic freeze-out (\cref{sec:horizon}) and near-Gaussian CMB statistics (\cref{sec:gauss}) also naturally smooths primordial chaos---suggesting a phenomenological analogy with the smoothing role of cosmic inflation.
 In the standard $\Lambda$CDM paradigm, the smoothness of the CMB is attributed to an inflationary epoch driven by a hypothetical scalar field; in the DSC framework, the logarithmic cooling law derived from Riemann spectral statistics provides a qualitatively similar smoothing effect as an intrinsic property of the lattice dynamics.
@@ -340,12 +344,16 @@ Whether this analogy can be made quantitatively precise remains an open question
 \begin{figure*}[htbp]
   \centering
   \includegraphics[width=\textwidth]{fig16_cosmic_timeline.pdf}
-  \caption{Full cosmic timeline from DSC lattice dynamics ($128^3$).
+  \caption{Full cosmic timeline from DSC lattice dynamics ($128^3$, 12-panel overview).
   (a)~Planck SMICA target. (b)~DSC reconstructed CMB.
   (c)~Big Bang initial state ($t = 0$). (d)~CMB epoch ($t \sim 380$k~yr).
-  (e)~Late universe with cosmic web ($t \sim 13.8$~Gyr). (f)~Galaxy clusters (high-density regions).
-  (g)~Dark matter filaments (intermediate density).
-  (h)~V-shape phase transition: field variance drops during adiabatic cooling (Phase~I) and rises during gravitational structure formation (Phase~II).
-  The $1/\ln^2(t)$ cooling naturally smooths primordial chaos without an inflaton field.}
+  (e)~Dark ages / early structure (intermediate state).
+  (f)~Late universe with cosmic web ($t \sim 13.8$~Gyr).
+  (g)~Galaxy clusters (high-density regions).
+  (h)~Dark matter filaments (intermediate density).
+  (i)~BB $\to$ CMB dissipation trace: spatial pattern of adiabatic cooling.
+  (j)~CMB $\to$ Web gravity trace: regions where gravitational instability drives structure formation.
+  (k)~Optimization convergence.
+  (l)~V-shape phase transition: field variance drops during adiabatic cooling (Phase~I) and rises during gravitational structure formation (Phase~II).}
   \label{fig:timeline}
 \end{figure*}

@@ -5,11 +5,112 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
+\bibitem{Planck2018I}
+{Planck Collaboration}, {Planck 2018 results. I. Overview and the cosmological
+  legacy of Planck}, Astronomy \& Astrophysics 641 (2020) A1.
+\newblock \href {https://doi.org/10.1051/0004-6361/201833880}
+  {\path{doi:10.1051/0004-6361/201833880}}.
+
 \bibitem{Planck2018VI}
 {Planck Collaboration}, {Planck 2018 results. VI. Cosmological parameters},
   Astronomy \& Astrophysics 641 (2020) A6.
 \newblock \href {https://doi.org/10.1051/0004-6361/201833910}
   {\path{doi:10.1051/0004-6361/201833910}}.
+
+\bibitem{Planck2018IX}
+{Planck Collaboration}, {Planck 2018 results. IX. Constraints on primordial
+  non-Gaussianity}, Astronomy \& Astrophysics 641 (2020) A9.
+\newblock \href {https://doi.org/10.1051/0004-6361/201935891}
+  {\path{doi:10.1051/0004-6361/201935891}}.
+
+\bibitem{Planck2018V}
+{Planck Collaboration}, {Planck 2018 results. V. CMB power spectra and
+  likelihoods}, Astronomy \& Astrophysics 641 (2020) A5.
+\newblock \href {https://doi.org/10.1051/0004-6361/201936386}
+  {\path{doi:10.1051/0004-6361/201936386}}.
+
+\bibitem{Dodelson2020}
+S.~Dodelson, F.~Schmidt, {Modern Cosmology}, 2nd Edition, Academic Press, 2020.
+
+\bibitem{Planck2018X}
+{Planck Collaboration}, {Planck 2018 results. X. Constraints on inflation},
+  Astronomy \& Astrophysics 641 (2020) A10.
+\newblock \href {https://doi.org/10.1051/0004-6361/201833887}
+  {\path{doi:10.1051/0004-6361/201833887}}.
+
+\bibitem{Mukhanov2005}
+V.~Mukhanov, {Physical Foundations of Cosmology}, Cambridge University Press,
+  2005.
+\newblock \href {https://doi.org/10.1017/CBO9780511790553}
+  {\path{doi:10.1017/CBO9780511790553}}.
+
+\bibitem{Durrer2008}
+R.~Durrer, {The Cosmic Microwave Background}, Cambridge University Press, 2008.
+\newblock \href {https://doi.org/10.1017/CBO9780511817205}
+  {\path{doi:10.1017/CBO9780511817205}}.
+
+\bibitem{DiValentino2021}
+E.~Di~Valentino, O.~Mena, S.~Pan, L.~Visinelli, W.~Yang, A.~Melchiorri, D.~F.
+  Mota, A.~G. Riess, J.~Silk, {In the realm of the Hubble tension---a review of
+  solutions}, Classical and Quantum Gravity 38 (2021) 153001.
+\newblock \href {https://doi.org/10.1088/1361-6382/ac086d}
+  {\path{doi:10.1088/1361-6382/ac086d}}.
+
+\bibitem{Schoneberg2022}
+N.~Sch{\"o}neberg, G.~Franco~Abell{\'a}n, A.~P{\'e}rez~S{\'a}nchez, S.~J.
+  Witte, V.~Poulin, J.~Lesgourgues, {The H0 Olympics: A fair ranking of
+  proposed models}, Physics Reports 984 (2022) 1--55.
+\newblock \href {https://doi.org/10.1016/j.physrep.2022.07.001}
+  {\path{doi:10.1016/j.physrep.2022.07.001}}.
+
+\bibitem{DESI2024}
+{DESI Collaboration}, {DESI 2024 VI: Cosmological Constraints from the
+  Measurements of Baryon Acoustic Oscillations}, arXiv preprint (2024).
+\newblock \href {http://arxiv.org/abs/2404.03002} {\path{arXiv:2404.03002}}.
+
+\bibitem{Uzan2003}
+J.-P. Uzan, {The fundamental constants and their variation: observational and
+  theoretical status}, Reviews of Modern Physics 75 (2003) 403--455.
+\newblock \href {https://doi.org/10.1103/RevModPhys.75.403}
+  {\path{doi:10.1103/RevModPhys.75.403}}.
+
+\bibitem{Martins2017}
+C.~J. A.~P. Martins, {The status of varying constants: a review of the physics,
+  searches and implications}, Reports on Progress in Physics 80 (2017) 126902.
+\newblock \href {https://doi.org/10.1088/1361-6633/aa860e}
+  {\path{doi:10.1088/1361-6633/aa860e}}.
+
+\bibitem{BerryKeating1999}
+M.~V. Berry, J.~P. Keating, {The Riemann zeros and eigenvalue asymptotics},
+  SIAM Review 41 (1999) 236--266.
+\newblock \href {https://doi.org/10.1137/S0036144598347497}
+  {\path{doi:10.1137/S0036144598347497}}.
+
+\bibitem{Bohigas1984}
+O.~Bohigas, M.-J. Giannoni, C.~Schmit, {Characterization of chaotic quantum
+  spectra and universality of level fluctuation laws}, Physical Review Letters
+  52 (1984) 1--4.
+\newblock \href {https://doi.org/10.1103/PhysRevLett.52.1}
+  {\path{doi:10.1103/PhysRevLett.52.1}}.
+
+\bibitem{Bender2017}
+C.~M. Bender, D.~C. Brody, M.~P. M{\"u}ller, {Hamiltonian for the zeros of the
+  Riemann zeta function}, Physical Review Letters 118 (2017) 130201.
+\newblock \href {https://doi.org/10.1103/PhysRevLett.118.130201}
+  {\path{doi:10.1103/PhysRevLett.118.130201}}.
+
+\bibitem{Schumayer2011}
+D.~Schumayer, D.~A.~W. Hutchinson, {Physics of the Riemann hypothesis}, Reviews
+  of Modern Physics 83 (2011) 307--330.
+\newblock \href {https://doi.org/10.1103/RevModPhys.83.307}
+  {\path{doi:10.1103/RevModPhys.83.307}}.
+
+\bibitem{WangEvolution}
+L.~Wang, {Cosmological Evolution as a Non-autonomous Dynamical System:
+  Empirical Evidence from the Fine-Structure Constant, Hubble Tension, and
+  Riemann Zeros}, v1.0 (2026).
+\newblock \href {https://doi.org/10.5281/zenodo.19218674}
+  {\path{doi:10.5281/zenodo.19218674}}.
 
 \bibitem{Wang2026}
 L.~Wang, {Discrete Symplectic Cosmology: A Phenomenological Framework for
@@ -25,24 +126,63 @@ E.~Hairer, C.~Lubich, G.~Wanner, {Geometric Numerical Integration:
 \newblock \href {https://doi.org/10.1007/3-540-30666-8}
   {\path{doi:10.1007/3-540-30666-8}}.
 
+\bibitem{Leimkuhler2004}
+B.~Leimkuhler, S.~Reich, {Simulating Hamiltonian Dynamics}, Cambridge
+  University Press, 2004.
+\newblock \href {https://doi.org/10.1017/CBO9780511614118}
+  {\path{doi:10.1017/CBO9780511614118}}.
+
+\bibitem{Modi2021}
+C.~Modi, F.~Lanusse, U.~Seljak, {FlowPM: Distributed TensorFlow implementation
+  of the FastPM cosmological N-body solver}, Astronomy and Computing 37 (2021)
+  100505.
+\newblock \href {https://doi.org/10.1016/j.ascom.2021.100505}
+  {\path{doi:10.1016/j.ascom.2021.100505}}.
+
+\bibitem{Li2022}
+Y.~Li, L.~Lu, U.~Seljak, {Differentiable cosmological simulation with the
+  adjoint method}, The Astrophysical Journal Supplement Series 259 (2022) 36.
+\newblock \href {https://doi.org/10.3847/1538-4365/ac5f4a}
+  {\path{doi:10.3847/1538-4365/ac5f4a}}.
+
+\bibitem{Campagne2023}
+J.-E. Campagne, F.~Lanusse, J.~Zuntz, et~al., {JAX-COSMO: An End-to-End
+  Differentiable and GPU Accelerated Cosmology Library}, The Open Journal of
+  Astrophysics 6 (2023) 15.
+\newblock \href {https://doi.org/10.21105/astro.2302.05163}
+  {\path{doi:10.21105/astro.2302.05163}}.
+
+\bibitem{Cranmer2020}
+K.~Cranmer, J.~Brehmer, G.~Louppe, {The frontier of simulation-based
+  inference}, Proceedings of the National Academy of Sciences 117 (2020)
+  30055--30062.
+\newblock \href {https://doi.org/10.1073/pnas.1912789117}
+  {\path{doi:10.1073/pnas.1912789117}}.
+
+\bibitem{Alsing2019}
+J.~Alsing, B.~Wandelt, S.~Feeney, {Massive optimal data compression and density
+  estimation for scalable, likelihood-free inference in cosmology}, Monthly
+  Notices of the Royal Astronomical Society 488 (2019) 4440--4458.
+\newblock \href {https://doi.org/10.1093/mnras/stz1960}
+  {\path{doi:10.1093/mnras/stz1960}}.
+
+\bibitem{Figueroa2021}
+D.~G. Figueroa, A.~Florio, F.~Torrenti, W.~Valkenburg, {The art of simulating
+  the early Universe. Part I. Integration techniques and canonical cases},
+  Journal of Cosmology and Astroparticle Physics 2021 (2021) 035.
+\newblock \href {https://doi.org/10.1088/1475-7516/2021/04/035}
+  {\path{doi:10.1088/1475-7516/2021/04/035}}.
+
+\bibitem{Caravano2022}
+A.~Caravano, E.~Komatsu, A.~Linde, K.~D. Lozanov, {Lattice simulations of
+  inflation}, arXiv preprint (2022).
+\newblock \href {http://arxiv.org/abs/2209.13616} {\path{arXiv:2209.13616}}.
+
 \bibitem{Kloeden2011}
 P.~E. Kloeden, M.~Rasmussen, {Nonautonomous Dynamical Systems}, American
   Mathematical Society, 2011.
 \newblock \href {https://doi.org/10.1090/surv/176}
   {\path{doi:10.1090/surv/176}}.
-
-\bibitem{Bohigas1984}
-O.~Bohigas, M.-J. Giannoni, C.~Schmit, {Characterization of chaotic quantum
-  spectra and universality of level fluctuation laws}, Physical Review Letters
-  52 (1984) 1--4.
-\newblock \href {https://doi.org/10.1103/PhysRevLett.52.1}
-  {\path{doi:10.1103/PhysRevLett.52.1}}.
-
-\bibitem{BerryKeating1999}
-M.~V. Berry, J.~P. Keating, {The Riemann zeros and eigenvalue asymptotics},
-  SIAM Review 41 (1999) 236--266.
-\newblock \href {https://doi.org/10.1137/S0036144598347497}
-  {\path{doi:10.1137/S0036144598347497}}.
 
 \bibitem{Gorski2005}
 K.~M. G{\'o}rski, E.~Hivon, A.~J. Banday, B.~D. Wandelt, F.~K. Hansen,
@@ -75,12 +215,5 @@ L.~Bombelli, J.~Lee, D.~Meyer, R.~D. Sorkin, {Space-time as a causal set},
   Physical Review Letters 59 (1987) 521--524.
 \newblock \href {https://doi.org/10.1103/PhysRevLett.59.521}
   {\path{doi:10.1103/PhysRevLett.59.521}}.
-
-\bibitem{Alsing2019}
-J.~Alsing, B.~Wandelt, S.~Feeney, {Massive optimal data compression and density
-  estimation for scalable, likelihood-free inference in cosmology}, Monthly
-  Notices of the Royal Astronomical Society 488 (2019) 4440--4458.
-\newblock \href {https://doi.org/10.1093/mnras/stz1960}
-  {\path{doi:10.1093/mnras/stz1960}}.
 
 \end{thebibliography}
