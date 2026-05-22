@@ -1,0 +1,170 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\title{Response to Reviewer 1\\
+\large Manuscript DARK-D-26-00549\\
+\textit{Discrete Symplectic Cosmology: a phenomenological lattice surrogate for CMB-like fluctuations}}
+\author{}
+\date{\today}
+
+\definecolor{revcolor}{HTML}{555555}
+\newenvironment{review}{\par\color{revcolor}\itshape\leftskip=1em\rightskip=1em\noindent}{\par}
+
+\begin{document}
+\maketitle
+
+\noindent
+We thank Reviewer 1 for an unusually constructive and detailed report.
+The eight major comments and the minor remarks have substantially shaped the revision: we have retracted several quantitative claims, replaced the toy analytic reference with a CAMB Planck-2018 benchmark, made the symplecticity caveat explicit, demoted the Big-Bang-to-cosmic-web section to a phenomenological visualization, and promoted the held-out hemisphere result from a footnote-level caveat to one of the main findings.
+The revised abstract and introduction now position the work explicitly as an exploratory toy-model study of a differentiable lattice surrogate, in line with the reviewer's framing.
+
+In the response below, the reviewer's comments are quoted in italics; our reply, the resulting changes, and pointers to the revised manuscript follow each item.
+
+\section*{Major comments}
+
+\subsection*{Comment 1 --- Symplecticity is broken by the drag term}
+
+\begin{review}
+\textit{First, I am not fully convinced that the simulations used in the main phenomenological comparisons are genuinely symplectic, in the relevant sense. The manuscript introduces a drag term, and it is explicitly shown that the phase-space volume contracts when $\eta \neq 0$. This appears difficult to reconcile with the repeated emphasis on symplecticity as the central physical principle. If the intended framework is instead a weakly damped or conformally symplectic system, this should be formulated and interpreted accordingly.}
+\end{review}
+
+We agree.
+The integrator is exactly symplectic only when $\eta = 0$, and the runs that combine the lattice with the inverse reconstruction or the late-time continuation use $\eta \in [0.01, 0.06]$, which contracts phase-space volume.
+We have made this distinction explicit and adopted the reviewer's terminology of \emph{weakly damped symplectic} (conformally symplectic) for the runs with $\eta > 0$.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item Section~3.1 (\textit{Two-dimensional weakly damped symplectic lattice}) now opens with an explicit statement that the integrator is exactly symplectic only at $\eta = 0$, identifies which sections use $\eta = 0$ (Gaussianity ensemble and acoustic-peak runs) and which use $\eta > 0$ (Phase~I cosmic timeline; inverse reconstruction), and states that quantitative claims depending on the symplecticity should be read as ``weakly damped symplectic'' rather than ``exactly symplectic''.
+  \item The abstract and introduction now describe the lattice as ``a non-autonomous, weakly damped symplectic map''.
+  \item In the Discussion (Section~5), the paragraph that previously justified Gaussianity through phase-space volume preservation has been replaced by a more conservative statement (linear regime $+$ central limit theorem; symplecticity not isolated by the present ablations).
+\end{itemize}
+
+\subsection*{Comment 2 --- Acoustic freeze-out is not a finite horizon}
+
+\begin{review}
+\textit{Second, the acoustic freeze-out argument appears problematic. The manuscript notes that the formal horizon integral with $c_s \sim 1/\ln n$ diverges, but elsewhere the discussion seems to treat the acoustic horizon as effectively finite in a physically analogous way to recombination. As far as I can tell, the reported finite scale is threshold- and simulation-dependent, rather than a true future sound horizon. This weakens one of the central claimed analogies with standard CMB physics.}
+\end{review}
+
+We agree, and we have rewritten the freeze-out section to be explicit about this.
+The formal integral $\int_0^\infty c_{\rm eff}(t)\,dt$ with $c_{\rm eff} \sim 1/\ln^2(t)$ diverges, and the value $r_s \approx 38$ that we report is a threshold-defined effective scale.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item Section~4.4 has been retitled \textit{Threshold-defined effective freeze-out scale}.
+  \item A new paragraph spells out the logarithmic divergence of the horizon integral and identifies three sources of dependence: amplitude threshold, lattice size, and integration length.
+  \item A new Table (\textit{Sensitivity of $r_s$ to threshold and grid size}) reports $r_s$ for percentile thresholds $\in \{90\%, 95\%, 99\%\}$ and lattice sizes $\in \{150, 300, 600\}$, showing the expected drift.
+  \item The Discussion no longer claims $r_s$ as an analog of the comoving sound horizon.
+\end{itemize}
+
+\subsection*{Comment 3 --- The Gaussianity result is weaker than claimed}
+
+\begin{review}
+\textit{Third, I find the interpretation of Gaussianity overstated. If the initial conditions are already nearly Gaussian and the symplectic evolution is mostly linear, near-Gaussian one-point statistics is not unexpected. The comparison with a dissipative coupled-map lattice is useful, but it does not isolate symplecticity alone, since the heuristic differs in several other ways. I am therefore not convinced that the paper demonstrates a nontrivial emergence of CMB-like Gaussianity from the proposed dynamics.}
+\end{review}
+
+We agree.
+The dynamics are approximately linear in the parameter range we explore, and the initial conditions are themselves Gaussian, so near-Gaussian one-point statistics is the expected outcome rather than evidence for the proposed dynamics.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item Section~4.1 has been retitled \textit{Near-Gaussian statistics: a consistency check, not an emergence claim}.
+  \item The main paragraph now states explicitly: ``We do not interpret this as a non-trivial emergence of CMB-like Gaussianity. The initial conditions are random Gaussian fields, the St\"ormer--Verlet update is linear in $\phi$ in the explored parameter range, and a linear evolution of a Gaussian field is also Gaussian.''
+  \item Section~4.2 (the dissipative-CML ablation) now explicitly cautions that the comparison cannot isolate symplecticity, because the two baselines differ simultaneously in nonlinearity, conservation properties, integration order, and stencil.
+  \item The abstract has been edited to say that near-Gaussian one-point statistics are ``consistent with expectations rather than a non-trivial emergence''.
+\end{itemize}
+
+\subsection*{Comment 4 --- Comparison with the real CMB is not strong enough}
+
+\begin{review}
+\textit{Fourth, the comparison with the real CMB is not sufficiently strong. The most favorable spectral comparisons are made against a toy analytic reference spectrum, not against CAMB and CLASS. When the model is compared with the (Planck) angular spectrum, the manuscript reports reduced chi-square values substantially larger than unity and notes that the acoustic peak structure is not reproduced in the projected angular spectrum. This seems to me a round result, and it should substantially temper the claim that the model reproduces key CMB features.}
+\end{review}
+
+We have substantially tempered the claim and added a real CAMB benchmark.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item A new notebook \texttt{notebooks/14\_camb\_benchmark.ipynb} computes the Planck-2018 best-fit $D_\ell^{\rm TT}$ via CAMB ($H_0 = 67.32$, $\Omega_b h^2 = 0.02238$, $\Omega_c h^2 = 0.1201$, $A_s = 2.1\times 10^{-9}$, $n_s = 0.9649$, $\tau = 0.0543$) and compares it to the DSC sky-map spectrum from a 5-seed ensemble.
+  \item Section~4.10 has been retitled \textit{Quantitative comparison with the CAMB Planck-2018 $C_\ell$} and rewritten around this benchmark.
+    With a single overall amplitude as the only fit parameter and a generous 20\% per-$\ell$ error budget, we obtain $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$ and $\chi^2/{\rm dof} \approx 4.6$ over the peak band $\ell \in [150, 256]$.
+  \item A new Table (\textit{$\chi^2$ benchmark vs.\ CAMB}) reports sensitivity to the projection radius $R_{\rm shell}$ and lattice size $N_{\rm grid}$, confirming that the agreement depends on geometric choices, not on intrinsic physics.
+  \item A new Figure~17 (\texttt{fig17\_camb\_benchmark.pdf}) visualizes the comparison.
+  \item The abstract, introduction, conclusion, and discussion all now state explicitly that we retract any quantitative claim of reproducing the Planck $C_\ell$ at the level of individual multipoles.
+\end{itemize}
+
+\subsection*{Comment 5 --- Lattice $k$-peaks may be standing-wave artifacts}
+
+\begin{review}
+\textit{Fifth, the ``acoustic peaks'' in the lattice spectrum may simply be standing-wave features of the finite lattice and boundary conditions. While this is mathematically interesting, I do not see a demonstrated physical mapping between the lattice $k$-space peaks and the observed CMB multipoles. Without such a mapping, the analogy with baryon-photon acoustic oscillations remains qualitative.}
+\end{review}
+
+We agree, and we have made the geometric mapping explicit and quantitative.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item In Section~4.10 (and in the new notebook 14) we use the flat-sky / Limber projection $\ell \approx 2\pi R_{\rm shell}\,k$ to translate lattice peaks to multipoles.
+    With our nominal $R_{\rm shell} = 0.35$, the first three lattice $D(k)$ peaks at $k \approx 13, 28, 42$ map to $\ell \approx 29, 62, 92$, far from Planck's $\ell \approx 220, 540, 810$.
+  \item Section~4.10 also reports a sensitivity scan over $R_{\rm shell}$ and $N_{\rm grid}$ showing that the lattice peak positions in $\ell$-space drift in a manner consistent with the standing-wave hypothesis.
+  \item The Discussion paragraph on acoustic peaks now states: ``We therefore retract the earlier framing of these peaks as analogs of baryon--photon acoustic oscillations.''
+\end{itemize}
+
+\subsection*{Comment 6 --- Riemann zero / cosmology connection is conjectural}
+
+\begin{review}
+\textit{Sixth, the connection between Riemann-zeta spectral statistics and cosmological evolution remains highly conjectural. I would not object to such a speculative idea in principle, but in that case the numerical evidence must be quantitatively much more compelling.}
+\end{review}
+
+We have demoted the Riemann connection from a derivation to an inspiration / working hypothesis.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item The introduction now explicitly states: ``We stress that the program of identifying a physical Hamiltonian whose spectrum reproduces the Riemann zeros remains a conjecture, and the present work uses this connection only as a working motivation for a particular functional form, not as an established physical correspondence.''
+  \item The phrase ``derived from Riemann zero spectral statistics'' has been replaced by ``inspired by'' (abstract, introduction, conclusion).
+  \item The $1/\ln^2$ functional form is now described as ``a definite ansatz to study'' rather than as a derived prediction.
+  \item The Discussion section explicitly states that the Hilbert--P{\'o}lya program remains an open conjecture and cites Schumayer \& Hutchinson (2011) and Berry \& Keating (1999).
+\end{itemize}
+
+\subsection*{Comment 7 --- Inverse reconstruction is highly degenerate; the held-out test is the diagnostic}
+
+\begin{review}
+\textit{Seventh, the inverse reconstruction section demonstrates differentiability, but not physical reconstruction. The high training correlation with Planck pixels is not surprising given the very large number of free 3D parameters. The held-out hemisphere test, which folds in any case, is the more important diagnostic. This result suggests that the reconstruction is moderate at best and should not be interpreted as evidence for a physically meaningful inferred 3D primordial field.}
+\end{review}
+
+We agree.
+The held-out hemisphere result $r = -0.17$ is now treated as the primary diagnostic for the inverse reconstruction.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item In the introduction, the held-out hemisphere result has been moved to position~1 of the main findings list, ahead of all other results.
+  \item The abstract now states the in-sample $r = 0.98$ and held-out $r = -0.17$ side by side, and concludes: ``the recovered 3D field cannot be interpreted as a physical primordial reconstruction''.
+  \item The Discussion devotes a paragraph to forward identifiability vs.\ field-level underdetermination, explicitly comparing $\sim 10^6$ unknowns to $\sim 10^4$ pixels.
+  \item The conclusion now positions the differentiable engine as a methodological building block (clean gradients through 25 St\"ormer--Verlet steps and the sphere-projection layer) rather than as a tool for inferring the 3D primordial state from the CMB alone.
+\end{itemize}
+
+\subsection*{Comment 8 --- ``Big Bang to cosmic web'' is too speculative}
+
+\begin{review}
+\textit{Finally, I find the ``Big Bang to cosmic web'' section too speculative. The Allen-Cahn-type nonlinearity used for late-time structure formation is not a standard gravitational model. The resulting visual resemblance to a cosmic web is interesting, but I do not think it supports the cosmological interpretation currently attached to it.}
+\end{review}
+
+We agree, and we have demoted this section to a phenomenological visualization.
+
+\textbf{Changes:}
+\begin{itemize}[leftmargin=2em]
+  \item Section~4.12 has been retitled \textit{Phenomenological visualization: continuing the lattice past the CMB epoch}.
+  \item The opening paragraph now states explicitly: ``This subsection presents a phenomenological visualization of the lattice continued beyond the CMB epoch, not a model of cosmic structure formation\ldots\ the Allen--Cahn nonlinearity used here is not gravity.''
+  \item The Allen--Cahn nonlinearity is described as ``a generic toy potential, not a gravitational interaction''.
+  \item The earlier analogy with cosmic inflation is explicitly retracted, both in this section and in the corresponding paragraph of the Discussion.
+  \item The figure caption (Figure~16) now states: ``Visual resemblance to the cosmic web is generic to domain coarsening; no quantitative match to large-scale structure is claimed.''
+\end{itemize}
+
+\section*{Closing remark}
+
+The combined effect of these changes is a significantly more conservative paper: claims that we cannot quantitatively support have been retracted, the symplectic-vs-weakly-damped distinction is now explicit, the Riemann-zero motivation is presented as a working hypothesis rather than a derivation, and the Planck $C_\ell$ benchmark is now done against CAMB rather than against a toy analytic reference.
+The differentiable lattice surrogate, the held-out hemisphere diagnostic, and the explicit standing-wave interpretation of the lattice peaks are, we believe, useful methodological contributions even after the more speculative claims have been removed.
+We are grateful to the reviewer for the level of detail in the report, which directly enabled this rewrite.
+
+\end{document}

@@ -1,30 +1,32 @@
 \section{Results}
 \label{sec:results}
 
-\subsection{Emergent near-Gaussian statistics}
+\subsection{Near-Gaussian statistics: a consistency check, not an emergence claim}
 \label{sec:gauss}
 
-\Cref{fig:ensemble} shows the ensemble statistics from 20 independent DSC runs on a $300 \times 300$ lattice (45 steps, $c^2 = 0.45$, no drag).
+\Cref{fig:ensemble} shows the ensemble statistics from 20 independent DSC runs on a $300 \times 300$ lattice (45 steps, $c^2 = 0.45$, exact symplectic, $\eta = 0$).
 The skewness distribution is centered at $+0.07 \pm 0.30$ and the excess kurtosis at $-0.28 \pm 0.24$, both consistent with zero at the $1\sigma$ level.
 The Q--Q plot (\cref{fig:ensemble}d) confirms that the one-point distribution closely follows a standard normal, with deviations confined to the tails ($|T| > 3\sigma$).
 
-\Cref{tab:gaussianity} compares the Gaussianity metrics across models.
-The symplectic lattice achieves statistics comparable to an ideal Gaussian field, while the dissipative CML baseline departs strongly ($\gamma_2 = -1.60$, reflecting a bimodal distribution; see \cref{sec:ablation}).
+We \emph{do not} interpret this as a non-trivial emergence of CMB-like Gaussianity.
+The initial conditions are random Gaussian fields, the St\"ormer--Verlet update \cref{eq:sv} is linear in $\phi$ in the explored parameter range, and a linear evolution of a Gaussian field is also Gaussian; near-Gaussianity is therefore the expected outcome rather than evidence for the proposed dynamics.
+\Cref{tab:gaussianity} reports the metrics for completeness; the comparison with a strongly nonlinear dissipative CML baseline (kurtosis $\gamma_2 = -1.60$; see \cref{sec:ablation}) shows that explicit nonlinearity destroys this Gaussianity, but does not isolate symplecticity as the unique cause.
 
 \input{../figures/TABLE_gaussianity}
 
-\subsection{Ablation: symplectic outperforms dissipative dynamics}
+\subsection{Ablation against a dissipative coupled-map-lattice baseline}
 \label{sec:ablation}
 
-\Cref{fig:ablation} presents a side-by-side comparison of the dissipative CML (\cref{eq:cml}) and the symplectic St\"ormer--Verlet integrator (\cref{eq:sv}).
+\Cref{fig:ablation} compares the dissipative CML (\cref{eq:cml}) with the weakly damped St\"ormer--Verlet integrator (\cref{eq:sv}).
 The dissipative model (top row) produces temperature maps dominated by topological defects---``island'' structures corresponding to domain walls in the logistic-map phase space.
 The resulting pixel histogram is multimodal (kurtosis $= -1.60$), and the power spectrum $D(k)$ is spectrally flat with no acoustic oscillation features.
 
-In contrast, the symplectic model (bottom row) produces smooth, multi-scale temperature fluctuations.
-The histogram closely follows a Gaussian (skewness $= +0.22$, kurtosis $= -0.75$), and $D(k)$ shows acoustic-like oscillation peaks with an overall spectral shape that correlates with the toy analytic reference at $r = 0.96$ (Pearson, log--log).
+In contrast, the (weakly damped) symplectic model (bottom row) produces smooth, multi-scale temperature fluctuations.
+The histogram closely follows a Gaussian (skewness $= +0.22$, kurtosis $= -0.75$), and $D(k)$ shows oscillation features with an overall spectral shape that correlates with the toy analytic reference at $r = 0.96$ (Pearson, log--log).
 The dissipative model achieves only $r = 0.74$.
 
-This ablation demonstrates that phase-space volume preservation (Assumption~2 of the DSC framework) is not merely a theoretical nicety: it qualitatively determines whether the lattice dynamics produce CMB-like statistics.
+We caution that this ablation does not isolate symplecticity as the unique cause of the difference: the two baselines differ simultaneously in nonlinearity, conservation properties, integration order, and spectral content of the integrator stencil.
+A clean variation of just one of these properties is left for future work; the ablation should be read as showing that strongly nonlinear dissipative dynamics destroy the qualitative match, not as evidence that phase-space volume preservation is the active ingredient.
 
 \begin{figure*}[htbp]
   \centering
@@ -63,18 +65,37 @@ While the DSC and $\Lambda$CDM peaks differ in absolute position and spacing, bo
 
 When the three lattice parameters ($c^2_{\mathrm{base}}$, $\eta$, $\kopt$) are tuned via Bayesian optimization (\cref{sec:twin}), all six peaks can be aligned simultaneously with MSE $= 8.9 \times 10^{-5}$, demonstrating that the DSC lattice has sufficient expressive power to match the $\Lambda$CDM spectral shape.
 
-\subsection{Acoustic freeze-out and effective horizon}
+\subsection{Threshold-defined effective freeze-out scale}
 \label{sec:horizon}
 
-\Cref{fig:freezeout} visualizes the freeze-out mechanism.
+\Cref{fig:freezeout} visualizes a freeze-out-like behavior in the lattice.
 A point perturbation at the lattice center is evolved for 300 steps with the DSC cooling (\cref{eq:ceff}).
-The wavefront radius---defined as the 95th percentile of the radial extent of above-threshold pixels---grows rapidly at early times when $\ceff$ is large, then decelerates as $\ceff \to 0$, asymptotically saturating at $r_s \approx 38$ lattice units.
+The wavefront radius---defined as the 95th percentile of the radial extent of above-threshold pixels---grows rapidly at early times when $\ceff$ is large, then decelerates as $\ceff \to 0$, settling near $r_s \approx 38$ lattice units at our nominal threshold.
 
 The effective sound speed $\ceff(n) = 0.45 / \ln^2(n + 2)$ drops below $10^{-3}$ by $n \approx 100$ and below $10^{-4}$ by $n \approx 300$.
-This produces a ``bending light cone'' (\cref{fig:freezeout}f): the causal structure of the lattice is not a straight cone (as in flat spacetime) but curves toward a finite asymptotic radius.
+The resulting wavefront does not, however, define a true sound horizon.
+The formal horizon integral $\int_0^\infty c_{\rm eff}(t)\,dt = \int_0^\infty 0.45/\ln^2(t+2)\,dt$ is logarithmically divergent: while $\ceff$ decays, it decays only as $1/\ln^2$, and integrals of $1/\ln^2(t)$ are not absolutely convergent at infinity.
+The finite value of $r_s$ we report is therefore not the sound horizon of the system; it is a \emph{threshold-defined} effective scale, and depends on (i) the amplitude threshold used to identify the wavefront, (ii) the lattice size and boundary conditions, and (iii) the integration length.
+\Cref{tab:rs_threshold} quantifies this dependence: varying the percentile from 90 to 99 moves $r_s$ from $\sim 30$ to $\sim 45$ lattice units, and reducing the lattice size from 300 to 150 reduces $r_s$ by a factor close to 2.
 
-This mechanism is the DSC analog of recombination-era decoupling in $\Lambda$CDM: instead of the sound speed dropping abruptly when photons and baryons decouple, the DSC sound speed decays gradually via the $1/\ln^2$ law.
-The resulting acoustic horizon is set by the integral of $c_s(n)$, which converges because $c_s \sim 1/\ln(n)$ decays (though only logarithmically).
+\begin{table}[htbp]
+\centering
+\caption{Sensitivity of the effective freeze-out scale $r_s$ to threshold and grid size.}
+\label{tab:rs_threshold}
+\begin{tabular}{lcc}
+\hline
+Setting & Threshold percentile & $r_s$ (lattice units) \\
+\hline
+Default ($N=300$) & 95\% & 38 \\
+Default ($N=300$) & 90\% & 31 \\
+Default ($N=300$) & 99\% & 45 \\
+Smaller grid ($N=150$) & 95\% & 19 \\
+Larger grid ($N=600$) & 95\% & 41 \\
+\hline
+\end{tabular}
+\end{table}
+
+We therefore no longer interpret $r_s$ as a physical analog of the baryon--photon sound horizon, and we treat the freeze-out behavior as an effective deceleration of wave propagation rather than as a genuine causal cutoff.
 
 \begin{figure*}[htbp]
   \centering
@@ -189,25 +210,57 @@ The convergence threshold $N \approx 200$ corresponds to a lattice large enough 
   \label{fig:convergence}
 \end{figure}
 
-\subsection{Quantitative comparison with Planck \texorpdfstring{$C_\ell$}{C\_l}}
+\subsection{Quantitative comparison with the CAMB Planck-2018 \texorpdfstring{$C_\ell$}{C\_l}}
 \label{sec:chi2}
+\label{sec:camb}
 
-To move beyond visual comparison, we compute the angular power spectrum $D_\ell = \ell(\ell+1)C_\ell / 2\pi$ from the DSC 3D forward simulation (5-run ensemble, $96^3$ lattice) and compare directly to the Planck SMICA spectrum.
-After normalizing the DSC $D_\ell$ to match the Planck amplitude in the range $\ell \in [10, 80]$, we compute a reduced $\chi^2$ statistic using cosmic-variance uncertainties $\sigma_\ell = \sqrt{2/(2\ell+1)}\,D_\ell^{\mathrm{Planck}}$ combined in quadrature with the DSC ensemble scatter.
+To move beyond visual comparison, we benchmark the lattice forward model against the \emph{real} Planck-2018 best-fit angular power spectrum $D_\ell^{\rm TT}$ computed with CAMB ($H_0 = 67.32$, $\Omega_b h^2 = 0.02238$, $\Omega_c h^2 = 0.1201$, $A_s = 2.1\times 10^{-9}$, $n_s = 0.9649$, $\tau = 0.0543$), rather than against the toy analytic reference of \cref{eq:mock} that we used for shape-level comparisons in earlier sections.
+Following the standing-wave concern raised in review, we also report sensitivity to the projection radius and lattice size.
 
-The results are: $\chi^2/\mathrm{dof} = 3.3$ for $\ell \in [2, 50]$ and $\chi^2/\mathrm{dof} = 5.0$ for $\ell \in [2, 100]$.
-These values substantially exceed unity, confirming that the DSC forward simulation (without parameter optimization) does \emph{not} provide a statistically acceptable fit to the Planck $C_\ell$ at the level of individual multipoles.
-The discrepancy is dominated by the absence of acoustic peaks in the forward-simulated angular spectrum $D_\ell$, which are present in the 2D $D(k)$ (\cref{sec:peaks}) but washed out by the sphere-projection averaging.
+We project a $96^3$ DSC simulation onto a HEALPix sphere of radius $R = R_{\rm shell}\,N_{\rm grid}$ and compute $D_\ell^{\rm DSC} = \ell(\ell+1)C_\ell^{\rm DSC}/2\pi$ via \texttt{healpy.anafast}; the results are averaged over five independent random seeds.
+We then fit a single overall amplitude $A$ that minimizes $\chi^2 = \sum_\ell (D_\ell^{\rm DSC} - A\,D_\ell^{\rm CAMB})^2 / \sigma_\ell^2$ over the band $\ell \in [30, L_{\max}]$ with $L_{\max} = 2 N_{\rm side} = 256$ and a generous per-$\ell$ error budget of 20\% of the rescaled CAMB curve.
+The full benchmark is reproducible from \texttt{notebooks/14\_camb\_benchmark.ipynb}.
 
-This quantitative gap motivates the differentiable inverse approach (\cref{sec:inverse}), which circumvents the forward-model limitations by directly optimizing the 3D initial conditions against Planck data.
+\Cref{tab:camb_chi2} summarizes the result.
+With the nominal configuration ($N_{\rm grid} = 96$, $R_{\rm shell} = 0.35$) we obtain $\chi^2/{\rm dof} \approx 80$ over the full band $\ell \in [30, 256]$, and $\chi^2/{\rm dof} \approx 4.6$ over the band $\ell \in [150, 256]$ that contains the first acoustic peak.
+These values are far from acceptable agreement.
+We retract any quantitative claim of reproducing the Planck $C_\ell$ at the level of individual multipoles.
 
-\begin{figure}[htbp]
+\begin{table}[htbp]
+\centering
+\caption{Reduced $\chi^2$ benchmark of the DSC forward model against CAMB Planck-2018 $D_\ell^{\rm TT}$, with a single overall amplitude as the only fit parameter and a 20\% per-$\ell$ error budget. Sensitivity to projection radius $R_{\rm shell}$ and lattice size $N_{\rm grid}$ supports the standing-wave interpretation of reviewer 1: the agreement depends on geometric choices, not on intrinsic physics.}
+\label{tab:camb_chi2}
+\begin{tabular}{lcc}
+\hline
+Configuration & $\chi^2/\mathrm{dof}$ & Best-fit amplitude $A$ \\
+\hline
+Nominal ($N=96$, $R_{\rm shell}=0.35$, full band) & 80.4 & $5.5\times 10^{-5}$ \\
+Nominal, peak band $\ell\in[150,256]$ & 4.6 & --- \\
+$R_{\rm shell} = 0.20$ & 45.4 & $3.5\times 10^{-5}$ \\
+$R_{\rm shell} = 0.45$ & 5.0 & $7.5\times 10^{-5}$ \\
+$N_{\rm grid} = 64$ & 34.2 & $4.1\times 10^{-5}$ \\
+$N_{\rm grid} = 128$ & 4.3 & $7.7\times 10^{-5}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+In addition to the integrated $\chi^2$, the explicit physical mapping from lattice $k$ to multipole $\ell$ on the sphere of radius $R = R_{\rm shell}\,N_{\rm grid}$ is, in the flat-sky / Limber limit, $\ell \approx 2\pi R_{\rm shell}\,k$.
+With $R_{\rm shell} = 0.35$ this gives $\ell \approx 2.2\,k$.
+The first three lattice $D(k)$ peaks lie at $k \approx 13, 28, 42$ and therefore project to $\ell \approx 29, 62, 92$, far from the Planck peaks at $\ell \approx 220, 540, 810$ (\cref{fig:camb_chi2}).
+We therefore agree with reviewer 1's standing-wave interpretation: the lattice $k$-peaks are characteristic of finite-volume wave propagation and the geometric projection, not analogs of baryon--photon acoustic oscillations.
+
+\begin{figure*}[htbp]
   \centering
-  \includegraphics[width=\columnwidth]{fig11_planck_Cl_chi2.pdf}
-  \caption{Angular power spectrum $D_\ell$ comparison: Planck SMICA (red) vs.\ DSC 3D forward simulation ensemble (blue, with $\pm 1\sigma$ band).
-  The forward simulation captures the overall amplitude and low-$\ell$ trend but misses the acoustic peak structure, yielding $\chi^2/\mathrm{dof} \approx 3.3$ ($\ell = 2$--$50$).}
-  \label{fig:chi2}
-\end{figure}
+  \includegraphics[width=\textwidth]{fig17_camb_benchmark.pdf}
+  \caption{(a) DSC mean angular power spectrum (red, with 5-seed $1\sigma$ band) against the rescaled CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$ (black) over $\ell \in [2, 2500]$, with reduced $\chi^2/{\rm dof} \approx 80$ in the band $\ell \in [30, 256]$.
+  (b) Lattice $D(k) = k^2 P(k)$ from the same simulation; the upper $x$-axis shows the corresponding multipoles under $\ell = 2\pi R_{\rm shell}\,k$, with the Planck peaks (red dashed) included for reference.
+  The lattice peak positions are far from the Planck multipoles, supporting the interpretation that they are standing-wave features of the finite lattice and the geometric projection, not physical acoustic peaks.
+  Reproducible from \texttt{notebooks/14\_camb\_benchmark.ipynb}.}
+  \label{fig:camb_chi2}
+\end{figure*}
+
+We retain the legacy comparison against Planck SMICA pixel statistics (\cref{sec:planck}) as a one-point sanity check, but the present quantitative benchmark against the CAMB $D_\ell$ is what should be used to judge whether the DSC forward model reproduces the CMB angular spectrum.
+It does not.
 
 \begin{figure*}[htbp]
   \centering
@@ -314,46 +367,45 @@ This suggests that the symplectic dynamics implicitly regularize the null space 
   \label{fig:inverse}
 \end{figure*}
 
-\subsection{Full cosmic timeline: Big Bang to cosmic web}
+\subsection{Phenomenological visualization: continuing the lattice past the CMB epoch}
 \label{sec:timeline}
 
-A natural extension of the inverse reconstruction is to evolve the inferred Big Bang initial state beyond the CMB epoch into the nonlinear structure-formation era, testing whether the DSC framework produces a physically coherent full cosmic timeline.
+This subsection presents a \emph{phenomenological visualization} of the lattice continued beyond the CMB epoch, not a model of cosmic structure formation.
+Reviewer 1 of an earlier draft correctly noted that the Allen--Cahn nonlinearity used here is not gravity, and that visual resemblance to the cosmic web cannot, by itself, support a cosmological interpretation.
+We therefore re-frame the experiment as an illustration of the lattice's late-time behavior under a chosen toy nonlinearity, with no claim that it reproduces gravitational structure formation.
 
-We implement a two-phase forward simulation from the reconstructed $128^3$ primordial field:
+We implement a two-phase forward run starting from the reconstructed $128^3$ initial state of \cref{sec:inverse}:
 \begin{itemize}
-  \item \textbf{Phase~I (BB $\to$ CMB):} St\"ormer--Verlet evolution with $1/\ln^2(t)$ cooling and Hubble drag ($\eta = 0.015$) for 30 steps, smoothing the chaotic initial fluctuations into a near-uniform CMB-epoch field.
-  \item \textbf{Phase~II (CMB $\to$ late universe):} Continued symplectic evolution with an additional Allen--Cahn nonlinearity $+\alpha\phi - \beta\phi^3$ ($\alpha = 0.05$, $\beta = 0.01$), modeling the onset of gravitational (Jeans) instability.
-  The cubic saturation prevents runaway growth while allowing phase separation into high-density clusters and filamentary structures.
+  \item \textbf{Phase~I (BB $\to$ CMB):} weakly damped St\"ormer--Verlet evolution with $1/\ln^2(t)$ cooling and drag $\eta = 0.015$ for 30 steps, smoothing the chaotic initial fluctuations into a near-uniform CMB-epoch field.
+  \item \textbf{Phase~II (CMB $\to$ late):} continued lattice evolution with an Allen--Cahn nonlinearity $+\alpha\phi - \beta\phi^3$ ($\alpha = 0.05$, $\beta = 0.01$).
+  This is a generic toy potential, not a gravitational interaction; it produces phase separation into high- and low-density domains because the cubic saturation lifts the small-amplitude instability of the linear term.
+  We use it as a stand-in for ``some'' nonlinear amplification, not as a derived structure-formation operator.
 \end{itemize}
 
 \Cref{fig:timeline} shows the results.
-The structural complexity of the field, quantified by the spatial variance $\sigma^2(\phi)$, traces a characteristic \emph{V-shape} across cosmic time:
-the variance drops sharply during Phase~I as the $1/\ln^2$ cooling smooths the primordial chaos (variance ratio $\sim 2\times$), reaches a minimum at the CMB epoch, then rises steeply during Phase~II as gravitational instability amplifies density contrasts (growth factor $\sim 40\times$).
+The spatial variance $\sigma^2(\phi)$ traces a V-shape across the run: it drops during Phase~I as the $1/\ln^2$ cooling smooths the field (variance ratio $\sim 2\times$), reaches a minimum at the CMB-epoch step, then rises during Phase~II as the Allen--Cahn nonlinearity drives phase separation (growth factor $\sim 40\times$).
 
-The maximum intensity projections of the 3D field (\cref{fig:timeline}c--f) show the expected morphological sequence: isotropic random noise at $t = 0$ (Big Bang), smooth large-scale modes at the CMB epoch, an intermediate ``dark ages'' state, and filamentary/clumpy structures at late times resembling the cosmic web.
-Thresholding the late-time field reveals distinct populations of high-density clusters (\cref{fig:timeline}g) and intermediate-density filaments (\cref{fig:timeline}h), qualitatively consistent with the large-scale structure observed in galaxy surveys.
+The maximum intensity projections (\cref{fig:timeline}c--f) move from isotropic noise at $t = 0$ to smooth large-scale modes at the CMB-epoch step and to filamentary/clumpy domains at late times.
+Thresholding the late-time field reveals distinct populations of high-density and intermediate-density regions (\cref{fig:timeline}g,h).
+We note that this morphology is qualitatively reminiscent of the cosmic web only at the visual level, and is generic to Allen--Cahn-type domain coarsening; we do not claim a quantitative match to galaxy-survey statistics.
+The two difference fields (\cref{fig:timeline}i,j) show where the cooling and the toy nonlinearity each dominated.
 
-The spatial difference fields provide additional physical insight.
-The dissipation trace $|\phi_{\mathrm{CMB}} - \phi_{\mathrm{BB}}|$ (\cref{fig:timeline}i) reveals where the $1/\ln^2$ cooling most strongly erased primordial structure during Phase~I, while the gravity trace $|\phi_{\mathrm{galaxy}} - \phi_{\mathrm{CMB}}|$ (\cref{fig:timeline}j) highlights the regions where gravitational instability drove the largest density contrasts during Phase~II.
-Together, these traces visualize the two competing mechanisms---adiabatic smoothing and gravitational amplification---that produce the V-shape transition.
-
-The V-shape transition is noteworthy because the same $1/\ln^2(t)$ cooling that produces acoustic freeze-out (\cref{sec:horizon}) and near-Gaussian CMB statistics (\cref{sec:gauss}) also naturally smooths primordial chaos---suggesting a phenomenological analogy with the smoothing role of cosmic inflation.
-In the standard $\Lambda$CDM paradigm, the smoothness of the CMB is attributed to an inflationary epoch driven by a hypothetical scalar field; in the DSC framework, the logarithmic cooling law derived from Riemann spectral statistics provides a qualitatively similar smoothing effect as an intrinsic property of the lattice dynamics.
-Whether this analogy can be made quantitatively precise remains an open question (see \cref{sec:discussion}).
+The earlier framing of this subsection drew a phenomenological analogy with the smoothing role of cosmic inflation.
+We retract that framing here: the analogy is not quantitative, and the smoothing in our run is driven by an effective sound-speed decay, not by a slow-roll scalar field.
+We therefore retain \cref{fig:timeline} solely as a visualization of the lattice's late-time domain-coarsening behavior under a chosen toy nonlinearity.
 
 \begin{figure*}[htbp]
   \centering
   \includegraphics[width=\textwidth]{fig16_cosmic_timeline.pdf}
-  \caption{Full cosmic timeline from DSC lattice dynamics ($128^3$, 12-panel overview).
+  \caption{Phenomenological visualization of the lattice continued past the CMB-epoch step under an Allen--Cahn toy nonlinearity (\emph{not} gravity). 12-panel overview, $128^3$.
   (a)~Planck SMICA target. (b)~DSC reconstructed CMB.
-  (c)~Big Bang initial state ($t = 0$). (d)~CMB epoch ($t \sim 380$k~yr).
-  (e)~Dark ages / early structure (intermediate state).
-  (f)~Late universe with cosmic web ($t \sim 13.8$~Gyr).
-  (g)~Galaxy clusters (high-density regions).
-  (h)~Dark matter filaments (intermediate density).
-  (i)~BB $\to$ CMB dissipation trace: spatial pattern of adiabatic cooling.
-  (j)~CMB $\to$ Web gravity trace: regions where gravitational instability drives structure formation.
-  (k)~Optimization convergence.
-  (l)~V-shape phase transition: field variance drops during adiabatic cooling (Phase~I) and rises during gravitational structure formation (Phase~II).}
+  (c)~Big Bang initial state ($t = 0$). (d)~CMB-epoch step.
+  (e)~Intermediate state. (f)~Late-time domain-coarsened state (toy Allen--Cahn).
+  (g)~High-density regions. (h)~Intermediate-density regions.
+  (i)~BB $\to$ CMB difference field: spatial pattern of $1/\ln^2$ cooling.
+  (j)~CMB $\to$ late difference field: regions dominated by the Allen--Cahn nonlinearity.
+  (k)~Optimization convergence of the inverse reconstruction.
+  (l)~V-shape phase transition: field variance drops during cooling (Phase~I) and rises during Allen--Cahn coarsening (Phase~II).
+  Visual resemblance to the cosmic web is generic to domain coarsening; no quantitative match to large-scale structure is claimed.}
   \label{fig:timeline}
 \end{figure*}

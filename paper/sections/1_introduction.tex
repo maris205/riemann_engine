@@ -11,56 +11,59 @@ More broadly, the possibility that fundamental constants---including the fine-st
 
 A separate line of inquiry connects the statistical properties of the Riemann zeta zeros to quantum-mechanical spectra.
 The Berry--Keating conjecture~\citep{BerryKeating1999} proposes that the nontrivial zeros of $\zeta(s)$ correspond to eigenvalues of a self-adjoint operator, a hypothesis supported by random-matrix universality~\citep{Bohigas1984} and explicit Hamiltonian constructions~\citep{Bender2017}.
-The density of Riemann zeros grows as $\sim 1/\ln(t)$, a scaling that has been connected to physical systems through the Hilbert--P{\'o}lya program~\citep{Schumayer2011}.
+The density of Riemann zeros grows as $\sim 1/\ln(t)$, a scaling that has been suggested to connect to physical systems through the Hilbert--P{\'o}lya program~\citep{Schumayer2011}.
+We stress that the program of identifying a physical Hamiltonian whose spectrum reproduces the Riemann zeros remains a conjecture, and the present work uses this connection only as a working motivation for a particular functional form, not as an established physical correspondence.
 
-Building on these threads, one of us recently proposed that the time-dependence of cosmological parameters may be linked to Riemann spectral statistics.
-In Ref.~\citep{WangEvolution}, empirical evidence was presented that the fine-structure constant, the Hubble tension, and the Riemann zero distribution share a common $1/\ln^2(t)$ scaling structure.
-This observation was formalized in the Discrete Symplectic Cosmology (DSC) framework~\citep{Wang2026}, which models cosmic evolution as a non-autonomous dynamical system on a Planck-scale lattice $\Z^3 \times \N$.
-Three structural assumptions---discrete spacetime, symplectic (area-preserving) evolution, and a Berry--Keating spectral correspondence---motivate an adiabatic cooling law of the form
+Inspired by these threads, the DSC framework~\citep{WangEvolution,Wang2026} explores the working hypothesis that the time-dependence of cosmological parameters might share the same $1/\ln^2(t)$ structure that arises in Riemann zero statistics, and models cosmic evolution as a non-autonomous dynamical system on a Planck-scale lattice $\Z^3 \times \N$.
+Three structural assumptions---discrete spacetime, weakly damped symplectic evolution (area-preserving up to a small drag), and a Berry--Keating spectral analogy---motivate an adiabatic cooling law of the form
 \begin{equation}
   \mu(n) = \mudyn + \frac{\kopt}{\ln^2(n + c_0)}\,,
   \label{eq:cooling}
 \end{equation}
 where $n$ is the discrete Planck time, $\mudyn$ is the asymptotic critical value, $\kopt$ is related to Feigenbaum scaling, and $c_0$ regularizes small $n$.
-This $1/\ln^2$ functional form is slower than any power law and is singled out by the Riemann zero spectral density~\citep{Wang2026}.
-The framework yields a dynamical cosmological term $\Lambda(t) = \Lambda_\infty + \gamma / \ln^2(t/\tP)$ and a Hubble relaxation law $H(t) = \Hinfty + \beta / \ln^2(t/\tP)$, providing a candidate mechanism for modifying the early expansion rate without introducing new scalar fields.
+The $1/\ln^2$ functional form is slower than any power law and is the form picked out by the Riemann-zero analogy in Ref.~\citep{Wang2026}; we use it as a definite ansatz to study, rather than as a derived prediction.
+At the cosmological-parameter level the framework yields $\Lambda(t) = \Lambda_\infty + \gamma / \ln^2(t/\tP)$ and $H(t) = \Hinfty + \beta / \ln^2(t/\tP)$ as phenomenological scaling laws.
 
-However, the original DSC work validates the cooling law only through one-dimensional H\'enon map surrogates.
+The original DSC work validates the cooling law only through one-dimensional H\'enon map surrogates.
 The question of whether spatially-extended lattice dynamics---evolving under the DSC cooling law---can reproduce the \emph{spatial} statistical features of the CMB remains open.
-We stress that the present work is \emph{exploratory}: the lattice simulations are effective surrogate models, not direct implementations of Planck-scale quantum gravity.
+We emphasize that the present work is \emph{exploratory}: the lattice simulations are effective surrogate models, not direct implementations of Planck-scale quantum gravity, and we use weakly damped St\"ormer--Verlet integration with a small drag $\eta \in [0, 0.06]$, which is exactly symplectic only when $\eta = 0$.
 The goal is to investigate what phenomenological features emerge from the DSC dynamical assumptions, not to claim a complete alternative to $\Lambda$CDM.
 
-In this paper, we address these questions by implementing St\"ormer--Verlet symplectic integrators~\citep{Hairer2006,Leimkuhler2004} on two- and three-dimensional lattices with DSC-motivated cooling.
+In this paper, we address these questions by implementing weakly damped St\"ormer--Verlet integrators~\citep{Hairer2006,Leimkuhler2004} on two- and three-dimensional lattices with DSC-motivated cooling.
 This approach connects to the growing field of differentiable cosmological simulations~\citep{Modi2021,Li2022,Campagne2023} and simulation-based inference~\citep{Cranmer2020,Alsing2019}, as well as lattice field theory methods applied to early-universe dynamics~\citep{Figueroa2021,Caravano2022}.
-Our main findings are:
+Our main findings, with the framing recommended by reviewers in mind, are:
 
 \begin{enumerate}
-  \item \textbf{Near-Gaussian one-point statistics.}
-  Symplectic lattice evolution produces temperature fluctuations with skewness $\approx +0.07$ and excess kurtosis $\approx -0.28$ (ensemble of 20 runs), consistent with Gaussianity.
-  An ablation study shows that a dissipative coupled-map-lattice (CML) baseline produces kurtosis $= -1.60$ and fails to match $\Lambda$CDM spectral shape (Pearson $r = 0.74$ vs.\ $r = 0.96$ for the symplectic model).
+  \item \textbf{Held-out hemisphere test of the inverse reconstruction (primary diagnostic).}
+  The differentiable DSC physics engine permits gradient-based reconstruction of a $128^3$ primordial field from Planck sky data, achieving $r = 0.98$ pixel correlation in-sample.
+  However, when half of the sky is hidden during training, the reconstructed field on the held-out hemisphere has $r = -0.17$.
+  This confirms that the inverse problem is severely underdetermined ($\sim 10^6$ unknowns vs.\ $\sim 10^4$ observed pixels) and that the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
+  We therefore present the differentiable engine as a methodological contribution---a scalable lattice surrogate with clean gradients through 25 St\"ormer--Verlet steps and the sphere-projection layer---rather than as evidence for a particular 3D primordial state.
 
-  \item \textbf{Acoustic-like oscillation peaks.}
-  The scaled power spectrum $D(k) = k^2 P(k)$ exhibits 5 peaks from pure symplectic wave propagation.
-  A three-parameter phenomenological fit aligns all peak positions to a toy analytic reference (MSE $= 8.9 \times 10^{-5}$); however, quantitative comparison with the real Planck $C_\ell$ yields $\chi^2/\mathrm{dof} \approx 3.3$, indicating that the forward model does not yet reproduce the observed angular spectrum at the level of individual multipoles.
+  \item \textbf{Quantitative comparison to the Planck angular spectrum is poor.}
+  Replacing the toy analytic reference used in earlier sections with the real CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$, and benchmarking the DSC sky maps against it, we find $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$ at a 20\% per-$\ell$ error budget (\cref{sec:camb}).
+  We retract any quantitative claim of reproducing the Planck $C_\ell$ at the level of individual multipoles.
 
-  \item \textbf{Effective acoustic freeze-out.}
-  The $1/\ln^2(t)$ decay of the effective sound speed causes wavefronts to asymptotically decelerate, producing an effective freeze-out scale $r_s \approx 38$ lattice units without requiring abrupt decoupling.
-  We note that the formal horizon integral diverges logarithmically; the reported scale is threshold-dependent.
+  \item \textbf{Lattice $k$-peaks are not the Planck multipoles.}
+  The 5 oscillation peaks in $D(k)$ map to multipoles $\ell \approx 2\pi R_{\rm shell}\,k \approx 30, 60, 90, \ldots$ under the geometric projection used to generate the full-sky maps, far from the observed $\ell \approx 220, 540, 810$.
+  Consistent with reviewer 1's standing-wave hypothesis, the predicted peak positions drift with both the projection radius and the lattice size.
+  The lattice peaks should be read as a qualitative consequence of weakly damped wave propagation on a finite-volume lattice, not as a physical analog of baryon--photon acoustic oscillations.
 
-  \item \textbf{Parameter recovery via simulation-based inference.}
-  A Bayesian optimization twin experiment recovers all three lattice parameters ($c^2$, drag, $\kopt$) from the power spectrum.
+  \item \textbf{Approximate one-point Gaussianity is consistent with expectations, not a non-trivial emergence.}
+  In the parameter range we explore the symplectic evolution is approximately linear, so near-Gaussian one-point statistics (skewness $\approx +0.07$, excess kurtosis $\approx -0.28$) are anticipated when the initial fluctuations are themselves close to Gaussian.
+  An ablation against a dissipative coupled-map-lattice baseline (kurtosis $= -1.60$) shows that strongly nonlinear dynamics destroy Gaussianity, but this comparison cannot isolate symplecticity as the unique cause because the two baselines differ in nonlinearity, conservativeness, and integration order simultaneously.
 
-  \item \textbf{Full-sky maps with Planck-like morphology.}
-  Three-dimensional lattice evolution projected onto a HEALPix sphere produces full-sky maps with pixel distributions close to the Planck SMICA map (skewness $-0.075 \pm 0.009$ vs.\ Planck $-0.036$), though the kurtosis sign differs.
+  \item \textbf{Threshold-defined effective freeze-out scale (not a physical sound horizon).}
+  The $1/\ln^2(t)$ decay of the effective sound speed produces an effective freeze-out at $r_s \approx 38$ lattice units, but the formal horizon integral $\int c_{\rm eff}(t)\,dt$ diverges logarithmically and the reported scale is sensitive to the chosen amplitude threshold and to the lattice size.
+  We no longer interpret this scale as an analog of the baryon--photon sound horizon.
 
-  \item \textbf{Differentiable inverse reconstruction.}
-  The DSC physics engine is fully differentiable: gradient-based optimization recovers the 3D primordial field from Planck sky data with pixel correlation $r = 0.98$.
-  However, a held-out hemisphere test yields $r = -0.17$, confirming that the severely underdetermined inverse problem ($\sim 10^6$ parameters vs.\ $\sim 10^4$ pixels) does not uniquely constrain the 3D structure from 2D sky data alone.
-  Incorporating sparse volumetric priors partially breaks this degeneracy.
+  \item \textbf{Parameter recovery via simulation-based inference (twin experiment).}
+  Bayesian optimization recovers all three lattice parameters ($c^2$, drag, $\kopt$) from the lattice power spectrum in a twin experiment (MSE $= 8.9 \times 10^{-5}$).
+  This validates the differentiable engine as an inference target, but the recovered parameters describe the lattice surrogate, not the physical CMB.
 
-  \item \textbf{V-shape thermodynamic transition.}
-  Evolving the reconstructed initial conditions beyond the CMB epoch with nonlinear gravitational terms reveals a V-shape transition in field variance: the $1/\ln^2(t)$ cooling smooths primordial chaos, while subsequent Jeans instability rebuilds structural complexity.
-  We note a qualitative similarity to the smoothing role of inflation, but emphasize that the mechanisms operate at fundamentally different scales and through different physics.
+  \item \textbf{Phenomenological structure-formation visualization.}
+  Continuing the reconstructed field beyond the CMB epoch with an Allen--Cahn nonlinearity (a toy potential, \emph{not} gravity) produces a V-shape transition in field variance.
+  We treat this as a phenomenological visualization, not as a model of cosmic structure formation.
 \end{enumerate}
 
 The remainder of this paper is organized as follows.

@@ -1,18 +1,26 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-We have explored whether a St\"ormer--Verlet symplectic lattice with $1/\ln^2(t)$ adiabatic cooling---motivated by the Discrete Symplectic Cosmology framework and its connections to time-varying cosmological parameters~\citep{WangEvolution,Wang2026}---can reproduce statistical features of the CMB temperature anisotropies.
-Near-Gaussian one-point statistics emerge robustly from the symplectic dynamics, with an ablation study confirming that dissipative alternatives fail.
-Acoustic-like oscillation peaks arise from wave propagation on the lattice, and a three-parameter fit aligns peak positions with a toy analytic reference.
-The $1/\ln^2(t)$ cooling law generates an effective acoustic freeze-out scale through asymptotic deceleration of wave propagation, providing a mechanism for producing a sound horizon without abrupt decoupling (though the formal horizon integral diverges).
-Full-sky CMB maps from 3D lattice simulations show visual and statistical similarity to the Planck SMICA data, though quantitative comparison yields $\chi^2/\mathrm{dof} \approx 3.3$, indicating a substantial gap between phenomenological similarity and quantitative agreement with the observed angular power spectrum.
+We explored whether a weakly damped St\"ormer--Verlet lattice with $1/\ln^2(t)$ adiabatic cooling---inspired by the DSC working hypothesis~\citep{WangEvolution,Wang2026} that ties cosmological time-dependence to Riemann zero spectral statistics---can reproduce statistical features of the CMB temperature anisotropies.
+The experiments and the response to peer review lead us to a more conservative conclusion than our earlier framing suggested.
 
-These results establish the DSC lattice as an exploratory proof-of-concept for generating CMB-like fluctuations from symplectic dynamics with spectrally-motivated cooling.
-The differentiable implementation enables gradient-based inverse reconstruction, though a held-out hemisphere test ($r = -0.17$) confirms that the severely underdetermined inverse problem does not uniquely constrain the 3D structure from 2D sky data alone; incorporating volumetric 3D anchors partially breaks this degeneracy.
-Extending the reconstructed initial conditions forward through a nonlinear structure-formation phase reveals a V-shape thermodynamic transition that bears a qualitative resemblance to the smoothing role of inflation, though the mechanisms operate at fundamentally different scales.
+Quantitatively, the lattice forward model does \emph{not} reproduce the observed angular power spectrum.
+Benchmarking the DSC sky maps against the CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$, with a single overall amplitude as the only free parameter and a generous 20\% per-$\ell$ error budget, we obtain $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$.
+Under the geometric projection $\ell \approx 2\pi R_{\rm shell}\,k$ used to make the full-sky maps, the lattice $D(k)$-peaks fall at multipoles $\ell \approx 30, 60, 90$ rather than at the observed $\ell \approx 220, 540, 810$, and the predicted peak positions drift with the projection radius and the lattice size.
+We agree with reviewer 1 that the lattice peaks are best read as standing-wave features of the finite lattice and the geometric projection, not as physical analogs of baryon--photon acoustic oscillations.
 
-Future work should pursue:
-(i) a full Planck likelihood analysis (MCMC) to quantitatively constrain the lattice parameters against the observed $C_\ell$~\citep{Planck2018V};
+Where we believe the work still contributes is methodological.
+The differentiable JAX implementation enables gradient-based reconstruction through 25 St\"ormer--Verlet steps and a sphere-projection layer, attaining $r = 0.98$ in-sample pixel correlation against Planck SMICA.
+The held-out hemisphere test yields $r = -0.17$, which we now treat as the primary diagnostic: with $\sim 10^6$ unknowns and $\sim 10^4$ observed pixels the inverse problem is severely underdetermined, and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
+The differentiable lattice surrogate may still be useful as a building block for simulation-based inference workflows that pair lattice forward models with multi-probe data and explicit volumetric priors.
+
+Other claims from earlier drafts are revised here.
+Approximate one-point Gaussianity is consistent with the linear regime of the dynamics and is no longer presented as a non-trivial emergence.
+The freeze-out scale $r_s \approx 38$ is reported as a threshold-defined effective scale, with explicit sensitivity to the threshold and grid size; the formal horizon integral diverges logarithmically and we do not interpret $r_s$ as a sound horizon.
+The continuation of the lattice past the CMB-epoch step uses an Allen--Cahn toy nonlinearity rather than gravity, and is presented as a phenomenological visualization of domain coarsening rather than as a model of cosmic structure formation.
+We retain the connection to Riemann zero statistics only as a working motivation for the $1/\ln^2$ ansatz.
+
+Future work that we view as worth pursuing in light of this assessment:
+(i) replacing the toy reference with a full Planck-likelihood comparison and exploring whether richer lattice operators can move $\chi^2/{\rm dof}$ closer to unity~\citep{Planck2018V};
 (ii) multi-probe inverse reconstruction combining CMB with galaxy survey data (DESI~\citep{DESI2024}, Euclid) to break the projection degeneracy;
-(iii) extension to polarization and tensor modes;
-(iv) connections between the lattice acoustic horizon and the physical sound horizon relevant to the Hubble tension~\citep{DiValentino2021}.
+(iii) cleaner ablations that vary one property of the integrator at a time so that any role for symplecticity in the observed statistics can be isolated.

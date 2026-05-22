@@ -1,10 +1,14 @@
 \section{Numerical Methods}
 \label{sec:methods}
 
-\subsection{Two-dimensional symplectic lattice}
+\subsection{Two-dimensional weakly damped symplectic lattice}
 \label{sec:2d}
 
 We simulate an $N \times N$ lattice ($N = 300$) with periodic boundary conditions.
+The integrator is St\"ormer--Verlet with an optional Hubble-like drag $\eta\,\dot\phi$, which is exactly symplectic only when $\eta = 0$ and is weakly area-contracting (conformally symplectic) when $\eta > 0$.
+For the 2D Gaussianity ensemble (\cref{sec:gauss}) and the acoustic-peak runs (\cref{sec:peaks}) we set $\eta = 0$, so symplectic structure is preserved exactly up to floating-point error; weak damping ($\eta \in [0.01, 0.06]$) is introduced only in the Phase~I cosmic-timeline run (\cref{sec:timeline}) and in the inverse reconstruction (\cref{sec:inverse}), where it is needed to stabilize gradient flow.
+Whenever a quantitative claim in this paper depends on the symplecticity of the integrator we make this distinction explicit; all sections that combine the lattice with the inverse reconstruction or the late-time continuation should be read as ``weakly damped symplectic'', not as ``exactly symplectic''.
+
 The initial field $\phi_0(\bm{x})$ is drawn from a scale-invariant spectrum: in Fourier space, the amplitude is $\hat{\phi}(\bm{k}) \propto |\bm{k}|^{-3/2}$, giving $P(k) \propto k^{-3}$.
 This mimics the approximately scale-invariant primordial power spectrum.
 The field is normalized to unit variance with zero mean.

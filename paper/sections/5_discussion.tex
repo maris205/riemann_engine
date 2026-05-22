@@ -1,43 +1,38 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{Why symplecticity produces Gaussianity.}
-The near-Gaussian statistics of the symplectic lattice can be understood through two complementary arguments.
-First, the St\"ormer--Verlet map preserves phase-space volume (Liouville's theorem on the lattice), preventing the contraction of the distribution onto low-dimensional attractors that would create non-Gaussian features.
-Second, the temperature field at each pixel is a sum of contributions from many lattice modes; by the central limit theorem, this sum tends toward a Gaussian distribution regardless of the individual mode statistics.
-The dissipative CML violates both conditions: phase-space contraction concentrates the distribution onto fractal attractors, and the logistic on-site map generates bimodal dynamics that resist Gaussianization.
+\paragraph{What the Gaussianity finding does and does not show.}
+The near-Gaussian one-point statistics of the lattice are consistent with two simple expectations rather than a non-trivial emergence.
+First, the initial conditions are random Gaussian fields, and the St\"ormer--Verlet update is linear in $\phi$ in the parameter range we explore; a linear evolution of a Gaussian field is also Gaussian.
+Second, each pixel of the projected sky is a sum over many lattice modes, and the central limit theorem favors Gaussianity regardless of the individual mode statistics.
+The contrast with the dissipative CML baseline (kurtosis $= -1.60$) shows that strongly nonlinear dynamics destroy this Gaussianity, but the comparison cannot isolate symplecticity as the active ingredient: the two baselines differ in nonlinearity, conservation properties, and integration order simultaneously.
 
-\paragraph{Acoustic peaks: lattice waves vs.\ baryon--photon oscillations.}
-The acoustic peaks in the DSC power spectrum arise from the same physical mechanism as BAO peaks in $\Lambda$CDM---standing waves in a medium with a finite sound speed---but from a different physical origin.
-In $\Lambda$CDM, the medium is the baryon--photon fluid coupled by Thomson scattering; in DSC, it is the symplectic lattice coupled by the discrete Laplacian.
-The peak spacing is determined by $c_s / N$ (lattice) vs.\ $c_s / r_s$ ($\Lambda$CDM), and both can be tuned to match by adjusting the effective sound speed.
-This structural analogy suggests that acoustic peaks are a generic consequence of wave propagation in any medium with an effective horizon, rather than a unique signature of baryon--photon physics.
+\paragraph{Lattice peaks vs.\ baryon--photon acoustic oscillations.}
+The peaks in the lattice $D(k)$ arise from standing-wave physics on a finite-volume lattice with a time-dependent effective propagation speed.
+On a sphere of radius $R$ inside the lattice they project, in the flat-sky limit, to multipoles $\ell \approx 2\pi R_{\rm shell}\,k$.
+With the geometry we use this gives $\ell \approx 30, 60, 90$ for the first three lattice peaks, far from the Planck multipoles $\ell \approx 220, 540, 810$.
+The peak positions in $\ell$-space drift with the projection radius and the lattice size (\cref{sec:camb}), which is the behavior expected from standing waves rather than from physical acoustic oscillations.
+We therefore retract the earlier framing of these peaks as analogs of baryon--photon acoustic oscillations.
 
-\paragraph{Connection to DSC predictions.}
-The simulations in this paper validate the computational feasibility of the DSC framework for generating CMB-like fields, complementing the analytical predictions of Ref.~\citep{Wang2026}.
-The $1/\ln^2$ cooling law, which was motivated by spectral statistics in the original paper, here serves as the time-dependent sound speed that governs wavefront propagation and freeze-out.
-The acoustic horizon $r_s$ in our simulations plays the role of the comoving sound horizon in the Friedmann equation, and its value is set by the same cooling parameters ($c^2_{\mathrm{base}}$, $c_0$) that appear in the analytical Hubble relaxation formula.
+\paragraph{Status of the connection to the DSC framework.}
+The simulations here implement the cooling law of Ref.~\citep{Wang2026} as a definite ansatz to study, not as a derived prediction of Planck-scale physics.
+The motivation from Riemann zero spectral statistics is treated as a working hypothesis rather than an established physical correspondence; the program of identifying a Hilbert--P{\'o}lya Hamiltonian with the correct spectrum remains an open conjecture~\citep{Schumayer2011,BerryKeating1999}.
+Within the lattice surrogate we observe that the $1/\ln^2(t)$ cooling controls the location of the threshold-defined effective freeze-out scale (\cref{sec:horizon}), but this scale is sensitive to threshold and grid parameters and we do not interpret it as an analog of the comoving sound horizon.
 
 \paragraph{Comparison with related approaches.}
 Coupled map lattices have been studied as models for spatiotemporal chaos and pattern formation~\citep{Kaneko1992}, but not in a cosmological context with adiabatic cooling.
 Lattice cosmology approaches~\citep{Regge1961} discretize Einstein's equations directly, while causal set theory~\citep{Bombelli1987} replaces the manifold with a partial order.
-The DSC lattice differs from both: it does not attempt to recover general relativity from the lattice, but instead studies observational consequences of symplectic dynamics with a spectrally-motivated cooling law.
-The simulation-based inference component connects to the growing field of likelihood-free inference in cosmology~\citep{Alsing2019}, where forward simulations replace analytical likelihoods.
+The DSC lattice differs from both: it does not attempt to recover general relativity from the lattice, and it should not be read as an alternative formulation of cosmology.
+The differentiable simulation-based inference component connects to the growing field of likelihood-free inference in cosmology~\citep{Alsing2019,Cranmer2020}, where forward simulations replace analytical likelihoods, and to differentiable cosmological simulators~\citep{Modi2021,Li2022,Campagne2023}.
 
-\paragraph{Dual-track inference and the projection degeneracy.}
-Our framework naturally supports two complementary inference paradigms with fundamentally different mathematical properties.
-The forward twin experiment (\cref{sec:twin}), optimizing 3 global physics parameters against $\sim 75$ power-spectrum bins, yields a strictly overdetermined system ($N_{\mathrm{data}} / N_{\mathrm{params}} \approx 25$), guaranteeing parameter identifiability up to a $c^2$--$\kopt$ degeneracy direction.
-In contrast, the direct voxel optimization (\cref{sec:inverse}) attempts to reconstruct $\sim 10^6$ free parameters from $\sim 10^4$ sky pixels ($N_{\mathrm{params}} / N_{\mathrm{data}} \approx 40$--$85$).
-While inherently underdetermined---causing the held-out hemisphere test to fail ($r = -0.17$)---this mode successfully demonstrates the extreme differentiability and scalability of the DSC physics engine: gradients flow cleanly through 25 symplectic steps and a sphere-projection layer without vanishing or exploding.
+\paragraph{Forward identifiability vs.\ field-level underdetermination.}
+The forward twin experiment (\cref{sec:twin}) optimizes 3 global physics parameters against $\sim 75$ power-spectrum bins, an overdetermined system that recovers the parameters up to a $c^2$--$\kopt$ degeneracy direction.
+The voxel-level reconstruction (\cref{sec:inverse}), in contrast, attempts to recover $\sim 10^6$ free parameters from $\sim 10^4$ sky pixels.
+The high in-sample correlation $r = 0.98$ is not surprising at this ratio of unknowns to data, and the held-out hemisphere result $r = -0.17$ is the appropriate diagnostic: the inverse problem is severely underdetermined and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
+We therefore present the differentiable engine---gradients flowing cleanly through 25 St\"ormer--Verlet steps and the sphere-projection layer---as a methodological building block for future multi-probe inference workflows that pair lattice forward models with volumetric priors, rather than as a tool for inferring the 3D primordial state from CMB data alone.
 
-The projection degeneracy is not a deficiency of the DSC framework but an expected geometric feature of any 2D$\to$3D inverse problem.
-As shown in \cref{sec:inverse}, the engine is natively equipped to break this degeneracy via joint-probe volumetric priors (e.g., sparse 3D galaxy positions from DESI or Euclid), and the reconstructed 3D field spontaneously obeys the $P(k) \propto k^{-3}$ gravity scaling even without explicit Fourier-space regularization.
-This combination---parameter-level identifiability from power spectra, plus field-level differentiability for future multi-probe reconstruction---positions the DSC engine as a versatile tool for both traditional cosmological parameter estimation and next-generation field-level inference.
-
-\paragraph{The $1/\ln^2$ cooling as a phenomenological smoothing mechanism.}
-The V-shape thermodynamic transition observed in \cref{sec:timeline} reveals a suggestive analogy between the DSC cooling law and the smoothing role of cosmic inflation.
-In standard cosmology, the smoothness problem---why the CMB is nearly uniform despite originating from causally disconnected regions---is resolved by postulating an inflaton scalar field that drives exponential expansion during the first $\sim 10^{-36}$~s.
-In the DSC framework, the $1/\ln^2(t)$ cooling derived from Riemann zero spectral statistics provides a qualitatively similar effect: the rapidly decaying effective sound speed acts as a dissipation channel that smooths primordial inhomogeneities during early evolution.
-We emphasize that this analogy is phenomenological: the DSC lattice is not a model of Planck-scale physics, and the Allen--Cahn nonlinearity used for late-time structure formation is a simplified proxy for gravitational collapse.
-Nevertheless, the fact that a single cooling law produces both the correct CMB statistics and a natural smoothing-to-structure-formation transition is an intriguing feature of the framework.
-Quantifying this connection---for instance, by comparing the DSC smoothing rate to the e-folding number required in slow-roll inflation---is an important direction for future work.
+\paragraph{The continuation past the CMB-epoch step is a phenomenological visualization.}
+The V-shape transition in field variance (\cref{sec:timeline}) is produced by a $1/\ln^2(t)$ cooling phase followed by an Allen--Cahn coarsening phase.
+The Allen--Cahn nonlinearity is a generic toy potential, not a gravitational interaction, and the resulting domain morphology is generic to coarsening dynamics.
+We retract the earlier suggestion of an analogy with cosmic inflation: the smoothing in our run is driven by an effective sound-speed decay rather than by a slow-roll scalar field, and the analogy is not quantitative.
+The cosmic-timeline figure should be read as an illustration of the lattice's behavior under a chosen toy nonlinearity, not as a model of cosmic structure formation.
