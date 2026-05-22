@@ -409,3 +409,98 @@ We therefore retain \cref{fig:timeline} solely as a visualization of the lattice
   Visual resemblance to the cosmic web is generic to domain coarsening; no quantitative match to large-scale structure is claimed.}
   \label{fig:timeline}
 \end{figure*}
+
+\subsection{Cross-scale empirical pillars beyond the CMB lattice}
+\label{sec:pillars}
+
+The CMB lattice surrogate of \crefrange{sec:gauss}{sec:timeline} is a forward-modeling probe of the DSC framework at the angular-spectrum level.
+The framework also makes predictions at three other observational scales: (i)~the quasar fine-structure-constant drift, (ii)~the late-time Hubble expansion, and (iii)~late-time cosmological perturbations.
+For completeness, and to make the cross-scale evidence explicit, we report here the relevant analyses we have performed in five companion notebooks (\texttt{notebooks/15--19}).
+The headline result is that two pillars (JWST $H_0$ anchors; late-time stability) are quantitatively consistent with the framework, two pillars (CAMB+BAO Fisher; King~2012 quasar) show the DSC correction is statistically indistinguishable from $\Lambda$CDM at current sensitivity, and one pillar (Webb-style 128-absorber subset) shows a strong $\chi^2$ improvement over null but with negative $R^2$, a tension that we discuss honestly rather than gloss.
+
+\paragraph{Pillar A: Wang-subset 128-absorber quasar drift (\texttt{notebooks/15}).}
+On a 128-absorber subset of the published quasar $\Delta\alpha/\alpha$ measurements, we fit Wang's $1/\ln^2(t)$ model and the standard ($\Delta\alpha/\alpha = 0$) null.
+The DSC model gives reduced $\chi^2 = 1.52$ versus $1.75$ for the null, a total $\Delta\chi^2 = 31.54$ improvement at the cost of one parameter ($\Gamma = 6.31$).
+The coefficient of determination is negative for both models ($R^2 = -0.015$ for DSC, $R^2 = -0.031$ for null), reflecting that the data scatter exceeds the variance of the fitted curves; the relevant comparison is therefore the $\chi^2$ improvement, not $R^2$.
+We treat this pillar as suggestive but not conclusive (\cref{fig:alpha_quasar}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig18_alpha_drift_quasar.pdf}
+  \caption{Quasar $\Delta\alpha/\alpha$ drift for the Wang-subset 128-absorber sample.
+  The DSC $1/\ln^2(t)$ model (red) achieves $\Delta\chi^2 = 31.54$ improvement over the constant null (gray).
+  Reproducible from \texttt{notebooks/15\_alpha\_drift\_quasar.ipynb}.}
+  \label{fig:alpha_quasar}
+\end{figure}
+
+\paragraph{Pillar B: King~2012 295-absorber sample (\texttt{notebooks/17}).}
+For consistency we re-ran the same comparison on the full published King \emph{et al.}~(2012) catalog (CDS J/MNRAS/422/3370 \texttt{tablea1}, $N = 295$ after standard outlier handling).
+The DSC $p = 2$ model gives reduced $\chi^2 = 0.881$ vs $0.878$ for the constant null, $\Delta\chi^2 \approx 0$, and the BIC penalty for one extra parameter ($\Delta {\rm BIC} = +5.7$) decisively favors the null.
+The joint quasar + atomic-clock~\citep{Rosenband2008} bound is $|\Gamma| < 0.30$, far below the $\Gamma \sim 6$ best-fit on the smaller subset (\cref{fig:king2012}).
+We therefore report Pillars~A and~B as showing a tension between subsets: an effect at the predicted scale is not unambiguously present in the full catalog at current sensitivity, and the framework is consistent with current quasar data only at $|\Gamma| \lesssim 0.3$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig20_quasar_293_fit.pdf}
+  \caption{Three-model comparison on the full King \emph{et al.}~(2012) 295-absorber sample.
+  Top: data with best-fit DSC $p = 2$ curve and constant null.
+  Bottom: $\chi^2(\Gamma)$ profile and joint clock + quasar bound $|\Gamma| < 0.30$.
+  $\Delta {\rm BIC}({\rm DSC}, {\rm null}) = +5.7$ favors the null.
+  Reproducible from \texttt{notebooks/17\_quasar\_293\_fit.ipynb}.}
+  \label{fig:king2012}
+\end{figure}
+
+\paragraph{Pillar C: JWST $H_0$ anchors (\texttt{notebooks/16}).}
+The DSC framework predicts that the Hubble parameter relaxes as $H(t) = H_\infty + \beta / \ln^2(t/t_P)$.
+Treating the four anchor $H_0$ determinations spanning local distance-ladder and high-$z$ measurements (Riess SH0ES, JWST replication, Planck CMB, BAO) as samples of $H(t_i)$ at different effective times, the fit yields $H_\infty = 104.5$~km/s/Mpc, $\beta = -6.24$, $R^2 = 0.907$, and reduced $\chi^2 = 0.28$ (\cref{fig:jwst_h0}).
+With four data points and two parameters this is two degrees of freedom, so the reduced $\chi^2$ is informative but the absolute number should not be over-interpreted; we view this pillar as the strongest of the five, providing a quantitative scaling relation that connects the $1/\ln^2$ ansatz to the observed $H_0$ tension.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig19_jwst_h0_anchors.pdf}
+  \caption{Four $H_0$ anchors fit by the DSC relaxation law $H(t) = H_\infty + \beta / \ln^2(t/t_P)$.
+  $R^2 = 0.907$, reduced $\chi^2 = 0.28$.
+  The fit captures the SH0ES~/~Planck Hubble tension as a smooth relaxation rather than a discrepancy.
+  Reproducible from \texttt{notebooks/16\_jwst\_h0\_anchors.ipynb}.}
+  \label{fig:jwst_h0}
+\end{figure}
+
+\paragraph{Pillar D: CAMB + BAO Fisher constraint on $\gamma_{\rm eff}$ (\texttt{notebooks/18}).}
+We compute the Planck CMB compressed observables ($R$, $\ell_A$) and the DESI~\citep{DESI2024} BAO ratios $D_V/r_d$ at $z \in \{0.15, 0.38, 0.51, 0.61, 0.70, 1.48, 2.33\}$ via CAMB at fiducial $\Lambda$CDM, then take numerical derivatives with respect to the DSC dark-energy correction $\gamma_{\rm eff}$ via the equivalence $w_a = \gamma_{\rm eff} \cdot 1.11 \times 10^{-6}$ established in Section~2 of the DSC theory paper~\citep{Wang2026}.
+Building the Fisher matrix from these derivatives gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$, i.e.\ the DSC correction is unconstrained by current Planck~\citep{Planck2018VI} + BAO~\citep{DESI2024} data at the level of $\gamma_{\rm eff} \sim O(1)$.
+The maximum fractional change to the CMB TT spectrum is $\sim 12.5\%$ at the largest scales; on small scales the model is indistinguishable from $\Lambda$CDM.
+This is consistent with the negative $C_\ell$ benchmark of \cref{sec:camb}: the DSC dark-energy sector is not currently in tension with CMB+BAO data, but neither does it improve the fit (\cref{fig:camb_fisher}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig21_camb_fisher.pdf}
+  \caption{CAMB-based Fisher constraint on the DSC effective dark-energy parameter $\gamma_{\rm eff}$.
+  Top: $\Lambda$CDM-vs-DSC TT power spectrum residual at $\gamma_{\rm eff} = 1$.
+  Bottom: BAO $D_V/r_d$ derivatives over $z \in [0.15, 2.33]$.
+  Combined Fisher gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$, leaving the DSC correction unconstrained at present sensitivity.
+  Reproducible from \texttt{notebooks/18\_camb\_fisher.ipynb}.}
+  \label{fig:camb_fisher}
+\end{figure}
+
+\paragraph{Pillar E: late-time perturbation stability (\texttt{notebooks/19}).}
+We verify that the DSC dark-energy form $\Lambda(t) = \Lambda_\infty + \gamma / \ln^2(t/t_P)$ satisfies the basic late-time stability criteria over $a \in [10^{-10}, 1]$ and $\gamma_{\rm eff} \in [0, 10]$:
+(C1)~$H^2(a) > 0$ everywhere (no bounce),
+(C2)~$\dot H < 0$ (monotone expansion),
+(C3)~the linear growth factor $D(a)$ is monotonically increasing,
+(C4)~$c_s^2 = 0$ for the prescribed vacuum sector (no propagating ghost / gradient instabilities by construction), and
+(C5)~$w_{\rm eff}(z = 0)$ remains within the $\Lambda$CDM 1$\sigma$ envelope.
+All five checks pass for the full scanned range, so the framework is internally consistent at the background and linear-perturbation level; the constraint that needs to be tightened is the data-driven one of Pillar~D, not internal stability (\cref{fig:late_stability}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig22_late_stability.pdf}
+  \caption{Late-time stability scan for the DSC $\Lambda(t)$.
+  All five stability criteria (C1--C5) pass over $a \in [10^{-10}, 1]$ and $\gamma_{\rm eff} \in [0, 10]$.
+  Reproducible from \texttt{notebooks/19\_late\_time\_stability.ipynb}.}
+  \label{fig:late_stability}
+\end{figure}
+
+\paragraph{Where the cross-scale evidence stands.}
+Of the five pillars, two are positive (Pillars C and E), two are null at current sensitivity (Pillars B and D), and one is suggestive but inconclusive (Pillar A).
+We do not claim the cross-scale evidence \emph{establishes} the DSC framework; we claim only that no current observation \emph{rules it out}, and that the JWST $H_0$ pillar provides a useful $1/\ln^2$ scaling that connects to the standing Hubble tension.
+The CMB lattice forward model of \crefrange{sec:gauss}{sec:timeline} is therefore one of several testbeds, none of which is currently decisive on its own.

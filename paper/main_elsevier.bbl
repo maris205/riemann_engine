@@ -178,6 +178,21 @@ A.~Caravano, E.~Komatsu, A.~Linde, K.~D. Lozanov, {Lattice simulations of
   inflation}, arXiv preprint (2022).
 \newblock \href {http://arxiv.org/abs/2209.13616} {\path{arXiv:2209.13616}}.
 
+\bibitem{RiessSH0ES2022}
+A.~G. Riess, et~al., {A Comprehensive Measurement of the Local Value of the
+  Hubble Constant with 1~km~s$^{-1}$~Mpc$^{-1}$ Uncertainty from the Hubble
+  Space Telescope and the SH0ES Team}, The Astrophysical Journal Letters 934
+  (2022) L7.
+\newblock \href {https://doi.org/10.3847/2041-8213/ac5c5b}
+  {\path{doi:10.3847/2041-8213/ac5c5b}}.
+
+\bibitem{RiessJWST2024}
+A.~G. Riess, et~al., {JWST Observations Reject Unrecognized Crowding of Cepheid
+  Photometry as an Explanation for the Hubble Tension at 8$\sigma$ Confidence},
+  The Astrophysical Journal Letters 962 (2024) L17.
+\newblock \href {https://doi.org/10.3847/2041-8213/ad1ddd}
+  {\path{doi:10.3847/2041-8213/ad1ddd}}.
+
 \bibitem{Kloeden2011}
 P.~E. Kloeden, M.~Rasmussen, {Nonautonomous Dynamical Systems}, American
   Mathematical Society, 2011.
@@ -203,6 +218,15 @@ T.~Akiba, S.~Sano, T.~Yanase, T.~Ohta, M.~Koyama, {Optuna: A Next-generation
   pp. 2623--2631.
 \newblock \href {https://doi.org/10.1145/3292500.3330701}
   {\path{doi:10.1145/3292500.3330701}}.
+
+\bibitem{Rosenband2008}
+T.~Rosenband, D.~B. Hume, P.~O. Schmidt, C.~W. Chou, A.~Brusch, L.~Lorini,
+  W.~H. Oskay, R.~E. Drullinger, T.~M. Fortier, J.~E. Stalnaker, S.~A. Diddams,
+  W.~C. Swann, N.~R. Newbury, W.~M. Itano, D.~J. Wineland, J.~C. Bergquist,
+  {Frequency ratio of Al$^+$ and Hg$^+$ single-ion optical clocks; metrology at
+  the 17th decimal place}, Science 319 (2008) 1808--1812.
+\newblock \href {https://doi.org/10.1126/science.1154622}
+  {\path{doi:10.1126/science.1154622}}.
 
 \bibitem{Regge1961}
 T.~Regge, {General relativity without coordinates}, Il Nuovo Cimento 19 (1961)

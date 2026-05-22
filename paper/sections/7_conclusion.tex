@@ -1,26 +1,33 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-We explored whether a weakly damped St\"ormer--Verlet lattice with $1/\ln^2(t)$ adiabatic cooling---inspired by the DSC working hypothesis~\citep{WangEvolution,Wang2026} that ties cosmological time-dependence to Riemann zero spectral statistics---can reproduce statistical features of the CMB temperature anisotropies.
-The experiments and the response to peer review lead us to a more conservative conclusion than our earlier framing suggested.
+We presented a consolidated empirical and computational evaluation of the Discrete Symplectic Cosmology (DSC) framework, in which a $1/\ln^2(t)$ adiabatic cooling law---inspired by the spectral statistics of the Riemann zeta zeros---is the central ansatz tying microscopic non-autonomous dynamics to time-dependent cosmological parameters.
+Across five tests at three observational scales, the cross-scale evidence is mixed but informative.
 
-Quantitatively, the lattice forward model does \emph{not} reproduce the observed angular power spectrum.
-Benchmarking the DSC sky maps against the CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$, with a single overall amplitude as the only free parameter and a generous 20\% per-$\ell$ error budget, we obtain $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$.
-Under the geometric projection $\ell \approx 2\pi R_{\rm shell}\,k$ used to make the full-sky maps, the lattice $D(k)$-peaks fall at multipoles $\ell \approx 30, 60, 90$ rather than at the observed $\ell \approx 220, 540, 810$, and the predicted peak positions drift with the projection radius and the lattice size.
-We agree with reviewer 1 that the lattice peaks are best read as standing-wave features of the finite lattice and the geometric projection, not as physical analogs of baryon--photon acoustic oscillations.
+The framework's strongest support is at the late-time Hubble scale.
+Fitting the four anchor $H_0$ measurements (SH0ES, JWST, Planck, BAO) by $H(t) = H_\infty + \beta/\ln^2(t/t_P)$ yields $R^2 = 0.91$, reduced $\chi^2 = 0.28$ (Pillar~C), recasting the SH0ES--Planck Hubble tension as a smooth time-dependent relaxation rather than a discrepancy.
+At the linear-perturbation level the framework is internally consistent: five basic stability criteria pass for $\gamma_{\rm eff} \in [0, 10]$ (Pillar~E).
 
-Where we believe the work still contributes is methodological.
-The differentiable JAX implementation enables gradient-based reconstruction through 25 St\"ormer--Verlet steps and a sphere-projection layer, attaining $r = 0.98$ in-sample pixel correlation against Planck SMICA.
-The held-out hemisphere test yields $r = -0.17$, which we now treat as the primary diagnostic: with $\sim 10^6$ unknowns and $\sim 10^4$ observed pixels the inverse problem is severely underdetermined, and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
+At the CMB+BAO scale the DSC dark-energy correction is currently \emph{unconstrained}.
+A CAMB + DESI BAO Fisher analysis gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$ (Pillar~D), so the framework is not in tension with present data but neither does it improve the fit.
+The $C_\ell$ benchmark of the lattice surrogate against the CAMB Planck-2018 spectrum yields $\chi^2/{\rm dof} \approx 80$, and the lattice $D(k)$-peaks map under the geometric projection to $\ell \approx 30, 60, 90$, far from the observed $\ell \approx 220, 540, 810$; we retract any quantitative claim of reproducing the Planck $C_\ell$ and agree with reviewer~1 that the lattice peaks are best read as standing-wave features.
+
+The quasar fine-structure-constant pillar shows a subset-dependent tension that we report rather than gloss.
+A 128-absorber subset previously analyzed in the literature gives $\Delta\chi^2 = 31.5$ improvement of the DSC drift over the constant null (Pillar~A), while the full King~\emph{et al.}~(2012) 295-absorber catalog yields $\Delta\chi^2 \approx 0$ and BIC-prefers the null (Pillar~B), with the joint atomic-clock + quasar bound $|\Gamma| < 0.30$.
+Whether the residual signal in the smaller subset is real or an artifact of selection requires re-examination of the absorber list and is the most concrete falsifiability target the framework currently has.
+
+The methodological contribution is the differentiable JAX implementation of the lattice surrogate, with clean gradients through 25 St\"ormer--Verlet steps and a sphere-projection layer.
+In-sample reconstruction attains $r = 0.98$ pixel correlation against Planck SMICA, but the held-out hemisphere test yields $r = -0.17$, which we treat as the primary diagnostic: with $\sim 10^6$ unknowns and $\sim 10^4$ pixels the inverse problem is severely underdetermined, and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
 The differentiable lattice surrogate may still be useful as a building block for simulation-based inference workflows that pair lattice forward models with multi-probe data and explicit volumetric priors.
 
-Other claims from earlier drafts are revised here.
-Approximate one-point Gaussianity is consistent with the linear regime of the dynamics and is no longer presented as a non-trivial emergence.
-The freeze-out scale $r_s \approx 38$ is reported as a threshold-defined effective scale, with explicit sensitivity to the threshold and grid size; the formal horizon integral diverges logarithmically and we do not interpret $r_s$ as a sound horizon.
-The continuation of the lattice past the CMB-epoch step uses an Allen--Cahn toy nonlinearity rather than gravity, and is presented as a phenomenological visualization of domain coarsening rather than as a model of cosmic structure formation.
-We retain the connection to Riemann zero statistics only as a working motivation for the $1/\ln^2$ ansatz.
+Other claims from earlier drafts have been revised here.
+Approximate Gaussianity is reported as a consistency check rather than a non-trivial emergence.
+The freeze-out scale $r_s \approx 38$ is reported as a threshold-defined effective scale; the formal horizon integral diverges logarithmically.
+The continuation past the CMB-epoch step uses an Allen--Cahn toy nonlinearity rather than gravity, and is presented as phenomenological visualization rather than structure formation.
+The connection to Riemann zero statistics is retained only as a working motivation for the $1/\ln^2$ ansatz, not as an established physical correspondence.
 
-Future work that we view as worth pursuing in light of this assessment:
-(i) replacing the toy reference with a full Planck-likelihood comparison and exploring whether richer lattice operators can move $\chi^2/{\rm dof}$ closer to unity~\citep{Planck2018V};
-(ii) multi-probe inverse reconstruction combining CMB with galaxy survey data (DESI~\citep{DESI2024}, Euclid) to break the projection degeneracy;
-(iii) cleaner ablations that vary one property of the integrator at a time so that any role for symplecticity in the observed statistics can be isolated.
+We list, in order of expected impact, the directions that we view as most worth pursuing in light of these results:
+(i)~tightening the quasar drift constraint by reanalyzing the King~2012 catalog under the same selection used for the 128-absorber subset, and adding next-generation high-resolution spectroscopy;
+(ii)~replacing the compressed CMB observables of Pillar~D with a full Planck likelihood and exploring whether richer lattice operators can reduce the lattice $C_\ell$ $\chi^2/{\rm dof}$;
+(iii)~multi-probe inverse reconstruction combining CMB with galaxy survey data to break the projection degeneracy of the lattice inverse;
+(iv)~cleaner ablations that vary one property of the integrator at a time so that any role for symplecticity in the observed statistics can be isolated.

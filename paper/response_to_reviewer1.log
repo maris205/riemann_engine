@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  23 MAY 2026 01:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  23 MAY 2026 07:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -325,16 +325,43 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 32.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
-(./response_to_reviewer1.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
+Overfull \hbox (14.47328pt too wide) in paragraph at lines 171--176
+\OT1/cmr/m/it/12 i-cal Evo-lu-tion as a Non-autonomous Dy-nam-i-cal Sys-tem\OT1
+/cmr/m/n/12 , Zen-odo \OT1/cmtt/m/n/12 10.5281/zenodo.19218674\OT1/cmr/m/n/12 ;
+
+ []
+
+[6]
+Overfull \hbox (51.23755pt too wide) in paragraph at lines 196--197
+[]\OT1/cmr/m/n/12 Five new note-books: \OT1/cmtt/m/n/12 notebooks/15[]alpha[]dr
+ift[]quasar.ipynb\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 16[]jwst[]h0[]anchors.ipynb
+\OT1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (8.38478pt too wide) in paragraph at lines 196--197
+\OT1/cmtt/m/n/12 17[]quasar[]293[]fit.ipynb\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 1
+8[]camb[]fisher.ipynb\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 19[]late[]time[]stabili
+ty.ipynb\OT1/cmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (18.34547pt too wide) in paragraph at lines 197--198
+[]\OT1/cmr/m/n/12 Five new fig-ures: \OT1/cmtt/m/n/12 fig18[]alpha[]drift[]quas
+ar.pdf \OT1/cmr/m/n/12 through \OT1/cmtt/m/n/12 fig22[]late[]stability.pdf\OT1/
+cmr/m/n/12 . 
+ []
+
+[7] (./response_to_reviewer1.aux)
 Package rerunfilecheck Info: File `response_to_reviewer1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9429 strings out of 480171
- 146153 string characters out of 5894489
+ 9432 strings out of 480171
+ 146185 string characters out of 5894489
  455194 words of memory out of 5000000
- 27285 multiletter control sequences out of 15000+600000
+ 27286 multiletter control sequences out of 15000+600000
  475627 words of font info for 49 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  60i,5n,63p,605b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -350,10 +377,10 @@ amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
 pfb>
-Output written on response_to_reviewer1.pdf (6 pages, 151966 bytes).
+Output written on response_to_reviewer1.pdf (7 pages, 165364 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
+ 115 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

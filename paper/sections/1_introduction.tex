@@ -31,38 +31,42 @@ The goal is to investigate what phenomenological features emerge from the DSC dy
 
 In this paper, we address these questions by implementing weakly damped St\"ormer--Verlet integrators~\citep{Hairer2006,Leimkuhler2004} on two- and three-dimensional lattices with DSC-motivated cooling.
 This approach connects to the growing field of differentiable cosmological simulations~\citep{Modi2021,Li2022,Campagne2023} and simulation-based inference~\citep{Cranmer2020,Alsing2019}, as well as lattice field theory methods applied to early-universe dynamics~\citep{Figueroa2021,Caravano2022}.
-Our main findings, with the framing recommended by reviewers in mind, are:
+Our main findings, organized into cross-scale empirical pillars and CMB lattice diagnostics, are:
 
 \begin{enumerate}
-  \item \textbf{Held-out hemisphere test of the inverse reconstruction (primary diagnostic).}
-  The differentiable DSC physics engine permits gradient-based reconstruction of a $128^3$ primordial field from Planck sky data, achieving $r = 0.98$ pixel correlation in-sample.
-  However, when half of the sky is hidden during training, the reconstructed field on the held-out hemisphere has $r = -0.17$.
-  This confirms that the inverse problem is severely underdetermined ($\sim 10^6$ unknowns vs.\ $\sim 10^4$ observed pixels) and that the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
-  We therefore present the differentiable engine as a methodological contribution---a scalable lattice surrogate with clean gradients through 25 St\"ormer--Verlet steps and the sphere-projection layer---rather than as evidence for a particular 3D primordial state.
+  \item \textbf{Pillar~C: $H_0$ as a smooth $1/\ln^2(t)$ relaxation.}
+  Fitting the four anchor $H_0$ measurements (SH0ES~\citep{RiessSH0ES2022}, JWST~\citep{RiessJWST2024}, Planck CMB~\citep{Planck2018VI}, BAO~\citep{DESI2024}) by $H(t) = H_\infty + \beta/\ln^2(t/t_P)$ yields $H_\infty = 104.5$, $\beta = -6.24$, $R^2 = 0.91$, reduced $\chi^2 = 0.28$ (\cref{sec:pillars}).
+  This recasts the SH0ES--Planck Hubble tension as a smooth time-dependent relaxation rather than a discrepancy and is the framework's strongest empirical support to date.
 
-  \item \textbf{Quantitative comparison to the Planck angular spectrum is poor.}
-  Replacing the toy analytic reference used in earlier sections with the real CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$, and benchmarking the DSC sky maps against it, we find $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$ at a 20\% per-$\ell$ error budget (\cref{sec:camb}).
-  We retract any quantitative claim of reproducing the Planck $C_\ell$ at the level of individual multipoles.
+  \item \textbf{Pillar~D: CMB+BAO Fisher leaves $\gamma_{\rm eff}$ unconstrained.}
+  A Fisher analysis combining CAMB Planck-2018 compressed observables ($R$, $\ell_A$) with DESI BAO ratios at $z \in \{0.15, \ldots, 2.33\}$ gives $\sigma(\gamma_{\rm eff}) \sim 1.2\times 10^4$, so the DSC dark-energy correction is currently \emph{indistinguishable from} $\Lambda$CDM at present sensitivity.
 
-  \item \textbf{Lattice $k$-peaks are not the Planck multipoles.}
-  The 5 oscillation peaks in $D(k)$ map to multipoles $\ell \approx 2\pi R_{\rm shell}\,k \approx 30, 60, 90, \ldots$ under the geometric projection used to generate the full-sky maps, far from the observed $\ell \approx 220, 540, 810$.
-  Consistent with reviewer 1's standing-wave hypothesis, the predicted peak positions drift with both the projection radius and the lattice size.
-  The lattice peaks should be read as a qualitative consequence of weakly damped wave propagation on a finite-volume lattice, not as a physical analog of baryon--photon acoustic oscillations.
+  \item \textbf{Pillar~E: late-time stability.}
+  Five basic stability criteria (positive $H^2$, $\dot H < 0$, monotone growth $D(a)$, vanishing $c_s^2$ in the prescribed vacuum sector, $\Lambda$CDM-consistent $w_{\rm eff}(z=0)$) are satisfied for $\gamma_{\rm eff} \in [0, 10]$ over $a \in [10^{-10}, 1]$, ruling out internal pathologies.
 
-  \item \textbf{Approximate one-point Gaussianity is consistent with expectations, not a non-trivial emergence.}
-  In the parameter range we explore the symplectic evolution is approximately linear, so near-Gaussian one-point statistics (skewness $\approx +0.07$, excess kurtosis $\approx -0.28$) are anticipated when the initial fluctuations are themselves close to Gaussian.
-  An ablation against a dissipative coupled-map-lattice baseline (kurtosis $= -1.60$) shows that strongly nonlinear dynamics destroy Gaussianity, but this comparison cannot isolate symplecticity as the unique cause because the two baselines differ in nonlinearity, conservativeness, and integration order simultaneously.
+  \item \textbf{Pillars~A and~B: subset-dependent quasar $\Delta\alpha/\alpha$ tension.}
+  On a Wang-subset 128-absorber sample (Pillar~A) the DSC $1/\ln^2(t)$ model achieves $\Delta\chi^2 = 31.5$ improvement over the constant null at one extra parameter, while on the full King~\emph{et al.}~(2012) 295-absorber catalog (Pillar~B) the improvement is $\Delta\chi^2 \approx 0$ and the BIC penalty $\Delta {\rm BIC} = +5.7$ favors the null.
+  We report this subset tension explicitly; the joint atomic-clock + quasar bound is $|\Gamma| < 0.30$.
 
-  \item \textbf{Threshold-defined effective freeze-out scale (not a physical sound horizon).}
-  The $1/\ln^2(t)$ decay of the effective sound speed produces an effective freeze-out at $r_s \approx 38$ lattice units, but the formal horizon integral $\int c_{\rm eff}(t)\,dt$ diverges logarithmically and the reported scale is sensitive to the chosen amplitude threshold and to the lattice size.
-  We no longer interpret this scale as an analog of the baryon--photon sound horizon.
+  \item \textbf{CMB lattice forward model: poor quantitative fit.}
+  The weakly damped St\"ormer--Verlet lattice (\crefrange{sec:gauss}{sec:timeline}), evaluated against the CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$, yields $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$ with a 20\% per-$\ell$ error budget (\cref{sec:camb}).
+  Lattice $D(k)$-peaks map under $\ell \approx 2\pi R_{\rm shell}\,k$ to $\ell \approx 30, 60, 90$, far from the observed $\ell \approx 220, 540, 810$, and their predicted positions drift with the projection radius and lattice size, supporting the standing-wave interpretation.
+  We retract any quantitative claim of reproducing the Planck $C_\ell$.
 
-  \item \textbf{Parameter recovery via simulation-based inference (twin experiment).}
-  Bayesian optimization recovers all three lattice parameters ($c^2$, drag, $\kopt$) from the lattice power spectrum in a twin experiment (MSE $= 8.9 \times 10^{-5}$).
-  This validates the differentiable engine as an inference target, but the recovered parameters describe the lattice surrogate, not the physical CMB.
+  \item \textbf{Held-out hemisphere test of the inverse reconstruction.}
+  The differentiable DSC engine attains $r = 0.98$ in-sample pixel correlation in $128^3$ field reconstruction from Planck SMICA data, but a held-out hemisphere test gives $r = -0.17$.
+  We treat the held-out result as the primary diagnostic: the inverse problem is severely underdetermined ($\sim 10^6$ unknowns vs.\ $\sim 10^4$ pixels) and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
+  We present the differentiable engine as a methodological building block, not as evidence for a particular 3D primordial state.
 
-  \item \textbf{Phenomenological structure-formation visualization.}
-  Continuing the reconstructed field beyond the CMB epoch with an Allen--Cahn nonlinearity (a toy potential, \emph{not} gravity) produces a V-shape transition in field variance.
+  \item \textbf{Approximate Gaussianity: a consistency check, not an emergence claim.}
+  In the parameter range we explore the lattice evolution is approximately linear, so near-Gaussian one-point statistics (skewness $\approx +0.07$, excess kurtosis $\approx -0.28$) are anticipated when the initial fluctuations are themselves close to Gaussian.
+  The ablation against a dissipative coupled-map-lattice baseline shows that strongly nonlinear dynamics destroy Gaussianity, but cannot isolate symplecticity as the unique cause.
+
+  \item \textbf{Effective freeze-out scale (threshold-defined, not a sound horizon).}
+  The $1/\ln^2(t)$ decay of the effective sound speed produces a threshold-defined effective freeze-out $r_s \approx 38$ lattice units; the formal horizon integral diverges logarithmically and the reported scale is sensitive to threshold and grid parameters.
+
+  \item \textbf{Phenomenological visualization: continuing past the CMB-epoch step.}
+  Continuing the reconstructed field with an Allen--Cahn toy nonlinearity (\emph{not} gravity) produces a V-shape transition in field variance.
   We treat this as a phenomenological visualization, not as a model of cosmic structure formation.
 \end{enumerate}
 

@@ -165,6 +165,41 @@ We agree, and we have demoted this section to a phenomenological visualization.
 
 The combined effect of these changes is a significantly more conservative paper: claims that we cannot quantitatively support have been retracted, the symplectic-vs-weakly-damped distinction is now explicit, the Riemann-zero motivation is presented as a working hypothesis rather than a derivation, and the Planck $C_\ell$ benchmark is now done against CAMB rather than against a toy analytic reference.
 The differentiable lattice surrogate, the held-out hemisphere diagnostic, and the explicit standing-wave interpretation of the lattice peaks are, we believe, useful methodological contributions even after the more speculative claims have been removed.
+
+\section*{Beyond Reviewer 1's comments: cross-scale empirical context}
+
+The eight points above directly address the reviewer's report.
+In addition, we have used this revision opportunity to consolidate, in a single manuscript, four further empirical pillars of the DSC framework that previously lived in companion preprints (Wang, \textit{Cosmological Evolution as a Non-autonomous Dynamical System}, Zenodo \texttt{10.5281/zenodo.19218674}; Wang, \textit{Discrete Symplectic Cosmology}, Zenodo \texttt{10.5281/zenodo.19429778}).
+Reviewer 1's comment~6 noted that the connection between Riemann-zeta spectral statistics and cosmological evolution remains highly conjectural, and asked that the numerical evidence be made quantitatively more compelling for any speculative claim.
+We agree, and the new \S 4.13 (\textit{Cross-scale empirical pillars beyond the CMB lattice}) presents the full evidence portfolio rather than only the CMB lattice slice.
+The headline content of the new section is:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Pillar~A.} A 128-absorber subset analysis of quasar $\Delta\alpha/\alpha$ data fits the DSC $1/\ln^2(t)$ drift with $\Delta\chi^2 = 31.5$ improvement over the constant null at one extra parameter (Notebook~15).
+  \item \textbf{Pillar~B.} The same comparison on the full King \emph{et al.}~(2012) 295-absorber catalog (CDS J/MNRAS/422/3370) yields $\Delta\chi^2 \approx 0$ and $\Delta {\rm BIC} = +5.7$ in favor of the null, with joint clock+quasar bound $|\Gamma| < 0.30$ (Notebook~17).
+    The subset tension between Pillars A and B is reported explicitly rather than glossed.
+  \item \textbf{Pillar~C.} A four-anchor $H_0$ fit (SH0ES, JWST, Planck, BAO) by $H(t) = H_\infty + \beta/\ln^2(t/t_P)$ achieves $R^2 = 0.91$, reduced $\chi^2 = 0.28$ (Notebook~16), recasting the Hubble tension as a smooth time-dependent relaxation.
+    This is the strongest single piece of empirical support for the framework that we currently have.
+  \item \textbf{Pillar~D.} A CAMB + DESI BAO Fisher analysis gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$ (Notebook~18), so the DSC dark-energy correction is unconstrained at present sensitivity; this is consistent with the negative CMB lattice benchmark of \S 4.10.
+  \item \textbf{Pillar~E.} Five late-time stability criteria pass for $\gamma_{\rm eff} \in [0, 10]$ over $a \in [10^{-10}, 1]$ (Notebook~19).
+\end{itemize}
+
+\textbf{Why this material now lives in the main manuscript.}
+We had originally split the empirical evidence (Pillars A--E) and the methodological CMB lattice surrogate (the original manuscript) into two preprints (Zenodo \texttt{19218674} and \texttt{19429778}) for length reasons.
+The reviewer's comments make clear that, evaluated on the CMB lattice slice alone, the framework's quantitative case is weak.
+We therefore consolidate the empirical pillars into the same paper, so that the framework can be evaluated on the totality of the cross-scale evidence rather than on any single observational probe.
+Of the five pillars, two are positive (Pillars~C and~E), two are null at current sensitivity (Pillars~B and~D), and one is suggestive but inconclusive (Pillar~A).
+We do not claim the cross-scale evidence \emph{establishes} the framework; we claim only that no current observation \emph{rules it out}, and that the JWST $H_0$ pillar provides a useful $1/\ln^2$ scaling that connects to the standing Hubble tension.
+
+\textbf{New material added in this revision (relative to the version reviewed):}
+\begin{itemize}[leftmargin=2em]
+  \item Five new notebooks: \texttt{notebooks/15\_alpha\_drift\_quasar.ipynb}, \texttt{16\_jwst\_h0\_anchors.ipynb}, \texttt{17\_quasar\_293\_fit.ipynb}, \texttt{18\_camb\_fisher.ipynb}, \texttt{19\_late\_time\_stability.ipynb}.
+  \item Five new figures: \texttt{fig18\_alpha\_drift\_quasar.pdf} through \texttt{fig22\_late\_stability.pdf}.
+  \item One new section: \S 4.13 \textit{Cross-scale empirical pillars beyond the CMB lattice}.
+  \item Abstract, introduction main-findings list, and conclusion are reorganized around the five pillars rather than around the CMB lattice slice alone.
+  \item References \texttt{Rosenband2008}, \texttt{King2012}, \texttt{RiessSH0ES2022}, \texttt{RiessJWST2024} added to \texttt{references.bib}.
+\end{itemize}
+
 We are grateful to the reviewer for the level of detail in the report, which directly enabled this rewrite.
 
 \end{document}

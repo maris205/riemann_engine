@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  23 MAY 2026 01:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  23 MAY 2026 07:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -542,7 +542,7 @@ Overfull \hbox (1.36548pt too wide) in paragraph at lines 75--77
  []
 
 [8]
-<../figures//fig14_symplecticity.pdf, id=278, 489.23196pt x 166.26366pt>
+<../figures//fig14_symplecticity.pdf, id=293, 489.23196pt x 166.26366pt>
 File: ../figures//fig14_symplecticity.pdf Graphic file (type pdf)
 <use ../figures//fig14_symplecticity.pdf>
 Package pdftex.def Info: ../figures//fig14_symplecticity.pdf  used on input lin
@@ -564,27 +564,27 @@ Overfull \hbox (22.02074pt too wide) in paragraph at lines 47--48
 
 [11]) (./sections/4_results.tex [12] (../figures/TABLE_gaussianity.tex)
 [13]
-<../figures//fig2_ablation.pdf, id=420, 497.00568pt x 332.72432pt>
+<../figures//fig2_ablation.pdf, id=435, 497.00568pt x 332.72432pt>
 File: ../figures//fig2_ablation.pdf Graphic file (type pdf)
 <use ../figures//fig2_ablation.pdf>
 Package pdftex.def Info: ../figures//fig2_ablation.pdf  used on input line 33.
 (pdftex.def)             Requested size: 390.0pt x 261.08762pt.
  [14 <../figures//fig2_ablation.pdf>]
-<../figures//fig3_acoustic_peaks.pdf, id=498, 225.63347pt x 173.29314pt>
+<../figures//fig3_acoustic_peaks.pdf, id=513, 225.63347pt x 173.29314pt>
 File: ../figures//fig3_acoustic_peaks.pdf Graphic file (type pdf)
 <use ../figures//fig3_acoustic_peaks.pdf>
 Package pdftex.def Info: ../figures//fig3_acoustic_peaks.pdf  used on input lin
 e 57.
 (pdftex.def)             Requested size: 390.0pt x 299.5418pt.
  (../figures/TABLE_peaks.tex) [15 <../figures//fig3_acoustic_peaks.pdf>]
-<../figures//fig5_freezeout.pdf, id=551, 432.08623pt x 276.15286pt>
+<../figures//fig5_freezeout.pdf, id=566, 432.08623pt x 276.15286pt>
 File: ../figures//fig5_freezeout.pdf Graphic file (type pdf)
 <use ../figures//fig5_freezeout.pdf>
 Package pdftex.def Info: ../figures//fig5_freezeout.pdf  used on input line 102
 .
 (pdftex.def)             Requested size: 390.0pt x 249.26424pt.
  [16] [17 <../figures//fig5_freezeout.pdf>]
-<../figures//fig4_twin_experiment.pdf, id=633, 491.11859pt x 187.57515pt>
+<../figures//fig4_twin_experiment.pdf, id=648, 491.11859pt x 187.57515pt>
 File: ../figures//fig4_twin_experiment.pdf Graphic file (type pdf)
 <use ../figures//fig4_twin_experiment.pdf>
 Package pdftex.def Info: ../figures//fig4_twin_experiment.pdf  used on input li
@@ -592,21 +592,21 @@ ne 125.
 (pdftex.def)             Requested size: 390.0pt x 148.96124pt.
 
 [18 <../figures//fig4_twin_experiment.pdf>]
-<../figures//fig8_planck_comparison.pdf, id=736, 497.94029pt x 373.87682pt>
+<../figures//fig8_planck_comparison.pdf, id=751, 497.94029pt x 373.87682pt>
 File: ../figures//fig8_planck_comparison.pdf Graphic file (type pdf)
 <use ../figures//fig8_planck_comparison.pdf>
 Package pdftex.def Info: ../figures//fig8_planck_comparison.pdf  used on input 
 line 150.
 (pdftex.def)             Requested size: 390.0pt x 292.82648pt.
  [19 <../figures//fig8_planck_comparison.pdf>]
-<../figures//fig10_grf_baseline.pdf, id=746, 485.89528pt x 178.266pt>
+<../figures//fig10_grf_baseline.pdf, id=761, 485.89528pt x 178.266pt>
 File: ../figures//fig10_grf_baseline.pdf Graphic file (type pdf)
 <use ../figures//fig10_grf_baseline.pdf>
 Package pdftex.def Info: ../figures//fig10_grf_baseline.pdf  used on input line
  188.
 (pdftex.def)             Requested size: 390.0pt x 143.08899pt.
  [20]
-<../figures//fig12_convergence.pdf, id=753, 484.69081pt x 165.9801pt>
+<../figures//fig12_convergence.pdf, id=768, 484.69081pt x 165.9801pt>
 File: ../figures//fig12_convergence.pdf Graphic file (type pdf)
 <use ../figures//fig12_convergence.pdf>
 Package pdftex.def Info: ../figures//fig12_convergence.pdf  used on input line 
@@ -618,19 +618,19 @@ Overfull \hbox (4.55922pt too wide) in paragraph at lines 233--245
  []
 
 [22 <../figures//fig12_convergence.pdf>]
-<../figures//fig17_camb_benchmark.pdf, id=772, 4302.8557pt x 381.7078pt>
+<../figures//fig17_camb_benchmark.pdf, id=787, 4302.8557pt x 381.7078pt>
 File: ../figures//fig17_camb_benchmark.pdf Graphic file (type pdf)
 <use ../figures//fig17_camb_benchmark.pdf>
 Package pdftex.def Info: ../figures//fig17_camb_benchmark.pdf  used on input li
 ne 254.
 (pdftex.def)             Requested size: 390.0pt x 34.59683pt.
-<../figures//fig7_sensitivity.pdf, id=774, 491.06146pt x 289.0825pt>
+<../figures//fig7_sensitivity.pdf, id=789, 491.06146pt x 289.0825pt>
 File: ../figures//fig7_sensitivity.pdf Graphic file (type pdf)
 <use ../figures//fig7_sensitivity.pdf>
 Package pdftex.def Info: ../figures//fig7_sensitivity.pdf  used on input line 2
 67.
 (pdftex.def)             Requested size: 390.0pt x 229.59894pt.
-<../figures//fig6_ensemble.pdf, id=775, 492.1587pt x 144.29909pt>
+<../figures//fig6_ensemble.pdf, id=790, 492.1587pt x 144.29909pt>
 File: ../figures//fig6_ensemble.pdf Graphic file (type pdf)
 <use ../figures//fig6_ensemble.pdf>
 Package pdftex.def Info: ../figures//fig6_ensemble.pdf  used on input line 277.
@@ -643,27 +643,28 @@ Overfull \hbox (1.25151pt too wide) in paragraph at lines 300--302
 ar-get: the Planck
  []
 
-<../figures//fig13_heldout.pdf, id=928, 482.82492pt x 147.76926pt>
+<../figures//fig13_heldout.pdf, id=943, 482.82492pt x 147.76926pt>
 File: ../figures//fig13_heldout.pdf Graphic file (type pdf)
 <use ../figures//fig13_heldout.pdf>
 Package pdftex.def Info: ../figures//fig13_heldout.pdf  used on input line 319.
 
 (pdftex.def)             Requested size: 390.0pt x 119.36098pt.
 [25] [26 <../figures//fig13_heldout.pdf>]
-<../figures//fig17_3d_power_spectrum.pdf, id=991, 231.21375pt x 187.44417pt>
+<../figures//fig17_3d_power_spectrum.pdf, id=1006, 231.21375pt x 187.44417pt>
 File: ../figures//fig17_3d_power_spectrum.pdf Graphic file (type pdf)
 <use ../figures//fig17_3d_power_spectrum.pdf>
 Package pdftex.def Info: ../figures//fig17_3d_power_spectrum.pdf  used on input
  line 343.
 (pdftex.def)             Requested size: 390.0pt x 316.20543pt.
-<../figures//fig15_degeneracy_breaking.pdf, id=992, 408.80003pt x 382.81306pt>
+<../figures//fig15_degeneracy_breaking.pdf, id=1007, 408.80003pt x 382.81306pt>
+
 File: ../figures//fig15_degeneracy_breaking.pdf Graphic file (type pdf)
 <use ../figures//fig15_degeneracy_breaking.pdf>
 Package pdftex.def Info: ../figures//fig15_degeneracy_breaking.pdf  used on inp
 ut line 351.
 (pdftex.def)             Requested size: 390.0pt x 365.21826pt.
-<../figures//fig9_inverse_reconstruction.pdf, id=993, 515.28508pt x 367.85585pt
->
+<../figures//fig9_inverse_reconstruction.pdf, id=1008, 515.28508pt x 367.85585p
+t>
 File: ../figures//fig9_inverse_reconstruction.pdf Graphic file (type pdf)
 <use ../figures//fig9_inverse_reconstruction.pdf>
 Package pdftex.def Info: ../figures//fig9_inverse_reconstruction.pdf  used on i
@@ -671,22 +672,63 @@ nput line 360.
 (pdftex.def)             Requested size: 390.0pt x 278.41707pt.
  [27 <../figures//fig17_3d_power_spectrum.pdf>] [28 <../figures//fig15_degenera
 cy_breaking.pdf>] [29 <../figures//fig9_inverse_reconstruction.pdf>]
-<../figures//fig16_cosmic_timeline.pdf, id=1174, 1858.2423pt x 1069.99872pt>
+<../figures//fig16_cosmic_timeline.pdf, id=1189, 1858.2423pt x 1069.99872pt>
 File: ../figures//fig16_cosmic_timeline.pdf Graphic file (type pdf)
 <use ../figures//fig16_cosmic_timeline.pdf>
 Package pdftex.def Info: ../figures//fig16_cosmic_timeline.pdf  used on input l
 ine 399.
 (pdftex.def)             Requested size: 390.0pt x 224.55942pt.
-) (./sections/5_discussion.tex [30] [31 <../figures//fig16_cosmic_timeline.pdf>
-] [32]) (./sections/6_limitations.tex [33]
-[34]) (./sections/7_conclusion.tex
-Overfull \hbox (7.75153pt too wide) in paragraph at lines 4--6
-[]\OT1/cmr/m/n/12 We ex-plored whether a weakly damped St^^?ormer--Verlet lat-t
-ice with $1\OML/cmm/m/it/12 = [][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m
-/n/12 )$
+ [30] [31 <../figures//fig16_cosmic_timeline.pdf>]
+<../figures//fig18_alpha_drift_quasar.pdf, id=1339, 446.35023pt x 330.3937pt>
+File: ../figures//fig18_alpha_drift_quasar.pdf Graphic file (type pdf)
+<use ../figures//fig18_alpha_drift_quasar.pdf>
+Package pdftex.def Info: ../figures//fig18_alpha_drift_quasar.pdf  used on inpu
+t line 429.
+(pdftex.def)             Requested size: 390.0pt x 288.68542pt.
+<../figures//fig20_quasar_293_fit.pdf, id=1342, 499.38857pt x 390.92926pt>
+File: ../figures//fig20_quasar_293_fit.pdf Graphic file (type pdf)
+<use ../figures//fig20_quasar_293_fit.pdf>
+Package pdftex.def Info: ../figures//fig20_quasar_293_fit.pdf  used on input li
+ne 444.
+(pdftex.def)             Requested size: 390.0pt x 305.30536pt.
+ [32] [33 <../figures//fig18_alpha_drift_quasar.pdf>] [34 <../figures//fig20_qu
+asar_293_fit.pdf>]
+<../figures//fig19_jwst_h0_anchors.pdf, id=1530, 567.258pt x 387.45372pt>
+File: ../figures//fig19_jwst_h0_anchors.pdf Graphic file (type pdf)
+<use ../figures//fig19_jwst_h0_anchors.pdf>
+Package pdftex.def Info: ../figures//fig19_jwst_h0_anchors.pdf  used on input l
+ine 460.
+(pdftex.def)             Requested size: 390.0pt x 266.37967pt.
+ [35 <../figures//fig19_jwst_h0_anchors.pdf>]
+<../figures//fig21_camb_fisher.pdf, id=1676, 486.72879pt x 559.88922pt>
+File: ../figures//fig21_camb_fisher.pdf Graphic file (type pdf)
+<use ../figures//fig21_camb_fisher.pdf>
+Package pdftex.def Info: ../figures//fig21_camb_fisher.pdf  used on input line 
+476.
+(pdftex.def)             Requested size: 390.0pt x 448.62106pt.
+<../figures//fig22_late_stability.pdf, id=1678, 494.46858pt x 611.15515pt>
+File: ../figures//fig22_late_stability.pdf Graphic file (type pdf)
+<use ../figures//fig22_late_stability.pdf>
+Package pdftex.def Info: ../figures//fig22_late_stability.pdf  used on input li
+ne 496.
+(pdftex.def)             Requested size: 390.0pt x 482.06123pt.
+
+Underfull \hbox (badness 1122) in paragraph at lines 499--499
+[]\OT1/cmr/m/n/10 Figure 21: []Late-time sta-bil-ity scan for the DSC $^^C(\OML
+/cmm/m/it/10 t\OT1/cmr/m/n/10 )$. All five sta-bil-ity cri-te-
  []
 
-[35])
+
+Underfull \hbox (badness 1661) in paragraph at lines 499--499
+\OT1/cmr/m/n/10 ria (C1--C5) pass over $\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \
+OT1/cmr/m/n/10 [10[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$ and $\OML/cmm/m/it/1
+0 ^^M[] \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
+ 10]$. Re-pro-ducible from
+ []
+
+) (./sections/5_discussion.tex [36] [37 <../figures//fig21_camb_fisher.pdf>]
+[38 <../figures//fig22_late_stability.pdf>] [39]) (./sections/6_limitations.tex
+[40]) (./sections/7_conclusion.tex [41] [42])
 Overfull \hbox (121.67831pt too wide) in paragraph at lines 51--53
 \OT1/cmtt/m/n/12 maris205 / riemann _ engine$[]\OT1/cmr/m/n/12 . The Planck SMI
 CA map (\OT1/cmtt/m/n/12 COM[]CMB[]IQU-smica[]2048[]R3.00[]full.fits\OT1/cmr/m/
@@ -694,64 +736,66 @@ n/12 )
  []
 
 (./sections/A_appendix.tex
-<../figures//fig1_hero.pdf, id=1379, 491.42409pt x 382.8246pt>
+<../figures//fig1_hero.pdf, id=1990, 491.42409pt x 382.8246pt>
 File: ../figures//fig1_hero.pdf Graphic file (type pdf)
 <use ../figures//fig1_hero.pdf>
 Package pdftex.def Info: ../figures//fig1_hero.pdf  used on input line 8.
 (pdftex.def)             Requested size: 390.0pt x 303.8242pt.
-) (./main_elsevier.bbl [36] [37 <../figures//fig1_hero.pdf>] [38]
+) (./main_elsevier.bbl [43] [44 <../figures//fig1_hero.pdf>] [45]
 Underfull \hbox (badness 2376) in paragraph at lines 84--88
 \OT1/cmr/m/n/12 asymp-totics, SIAM Re-view 41 (1999) 236--266.  []$\OT1/cmtt/m/
 n/12 doi : 10 . 1137 /
  []
 
-[39] [40]
-Underfull \hbox (badness 1142) in paragraph at lines 214--218
+[46] [47]
+Underfull \hbox (badness 1142) in paragraph at lines 238--242
 \OT1/cmr/m/n/12 set, Phys-i-cal Re-view Let-ters 59 (1987) 521--524.  []$\OT1/c
 mtt/m/n/12 doi : 10 . 1103 /
  []
 
-) [41] (./main_elsevier.aux)
+) [48] (./main_elsevier.aux)
 Package rerunfilecheck Info: File `main_elsevier.out' has not changed.
-(rerunfilecheck)             Checksum: BFD921E1A0FD04A75744E577A0796B3C;6450.
+(rerunfilecheck)             Checksum: 2AECB8407647ADF6498946997EDCF9AF;6787.
  ) 
 Here is how much of TeX's memory you used:
- 13635 strings out of 480171
- 222869 string characters out of 5894489
- 517908 words of memory out of 5000000
- 31175 multiletter control sequences out of 15000+600000
- 483444 words of font info for 80 fonts, out of 8000000 for 9000
+ 13723 strings out of 480171
+ 225236 string characters out of 5894489
+ 518739 words of memory out of 5000000
+ 31233 multiletter control sequences out of 15000+600000
+ 483612 words of font info for 81 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 70i,10n,76p,1297b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,10n,76p,1297b,571s stack positions out of 5000i,500n,10000p,200000b,80000s
  </root/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_elsevier.pdf (41 pages, 8972956 bytes).
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main_elsevier.pdf (48 pages, 9225573 bytes).
 PDF statistics:
- 1692 PDF objects out of 1728 (max. 8388607)
- 844 compressed objects within 9 object streams
- 181 named destinations out of 1000 (max. 500000)
- 318 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2321 PDF objects out of 2487 (max. 8388607)
+ 1004 compressed objects within 11 object streams
+ 205 named destinations out of 1000 (max. 500000)
+ 351 words of extra memory for PDF output out of 10000 (max. 10000000)
 
