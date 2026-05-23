@@ -276,4 +276,33 @@ L.~Bombelli, J.~Lee, D.~Meyer, R.~D. Sorkin, {Space-time as a causal set},
 \newblock \href {https://doi.org/10.1103/PhysRevLett.59.521}
   {\path{doi:10.1103/PhysRevLett.59.521}}.
 
+\bibitem{Dainotti2021}
+M.~G. Dainotti, B.~De~Simone, T.~Schiavone, G.~Montani, E.~Rinaldi,
+  G.~Lambiase, {On the Hubble Constant Tension in the SNe Ia Pantheon Sample},
+  The Astrophysical Journal 912 (2021) 150.
+\newblock \href {https://doi.org/10.3847/1538-4357/abeb73}
+  {\path{doi:10.3847/1538-4357/abeb73}}.
+
+\bibitem{Krishnan2020}
+C.~Krishnan, E.~{\'O}~Colg{\'a}in, M.~M. Sheikh-Jabbari, T.~Yang, {Is there an
+  early Universe solution to Hubble tension?}, Physical Review D 102 (2020)
+  103525.
+\newblock \href {https://doi.org/10.1103/PhysRevD.102.103525}
+  {\path{doi:10.1103/PhysRevD.102.103525}}.
+
+\bibitem{Kazantzidis2020}
+L.~Kazantzidis, L.~Perivolaropoulos, {Hints of a local matter underdensity or
+  modified gravity in the low z Pantheon data}, Physical Review D 102 (2020)
+  023520.
+\newblock \href {https://doi.org/10.1103/PhysRevD.102.023520}
+  {\path{doi:10.1103/PhysRevD.102.023520}}.
+
+\bibitem{Colgain2022}
+E.~{\'O}~Colg{\'a}in, M.~M. Sheikh-Jabbari, R.~Solomon, G.~Bargiacchi,
+  S.~Capozziello, M.~G. Dainotti, D.~Stojkovic, {Revealing intrinsic flat
+  $\Lambda$CDM biases with standardizable candles}, Physical Review D 106
+  (2022) L041301.
+\newblock \href {https://doi.org/10.1103/PhysRevD.106.L041301}
+  {\path{doi:10.1103/PhysRevD.106.L041301}}.
+
 \end{thebibliography}

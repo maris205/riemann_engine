@@ -26,6 +26,33 @@ Lattice cosmology approaches~\citep{Regge1961} discretize Einstein's equations d
 The DSC lattice differs from both: it does not attempt to recover general relativity from the lattice, and it should not be read as an alternative formulation of cosmology.
 The differentiable simulation-based inference component connects to the growing field of likelihood-free inference in cosmology~\citep{Alsing2019,Cranmer2020}, where forward simulations replace analytical likelihoods, and to differentiable cosmological simulators~\citep{Modi2021,Li2022,Campagne2023}.
 
+\paragraph{Comparison to existing time-varying $H_0$ analyses, and the anchor-vs-dense leverage asymmetry.}
+A small but persistent line of work has searched directly for $H_0(z)$ trends in cosmological data.
+Dainotti~\emph{et al.}~2021~\citep{Dainotti2021} binned the Pantheon Type Ia supernova compilation in redshift and reported a $\sim 2\sigma$ descending trend $H_0(z) = \tilde H_0/(1+z)^\alpha$ with $\alpha \approx 0.01$.
+Krishnan~\emph{et al.}~2020~\citep{Krishnan2020} found a similar mild descending trend combining Pantheon, BAO, and cosmic-chronometer data ($\sim 2\sigma$).
+Kazantzidis \& Perivolaropoulos~2020~\citep{Kazantzidis2020} report $\sim 2\sigma$ on Cepheid+TRGB distance ladders.
+Colg{\'a}in~\emph{et al.}~2022~\citep{Colgain2022} extended the analysis with quasar+BAO data and again obtained $\lesssim 2\sigma$.
+The Hubble-tension model census of Schöneberg~\emph{et al.}~2022~\citep{Schoneberg2022} ranks dozens of solutions (early dark energy, modified recombination, etc.) and notes that none currently survive joint multi-probe scrutiny.
+
+Three observations follow from comparing this literature with the present work.
+
+(i)~\emph{Functional form.} Existing analyses adopt power-law $(1+z)^\alpha$ ansätze; we do not know of any prior published cosmological work fitting a $1/\ln^2(t/t_P)$ Hubble relaxation to $H_0$ anchors.
+The functional form here is independent of the literature ansätze, motivated by the Riemann-zeta-zero spectral density (\cref{sec:dsc}) and by the slowness requirement of \cref{sec:pillarN}.
+
+(ii)~\emph{Leverage choice.} The literature analyses operate exclusively within the $z < 2.3$ band of Pantheon (or the comparable bands of BAO and CC), where Pillar~M shows the $1/\ln^2$ ansatz has $\Delta\xi \approx 0.10$ of dynamic range.
+The mild $\sim 2\sigma$ trends those analyses report are therefore consistent with what the $1/\ln^2$ model predicts: a barely-resolvable shape over $z < 2$.
+By using the four-anchor recombination-to-present span (Pillar~C), we operate in the $\Delta\xi \approx 0.84$ regime where the same ansatz has 8.4$\times$ the leverage---hence $R^2 = 0.91, \chi^2/{\rm dof} = 0.28$ rather than $\sim 2\sigma$.
+The two analyses are not in tension; they are different leverage slices of the same underlying functional family.
+
+(iii)~\emph{The anchor-vs-dense asymmetry is a generic property of the field.}
+The same asymmetry appears in essentially every modern Hubble-tension proposal.
+Early Dark Energy~\citep{Schoneberg2022} resolves the SH0ES--Planck anchor difference by modifying recombination physics, but is in tension with low-redshift growth-rate measurements ($\sigma_8$ tension; the so-called yin-yang problem).
+CPL ($w_0w_a$) achieves a marginal $\Delta {\rm BIC} = -2.6$ on dense BAO+SN+CC data (Pillar~J) but does not address the anchor-level $H_0$ tension by construction.
+Modified-recombination scenarios match Planck but introduce tensions elsewhere.
+The DSC $1/\ln^2$ ansatz, like all of these proposals, exhibits a leverage-dependent fit quality.
+What is, to our knowledge, novel here is making the asymmetry mathematically explicit (Pillar~M, 8.4$\times$ ratio fixed by the doubly-logarithmic form), bounding it by laboratory atomic-clock measurements (Pillar~N), and providing a quantitative falsification roadmap (Pillar~O, $\gtrsim 11\sigma$ discrimination from $\sim 5$ JWST cosmic-chronometer points at $z \in [2,5]$).
+Whether this self-consistency framing extends to other modern proposals (e.g.\ EDE) is, in our view, a worthwhile direction for the field.
+
 \paragraph{Forward identifiability vs.\ field-level underdetermination.}
 The forward twin experiment (\cref{sec:twin}) optimizes 3 global physics parameters against $\sim 75$ power-spectrum bins, an overdetermined system that recovers the parameters up to a $c^2$--$\kopt$ degeneracy direction.
 The voxel-level reconstruction (\cref{sec:inverse}), in contrast, attempts to recover $\sim 10^6$ free parameters from $\sim 10^4$ sky pixels.
