@@ -20,14 +20,16 @@ Concretely, this requires $\det DF_n = 1$ (Liouville's theorem on the lattice), 
 
 The non-autonomous character enters through the explicit $n$-dependence of $F_n$.  Following the theory of non-autonomous dynamical systems~\citep{Kloeden2011}, the sequence $\{F_n\}_{n \in \N}$ is viewed as a process (or two-parameter semigroup) and studied via its pullback attractors.
 
-\paragraph{Assumption 3 (Berry--Keating spectral correspondence).}
-The quantized dynamics on the symplectic lattice belong to the GUE universality class of random matrix theory~\citep{Bohigas1984}.
-The spectral density of the lattice Hamiltonian then satisfies the Riemann--von Mangoldt formula~\citep{BerryKeating1999}:
+\paragraph{Assumption 3 ($1/\ln$ spectral density of the lattice Hamiltonian).}
+We posit that the spectral density of the (effective) lattice Hamiltonian satisfies a logarithmic counting law of the Riemann--von Mangoldt form,
 \begin{equation}
-  \rho(E) = \frac{1}{2\pi}\ln\!\left(\frac{E}{2\pi}\right) + O\!\left(\frac{1}{E}\right)\,.
+  \rho(E) = \frac{1}{2\pi}\ln\!\left(\frac{E}{2\pi}\right) + O\!\left(\frac{1}{E}\right)\,,
   \label{eq:rvm}
 \end{equation}
-This assumption is motivated by three lines of evidence: (i) the Berry--Keating program, which seeks a self-adjoint operator whose eigenvalues are the Riemann zeta zeros and whose classical limit is a chaotic Hamiltonian with symplectic structure; (ii) the numerical spectral isomorphism between period-doubling renormalization flow and Riemann zero statistics~\citep{Wang2026}; and (iii) the GUE level-spacing distribution observed in area-preserving H\'enon maps at the onset of chaos.
+which is mathematically the same form satisfied by the Riemann zeta zeros.
+This is an \emph{ansatz} on the spectral density, not a derivation: we adopt it because it produces a closed-form $1/\ln^2$ cooling law (\cref{sec:cooling_derivation}) that is the central testable hypothesis of this paper.
+We do not engage with the broader question of whether a physical Hamiltonian exists whose eigenvalues are literally the Riemann zeros (the Hilbert--P\'olya program), nor with experimental programs aimed at realizing such a spectrum in laboratory systems.
+The numerical spectral observation that period-doubling renormalization flow exhibits a level-counting law of the same logarithmic form~\citep{Wang2026} provides additional motivation for adopting \cref{eq:rvm} as the working ansatz.
 
 \subsection{Derivation of the $1/\ln^2$ cooling law}
 \label{sec:cooling_derivation}
