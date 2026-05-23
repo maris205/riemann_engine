@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main_elsevier.aux
 The style file: elsarticle-num.bst
 Database file #1: references.bib
-You've used 43 entries,
+You've used 44 entries,
             2952 wiz_defined-function locations,
-            980 strings with 13992 characters,
-and the built_in function-call counts, 13323 in all, are:
-= -- 1265
-> -- 521
+            988 strings with 14216 characters,
+and the built_in function-call counts, 13681 in all, are:
+= -- 1305
+> -- 531
 < -- 5
-+ -- 201
-- -- 158
-* -- 1038
-:= -- 1874
-add.period$ -- 85
-call.type$ -- 43
-change.case$ -- 43
++ -- 205
+- -- 161
+* -- 1073
+:= -- 1921
+add.period$ -- 87
+call.type$ -- 44
+change.case$ -- 44
 chr.to.int$ -- 12
-cite$ -- 43
-duplicate$ -- 353
-empty$ -- 1418
-format.name$ -- 186
-if$ -- 3392
+cite$ -- 44
+duplicate$ -- 361
+empty$ -- 1454
+format.name$ -- 190
+if$ -- 3481
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 47
-newline$ -- 179
-num.names$ -- 43
-pop$ -- 222
+int.to.str$ -- 44
+missing$ -- 48
+newline$ -- 183
+num.names$ -- 44
+pop$ -- 225
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 878
+skip$ -- 900
 stack$ -- 0
-substring$ -- 566
-swap$ -- 137
+substring$ -- 591
+swap$ -- 142
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 92
-width$ -- 45
-write$ -- 432
+while$ -- 95
+width$ -- 46
+write$ -- 443

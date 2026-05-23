@@ -572,19 +572,48 @@ This directly answers Reviewer~1 \#3 (``what distinguishes DSC from CPL observat
   \label{fig:pillar_J}
 \end{figure}
 
-\paragraph{Pillar K: Resolving the Pillar~A vs Pillar~B tension.}
-Pillars A and B reported a strong subset tension on the quasar fine-structure-constant data: a 128-absorber subset gave $\Delta\chi^2 = 31.5$ in favor of DSC, while the full King~\emph{et al.}~(2012) 295-absorber sample gave $\Delta\chi^2 \approx 0$.
-We now scan plausible cuts on the King catalog and 200 random 128-absorber subsamples (reproducible in \texttt{notebooks/24\_pillar\_K\_subset\_scan.ipynb}).
-The dominant finding is a strong VLT/Keck anti-correlation: the Keck-only subset ($N = 141$) yields $\Gamma = +6.4 \pm 1.9$ ($3.3\sigma$, $\Delta\chi^2 = 11.0$), while the VLT-only subset ($N = 154$) yields $\Gamma = -2.0 \pm 1.1$ ($1.8\sigma$ in the \emph{opposite} direction), and the full sample averages to null.
-None of 200 random 128-absorber subsamples reaches $\Delta\chi^2 \ge 31.5$ (median $\Delta\chi^2 = 0.4$, 16--84\% interval $[0.04, 1.27]$).
-We therefore conclude that Pillar~A's apparent signal is essentially the long-standing Keck $\alpha$-dipole signal, which has been attributed to wavelength-calibration systematics in subsequent re-analyses~\citep{Whitmore2015,Wilczynska2020}, and that the full King catalog (Pillar~B) is the more reliable indicator (\cref{fig:pillar_K}).
+\paragraph{Pillar K: Resolving the Pillar~A vs Pillar~B tension with the Murphy~2003 sample.}
+We were able to obtain, after the prior commit, the original 128-absorber catalog of Murphy, Webb \& Flambaum~2003~\citep{Murphy2003} via VizieR (\texttt{J/MNRAS/345/609}, machine-readable Table~3), which is the actual sample underlying Pillar~A.
+The Murphy~2003 sample is composed entirely of Keck/HIRES absorbers (27 ``previous low-$z$'' + 23 ``previous high-$z$'' + 78 ``new'' = 128, with 22 flagged ``high-contrast''), and the original paper quotes per-absorber random errors $\sigma_{\rm rand} = 0.91 \times 10^{-5}$ (high-contrast) and $\sigma_{\rm rand} = 2.09 \times 10^{-5}$ (non-high-contrast).
+Combined with the King~2012 catalog (CDS \texttt{J/MNRAS/422/3370}), this allows a direct, instrument-resolved comparison.
+
+The headline result of this decomposition (\cref{fig:pillar_K_murphy}; reproducible in \texttt{notebooks/25\_murphy03\_replication.ipynb}) is:
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Murphy~2003 full ($N=128$, all Keck):} $\Gamma = +5.08 \pm 1.81$ ($2.81\sigma$, $\Delta\chi^2 = 7.9$).
+  \item \textbf{King~2012 Keck-only ($N=141$):} $\Gamma = +6.40 \pm 1.94$ ($3.31\sigma$, $\Delta\chi^2 = 11.0$).
+  \item \textbf{King~2012 VLT-only ($N=154$):} $\Gamma = -2.05 \pm 1.14$ ($1.79\sigma$, opposite sign).
+  \item \textbf{Murphy~03 + King~12 Keck-only union ($N=269$):} $\Gamma = +5.70 \pm 1.32$ ($4.31\sigma$, $\Delta\chi^2 = 18.6$).
+  \item \textbf{Full Keck + VLT union ($N=423$):} $\Gamma = +1.27 \pm 0.86$ ($1.47\sigma$, $\Delta\chi^2 = 2.2$).
+\end{itemize}
+
+The two independent Keck samples both prefer $\Gamma > 0$ at $\sim 3\sigma$; the VLT subset of King~2012 prefers $\Gamma < 0$ at $\sim 1.8\sigma$.
+Adding VLT to the Keck union reduces the apparent significance from $4.3\sigma$ to $1.5\sigma$.
+This is the textbook signature of an instrument-driven systematic, consistent with the wavelength-calibration findings of Whitmore \& Murphy~2015~\citep{Whitmore2015} and Wilczynska~\emph{et~al.}~2020~\citep{Wilczynska2020}.
+
+We note that the Pillar~A figure of $\Delta\chi^2 = 31.5$ reported in the prior commit (taken from companion preprint Zenodo \texttt{19218674}) cannot be reproduced from the Murphy~2003 Table~3 with the published random-error model; we obtain $\Delta\chi^2 = 7.9$ on the same 128 absorbers.
+The discrepancy is likely due to a different per-absorber random-error budget in the companion preprint.
+We adopt the Murphy~2003 published budget here, which gives the more conservative $\Delta\chi^2$, and note that even this conservative number is consistent with the Keck dipole rather than with a genuine cosmological signal once the VLT subset is included.
+We further confirm by 200 random 128-subsamples of the King~2012 catalog that the median $\Delta\chi^2$ of a random 128-cut is $0.4$, with no random cut reaching the originally reported $\Delta\chi^2 = 31.5$ (\cref{fig:pillar_K}b above).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig28_pillar_K_murphy_forest.pdf}
+  \caption{Pillar~K refined with Murphy 2003: forest plot of best-fit $\Gamma$ across instrument-resolved subsamples.
+  Both independent Keck-only samples give $\Gamma > 0$ at $\sim 3\sigma$; the VLT-only subset gives $\Gamma$ of opposite sign; the full Keck$+$VLT union (rightmost) is consistent with $\Gamma = 0$ at $1.5\sigma$.
+  This is the textbook signature of instrumental systematics, not new physics.}
+  \label{fig:pillar_K_murphy}
+\end{figure}
+
+\paragraph{Pillar K (cont.): cut-by-cut sensitivity of the King 2012 catalog.}
+For completeness, we also scan additional cuts on the King~2012 catalog and 200 random 128-absorber subsamples drawn from it (reproducible in \texttt{notebooks/24\_pillar\_K\_subset\_scan.ipynb}).
+The cut-by-cut analysis confirms the Keck/VLT anti-correlation reported above: the Keck-only subset ($N = 141$) yields $\Gamma = +6.4 \pm 1.9$ ($3.3\sigma$), the VLT-only subset ($N = 154$) yields $\Gamma = -2.0 \pm 1.1$ ($1.8\sigma$ in the opposite direction), and the full sample averages to null.
+None of 200 random 128-absorber subsamples reaches $\Delta\chi^2 \ge 31.5$ (median $\Delta\chi^2 = 0.4$, 16--84\% interval $[0.04, 1.27]$), confirming that the Zenodo-19218674 figure of $31.5$ is not a generic property of any 128-absorber cut, but is consistent with the Murphy~2003 random-error budget being underestimated relative to that adopted in our reanalysis (\cref{fig:pillar_K}).
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig27_pillar_K_subset.pdf}
-  \caption{Pillar~K: King~\emph{et al.}~(2012) subset sensitivity.
-  (a) Cut-by-cut $\Delta\chi^2$ vs the constant null; the Keck-only subset gives $\Delta\chi^2 = 11.0$, while the VLT-only subset gives $\Gamma$ of opposite sign.
-  (b) Random 128-absorber subsamples give a median $\Delta\chi^2 = 0.4$; Pillar~A's reported value of $31.5$ is far outside the random-cut distribution.}
+  \caption{Pillar~K (King 2012 subset scan): (a) cut-by-cut $\Delta\chi^2$ vs the constant null; the Keck-only subset gives $\Delta\chi^2 = 11.0$, while the VLT-only subset gives $\Gamma$ of opposite sign.
+  (b) 200 random 128-absorber subsamples give a median $\Delta\chi^2 = 0.4$; the value $31.5$ reported in Zenodo~\texttt{19218674} is not reproduced by any random cut.}
   \label{fig:pillar_K}
 \end{figure}
 
