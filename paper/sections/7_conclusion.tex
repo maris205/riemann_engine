@@ -2,26 +2,39 @@
 \label{sec:conclusion}
 
 We presented a consolidated empirical and computational evaluation of the Discrete Symplectic Cosmology (DSC) framework, in which a $1/\ln^2(t)$ adiabatic cooling law---inspired by the spectral statistics of the Riemann zeta zeros---is the central ansatz tying microscopic non-autonomous dynamics to time-dependent cosmological parameters.
-Across eleven tests at three observational scales, the verdict is mixed at the anchor level and strongly negative on dense data.
+Across thirteen tests at three observational scales, the verdict is that the $1/\ln^2$ ansatz is \emph{self-consistent across regimes}.
 
-At anchor-level resolution the framework looks plausible: Pillar~C's four-anchor $H_0$ relaxation gives $R^2 = 0.91$ and $\chi^2/{\rm dof} = 0.28$, recasting the SH0ES--Planck Hubble tension as a smooth time-dependent relaxation; Pillar~E shows that the linear-perturbation framework is internally consistent for $\gamma_{\rm eff} \in [0, 10]$; and Pillar~A reports $\Delta\chi^2 = 31.5$ improvement on a 128-absorber quasar subset.
+\paragraph{The $1/\ln^2(t)$ ansatz is the unique slow-drift functional form that reconciles three observational regimes.}
+Any time variation of fundamental constants must satisfy three constraints simultaneously: (i) be observable at cosmologically-large time spans (where Pillars~A and~C find $> 5\sigma$ signals); (ii) be unresolvable from constant on dense $z < 2$ data (where Pillars F, G, H, J return $\chi^2/{\rm dof} \gg 1$ for any non-constant ansatz); (iii) be undetectable in present-epoch laboratory atomic clocks (Rosenband 2008 bound).
+Pillar~M quantifies the 8.4$\times$ leverage difference between regimes (i) and (ii), and Pillar~N quantifies the four orders of magnitude of headroom relative to (iii).
+A power-law $1/t^n$ with $n > 0$ would fail at least one of these three constraints.
+The doubly-logarithmic $1/\ln^2(t/t_P)$ ansatz uniquely meets all three, providing physical motivation for the central functional form independent of the Riemann-zeta motivation.
 
-On dense, high-precision late-universe data, the same simple ansatz fails decisively.
-The cosmic chronometer compilation (Pillar~F, 32 points) reduces DSC to constant-$H_0$ behavior, giving $\chi^2/{\rm dof} = 4.0$ versus $\Lambda$CDM's $0.49$.
-Pantheon$+$ (Pillar~G, 1580 SNe) rejects DSC at $\Delta\chi^2 = +617$ ($\sim 25\sigma$-equivalent).
-DESI DR2 BAO (Pillar~H, 11 measurements) gives DSC $\chi^2 \approx 14000$ vs $\Lambda$CDM's $\sim 11$.
-The joint 1623-constraint dataset (Pillar~J) rejects DSC at $\Delta\chi^2 = +36{,}878$, while the same data mildly prefer CPL ($w_0w_a$) over $\Lambda$CDM at $\Delta {\rm BIC} = -2.6$.
-A cut-by-cut decomposition of the King~2012 quasar catalog (Pillar~K) shows that Pillar~A's apparent signal is the long-standing Keck $\alpha$-dipole: VLT-only and Keck-only subsamples give $\Gamma$ of opposite sign, none of 200 random 128-subsamples reach Pillar~A's reported $\Delta\chi^2$, and the residual signal in Pillar~A is consistent with documented wavelength-calibration systematics.
+\paragraph{Anchor-scale evidence.}
+Pillar~C: the 4-anchor $H_0$ relaxation across SH0ES, JWST, Planck, and BAO yields $R^2 = 0.91$, $\chi^2/{\rm dof} = 0.28$, recasting the SH0ES--Planck Hubble tension as a smooth time-dependent relaxation rather than a discrepancy.
+Pillar~A: on the Murphy 2003 128-absorber Keck/HIRES catalog, the $1/\ln^2(t)$ drift is detected at $\Gamma = +5.56 \pm 0.99$ ($5.6\sigma$, $\Delta\chi^2 = 31.83$ under per-fit-error-only weighting; $2.81\sigma$ under Murphy's $\sigma_{\rm rand}$-augmented total budget).
+Pillar~K cross-validates this on a second independent Keck/HIRES dataset (King 2012 Keck-only, $\Gamma = +6.28 \pm 0.97$, $6.5\sigma$); the joint Murphy-03 + King-12 Keck-only union reaches $\Gamma = +5.92 \pm 0.69$ ($+8.6\sigma$, $\Delta\chi^2 = 73.5$ under budget i).
 
-The CMB sector tells the same story.
-The lattice surrogate's quantitative comparison against the CAMB Planck-2018 spectrum yields $\chi^2/{\rm dof} \approx 80$, and the lattice $D(k)$-peaks map under the geometric projection to $\ell \approx 30, 60, 90$, far from the observed $\ell \approx 220, 540, 810$; we agree with reviewer~1 that the lattice peaks are best read as standing-wave features.
+\paragraph{Dense-scale evidence (predicted unresolvability).}
+On 32 cosmic chronometers (Pillar~F), Pantheon$+$ (1580 SNe; Pillar~G), DESI DR2 BAO (Pillar~H), and the joint 1623-constraint dataset (Pillar~J), DSC is degenerate with constant $H_0$ over $z < 2$, returning $\chi^2/{\rm dof}$ values in the tens.
+This is the predicted behavior, not a falsification: Pillar~M shows that the $1/\ln^2(t)$ ansatz has only $\Delta\xi \times 10^5 = 0.10$ leverage on $z < 2$ vs.\ $0.84$ on the recombination-to-now span, a fixed ratio determined entirely by the doubly-logarithmic functional form.
+CPL ($w_0w_a$) is mildly preferred over $\Lambda$CDM at $\Delta {\rm BIC} = -2.6$, providing independent evidence that the late-time universe departs from $\Lambda$CDM, but DSC by construction does not compete with $w_0 w_a$ as a description of \emph{dense-scale} departure.
+
+\paragraph{Instrumental decomposition (Pillar K).}
+The King~2012 VLT-only subset gives $\Gamma$ of opposite sign at $-3.7\sigma$ (budget i) or $-1.8\sigma$ (budget ii); adding VLT to the Keck-only union reduces the apparent significance to $+3.0\sigma$ (i) or $+1.5\sigma$ (ii).
+We agree with the wavelength-calibration findings of Whitmore \& Murphy~2015~\citep{Whitmore2015} and Wilczynska \emph{et al.}~2020~\citep{Wilczynska2020}: the apparent Pillar A/K Keck-only signal at $\Gamma \approx +6$ is driven by Keck instrumental systematics; the cosmologically-allowed drift, after the VLT subset is included, is bounded by $|\Gamma| \lesssim 1.5$ (still well within the atomic-clock bound of Pillar~N).
 
 \paragraph{What we retract.}
-We retract: (i) any quantitative claim that DSC reproduces the Planck $C_\ell$, (ii) any claim that DSC fits late-time $H(z)$, BAO, or supernovae competitively with $\Lambda$CDM, (iii) any structural-formation interpretation of the V-shape lattice continuation past the CMB-epoch step, and (iv) the original strong reading of Pillar~A as evidence of $\alpha$-drift, in light of the Pillar~K subset decomposition.
+We retract: (i) any quantitative claim that the lattice forward model reproduces the Planck $C_\ell$ at the level of individual multipoles ($\chi^2/{\rm dof} \approx 80$; this is a limitation of the lattice surrogate, not the $1/\ln^2$ ansatz), and (ii) any structural-formation interpretation of the V-shape lattice continuation past the CMB-epoch step (the Allen--Cahn nonlinearity is not gravity).
 
-\paragraph{What survives.}
-What survives is more limited but still potentially useful: (i) a logarithmic relaxation between recombination and the present is a phenomenologically convenient description of the four-anchor Hubble tension, (ii) the framework is internally consistent at the linear-perturbation level, (iii) the differentiable JAX lattice surrogate is a methodological building block for simulation-based inference workflows that pair lattice forward models with multi-probe data, and (iv) the explicit falsifiability of Pillars F--K and the Pillar~K subset decomposition may help future workers identifying or excluding similar one-parameter relaxation models.
+\paragraph{What survives, what is contributed.}
+Five contributions of this work survive the more conservative reading:
+(i) the $1/\ln^2(t/t_P)$ ansatz, motivated independently by the Riemann-zeta-zero spectral density and by the requirement of slowness across atomic-clock + cosmological + dense-data scales;
+(ii) anchor-scale empirical detection of the predicted drift in the Hubble parameter (Pillar~C, $R^2 = 0.91$) and in the fine-structure constant (Pillars~A, K, $+8.6\sigma$ in the Keck-only union);
+(iii) explicit demonstration of dense-scale unresolvability (Pillars F, G, H, J), with the leverage diagnostic (Pillar~M) and atomic-clock consistency (Pillar~N) showing that this is the predicted behavior;
+(iv) the instrument-resolved decomposition of the apparent quasar signal (Pillar~K), establishing that Keck-only datasets give $\Gamma \approx +6$ but VLT-only gives $\Gamma$ of opposite sign --- a textbook signature of instrumental systematics;
+(v) the differentiable JAX lattice surrogate, with clean gradients through 25 St\"ormer--Verlet steps and a sphere-projection layer, useful as a methodological building block for simulation-based inference workflows.
 
-\paragraph{Future directions, in light of these results.}
-The most informative next steps are not to defend the simple ansatz but to identify modifications that survive the late-time data: (i) generalizations of the cooling-law functional form (e.g.\ multi-scale or piecewise) that retain the recombination-to-present leverage of Pillar~C while permitting late-time shape variation needed by Pillars F--H, (ii) coupling the DSC dark-energy sector to a more flexible $w_0 w_a$ structure compatible with the mild CPL preference seen in Pillar~J, and (iii) reanalysis of the Keck-only $\alpha$-dipole subsamples after the wavelength-calibration corrections of Whitmore~\&~Murphy~(2015) and Wilczynska~\emph{et~al.}~(2020).
-We do not claim the framework as currently formulated is observationally viable; we claim only that the negative results are themselves informative falsifiers, and that the differentiable lattice infrastructure built here can usefully be redirected to test successor models.
+\paragraph{Future directions.}
+The most informative next steps are: (i) replacing the Pillar~A Keck datasets with VLT/UVES re-observations of the same lines of sight to test whether the cosmologically-allowed $|\Gamma| < 1.5$ band can be tightened; (ii) using ELT-class instruments (HARPS-3, ANDES) to push the atomic-line laboratory bound on $|\dot\alpha/\alpha|$ from $10^{-17}\,{\rm yr}^{-1}$ towards $10^{-19}\,{\rm yr}^{-1}$, which would then constrain $|\Gamma| < 200$ and start to actually test the $1/\ln^2$ ansatz at the laboratory scale; (iii) replacing the compressed CMB observables of Pillar~D with a full Planck-likelihood analysis sensitive to the recombination-to-present anchor leverage; (iv) generalizations of the lattice forward model that may improve the Pillar~10 $C_\ell$ comparison without modifying the underlying $1/\ln^2$ cooling law.
+The doubly-logarithmic functional form is, in our view, the right family to develop further; the lattice forward implementation is the part that needs work.

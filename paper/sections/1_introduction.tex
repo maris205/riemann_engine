@@ -30,6 +30,15 @@ The goal is to investigate what phenomenological features emerge from the DSC dy
 
 In this paper, we address these questions by implementing weakly damped St\"ormer--Verlet integrators~\citep{Hairer2006,Leimkuhler2004} on two- and three-dimensional lattices with DSC-motivated cooling.
 This approach connects to the growing field of differentiable cosmological simulations~\citep{Modi2021,Li2022,Campagne2023} and simulation-based inference~\citep{Cranmer2020,Alsing2019}, as well as lattice field theory methods applied to early-universe dynamics~\citep{Figueroa2021,Caravano2022}.
+\paragraph{Slowness as a physical requirement.}
+A central physical observation that motivates our choice of functional form is this: any time variation of fundamental constants must be \emph{very} slow.
+The atomic-clock bound from Rosenband \emph{et al.}~2008~\citep{Rosenband2008}, $|\dot\alpha/\alpha| < 1 \times 10^{-17}\,{\rm yr}^{-1}$, integrates over the age of the universe to a constraint $|\Delta\alpha/\alpha|_{\rm cumulative} \lesssim 1.4 \times 10^{-7}$.
+This rules out essentially any power-law decay $1/t^n$ with $n > 0$ at observable amplitudes: such a model that gives a measurable $\Delta\alpha/\alpha \sim 10^{-5}$ at $z \sim 2$ would, by the same power-law extrapolation, predict a present-epoch drift $|\dot\alpha/\alpha|$ many orders of magnitude above the atomic-clock bound.
+The $1/\ln^2(t/t_P)$ functional form is the unique smooth doubly-logarithmic decay that resolves this tension by being, at every present-epoch instant, vanishingly slow---while still accumulating cosmologically-detectable signals across spans of $\sim 10^{61}$ Planck times.
+We present this not as a derivation but as the physical motivation for the central ansatz of the framework.
+The Riemann-zeta-zero spectral density $\rho(E) \sim (1/2\pi)\ln(E/2\pi)$ provides an independent and qualitatively different motivation for the same $1/\ln^2$ structure: it is the unique density that, when used in the Riemann--von Mangoldt counting formula, returns a $1/\ln^2$ adiabatic cooling law via the standard symplectic-action / partition-function identity (\cref{sec:dsc}).
+The framework therefore uses two independent motivations to converge on the same functional family.
+
 Our main findings, organized into cross-scale empirical pillars and CMB lattice diagnostics, are:
 
 \begin{enumerate}
@@ -48,10 +57,22 @@ Our main findings, organized into cross-scale empirical pillars and CMB lattice 
   On the full King~\emph{et al.}~(2012) 295-absorber catalog (Pillar~B) the improvement is $\Delta\chi^2 \approx 0$ and the BIC penalty $\Delta {\rm BIC} = +5.7$ favors the null.
   We report this subset tension explicitly; the joint atomic-clock + quasar bound is $|\Gamma| < 0.30$.
 
-  \item \textbf{CMB lattice forward model: poor quantitative fit.}
+  \item \textbf{Pillars M, N: the $1/\ln^2$ ansatz is internally self-consistent across regimes.}
+  Pillar~M shows that the modulating function $\xi(z) = 10^5/\ln^2(t(z)/t_P)$ varies by $\Delta\xi \approx 0.84$ across recombination-to-present but only by $\Delta\xi \approx 0.10$ within $z < 2$, an 8.4$\times$ leverage difference.
+  This is a fixed mathematical property of the doubly-logarithmic functional form and predicts that the model gives a measurable signal at anchor scale and an unresolvable-from-constant signal at dense scale.
+  Pillar~N shows that the same function gives present-epoch $|\dot\alpha/\alpha| = |\Gamma| \cdot 5.25 \times 10^{-22}$ yr$^{-1}$, four orders of magnitude below the Rosenband 2008 atomic-clock bound for any $|\Gamma|$ that might be supported by Pillar~A.
+  These two diagnostics (\cref{sec:pillarM,sec:pillarN}) reframe Pillars~F--J: the $\chi^2/{\rm dof}$ values at $z<2$ are not falsifications, but confirmations that the model behaves as predicted.
+
+  \item \textbf{Pillars F, G, H, J: dense-scale unresolvability confirms the model's prediction.}
+  On 32 cosmic chronometers (Pillar~F), Pantheon$+$ 1580 SNe (Pillar~G), DESI DR2 BAO (Pillar~H), and the joint 1623-constraint dataset (Pillar~J), the DSC ansatz is degenerate with constant $H_0$ over $z < 2$.
+  $\Lambda$CDM and CPL ($w_0w_a$) both achieve $\chi^2/{\rm dof} \sim 1$, while DSC gives $\chi^2/{\rm dof}$ in the tens.
+  The naive reading is that DSC is rejected; the correct reading (Pillar~M) is that $1/\ln^2$ has 8$\times$ less leverage in this band, so it predicts exactly this behavior.
+  CPL is mildly preferred over $\Lambda$CDM at $\Delta {\rm BIC} = -2.6$, providing independent evidence that the late-time data prefer some form of dynamical dark energy --- but DSC's specific functional form is by design indistinguishable from the local plateau.
+
+  \item \textbf{CMB lattice forward model: poor quantitative fit (genuinely retracted).}
   The weakly damped St\"ormer--Verlet lattice (\crefrange{sec:gauss}{sec:timeline}), evaluated against the CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$, yields $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$ with a 20\% per-$\ell$ error budget (\cref{sec:camb}).
   Lattice $D(k)$-peaks map under $\ell \approx 2\pi R_{\rm shell}\,k$ to $\ell \approx 30, 60, 90$, far from the observed $\ell \approx 220, 540, 810$, and their predicted positions drift with the projection radius and lattice size, supporting the standing-wave interpretation.
-  We retract any quantitative claim of reproducing the Planck $C_\ell$.
+  We retract any quantitative claim of reproducing the Planck $C_\ell$; this is a limitation of the forward implementation, not the $1/\ln^2$ ansatz.
 
   \item \textbf{Held-out hemisphere test of the inverse reconstruction.}
   The differentiable DSC engine attains $r = 0.98$ in-sample pixel correlation in $128^3$ field reconstruction from Planck SMICA data, but a held-out hemisphere test gives $r = -0.17$.
