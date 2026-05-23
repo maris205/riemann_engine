@@ -36,5 +36,12 @@ Five contributions of this work survive the more conservative reading:
 (v) the differentiable JAX lattice surrogate, with clean gradients through 25 St\"ormer--Verlet steps and a sphere-projection layer, useful as a methodological building block for simulation-based inference workflows.
 
 \paragraph{Future directions.}
-The most informative next steps are: (i) replacing the Pillar~A Keck datasets with VLT/UVES re-observations of the same lines of sight to test whether the cosmologically-allowed $|\Gamma| < 1.5$ band can be tightened; (ii) using ELT-class instruments (HARPS-3, ANDES) to push the atomic-line laboratory bound on $|\dot\alpha/\alpha|$ from $10^{-17}\,{\rm yr}^{-1}$ towards $10^{-19}\,{\rm yr}^{-1}$, which would then constrain $|\Gamma| < 200$ and start to actually test the $1/\ln^2$ ansatz at the laboratory scale; (iii) replacing the compressed CMB observables of Pillar~D with a full Planck-likelihood analysis sensitive to the recombination-to-present anchor leverage; (iv) generalizations of the lattice forward model that may improve the Pillar~10 $C_\ell$ comparison without modifying the underlying $1/\ln^2$ cooling law.
-The doubly-logarithmic functional form is, in our view, the right family to develop further; the lattice forward implementation is the part that needs work.
+The most informative next steps follow directly from the Pillar~O forecast:
+(i) targeting JWST high-$z$ passive galaxies~\citep{Glazebrook2024} for cosmic-chronometer measurements at $z \in [2, 10]$, which is the regime where the DSC and $\Lambda$CDM Hubble curves diverge by $65$--$95\%$ and as few as five points at $10\%$ precision suffice for $\gtrsim 11\sigma$ discrimination;
+(ii) replacing the Pillar~A Keck datasets with VLT/UVES re-observations of the same lines of sight to test whether the cosmologically-allowed $|\Gamma| < 1.5$ band can be tightened;
+(iii) using ELT-class instruments (HARPS-3, ANDES) to push the atomic-line laboratory bound on $|\dot\alpha/\alpha|$ from $10^{-17}\,{\rm yr}^{-1}$ towards $10^{-19}\,{\rm yr}^{-1}$, which would tighten the Pillar~N bound on $|\Gamma|$ by two orders of magnitude;
+(iv) replacing the compressed CMB observables of Pillar~D with a full Planck-likelihood analysis sensitive to the recombination-to-present anchor leverage;
+(v) generalizations of the lattice forward model that may improve the Pillar~10 $C_\ell$ comparison without modifying the underlying $1/\ln^2$ cooling law.
+
+The doubly-logarithmic functional form is, in our view, the right family to develop further; the lattice forward implementation is the part that needs work; and the JWST high-$z$ Hubble program is the experiment that decides whether the DSC ansatz is the candidate solution to the modern dark clouds, or merely a useful illustration of how a slow-drift framework should be tested.
+

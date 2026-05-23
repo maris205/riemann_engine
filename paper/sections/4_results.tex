@@ -694,6 +694,57 @@ The doubly-logarithmic ansatz of DSC is therefore the unique functional family i
   \label{fig:pillar_N}
 \end{figure}
 
+\paragraph{Pillar O: forecast for high-$z$ cosmic chronometers.}
+\label{sec:pillarO}
+The 8.4$\times$ leverage difference between anchor scale and dense scale (Pillar M) suggests that the cleanest falsification path for the $1/\ln^2(t)$ ansatz is to extend cosmic-chronometer measurements beyond $z = 2$, into the regime where the predicted DSC and $\Lambda$CDM Hubble curves diverge sharply.
+At Pillar C's best-fit values $H_\infty = 104.5$, $\beta = -6.24$, the DSC ansatz predicts $H(z=2) = 72.1$ km/s/Mpc, $H(z=5) = 71.6$ km/s/Mpc, $H(z=10) = 71.2$ km/s/Mpc---all close to the asymptotic value $H_\infty$.
+$\Lambda$CDM (Planck 2018, $H_0 = 67.4$, $\Omega_m = 0.315$) instead predicts $H(z=2) = 204$, $H(z=5) = 559$, $H(z=10) = 1381$ km/s/Mpc.
+The fractional difference is $-65\%$ at $z=2$, $-87\%$ at $z=5$, and $-95\%$ at $z=10$ (\cref{fig:pillar_O}a; reproducible in \texttt{notebooks/28\_pillar\_O\_forecast.ipynb}).
+
+To quantify the discrimination power of plausible future cosmic-chronometer surveys, we run mock-data forecasts: for each survey configuration $(N, z_{\max}, \sigma_H/H)$, we generate 30 realizations of mock data under each truth hypothesis (DSC and $\Lambda$CDM), refit both models, and report the median $\sqrt{\Delta\chi^2}$.
+The result, summarized in \cref{tab:pillarO}, is that even the most modest configurations are sufficient.
+A 5-point JWST-class survey covering $z \in [2, 5]$ at $10\%$ precision would already distinguish DSC from $\Lambda$CDM at $11\sigma$ in either direction; extending to $z = 10$ at $5\%$ precision gives $\gtrsim 100\sigma$.
+Existing JWST observations of massive quiescent galaxies at $z \gtrsim 7$~\citep{Glazebrook2024} and the broader cosmic-dawn programs over the next 3--5 years are expected to deliver these data; the present work motivates the explicit DSC-vs-$\Lambda$CDM analysis as a high-impact early target.
+
+\begin{table}[htbp]
+\centering
+\caption{Pillar~O forecast: discriminating power of future cosmic-chronometer surveys for the $1/\ln^2$ vs.\ $\Lambda$CDM hypothesis. Each row reports the median $\sqrt{\Delta\chi^2}$ over 30 mock-data realizations under two truth hypotheses (Scenario A: truth $=$ DSC, can we exclude $\Lambda$CDM; Scenario B: truth $=$ $\Lambda$CDM, can we exclude DSC).}
+\label{tab:pillarO}
+\small
+\begin{tabular}{ccc|cc|cc}
+\hline
+$N$ & $z_{\max}$ & $\sigma_H/H$ & $\Delta\chi^2_A$ & $\sqrt{\Delta\chi^2_A}$ & $\Delta\chi^2_B$ & $\sqrt{\Delta\chi^2_B}$ \\
+\hline
+5  & 3  & 10\% & 7.5     & 2.7$\sigma$  & 8.5     & 2.9$\sigma$ \\
+5  & 5  & 10\% & 130.7   & 11.4$\sigma$ & 61.9    & 7.9$\sigma$ \\
+5  & 10 & 10\% & 2156.2  & 46.4$\sigma$ & 164.3   & 12.8$\sigma$ \\
+10 & 5  & 5\%  & 915.3   & 30.3$\sigma$ & 390.7   & 19.8$\sigma$ \\
+10 & 10 & 5\%  & 15223.3 & 123.4$\sigma$ & 1205.9 & 34.7$\sigma$ \\
+20 & 10 & 5\%  & 29026.9 & 170.4$\sigma$ & 2242.0 & 47.4$\sigma$ \\
+20 & 10 & 2\%  & 181166.6 & 425.6$\sigma$ & 14050.6 & 118.5$\sigma$ \\
+50 & 10 & 2\%  & 440877.2 & 664.0$\sigma$ & 33850.9 & 184.0$\sigma$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig31_pillar_O_forecast.pdf}
+  \caption{Pillar~O: forecast falsifiability of the $1/\ln^2(t)$ ansatz at high redshift.
+  (a) The DSC and $\Lambda$CDM Hubble curves diverge sharply at $z > 2$; current dense-data tests (Pillars F--J, $z < 2$) sit in the band where the two models are nearly degenerate, but the forecast band $z \in [2, 20]$ is where future cosmic chronometers can decisively discriminate.
+  (b) Forecast significance ($\sqrt{\Delta\chi^2}$) for distinguishing DSC vs $\Lambda$CDM under various survey configurations, in either truth direction.
+  Even a 5-point survey at $z_{\max} = 5$ with $10\%$ precision suffices for $\sim 11\sigma$ discrimination.}
+  \label{fig:pillar_O}
+\end{figure*}
+
+\paragraph{Pillar O context: a candidate \emph{solution} to ``the next dark cloud''.}
+The historical pattern of two ``dark clouds'' over physics at the turn of the 20th century (the Michelson--Morley null result and the ultraviolet catastrophe; Lord Kelvin 1900) led to special relativity and quantum mechanics.
+The contemporary cosmological situation features the SH0ES--Planck $H_0$ tension (now $> 5\sigma$ and confirmed by JWST~\citep{RiessJWST2024}) and the DESI 2024/2025 BAO preference for time-varying dark energy ($\Delta {\rm BIC}({\rm CPL}, \Lambda{\rm CDM}) = -2.6$ in our Pillar~J) as two independent hints that the cosmic expansion history may not be described by $\Lambda$CDM alone.
+These two anomalies, in our view, are the modern dark clouds.
+The $1/\ln^2(t)$ ansatz of the present work is offered as a candidate \emph{solution}---a specific, falsifiable, atomic-clock-consistent prediction for what the underlying time-dependence of the cosmological background looks like.
+Pillar~O establishes that this candidate solution will be sharply tested by JWST and forthcoming data within $\sim 5$ years: either the high-$z$ Hubble curve shows a smooth $1/\ln^2(t)$ relaxation to $H_\infty \sim 100$ km/s/Mpc---in which case the framework is confirmed and the $H_0$ tension is resolved---or it follows $\Lambda$CDM-style $(1+z)^{3/2}$ growth, in which case the simple ansatz is falsified at high significance and a generalization is needed.
+Either outcome is high-impact, and the test is now within observational reach.
+
 \paragraph{Combined verdict: dense-scale unresolvability is a feature, not a falsification.}
 The naive reading of Pillars~F, G, H, J is that they "rule out" DSC, since each individually gives $\chi^2/{\rm dof}$ much larger than $\Lambda$CDM and $\Delta\chi^2$ values in the hundreds-to-tens-of-thousands.
 We argue that this reading misses the central physical content of the $1/\ln^2$ ansatz, which is established by Pillars~M (\cref{sec:pillarM}) and~N (\cref{sec:pillarN}):

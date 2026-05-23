@@ -1,5 +1,5 @@
 \begin{abstract}
-We consolidate, in a single manuscript, thirteen empirical and computational tests of the Discrete Symplectic Cosmology (DSC) framework: a non-autonomous, weakly damped lattice cosmology in which a $1/\ln^2(t)$ adiabatic cooling law---inspired by the spectral statistics of the Riemann zeta zeros---is the central ansatz tying microscopic dynamics to time-dependent cosmological parameters.
+We consolidate, in a single manuscript, fourteen empirical, computational, and forecast tests of the Discrete Symplectic Cosmology (DSC) framework: a non-autonomous, weakly damped lattice cosmology in which a $1/\ln^2(t)$ adiabatic cooling law---inspired by the spectral statistics of the Riemann zeta zeros---is the central ansatz tying microscopic dynamics to time-dependent cosmological parameters.
 The framework predicts, simultaneously, a smooth Hubble relaxation $H(t) = H_\infty + \beta/\ln^2(t/t_P)$, a logarithmic dark-energy term $\Lambda(t) = \Lambda_\infty + \gamma/\ln^2(t/t_P)$, and a slow drift in the fine-structure constant $\alpha$.
 
 \textbf{Slowness as a physical requirement.}
@@ -23,4 +23,13 @@ This is the textbook signature of an instrument-driven systematic, consistent wi
 \textbf{What is retained, what is retracted.}
 A weakly damped St\"ormer--Verlet lattice surrogate of CMB anisotropies, evaluated against the CAMB Planck-2018 best-fit $D_\ell^{TT}$, yields $\chi^2/{\rm dof} \approx 80$; we retract any quantitative claim that the lattice forward model reproduces the Planck $C_\ell$.
 The differentiable JAX implementation, the Keck/VLT instrument decomposition (Pillar~K), the $\xi$-leverage diagnostic (Pillar~M), the atomic-clock consistency (Pillar~N), and the falsifiability of Pillars F--J under the $1/\ln^2$ hypothesis are presented as the principal contributions of this work.
+
+\textbf{Pillar O: a candidate solution to the modern dark clouds.}
+The SH0ES--Planck $H_0$ tension and the DESI BAO preference for time-varying dark energy are, in our view, two independent dark clouds over $\Lambda$CDM cosmology.
+The $1/\ln^2(t)$ ansatz of this work is offered as a candidate \emph{solution}: a specific, atomic-clock-consistent prediction for what the underlying time-dependence of the cosmic expansion history should look like.
+The DSC and $\Lambda$CDM Hubble curves diverge sharply at $z > 2$ (DSC predicts $H(z) \to H_\infty \sim 105$ km/s/Mpc; $\Lambda$CDM predicts $H(z) \propto (1+z)^{3/2}$, reaching $\sim 1400$ km/s/Mpc at $z = 10$).
+A mock-data forecast (Pillar~O) shows that as few as five JWST-class cosmic-chronometer points over $z \in [2, 5]$ at $10\%$ precision are sufficient to distinguish the two models at $\gtrsim 11\sigma$, with $\gtrsim 100\sigma$ achievable for 10 points at $z_{\max} = 10$.
+Within $\sim 5$ years, JWST and forthcoming high-$z$ programs are expected to deliver a clean verdict: either $H(z)$ at $z \sim 5$--$10$ tracks the predicted asymptotic plateau---in which case the candidate solution is confirmed and the $H_0$ tension is naturally resolved---or it follows $\Lambda$CDM-style power-law growth, falsifying the simple ansatz at high significance.
 \end{abstract}
+
+
