@@ -228,6 +228,49 @@ T.~Rosenband, D.~B. Hume, P.~O. Schmidt, C.~W. Chou, A.~Brusch, L.~Lorini,
 \newblock \href {https://doi.org/10.1126/science.1154622}
   {\path{doi:10.1126/science.1154622}}.
 
+\bibitem{Moresco2022}
+M.~Moresco, L.~Amati, L.~Amendola, S.~Birrer, J.~P. Blakeslee, M.~Cantiello,
+  A.~Cimatti, J.~Darling, M.~Della~Valle, M.~Fishbach, C.~Grillo, N.~Hamaus,
+  D.~Holz, L.~Izzo, H.~Jia, A.~Kim, L.~Lombriser, A.~Pourtsidou, I.~Tutusaus,
+  L.~Verde, {Unveiling the Universe with emerging cosmological probes}, Living
+  Reviews in Relativity 25 (2022) 6.
+\newblock \href {https://doi.org/10.1007/s41114-022-00040-z}
+  {\path{doi:10.1007/s41114-022-00040-z}}.
+
+\bibitem{Scolnic2022}
+D.~Scolnic, D.~Brout, A.~Carr, A.~G. Riess, et~al., {The Pantheon+ Analysis:
+  The Full Data Set and Light-curve Release}, The Astrophysical Journal 938
+  (2022) 113.
+\newblock \href {https://doi.org/10.3847/1538-4357/ac8b7a}
+  {\path{doi:10.3847/1538-4357/ac8b7a}}.
+
+\bibitem{Brout2022}
+D.~Brout, D.~Scolnic, B.~Popovic, A.~G. Riess, et~al., {The Pantheon+ Analysis:
+  Cosmological Constraints}, The Astrophysical Journal 938 (2022) 110.
+\newblock \href {https://doi.org/10.3847/1538-4357/ac8e04}
+  {\path{doi:10.3847/1538-4357/ac8e04}}.
+
+\bibitem{DESI2025DR2}
+{DESI Collaboration}, {DESI DR2 Results II: Measurements of Baryon Acoustic
+  Oscillations and Cosmological Constraints}, arXiv preprint (2025).
+\newblock \href {http://arxiv.org/abs/2503.14738} {\path{arXiv:2503.14738}}.
+
+\bibitem{Whitmore2015}
+J.~B. Whitmore, M.~T. Murphy, {Impact of instrumental systematic errors on
+  fine-structure constant measurements with quasar spectra}, Monthly Notices of
+  the Royal Astronomical Society 447 (2015) 446--462.
+\newblock \href {https://doi.org/10.1093/mnras/stu2420}
+  {\path{doi:10.1093/mnras/stu2420}}.
+
+\bibitem{Wilczynska2020}
+M.~R. Wilczynska, J.~K. Webb, M.~Bainbridge, J.~D. Barrow, S.~E.~I. Bosman,
+  R.~F. Carswell, M.~P. Dabrowski, V.~Dumont, C.-C. Lee, A.~C. Leite,
+  K.~Leszczyńska, J.~Liske, K.~Marosek, C.~J. A.~P. Martins, D.~Milaković,
+  P.~Molaro, L.~Pasquini, {Four direct measurements of the fine-structure
+  constant 13 billion years ago}, Science Advances 6 (2020) eaay9672.
+\newblock \href {https://doi.org/10.1126/sciadv.aay9672}
+  {\path{doi:10.1126/sciadv.aay9672}}.
+
 \bibitem{Regge1961}
 T.~Regge, {General relativity without coordinates}, Il Nuovo Cimento 19 (1961)
   558--571.

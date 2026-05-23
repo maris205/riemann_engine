@@ -2,32 +2,26 @@
 \label{sec:conclusion}
 
 We presented a consolidated empirical and computational evaluation of the Discrete Symplectic Cosmology (DSC) framework, in which a $1/\ln^2(t)$ adiabatic cooling law---inspired by the spectral statistics of the Riemann zeta zeros---is the central ansatz tying microscopic non-autonomous dynamics to time-dependent cosmological parameters.
-Across five tests at three observational scales, the cross-scale evidence is mixed but informative.
+Across eleven tests at three observational scales, the verdict is mixed at the anchor level and strongly negative on dense data.
 
-The framework's strongest support is at the late-time Hubble scale.
-Fitting the four anchor $H_0$ measurements (SH0ES, JWST, Planck, BAO) by $H(t) = H_\infty + \beta/\ln^2(t/t_P)$ yields $R^2 = 0.91$, reduced $\chi^2 = 0.28$ (Pillar~C), recasting the SH0ES--Planck Hubble tension as a smooth time-dependent relaxation rather than a discrepancy.
-At the linear-perturbation level the framework is internally consistent: five basic stability criteria pass for $\gamma_{\rm eff} \in [0, 10]$ (Pillar~E).
+At anchor-level resolution the framework looks plausible: Pillar~C's four-anchor $H_0$ relaxation gives $R^2 = 0.91$ and $\chi^2/{\rm dof} = 0.28$, recasting the SH0ES--Planck Hubble tension as a smooth time-dependent relaxation; Pillar~E shows that the linear-perturbation framework is internally consistent for $\gamma_{\rm eff} \in [0, 10]$; and Pillar~A reports $\Delta\chi^2 = 31.5$ improvement on a 128-absorber quasar subset.
 
-At the CMB+BAO scale the DSC dark-energy correction is currently \emph{unconstrained}.
-A CAMB + DESI BAO Fisher analysis gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$ (Pillar~D), so the framework is not in tension with present data but neither does it improve the fit.
-The $C_\ell$ benchmark of the lattice surrogate against the CAMB Planck-2018 spectrum yields $\chi^2/{\rm dof} \approx 80$, and the lattice $D(k)$-peaks map under the geometric projection to $\ell \approx 30, 60, 90$, far from the observed $\ell \approx 220, 540, 810$; we retract any quantitative claim of reproducing the Planck $C_\ell$ and agree with reviewer~1 that the lattice peaks are best read as standing-wave features.
+On dense, high-precision late-universe data, the same simple ansatz fails decisively.
+The cosmic chronometer compilation (Pillar~F, 32 points) reduces DSC to constant-$H_0$ behavior, giving $\chi^2/{\rm dof} = 4.0$ versus $\Lambda$CDM's $0.49$.
+Pantheon$+$ (Pillar~G, 1580 SNe) rejects DSC at $\Delta\chi^2 = +617$ ($\sim 25\sigma$-equivalent).
+DESI DR2 BAO (Pillar~H, 11 measurements) gives DSC $\chi^2 \approx 14000$ vs $\Lambda$CDM's $\sim 11$.
+The joint 1623-constraint dataset (Pillar~J) rejects DSC at $\Delta\chi^2 = +36{,}878$, while the same data mildly prefer CPL ($w_0w_a$) over $\Lambda$CDM at $\Delta {\rm BIC} = -2.6$.
+A cut-by-cut decomposition of the King~2012 quasar catalog (Pillar~K) shows that Pillar~A's apparent signal is the long-standing Keck $\alpha$-dipole: VLT-only and Keck-only subsamples give $\Gamma$ of opposite sign, none of 200 random 128-subsamples reach Pillar~A's reported $\Delta\chi^2$, and the residual signal in Pillar~A is consistent with documented wavelength-calibration systematics.
 
-The quasar fine-structure-constant pillar shows a subset-dependent tension that we report rather than gloss.
-A 128-absorber subset previously analyzed in the literature gives $\Delta\chi^2 = 31.5$ improvement of the DSC drift over the constant null (Pillar~A), while the full King~\emph{et al.}~(2012) 295-absorber catalog yields $\Delta\chi^2 \approx 0$ and BIC-prefers the null (Pillar~B), with the joint atomic-clock + quasar bound $|\Gamma| < 0.30$.
-Whether the residual signal in the smaller subset is real or an artifact of selection requires re-examination of the absorber list and is the most concrete falsifiability target the framework currently has.
+The CMB sector tells the same story.
+The lattice surrogate's quantitative comparison against the CAMB Planck-2018 spectrum yields $\chi^2/{\rm dof} \approx 80$, and the lattice $D(k)$-peaks map under the geometric projection to $\ell \approx 30, 60, 90$, far from the observed $\ell \approx 220, 540, 810$; we agree with reviewer~1 that the lattice peaks are best read as standing-wave features.
 
-The methodological contribution is the differentiable JAX implementation of the lattice surrogate, with clean gradients through 25 St\"ormer--Verlet steps and a sphere-projection layer.
-In-sample reconstruction attains $r = 0.98$ pixel correlation against Planck SMICA, but the held-out hemisphere test yields $r = -0.17$, which we treat as the primary diagnostic: with $\sim 10^6$ unknowns and $\sim 10^4$ pixels the inverse problem is severely underdetermined, and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
-The differentiable lattice surrogate may still be useful as a building block for simulation-based inference workflows that pair lattice forward models with multi-probe data and explicit volumetric priors.
+\paragraph{What we retract.}
+We retract: (i) any quantitative claim that DSC reproduces the Planck $C_\ell$, (ii) any claim that DSC fits late-time $H(z)$, BAO, or supernovae competitively with $\Lambda$CDM, (iii) any structural-formation interpretation of the V-shape lattice continuation past the CMB-epoch step, and (iv) the original strong reading of Pillar~A as evidence of $\alpha$-drift, in light of the Pillar~K subset decomposition.
 
-Other claims from earlier drafts have been revised here.
-Approximate Gaussianity is reported as a consistency check rather than a non-trivial emergence.
-The freeze-out scale $r_s \approx 38$ is reported as a threshold-defined effective scale; the formal horizon integral diverges logarithmically.
-The continuation past the CMB-epoch step uses an Allen--Cahn toy nonlinearity rather than gravity, and is presented as phenomenological visualization rather than structure formation.
-The connection to Riemann zero statistics is retained only as a working motivation for the $1/\ln^2$ ansatz, not as an established physical correspondence.
+\paragraph{What survives.}
+What survives is more limited but still potentially useful: (i) a logarithmic relaxation between recombination and the present is a phenomenologically convenient description of the four-anchor Hubble tension, (ii) the framework is internally consistent at the linear-perturbation level, (iii) the differentiable JAX lattice surrogate is a methodological building block for simulation-based inference workflows that pair lattice forward models with multi-probe data, and (iv) the explicit falsifiability of Pillars F--K and the Pillar~K subset decomposition may help future workers identifying or excluding similar one-parameter relaxation models.
 
-We list, in order of expected impact, the directions that we view as most worth pursuing in light of these results:
-(i)~tightening the quasar drift constraint by reanalyzing the King~2012 catalog under the same selection used for the 128-absorber subset, and adding next-generation high-resolution spectroscopy;
-(ii)~replacing the compressed CMB observables of Pillar~D with a full Planck likelihood and exploring whether richer lattice operators can reduce the lattice $C_\ell$ $\chi^2/{\rm dof}$;
-(iii)~multi-probe inverse reconstruction combining CMB with galaxy survey data to break the projection degeneracy of the lattice inverse;
-(iv)~cleaner ablations that vary one property of the integrator at a time so that any role for symplecticity in the observed statistics can be isolated.
+\paragraph{Future directions, in light of these results.}
+The most informative next steps are not to defend the simple ansatz but to identify modifications that survive the late-time data: (i) generalizations of the cooling-law functional form (e.g.\ multi-scale or piecewise) that retain the recombination-to-present leverage of Pillar~C while permitting late-time shape variation needed by Pillars F--H, (ii) coupling the DSC dark-energy sector to a more flexible $w_0 w_a$ structure compatible with the mild CPL preference seen in Pillar~J, and (iii) reanalysis of the Keck-only $\alpha$-dipole subsamples after the wavelength-calibration corrections of Whitmore~\&~Murphy~(2015) and Wilczynska~\emph{et~al.}~(2020).
+We do not claim the framework as currently formulated is observationally viable; we claim only that the negative results are themselves informative falsifiers, and that the differentiable lattice infrastructure built here can usefully be redirected to test successor models.

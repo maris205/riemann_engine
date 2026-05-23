@@ -500,7 +500,99 @@ All five checks pass for the full scanned range, so the framework is internally 
   \label{fig:late_stability}
 \end{figure}
 
-\paragraph{Where the cross-scale evidence stands.}
-Of the five pillars, two are positive (Pillars C and E), two are null at current sensitivity (Pillars B and D), and one is suggestive but inconclusive (Pillar A).
-We do not claim the cross-scale evidence \emph{establishes} the DSC framework; we claim only that no current observation \emph{rules it out}, and that the JWST $H_0$ pillar provides a useful $1/\ln^2$ scaling that connects to the standing Hubble tension.
-The CMB lattice forward model of \crefrange{sec:gauss}{sec:timeline} is therefore one of several testbeds, none of which is currently decisive on its own.
+\paragraph{Where the cross-scale evidence stands (Pillars A--E).}
+Of the five anchor-level pillars, two are positive (Pillars C and E), two are null at current sensitivity (Pillars B and D), and one is suggestive but inconclusive (Pillar A).
+At the anchor level we therefore do not claim the cross-scale evidence \emph{establishes} the DSC framework, only that no probe \emph{rules it out at this resolution}.
+However, the dense-data tests F--K below substantially revise this picture and constitute the most important empirical update of this revision.
+
+\subsection{Late-universe falsification: Pillars F--K with high-precision data}
+\label{sec:falsification}
+
+The five pillars above use widely-separated anchor points or summary statistics.
+Following Reviewer~1's guidance that ``the numerical evidence must be quantitatively much more compelling,'' we now stress-test the simple DSC functional form $H(t) = H_\infty + \beta\,(10^5/\ln^2(t/t_P))$ against six high-precision late-universe probes that densely sample $z \in [0, 2.5]$.
+The combined verdict is that the simple ansatz is \emph{strongly rejected} by every late-universe probe individually and by their joint combination.
+This is, in our view, the most important result of the present revision, because it both falsifies the simplest DSC ansatz and explains why the Pillar~C four-anchor fit looked so good: the apparent strength of Pillar~C came almost entirely from the $\ln^2(t/t_P)$ leverage between the CMB-recombination anchor ($t \sim 380$~kyr) and the present ($t \sim 13.8$~Gyr), which dwarfs the leverage available within $z \in [0.07, 2]$.
+
+\paragraph{Pillar F: Cosmic chronometer $H(z)$ (32 model-independent points).}
+Using the standard cosmic chronometer compilation~\citep{Moresco2022} of 32 differential-aging $H(z)$ measurements over $z \in [0.07, 1.97]$, $\Lambda$CDM with two free parameters yields $\chi^2/{\rm dof} = 0.49$ ($H_0 = 68.2, \Omega_m = 0.318$, an excellent fit).
+The DSC ansatz with the same number of free parameters gives $\chi^2/{\rm dof} = 4.01$ and is statistically indistinguishable from a constant $H_0$ over this redshift range.
+The diagnostic is direct: across the full CC redshift range, the DSC modulating function $\xi(z) = 10^5/\ln^2(t(z)/t_P)$ varies by only $\Delta\xi \approx 0.11$, whereas the four anchor points of Pillar~C span $\Delta\xi \approx 0.86$, an 8$\times$ larger leverage.
+The DSC ansatz simply has no shape information to offer over the CC band (\cref{fig:cc_pillar_F}; reproducible in \texttt{notebooks/20\_pillar\_F\_cosmic\_chronometers.ipynb}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig23_cc_hz_pillar_F.pdf}
+  \caption{Pillar~F: cosmic chronometer $H(z)$.
+  $\Lambda$CDM ($\chi^2/{\rm dof} = 0.49$) describes the data well; the DSC ansatz ($\chi^2/{\rm dof} = 4.01$) is degenerate with constant $H_0$ over $z \in [0.07, 1.97]$ and is rejected at very high significance.}
+  \label{fig:cc_pillar_F}
+\end{figure}
+
+\paragraph{Pillar G: Pantheon+ Type Ia supernovae (1580 SNe).}
+The full Pantheon+ cosmology sample~\citep{Scolnic2022,Brout2022} (1701 SNe, restricted here to $z > 0.01$ and excluding SH0ES Cepheid-host calibrators, leaving $N = 1580$) provides distance moduli with a full $1701 \times 1701$ statistical+systematic covariance matrix.
+The integrated $\mu(z) = 5\log_{10}d_L(z) + 25$ test gives $\Lambda$CDM $\chi^2/{\rm dof} = 0.88$ at $H_0 = 73.2, \Omega_m = 0.33$; DSC gives $\chi^2/{\rm dof} = 1.27$.
+The model-comparison $\Delta\chi^2 = +617$ (DSC$-\Lambda$CDM) corresponds to a $\sim 25\sigma$-equivalent rejection of DSC vs $\Lambda$CDM (\cref{fig:pantheon_pillar_G}; reproducible in \texttt{notebooks/21\_pillar\_G\_pantheon.ipynb}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig24_pantheon_pillar_G.pdf}
+  \caption{Pillar~G: Pantheon+ Hubble diagram and binned residuals.
+  $\Lambda$CDM achieves $\chi^2/{\rm dof} = 0.88$, DSC achieves $1.27$ ($\Delta\chi^2 = +617$, a $\sim 25\sigma$-equivalent preference for $\Lambda$CDM).}
+  \label{fig:pantheon_pillar_G}
+\end{figure}
+
+\paragraph{Pillar H: DESI DR2 BAO (11 measurements).}
+Replacing the Fisher analysis of Pillar~D with a full $\chi^2$ fit of the DESI DR2 BAO measurements~\citep{DESI2025DR2} ($D_M/r_d$ and $D_H/r_d$ at five redshifts, plus $D_V/r_d$ for BGS, with the published cross-correlations) gives $\Lambda$CDM $\chi^2/{\rm dof} = 1.07$, CPL ($w_0w_a$, two extra parameters) $\chi^2/{\rm dof} = 1.16$, and DSC $\chi^2 = 14036$ (catastrophic).
+DESI DR2 alone modestly disfavors CPL versus $\Lambda$CDM ($\Delta {\rm BIC} = +3.2$), but rules out the simple DSC ansatz at extreme significance ($\Delta\chi^2 = +14026$).
+The breakdown is that DSC, being degenerate with constant $H(z)$ over this band, predicts approximately constant $D_M/r_d$ and $D_H/r_d$, in stark contrast to the observed monotone trends (\cref{fig:desi_pillar_H}; reproducible in \texttt{notebooks/22\_pillar\_H\_desi\_dr2.ipynb}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig25_desi_pillar_H.pdf}
+  \caption{Pillar~H: DESI DR2 BAO. $\Lambda$CDM ($\chi^2/{\rm dof}=1.07$) and CPL ($\chi^2/{\rm dof}=1.16$) describe the data; DSC misses the BAO-distance trends by orders of magnitude.}
+  \label{fig:desi_pillar_H}
+\end{figure}
+
+\paragraph{Pillar I: $\sigma_8$ tension test (not pursued).}
+Because Pillar~F shows that DSC's $H(z)$ is degenerate with constant $H_0$ at $z \le 2$, the linear growth function $D(a) = \int da/(a^2 H(a))$ is degenerate with the $\Lambda$CDM growth at the relevant precision.
+A KiDS+DES weak-lensing $S_8/\sigma_8$ test would therefore not distinguish DSC from $\Lambda$CDM with current data, for the same reason that Pillar~D's Fisher analysis returned $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$.
+We mention Pillar~I only to confirm that the current $\sigma_8$ tension provides no further constraint beyond Pillars~F--H.
+
+\paragraph{Pillar J: Joint DESI + Pantheon$+$ + cosmic chronometers (1623 constraints).}
+Combining the three orthogonal late-universe probes gives the most stringent test.
+$\Lambda$CDM achieves $\chi^2/{\rm dof} = 0.96$ on 1623 constraints; CPL ($w_0w_a$) achieves $\chi^2/{\rm dof} = 0.95$ with two extra parameters and is mildly preferred ($\Delta {\rm BIC} = -2.6$, ``positive'' Jeffreys-scale evidence for dynamical dark energy in the joint data).
+DSC achieves $\chi^2/{\rm dof} = 23.7$, with a $\Delta\chi^2 = +36{,}878$ versus $\Lambda$CDM ($\sim 190\sigma$-equivalent rejection; \cref{fig:pillar_J}).
+The DSC misfit is dominated by BAO ($\chi^2 = 27796$ vs $\Lambda$CDM's $113$) and supernovae ($\chi^2 = 10520$ vs $\Lambda$CDM's $1432$).
+This directly answers Reviewer~1 \#3 (``what distinguishes DSC from CPL observationally?''): on dense late-time data, CPL is a viable parameterization of dynamical dark energy that is mildly preferred over $\Lambda$CDM, while DSC is ruled out (reproducible in \texttt{notebooks/23\_pillar\_J\_joint.ipynb}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\columnwidth]{fig26_pillar_J_joint.pdf}
+  \caption{Pillar~J: joint $\Delta {\rm BIC}$ vs $\Lambda$CDM on 1623 late-time constraints.
+  CPL is mildly preferred ($\Delta {\rm BIC} = -2.6$); the simple DSC ansatz is ruled out at $\Delta {\rm BIC} \sim 4\times 10^4$.}
+  \label{fig:pillar_J}
+\end{figure}
+
+\paragraph{Pillar K: Resolving the Pillar~A vs Pillar~B tension.}
+Pillars A and B reported a strong subset tension on the quasar fine-structure-constant data: a 128-absorber subset gave $\Delta\chi^2 = 31.5$ in favor of DSC, while the full King~\emph{et al.}~(2012) 295-absorber sample gave $\Delta\chi^2 \approx 0$.
+We now scan plausible cuts on the King catalog and 200 random 128-absorber subsamples (reproducible in \texttt{notebooks/24\_pillar\_K\_subset\_scan.ipynb}).
+The dominant finding is a strong VLT/Keck anti-correlation: the Keck-only subset ($N = 141$) yields $\Gamma = +6.4 \pm 1.9$ ($3.3\sigma$, $\Delta\chi^2 = 11.0$), while the VLT-only subset ($N = 154$) yields $\Gamma = -2.0 \pm 1.1$ ($1.8\sigma$ in the \emph{opposite} direction), and the full sample averages to null.
+None of 200 random 128-absorber subsamples reaches $\Delta\chi^2 \ge 31.5$ (median $\Delta\chi^2 = 0.4$, 16--84\% interval $[0.04, 1.27]$).
+We therefore conclude that Pillar~A's apparent signal is essentially the long-standing Keck $\alpha$-dipole signal, which has been attributed to wavelength-calibration systematics in subsequent re-analyses~\citep{Whitmore2015,Wilczynska2020}, and that the full King catalog (Pillar~B) is the more reliable indicator (\cref{fig:pillar_K}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig27_pillar_K_subset.pdf}
+  \caption{Pillar~K: King~\emph{et al.}~(2012) subset sensitivity.
+  (a) Cut-by-cut $\Delta\chi^2$ vs the constant null; the Keck-only subset gives $\Delta\chi^2 = 11.0$, while the VLT-only subset gives $\Gamma$ of opposite sign.
+  (b) Random 128-absorber subsamples give a median $\Delta\chi^2 = 0.4$; Pillar~A's reported value of $31.5$ is far outside the random-cut distribution.}
+  \label{fig:pillar_K}
+\end{figure}
+
+\paragraph{Combined verdict on the simple DSC ansatz.}
+The five late-universe pillars (F, G, H, J) and the subset-decomposition of Pillar~K together strongly disfavor the simple DSC ansatz $H(t) = H_\infty + \beta/\ln^2(t/t_P)$ as a competitive description of the late-time universe.
+The original Pillar~C result ($R^2 = 0.91$ on four anchor $H_0$ points) is now explained: it relied on the $\ln^2(t/t_P)$ leverage between the CMB anchor and the local-distance anchor, which dwarfs the leverage available within $z < 2$.
+Pillars~B (full quasar) and Pillar~D (CMB+BAO Fisher), already null at current sensitivity, are now joined by Pillars~F, G, H, J as falsifications.
+What remains as a positive empirical claim is therefore: \emph{a logarithmic relaxation between recombination and the present provides a phenomenologically convenient description of the Hubble tension at the level of the four anchor points, but is not a viable cosmological model on dense late-time data.}
+The CMB lattice surrogate of \crefrange{sec:gauss}{sec:timeline} likewise does not reproduce the Planck angular spectrum (\cref{sec:camb}).
+
+We retain the framework in this conservative form because (i) the Riemann-zero spectral motivation remains an interesting working hypothesis at the level of the cooling-law functional form, (ii) the differentiable lattice surrogate is a useful methodological building block for simulation-based inference workflows, and (iii) the negative results F--K are themselves valuable for future workers exploring this functional family or its generalizations.
