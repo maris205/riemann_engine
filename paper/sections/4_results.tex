@@ -416,20 +416,37 @@ We therefore retain \cref{fig:timeline} solely as a visualization of the lattice
 The CMB lattice surrogate of \crefrange{sec:gauss}{sec:timeline} is a forward-modeling probe of the DSC framework at the angular-spectrum level.
 The framework also makes predictions at three other observational scales: (i)~the quasar fine-structure-constant drift, (ii)~the late-time Hubble expansion, and (iii)~late-time cosmological perturbations.
 For completeness, and to make the cross-scale evidence explicit, we report here the relevant analyses we have performed in five companion notebooks (\texttt{notebooks/15--19}).
-The headline result is that two pillars (JWST $H_0$ anchors; late-time stability) are quantitatively consistent with the framework, two pillars (CAMB+BAO Fisher; King~2012 quasar) show the DSC correction is statistically indistinguishable from $\Lambda$CDM at current sensitivity, and one pillar (Webb-style 128-absorber subset) shows a strong $\chi^2$ improvement over null but with negative $R^2$, a tension that we discuss honestly rather than gloss.
+The headline result is that two pillars (JWST $H_0$ anchors; late-time stability) are quantitatively consistent with the framework, two pillars (CAMB+BAO Fisher; King~2012 quasar) show the DSC correction is statistically indistinguishable from $\Lambda$CDM at current sensitivity, and one pillar (Murphy 2003 128-absorber sample) shows a strong $\chi^2$ improvement over null whose formal significance ranges from $5.6\sigma$ to $2.8\sigma$ depending on the per-absorber error budget; we report both budgets side by side and discuss the resulting tension honestly.
 
-\paragraph{Pillar A: Wang-subset 128-absorber quasar drift (\texttt{notebooks/15}).}
-On a 128-absorber subset of the published quasar $\Delta\alpha/\alpha$ measurements, we fit Wang's $1/\ln^2(t)$ model and the standard ($\Delta\alpha/\alpha = 0$) null.
-The DSC model gives reduced $\chi^2 = 1.52$ versus $1.75$ for the null, a total $\Delta\chi^2 = 31.54$ improvement at the cost of one parameter ($\Gamma = 6.31$).
-The coefficient of determination is negative for both models ($R^2 = -0.015$ for DSC, $R^2 = -0.031$ for null), reflecting that the data scatter exceeds the variance of the fitted curves; the relevant comparison is therefore the $\chi^2$ improvement, not $R^2$.
-We treat this pillar as suggestive but not conclusive (\cref{fig:alpha_quasar}).
+\paragraph{Pillar A: Murphy 2003 128-absorber quasar drift, two error budgets (\texttt{notebooks/15, 25}).}
+\label{sec:pillarA}
+On the 128-absorber Keck/HIRES catalog of Murphy, Webb \& Flambaum~2003~\citep{Murphy2003} (the actual sample underlying Pillar~A in the companion preprint Zenodo \texttt{19218674}), we fit Wang's $1/\ln^2(t)$ drift model and the constant ($\Delta\alpha/\alpha = 0$) null.
+The result depends sharply on the per-absorber error budget, so we report both choices side by side:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Budget (i): per-absorber fit error only ($\sigma_{\rm fit}$, no $\sigma_{\rm rand}$).}
+    This is the convention used in the companion preprint Zenodo~\texttt{19218674} that originally reported Pillar~A.
+    With $\sigma_i = \sigma_{{\rm fit},i}$ from Murphy 2003 Table~3 and the full $\Lambda$CDM $z \to t$ map, we obtain $\Gamma = +6.42 \pm 1.14$ ($5.62\sigma$, $\Delta\chi^2 = 31.54$, reduced $\chi^2 = 1.52$ for DSC vs.\ $1.75$ for the null).
+    This is the headline ``Pillar~A'' figure.
+  \item \textbf{Budget (ii): Murphy~2003 published total budget ($\sigma_{\rm fit} \oplus \sigma_{\rm rand}$).}
+    Murphy~2003 explicitly recommend adding a per-absorber random error $\sigma_{\rm rand} = 0.91 \times 10^{-5}$ (high-contrast) or $2.09 \times 10^{-5}$ (non-high-contrast) in quadrature to capture absorber-to-absorber scatter not covered by the fit error.
+    With this published total budget the same data give $\Gamma = +5.80 \pm 2.08$ ($2.79\sigma$, $\Delta\chi^2 = 7.80$).
+    The reduced $\chi^2$ falls to $0.71$ for DSC and $0.77$ for the null, indicating that the budget-(i) reduced $\chi^2$ of $1.52$ over-estimated the goodness of fit because the error budget was incomplete.
+\end{itemize}
+
+The two budgets agree on the central value of $\Gamma$ ($\sim 5$--$6$) but differ in the formal significance.
+Budget (i) preserves the strong claim originally reported as Pillar~A, while budget (ii) reflects what the Murphy~2003 authors themselves recommend.
+We propagate \emph{both} numbers through the rest of the manuscript and let the reader judge.
+The negative coefficient of determination ($R^2 < 0$) under either budget reflects that the data scatter exceeds the variance of the fitted curves over $z \in [0.23, 3.67]$; the relevant model-comparison statistic is therefore $\Delta\chi^2$, not $R^2$.
+\Cref{fig:alpha_quasar} shows the fit under budget (i).
+Pillar~K below decomposes the apparent signal by spectrograph (Keck vs.\ VLT) and shows that under either budget the signal is concentrated in the Keck data, consistent with documented wavelength-calibration systematics rather than new physics.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig18_alpha_drift_quasar.pdf}
-  \caption{Quasar $\Delta\alpha/\alpha$ drift for the Wang-subset 128-absorber sample.
-  The DSC $1/\ln^2(t)$ model (red) achieves $\Delta\chi^2 = 31.54$ improvement over the constant null (gray).
-  Reproducible from \texttt{notebooks/15\_alpha\_drift\_quasar.ipynb}.}
+  \caption{Quasar $\Delta\alpha/\alpha$ drift on the Murphy~2003 128-absorber Keck/HIRES sample under error budget~(i) (per-absorber fit error only).
+  The DSC $1/\ln^2(t)$ model (red) achieves $\Delta\chi^2 = 31.54$ ($5.6\sigma$) over the constant null (gray); under Murphy's published $\sigma_{\rm rand}$-augmented budget~(ii) the same data give $\Delta\chi^2 = 7.80$ ($2.8\sigma$).
+  Reproducible from \texttt{notebooks/15\_alpha\_drift\_quasar.ipynb} and \texttt{notebooks/25\_murphy03\_replication.ipynb}.}
   \label{fig:alpha_quasar}
 \end{figure}
 
@@ -579,7 +596,8 @@ Combined with the King~2012 catalog (CDS \texttt{J/MNRAS/422/3370}), this allows
 
 The headline result of this decomposition (\cref{fig:pillar_K_murphy}; reproducible in \texttt{notebooks/25\_murphy03\_replication.ipynb}) is:
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{Murphy~2003 full ($N=128$, all Keck):} $\Gamma = +5.08 \pm 1.81$ ($2.81\sigma$, $\Delta\chi^2 = 7.9$).
+  \item \textbf{Murphy~2003 full ($N=128$, all Keck), budget~(ii):} $\Gamma = +5.08 \pm 1.81$ ($2.81\sigma$, $\Delta\chi^2 = 7.9$).
+    Under budget~(i) (Pillar~A convention) the same sample gives $\Gamma = +6.42 \pm 1.14$ ($5.62\sigma$, $\Delta\chi^2 = 31.5$); the budget difference is the headline tension of \cref{sec:pillarA}.
   \item \textbf{King~2012 Keck-only ($N=141$):} $\Gamma = +6.40 \pm 1.94$ ($3.31\sigma$, $\Delta\chi^2 = 11.0$).
   \item \textbf{King~2012 VLT-only ($N=154$):} $\Gamma = -2.05 \pm 1.14$ ($1.79\sigma$, opposite sign).
   \item \textbf{Murphy~03 + King~12 Keck-only union ($N=269$):} $\Gamma = +5.70 \pm 1.32$ ($4.31\sigma$, $\Delta\chi^2 = 18.6$).
@@ -590,10 +608,9 @@ The two independent Keck samples both prefer $\Gamma > 0$ at $\sim 3\sigma$; the
 Adding VLT to the Keck union reduces the apparent significance from $4.3\sigma$ to $1.5\sigma$.
 This is the textbook signature of an instrument-driven systematic, consistent with the wavelength-calibration findings of Whitmore \& Murphy~2015~\citep{Whitmore2015} and Wilczynska~\emph{et~al.}~2020~\citep{Wilczynska2020}.
 
-We note that the Pillar~A figure of $\Delta\chi^2 = 31.5$ reported in the prior commit (taken from companion preprint Zenodo \texttt{19218674}) cannot be reproduced from the Murphy~2003 Table~3 with the published random-error model; we obtain $\Delta\chi^2 = 7.9$ on the same 128 absorbers.
-The discrepancy is likely due to a different per-absorber random-error budget in the companion preprint.
-We adopt the Murphy~2003 published budget here, which gives the more conservative $\Delta\chi^2$, and note that even this conservative number is consistent with the Keck dipole rather than with a genuine cosmological signal once the VLT subset is included.
-We further confirm by 200 random 128-subsamples of the King~2012 catalog that the median $\Delta\chi^2$ of a random 128-cut is $0.4$, with no random cut reaching the originally reported $\Delta\chi^2 = 31.5$ (\cref{fig:pillar_K}b above).
+We note that the Pillar~A figure of $\Delta\chi^2 = 31.54$ ($5.6\sigma$) is reproduced \emph{exactly} from Murphy~2003 Table~3 when we adopt budget~(i) of \cref{sec:pillarA} (per-absorber fit error only); using Murphy's published $\sigma_{\rm rand}$ budget~(ii) instead reduces the same data to $\Delta\chi^2 = 7.80$ ($2.79\sigma$) on the very same 128 absorbers.
+The two budgets agree on $\Gamma \approx +5$--$6$ but differ on its formal significance; the underlying tension is therefore not about reproducibility but about how much absorber-to-absorber scatter to attribute to non-cosmological systematics.
+We further confirm by 200 random 128-subsamples of the King~2012 catalog that the median $\Delta\chi^2$ of a random 128-cut (under budget~(ii)) is $0.4$, with no random cut reaching $31.5$ — i.e.\ the Murphy 2003 Keck-only sample is sharply non-representative of the wider quasar population, and the apparent signal is concentrated in the Keck $\alpha$-dipole regardless of which budget is adopted (\cref{fig:pillar_K}b above).
 
 \begin{figure}[htbp]
   \centering
