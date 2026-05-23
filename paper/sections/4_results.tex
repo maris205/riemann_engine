@@ -594,18 +594,38 @@ We were able to obtain, after the prior commit, the original 128-absorber catalo
 The Murphy~2003 sample is composed entirely of Keck/HIRES absorbers (27 ``previous low-$z$'' + 23 ``previous high-$z$'' + 78 ``new'' = 128, with 22 flagged ``high-contrast''), and the original paper quotes per-absorber random errors $\sigma_{\rm rand} = 0.91 \times 10^{-5}$ (high-contrast) and $\sigma_{\rm rand} = 2.09 \times 10^{-5}$ (non-high-contrast).
 Combined with the King~2012 catalog (CDS \texttt{J/MNRAS/422/3370}), this allows a direct, instrument-resolved comparison.
 
-The headline result of this decomposition (\cref{fig:pillar_K_murphy}; reproducible in \texttt{notebooks/25\_murphy03\_replication.ipynb}) is:
-\begin{itemize}[leftmargin=2em]
-  \item \textbf{Murphy~2003 full ($N=128$, all Keck), budget~(ii):} $\Gamma = +5.08 \pm 1.81$ ($2.81\sigma$, $\Delta\chi^2 = 7.9$).
-    Under budget~(i) (Pillar~A convention) the same sample gives $\Gamma = +6.42 \pm 1.14$ ($5.62\sigma$, $\Delta\chi^2 = 31.5$); the budget difference is the headline tension of \cref{sec:pillarA}.
-  \item \textbf{King~2012 Keck-only ($N=141$):} $\Gamma = +6.40 \pm 1.94$ ($3.31\sigma$, $\Delta\chi^2 = 11.0$).
-  \item \textbf{King~2012 VLT-only ($N=154$):} $\Gamma = -2.05 \pm 1.14$ ($1.79\sigma$, opposite sign).
-  \item \textbf{Murphy~03 + King~12 Keck-only union ($N=269$):} $\Gamma = +5.70 \pm 1.32$ ($4.31\sigma$, $\Delta\chi^2 = 18.6$).
-  \item \textbf{Full Keck + VLT union ($N=423$):} $\Gamma = +1.27 \pm 0.86$ ($1.47\sigma$, $\Delta\chi^2 = 2.2$).
-\end{itemize}
+The headline result of this decomposition (\cref{fig:pillar_K_murphy}; reproducible in \texttt{notebooks/25\_murphy03\_replication.ipynb}) is summarized in \cref{tab:pillarK_budgets}.
+The same set of cuts is reported under both error budgets (i) and (ii) of \cref{sec:pillarA}, so that the instrument-correlation structure of the apparent signal can be read off independently of the budget choice.
 
-The two independent Keck samples both prefer $\Gamma > 0$ at $\sim 3\sigma$; the VLT subset of King~2012 prefers $\Gamma < 0$ at $\sim 1.8\sigma$.
-Adding VLT to the Keck union reduces the apparent significance from $4.3\sigma$ to $1.5\sigma$.
+\begin{table}[htbp]
+\centering
+\caption{Pillar~K: instrument-resolved fits of the DSC $1/\ln^2(t)$ drift coefficient $\Gamma$ (in units of $10^{-5}$) on Murphy~2003 + King~2012 quasar samples, under both error budgets discussed in \cref{sec:pillarA}.
+Budget (i): per-absorber fit error only (Pillar~A convention).
+Budget (ii): Murphy's published $\sigma_{\rm fit} \oplus \sigma_{\rm rand}$.
+The Keck-only samples both prefer $\Gamma > 0$ at high significance; the VLT-only subset prefers $\Gamma$ of the opposite sign; the joint Keck+VLT union is consistent with $\Gamma = 0$ at $\sim 1.5$--$3.0\sigma$ depending on the budget.}
+\label{tab:pillarK_budgets}
+\small
+\begin{tabular}{lcccc}
+\hline
+Subset & $N$ & Budget & $\Gamma \pm \sigma_\Gamma$ & Significance \\
+\hline
+Murphy 03 (all Keck)        & 128 & (i)  & $+5.56 \pm 0.99$ & $+5.64\sigma$ \\
+                            & 128 & (ii) & $+5.08 \pm 1.81$ & $+2.81\sigma$ \\
+King 12 Keck-only           & 141 & (i)  & $+6.28 \pm 0.97$ & $+6.47\sigma$ \\
+                            & 141 & (ii) & $+6.40 \pm 1.94$ & $+3.31\sigma$ \\
+King 12 VLT-only            & 154 & (i)  & $-2.35 \pm 0.63$ & $-3.72\sigma$ \\
+                            & 154 & (ii) & $-2.05 \pm 1.14$ & $-1.79\sigma$ \\
+Murphy 03 + King 12 (Keck $\cup$) & 269 & (i)  & $+5.92 \pm 0.69$ & $+8.57\sigma$ \\
+                                  & 269 & (ii) & $+5.70 \pm 1.32$ & $+4.31\sigma$ \\
+Full Keck + VLT union       & 423 & (i)  & $+1.42 \pm 0.47$ & $+3.04\sigma$ \\
+                            & 423 & (ii) & $+1.27 \pm 0.86$ & $+1.47\sigma$ \\
+\hline
+\end{tabular}
+\end{table}
+
+Two independent Keck samples (Murphy 2003 and the Keck subset of King 2012) both prefer $\Gamma \sim +6$ at $\gtrsim 5.6\sigma$ under budget~(i) and $\gtrsim 2.8\sigma$ under budget~(ii); the VLT subset of King 2012 prefers $\Gamma$ of \emph{opposite} sign at $-3.72\sigma$ (i) or $-1.79\sigma$ (ii); the joint Keck+VLT union is consistent with $\Gamma = 0$ at $1.5$--$3.0\sigma$.
+The Keck-only union (Murphy 03 $\cup$ King 12 Keck) reaches $+8.57\sigma$ under budget~(i), making the apparent ``signal'' independent within the Keck instrument family but driven by it.
+Adding VLT to the Keck union reduces the apparent significance from $8.6\sigma$ to $3.0\sigma$ (budget i) or from $4.3\sigma$ to $1.5\sigma$ (budget ii).
 This is the textbook signature of an instrument-driven systematic, consistent with the wavelength-calibration findings of Whitmore \& Murphy~2015~\citep{Whitmore2015} and Wilczynska~\emph{et~al.}~2020~\citep{Wilczynska2020}.
 
 We note that the Pillar~A figure of $\Delta\chi^2 = 31.54$ ($5.6\sigma$) is reproduced \emph{exactly} from Murphy~2003 Table~3 when we adopt budget~(i) of \cref{sec:pillarA} (per-absorber fit error only); using Murphy's published $\sigma_{\rm rand}$ budget~(ii) instead reduces the same data to $\Delta\chi^2 = 7.80$ ($2.79\sigma$) on the very same 128 absorbers.
