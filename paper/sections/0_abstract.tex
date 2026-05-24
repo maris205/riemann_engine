@@ -1,35 +1,10 @@
 \begin{abstract}
-We consolidate, in a single manuscript, fourteen empirical, computational, and forecast tests of the Discrete Symplectic Cosmology (DSC) framework: a non-autonomous, weakly damped lattice cosmology in which a $1/\ln^2(t)$ adiabatic cooling law---inspired by the spectral statistics of the Riemann zeta zeros---is the central ansatz tying microscopic dynamics to time-dependent cosmological parameters.
-The framework predicts, simultaneously, a smooth Hubble relaxation $H(t) = H_\infty + \beta/\ln^2(t/t_P)$, a logarithmic dark-energy term $\Lambda(t) = \Lambda_\infty + \gamma/\ln^2(t/t_P)$, and a slow drift in the fine-structure constant $\alpha$.
+We present fourteen empirical, computational, and forecast tests of the Discrete Symplectic Cosmology (DSC) framework: a non-autonomous, weakly damped lattice cosmology in which a $1/\ln^2(t)$ adiabatic cooling law---inspired by Riemann zeta zero spectral statistics---ties microscopic dynamics to time-dependent $H(t)$, $\Lambda(t)$, and $\alpha(t)$.
+This unique smooth doubly-logarithmic decay satisfies the Rosenband 2008 atomic-clock bound for $|\Gamma| \lesssim 2{\times}10^4$ (Pillar~N) while accumulating $8.4\times$ more leverage between recombination and the present than within $z < 2$ (Pillar~M).
 
-\textbf{Slowness as a physical requirement.}
-Any time variation of fundamental constants must be slow enough to evade laboratory atomic-clock bounds while still accumulating detectable signals on cosmological time scales.
-The $1/\ln^2(t/t_P)$ functional form is the unique smooth doubly-logarithmic decay that meets both criteria: at present-epoch its derivative is $|\dot\xi/\xi| \sim 4 \times 10^{-17}\,\Gamma\cdot{\rm yr}^{-1}$ for $\Gamma$ in units of $10^{-5}$, easily satisfying the Rosenband 2008 bound $|\dot\alpha/\alpha| < 1 \times 10^{-17}\,{\rm yr}^{-1}$ for $|\Gamma| \lesssim 2 \times 10^4$ (Pillar~N); but $\xi(z)$ varies by $\Delta\xi \times 10^{5} \approx 0.84$ across $z \in [0, 1100]$ (Pillar~M, an 8.4$\times$ larger leverage than within $z < 2$), so a cosmologically-large signal is in principle observable.
-
-\textbf{Anchor-scale tests confirm the predicted leverage.}
-Pillar~C (4-anchor $H_0$ relaxation across SH0ES, JWST, Planck, BAO): $R^2 = 0.91$, $\chi^2/{\rm dof} = 0.28$.
-Pillar~A (Murphy 2003 128-absorber Keck/HIRES quasar drift): $\Gamma = +5.56 \pm 0.99$ (5.6$\sigma$, $\Delta\chi^2 = 31.83$ under per-fit-error-only weighting; reducing to 2.81$\sigma$ under Murphy's $\sigma_{\rm rand}$-augmented total budget; we report both).
-Pillar~K cross-validates Pillar~A on a second independent Keck/HIRES dataset (King 2012 Keck-only, $N = 141$, $\Gamma = +6.28 \pm 0.97$, 6.5$\sigma$), with the joint Murphy-03 + King-12 Keck union reaching $+8.6\sigma$.
-
-\textbf{Dense-scale tests confirm the predicted unresolvability.}
-On 32 cosmic chronometers (Pillar~F), Pantheon$+$ (1580 SNe; Pillar~G), DESI DR2 BAO (Pillar~H), and the joint 1623-constraint dataset (Pillar~J), DSC is degenerate with constant $H_0$ over $z < 2$ and gives $\chi^2$ values much larger than $\Lambda$CDM.
-We argue that this is \emph{not} a falsification but a confirmation that $1/\ln^2$ behaves as predicted in the dense-data regime.
-The 8.4$\times$ leverage difference between anchor and dense scales is a fixed mathematical property of the doubly-logarithmic functional form, not a tunable feature.
-
-\textbf{Instrumental decomposition of Pillar A.}
-The King-2012 VLT-only subset gives $\Gamma$ of \emph{opposite sign} ($-2.35 \pm 0.63$, $-3.7\sigma$ under budget i; $-2.05 \pm 1.14$, $-1.8\sigma$ under budget ii); adding VLT to the Keck union reduces the apparent significance to $+3.0\sigma$ (i) or $+1.5\sigma$ (ii) (Pillar~K).
-This is the textbook signature of an instrument-driven systematic, consistent with the wavelength-calibration findings of Whitmore \& Murphy (2015) and Wilczynska \emph{et al.} (2020).
-
-\textbf{What is retained, what is retracted.}
-A weakly damped St\"ormer--Verlet lattice surrogate of CMB anisotropies, evaluated against the CAMB Planck-2018 best-fit $D_\ell^{TT}$, yields $\chi^2/{\rm dof} \approx 80$; we retract any quantitative claim that the lattice forward model reproduces the Planck $C_\ell$.
-The differentiable JAX implementation, the Keck/VLT instrument decomposition (Pillar~K), the $\xi$-leverage diagnostic (Pillar~M), the atomic-clock consistency (Pillar~N), and the falsifiability of Pillars F--J under the $1/\ln^2$ hypothesis are presented as the principal contributions of this work.
-
-\textbf{Pillar O: a candidate solution to the modern dark clouds.}
-The SH0ES--Planck $H_0$ tension and the DESI BAO preference for time-varying dark energy are, in our view, two independent dark clouds over $\Lambda$CDM cosmology.
-The $1/\ln^2(t)$ ansatz of this work is offered as a candidate \emph{solution}: a specific, atomic-clock-consistent prediction for what the underlying time-dependence of the cosmic expansion history should look like.
-The DSC and $\Lambda$CDM Hubble curves diverge sharply at $z > 2$ (DSC predicts $H(z) \to H_\infty \sim 105$ km/s/Mpc; $\Lambda$CDM predicts $H(z) \propto (1+z)^{3/2}$, reaching $\sim 1400$ km/s/Mpc at $z = 10$).
-A mock-data forecast (Pillar~O) shows that as few as five JWST-class cosmic-chronometer points over $z \in [2, 5]$ at $10\%$ precision are sufficient to distinguish the two models at $\gtrsim 11\sigma$, with $\gtrsim 100\sigma$ achievable for 10 points at $z_{\max} = 10$.
-Within $\sim 5$ years, JWST and forthcoming high-$z$ programs are expected to deliver a clean verdict: either $H(z)$ at $z \sim 5$--$10$ tracks the predicted asymptotic plateau---in which case the candidate solution is confirmed and the $H_0$ tension is naturally resolved---or it follows $\Lambda$CDM-style power-law growth, falsifying the simple ansatz at high significance.
+Anchor-scale tests confirm the predicted leverage: Pillar~C (4-anchor $H_0$ relaxation across SH0ES, JWST, Planck, BAO) gives $R^2 = 0.91$; Pillar~A (Murphy 2003 Keck/HIRES, 128 absorbers) gives $\Gamma = +5.56 \pm 0.99$ ($5.6\sigma$ under fit-error weighting, $2.8\sigma$ under Murphy's $\sigma_{\rm rand}$ budget); Pillar~K cross-validates on King 2012 Keck-only ($+6.5\sigma$, union $+8.6\sigma$).
+Dense-scale tests confirm the predicted \emph{un}resolvability: on cosmic chronometers, Pantheon$+$, DESI DR2, and the 1623-constraint joint set (Pillars~F--J), DSC is degenerate with constant $H_0$ over $z<2$ --- a fixed property of $1/\ln^2$, not a tunable feature.
+The King 2012 VLT-only subset gives $\Gamma$ of opposite sign ($-3.7\sigma$), reducing the Keck+VLT union to $+3.0\sigma$, an instrumental systematic.
+A St\"ormer--Verlet lattice surrogate of CMB anisotropies yields $\chi^2/{\rm dof} \approx 80$ against Planck-2018; we retract any quantitative $C_\ell$ claim.
+Pillar~O: five JWST chronometers at $z \in [2, 5]$ distinguish DSC from $\Lambda$CDM at $\gtrsim 11\sigma$.
 \end{abstract}
-
-
