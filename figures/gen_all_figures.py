@@ -318,17 +318,21 @@ def gen_fig5():
         c2h.append(c2t)
         if t in [5, 30, 100, 300]: snaps[t] = phi.copy()
 
-    fig = plt.figure(figsize=(7.0, 4.5))
+    fig = plt.figure(figsize=(10.5, 5.4))
+    gs = fig.add_gridspec(2, 10, height_ratios=[1.0, 1.4],
+                          hspace=0.55, wspace=1.2,
+                          left=0.07, right=0.95, top=0.92, bottom=0.10)
 
-    snap_times = sorted(snaps.keys())
+    snap_times = sorted(snaps.keys())  # [0, 5, 30, 100, 300]
     for i, t in enumerate(snap_times):
-        ax = fig.add_subplot(2, len(snap_times), i+1)
+        ax = fig.add_subplot(gs[0, 2*i:2*i+2])
         ax.imshow(np.sqrt(np.abs(snaps[t])), cmap='inferno', origin='lower',
                   extent=[0,N,0,N])
         ax.set_title(f't={t}', fontsize=8)
         ax.axis('off')
 
-    ax1 = fig.add_subplot(2,2,3)
+    # (e) on bottom-left half, (f) on bottom-right half, with empty gap column between
+    ax1 = fig.add_subplot(gs[1, 0:5])
     ax1.plot(radii, color=C_DSC, lw=1.5)
     ax1.axhline(radii[-1], color=C_DSC, ls=':', alpha=0.4)
     ax1.set_xlabel('Time step')
@@ -340,7 +344,7 @@ def gen_fig5():
     ax1b.set_ylabel(r'$c^2_{\rm eff}$', color=C_DISS, fontsize=9)
     ax1b.tick_params(axis='y', colors=C_DISS)
 
-    ax2 = fig.add_subplot(2,2,4)
+    ax2 = fig.add_subplot(gs[1, 5:10])
     t_arr = np.arange(len(radii))
     ax2.plot(t_arr, radii, color=C_DSC, lw=1.5)
     ax2.fill_between(t_arr, 0, radii, alpha=0.08, color=C_DSC)
@@ -348,7 +352,6 @@ def gen_fig5():
     ax2.set_ylabel('Comoving distance')
     ax2.set_title('(f) Causal structure', fontsize=9)
 
-    plt.tight_layout(h_pad=0.8)
     save_fig(fig, 'fig5_freezeout')
 
 
