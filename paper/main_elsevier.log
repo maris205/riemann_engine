@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  24 MAY 2026 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  24 MAY 2026 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -842,21 +842,21 @@ ne 462.
 (pdftex.def)             Requested size: 390.0pt x 148.96124pt.
 
 [39 <../figures//fig4_twin_experiment.pdf>]
-<../figures//fig8_planck_comparison.pdf, id=2088, 497.94029pt x 373.87682pt>
+<../figures//fig8_planck_comparison.pdf, id=2088, 506.80464pt x 435.47305pt>
 File: ../figures//fig8_planck_comparison.pdf Graphic file (type pdf)
 <use ../figures//fig8_planck_comparison.pdf>
 Package pdftex.def Info: ../figures//fig8_planck_comparison.pdf  used on input 
 line 487.
-(pdftex.def)             Requested size: 390.0pt x 292.82648pt.
+(pdftex.def)             Requested size: 390.0pt x 335.12259pt.
  [40 <../figures//fig8_planck_comparison.pdf>]
-<../figures//fig10_grf_baseline.pdf, id=2097, 485.89528pt x 178.266pt>
+<../figures//fig10_grf_baseline.pdf, id=2166, 485.89528pt x 178.266pt>
 File: ../figures//fig10_grf_baseline.pdf Graphic file (type pdf)
 <use ../figures//fig10_grf_baseline.pdf>
 Package pdftex.def Info: ../figures//fig10_grf_baseline.pdf  used on input line
  525.
 (pdftex.def)             Requested size: 390.0pt x 143.08899pt.
  [41]
-<../figures//fig12_convergence.pdf, id=2105, 484.69081pt x 165.9801pt>
+<../figures//fig12_convergence.pdf, id=2173, 484.69081pt x 165.9801pt>
 File: ../figures//fig12_convergence.pdf Graphic file (type pdf)
 <use ../figures//fig12_convergence.pdf>
 Package pdftex.def Info: ../figures//fig12_convergence.pdf  used on input line 
@@ -868,19 +868,19 @@ Overfull \hbox (4.55922pt too wide) in paragraph at lines 570--582
  []
 
 [43 <../figures//fig12_convergence.pdf>]
-<../figures//fig17_camb_benchmark.pdf, id=2125, 4302.8557pt x 381.7078pt>
+<../figures//fig17_camb_benchmark.pdf, id=2193, 4302.8557pt x 381.7078pt>
 File: ../figures//fig17_camb_benchmark.pdf Graphic file (type pdf)
 <use ../figures//fig17_camb_benchmark.pdf>
 Package pdftex.def Info: ../figures//fig17_camb_benchmark.pdf  used on input li
 ne 591.
 (pdftex.def)             Requested size: 390.0pt x 34.59683pt.
-<../figures//fig7_sensitivity.pdf, id=2127, 491.06146pt x 289.0825pt>
+<../figures//fig7_sensitivity.pdf, id=2195, 491.06146pt x 289.0825pt>
 File: ../figures//fig7_sensitivity.pdf Graphic file (type pdf)
 <use ../figures//fig7_sensitivity.pdf>
 Package pdftex.def Info: ../figures//fig7_sensitivity.pdf  used on input line 6
 04.
 (pdftex.def)             Requested size: 390.0pt x 229.59894pt.
-<../figures//fig6_ensemble.pdf, id=2128, 492.1587pt x 144.29909pt>
+<../figures//fig6_ensemble.pdf, id=2196, 492.1587pt x 144.29909pt>
 File: ../figures//fig6_ensemble.pdf Graphic file (type pdf)
 <use ../figures//fig6_ensemble.pdf>
 Package pdftex.def Info: ../figures//fig6_ensemble.pdf  used on input line 614.
@@ -893,27 +893,27 @@ Overfull \hbox (1.25151pt too wide) in paragraph at lines 637--639
 ar-get: the Planck
  []
 
-<../figures//fig13_heldout.pdf, id=2280, 482.82492pt x 147.76926pt>
+<../figures//fig13_heldout.pdf, id=2348, 482.82492pt x 147.76926pt>
 File: ../figures//fig13_heldout.pdf Graphic file (type pdf)
 <use ../figures//fig13_heldout.pdf>
 Package pdftex.def Info: ../figures//fig13_heldout.pdf  used on input line 656.
 
 (pdftex.def)             Requested size: 390.0pt x 119.36098pt.
 [46] [47 <../figures//fig13_heldout.pdf>]
-<../figures//fig17_3d_power_spectrum.pdf, id=2342, 231.21375pt x 187.44417pt>
+<../figures//fig17_3d_power_spectrum.pdf, id=2410, 231.21375pt x 187.44417pt>
 File: ../figures//fig17_3d_power_spectrum.pdf Graphic file (type pdf)
 <use ../figures//fig17_3d_power_spectrum.pdf>
 Package pdftex.def Info: ../figures//fig17_3d_power_spectrum.pdf  used on input
  line 680.
 (pdftex.def)             Requested size: 390.0pt x 316.20543pt.
-<../figures//fig15_degeneracy_breaking.pdf, id=2343, 408.80003pt x 382.81306pt>
+<../figures//fig15_degeneracy_breaking.pdf, id=2411, 408.80003pt x 382.81306pt>
 
 File: ../figures//fig15_degeneracy_breaking.pdf Graphic file (type pdf)
 <use ../figures//fig15_degeneracy_breaking.pdf>
 Package pdftex.def Info: ../figures//fig15_degeneracy_breaking.pdf  used on inp
 ut line 688.
 (pdftex.def)             Requested size: 390.0pt x 365.21826pt.
-<../figures//fig9_inverse_reconstruction.pdf, id=2344, 515.28508pt x 367.85585p
+<../figures//fig9_inverse_reconstruction.pdf, id=2412, 515.28508pt x 367.85585p
 t>
 File: ../figures//fig9_inverse_reconstruction.pdf Graphic file (type pdf)
 <use ../figures//fig9_inverse_reconstruction.pdf>
@@ -922,7 +922,7 @@ nput line 697.
 (pdftex.def)             Requested size: 390.0pt x 278.41707pt.
  [48 <../figures//fig17_3d_power_spectrum.pdf>] [49 <../figures//fig15_degenera
 cy_breaking.pdf>] [50 <../figures//fig9_inverse_reconstruction.pdf>]
-<../figures//fig16_cosmic_timeline.pdf, id=2527, 1858.2423pt x 1069.99872pt>
+<../figures//fig16_cosmic_timeline.pdf, id=2595, 1858.2423pt x 1069.99872pt>
 File: ../figures//fig16_cosmic_timeline.pdf Graphic file (type pdf)
 <use ../figures//fig16_cosmic_timeline.pdf>
 Package pdftex.def Info: ../figures//fig16_cosmic_timeline.pdf  used on input l
@@ -950,7 +950,7 @@ n/12 )
  []
 
 (./sections/A_appendix.tex
-<../figures//fig1_hero.pdf, id=2794, 491.42409pt x 382.8246pt>
+<../figures//fig1_hero.pdf, id=2862, 491.42409pt x 382.8246pt>
 File: ../figures//fig1_hero.pdf Graphic file (type pdf)
 <use ../figures//fig1_hero.pdf>
 Package pdftex.def Info: ../figures//fig1_hero.pdf  used on input line 8.
@@ -1000,10 +1000,10 @@ m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_elsevier.pdf (69 pages, 10080762 bytes).
+Output written on main_elsevier.pdf (69 pages, 10283389 bytes).
 PDF statistics:
- 3164 PDF objects out of 3580 (max. 8388607)
- 1319 compressed objects within 14 object streams
+ 3232 PDF objects out of 3580 (max. 8388607)
+ 1336 compressed objects within 14 object streams
  275 named destinations out of 1000 (max. 500000)
  428 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -526,14 +526,14 @@ def gen_fig8():
 
     planck_s, planck_k = skew(target[valid]), kurtosis(target[valid])
 
-    fig = plt.figure(figsize=(7.0, 5.5))
+    fig = plt.figure(figsize=(7.2, 6.4))
 
     hp.mollview(np.where(valid, target, hp.UNSEEN), cmap='RdYlBu_r', min=-3, max=3,
-                sub=(2,3,1), badcolor='gray', title='')
+                sub=(2,3,1), badcolor='gray', title='', margins=(0.02, 0.02, 0.02, 0.05))
     plt.title('(a) Planck SMICA', fontsize=9, pad=2)
 
     hp.mollview(dsc_sky, cmap='RdYlBu_r', min=-3, max=3,
-                sub=(2,3,2), title='')
+                sub=(2,3,2), title='', margins=(0.02, 0.02, 0.02, 0.05))
     plt.title('(b) DSC forward sim.', fontsize=9, pad=2)
 
     ax3 = fig.add_subplot(2,3,3)
@@ -573,7 +573,8 @@ def gen_fig8():
     ax6.set_xticklabels(['Planck\nskew', 'DSC\nskew', 'Planck\nkurt', 'DSC\nkurt'], fontsize=7)
     ax6.set_title('(f) Gaussianity comparison', fontsize=9)
 
-    plt.tight_layout(h_pad=0.6, w_pad=0.3)
+    plt.tight_layout(h_pad=2.2, w_pad=0.6)
+    plt.subplots_adjust(top=0.95, bottom=0.08, hspace=0.55)
     save_fig(fig, 'fig8_planck_comparison')
 
 
