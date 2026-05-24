@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  24 MAY 2026 11:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  24 MAY 2026 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,24 +931,24 @@ File: ../figures//fig1_hero.pdf Graphic file (type pdf)
 <use ../figures//fig1_hero.pdf>
 Package pdftex.def Info: ../figures//fig1_hero.pdf  used on input line 8.
 (pdftex.def)             Requested size: 390.0pt x 303.8242pt.
-) (./main_elsevier.bbl [62 <../figures//fig1_hero.pdf>] [63] [64] [65] [66]
+) (./main_elsevier.bbl [62] [63 <../figures//fig1_hero.pdf>] [64] [65] [66]
 Underfull \hbox (badness 1142) in paragraph at lines 274--278
 \OT1/cmr/m/n/12 set, Phys-i-cal Re-view Let-ters 59 (1987) 521--524.  []$\OT1/c
 mtt/m/n/12 doi : 10 . 1103 /
  []
 
-) [67] (./main_elsevier.aux)
+[67]) [68] (./main_elsevier.aux)
 Package rerunfilecheck Info: File `main_elsevier.out' has not changed.
 (rerunfilecheck)             Checksum: 0742B62F4BAABF57DFA4768D7D713B29;7192.
  ) 
 Here is how much of TeX's memory you used:
- 13929 strings out of 480171
- 230312 string characters out of 5894489
- 529147 words of memory out of 5000000
+ 13930 strings out of 480171
+ 230319 string characters out of 5894489
+ 529992 words of memory out of 5000000
  31365 multiletter control sequences out of 15000+600000
  486081 words of font info for 90 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 70i,11n,76p,1297b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,11n,76p,1798b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
  </root/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -976,10 +976,10 @@ m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_elsevier.pdf (67 pages, 9565505 bytes).
+Output written on main_elsevier.pdf (68 pages, 9567545 bytes).
 PDF statistics:
- 3249 PDF objects out of 3580 (max. 8388607)
- 1300 compressed objects within 13 object streams
- 270 named destinations out of 1000 (max. 500000)
+ 3263 PDF objects out of 3580 (max. 8388607)
+ 1308 compressed objects within 14 object streams
+ 271 named destinations out of 1000 (max. 500000)
  404 words of extra memory for PDF output out of 10000 (max. 10000000)
 

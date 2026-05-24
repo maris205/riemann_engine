@@ -6,10 +6,11 @@
 \begin{figure*}[htbp]
   \centering
   \includegraphics[width=\textwidth]{fig1_hero.pdf}
-  \caption{Overview of DSC symplectic lattice CMB simulation.
-  (a)~Full-sky temperature fluctuation map from 3D St\"ormer--Verlet evolution ($128^3$ lattice, 60 steps) projected onto a Mollweide sphere, showing multi-scale red--blue fluctuations resembling CMB observations.
-  (b)~Scaled power spectrum $D(k) = k^2 P(k)$ with acoustic-like oscillation peaks (blue triangles) compared to mock $\Lambda$CDM (dashed).
-  (c)~Ablation: pixel distribution of dissipative CML (red) vs.\ symplectic lattice (blue); only the symplectic model matches the Gaussian reference (black dashed).
-  (d)~Pixel distribution comparison between DSC 3D forward simulation and real Planck SMICA data.}
+  \caption{Overview of DSC weakly damped symplectic lattice surrogate.
+  (a)~Full-sky temperature fluctuation map from 3D St\"ormer--Verlet evolution ($128^3$ lattice, 60 steps) projected onto a Mollweide sphere by sampling a radius-$0.35\,N_{\rm grid}$ shell.
+  The visible large-scale red--blue patches are lattice standing-wave modes projected onto the sphere (the lattice has a finite size, and the doubly-logarithmic cooling damps small-scale modes preferentially); they are \emph{not} physical CMB cold spots, and the lattice $D(k)$ peaks do not map to the Planck multipoles (\cref{sec:camb}, Pillar~K).
+  (b)~Scaled power spectrum $D(k) = k^2 P(k)$ with multimodal oscillation peaks (blue triangles), compared to a toy analytic reference (dashed); the toy reference is used only for shape-level comparison and is replaced by the real CAMB Planck-2018 $D_\ell^{\rm TT}$ benchmark in \cref{sec:camb}.
+  (c)~Ablation: pixel distribution of dissipative CML (red) vs.\ weakly damped symplectic lattice (blue); only the symplectic-family lattice matches a Gaussian reference (black dashed), but as discussed in \cref{sec:gauss} this comparison cannot isolate symplecticity as the unique cause.
+  (d)~Pixel one-point distribution of the DSC 3D forward simulation (blue) is close to that of the actual Planck SMICA map (purple), but at the angular-spectrum level the forward model gives $\chi^2/{\rm dof} \approx 80$ vs.\ the CAMB Planck-2018 $C_\ell$ (\cref{sec:camb}); the visual resemblance at the pixel level should not be over-interpreted as a CMB-physics match.}
   \label{fig:hero}
 \end{figure*}
