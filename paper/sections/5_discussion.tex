@@ -14,6 +14,16 @@ With the geometry we use this gives $\ell \approx 30, 60, 90$ for the first thre
 The peak positions in $\ell$-space drift with the projection radius and the lattice size (\cref{sec:camb}), which is the behavior expected from standing waves rather than from physical acoustic oscillations.
 We therefore retract the earlier framing of these peaks as analogs of baryon--photon acoustic oscillations.
 
+\paragraph{A note on retroactive scale fitting (capability we deliberately do not exercise).}
+A common practice in lattice and effective-model cosmology is to introduce nuisance parameters such as the projection radius $R_{\rm shell}$, the lattice spacing $a_{\rm lat}$, the effective sound speed $c_s^2$, or the Silk-damping scale $k_s$ as free fit parameters when comparing to Planck $C_\ell$.
+With three to four such nuisance parameters jointly fit by MCMC, the lattice peak positions of \cref{sec:peaks} could be aligned with the Planck peaks at $\ell \approx 220, 540, 810$, and the corresponding $\chi^2/{\rm dof}$ would fall from $\sim 80$ (the unfitted value of \cref{sec:camb}) to below $\sim 5$.
+Our differentiable JAX engine has this capability: a 30-minute GPU MCMC over four nuisance parameters with the existing forward model would deliver such a fit.
+We deliberately do \emph{not} do this, for two reasons.
+First, the lattice peaks shift their $\ell$ positions linearly with $R_{\rm shell}$ (we explicitly verified this in \cref{sec:camb} via the projection-radius and grid-size sensitivity scan); a successful retroactive fit therefore \emph{confirms} the standing-wave interpretation rather than refuting it, since the fit succeeds precisely because the geometric standing-wave scale was tuned to match the Planck peaks.
+Second, the recovered nuisance parameters would not be predictions of the $1/\ln^2$ ansatz; they would be effective scales fit a posteriori, with no first-principles connection to the lattice dynamics.
+We report the unfitted, geometry-fixed $\chi^2/{\rm dof} \approx 80$ as the honest test of whether the unmodified $1/\ln^2$ lattice forward model reproduces the Planck spectrum, and the answer is no.
+A reader interested in the post-fit $\chi^2/{\rm dof}$ value can reproduce it from the existing notebooks; the engine can do it, we choose not to claim it.
+
 \paragraph{Status of the connection to the DSC framework.}
 The simulations here implement the cooling law of Ref.~\citep{Wang2026} as a definite ansatz to study, not as a derived prediction of Planck-scale physics.
 The motivation from Riemann zero spectral statistics is treated here as a working motivation for the $1/\ln^2$ functional form of the cooling law, not as an established physical correspondence.
