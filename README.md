@@ -122,15 +122,24 @@ Notebooks `01–12` were the original lattice / ablation / inverse-reconstructio
 
 ## Data
 
-The Planck SMICA map (`COM_CMB_IQU-smica_2048_R3.00_full.fits`, ~1.9 GB) is required for notebooks `08`, `09`, `12`, and `fig16_cosmic_timeline`.
+All peer-reviewed catalogs used by the Pillar A–O notebooks are tracked in `notebooks/data/`:
 
-**Download steps:**
+| File | Source | Used by |
+|------|--------|---------|
+| `Murphy03_table3_128absorbers.dat` | Murphy et al. 2003, MNRAS 345 (Keck/HIRES) | Pillar A (fig18, fig28) |
+| `King12_VLT_Keck_295absorbers.dat` | King et al. 2012, MNRAS 422 (VLT+Keck) | Pillars B, K (fig20, fig27) |
+| `pantheon_plus_distances.txt` + `pantheon_plus_cov_stat.txt` | Scolnic et al. 2022 / Brout et al. 2022 (1580 SNe Ia) | Pillar G (fig24) |
+| `desi_dr2_y3.txt` + `desi_y3_bao.txt` | DESI Collaboration 2025 DR2 BAO (arXiv:2503.14738 Tab. III) | Pillars H, J (fig25, fig26) |
+
+Cosmic chronometer points (Moresco 2022, 32 H(z) measurements) and the four anchor H₀ values (SH0ES, JWST, Planck, BAO) are hardcoded inline in `fig23_cc_hz_pillar_F.ipynb` and `fig19_jwst_h0_anchors.ipynb` — no external file required.
+
+The only large dataset not committed is the Planck SMICA map (`COM_CMB_IQU-smica_2048_R3.00_full.fits`, ~1.9 GB), required for notebooks `08`, `09`, `12`, and `fig16_cosmic_timeline`.
+
+**SMICA download steps:**
 1. Visit [ESA Planck Legacy Archive](https://pla.esac.esa.int/)
 2. Click **MAPS** → **CMB maps**
 3. Download the **Full Mission** row: `COM_CMB_IQU-smica_2048_R3.00_full.fits`
 4. Place the file in the `data/` directory (replace the existing symlink)
-
-The Pillar F–K notebooks pull peer-reviewed catalogs (Murphy 2003, King 2012, Moresco 2022 cosmic chronometers, Pantheon+, DESI DR2 BAO) into `notebooks/data/`.
 
 ## DSC Theory
 
