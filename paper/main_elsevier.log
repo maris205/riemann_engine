@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  24 MAY 2026 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  24 MAY 2026 21:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -733,15 +733,15 @@ Overfull \hbox (20.70827pt too wide) in paragraph at lines 214--218
 pillar[]F[]cosmic[]chronometers.ipynb\OT1/cmr/m/n/12 ). 
  []
 
-<../figures//fig23_cc_hz_pillar_F.pdf, id=929, 929.23462pt x 355.29074pt>
+<../figures//fig23_cc_hz_pillar_F.pdf, id=929, 569.59326pt x 427.56075pt>
 File: ../figures//fig23_cc_hz_pillar_F.pdf Graphic file (type pdf)
 <use ../figures//fig23_cc_hz_pillar_F.pdf>
 Package pdftex.def Info: ../figures//fig23_cc_hz_pillar_F.pdf  used on input li
 ne 221.
-(pdftex.def)             Requested size: 390.0pt x 149.11266pt.
+(pdftex.def)             Requested size: 390.0pt x 292.7599pt.
 [25] [26 <../figures//fig21_camb_fisher.pdf>] [27 <../figures//fig22_late_stabi
-lity.pdf>]
-<../figures//fig24_pantheon_pillar_G.pdf, id=1193, 931.37695pt x 352.46797pt>
+lity.pdf>] [28 <../figures//fig23_cc_hz_pillar_F.pdf>]
+<../figures//fig24_pantheon_pillar_G.pdf, id=1281, 931.37695pt x 352.46797pt>
 File: ../figures//fig24_pantheon_pillar_G.pdf Graphic file (type pdf)
 <use ../figures//fig24_pantheon_pillar_G.pdf>
 Package pdftex.def Info: ../figures//fig24_pantheon_pillar_G.pdf  used on input
@@ -753,9 +753,7 @@ Overfull \hbox (12.25067pt too wide) in paragraph at lines 239--242
 tebooks/22[]pillar[]H[]desi[]dr2.ipynb\OT1/cmr/m/n/12 ). 
  []
 
-[28 <../figures//fig23_cc_hz_pillar_F.pdf> <../figures//fig24_pantheon_pillar_G
-.pdf>]
-<../figures//fig25_desi_pillar_H.pdf, id=1377, 931.25075pt x 354.82294pt>
+<../figures//fig25_desi_pillar_H.pdf, id=1284, 931.25075pt x 354.82294pt>
 File: ../figures//fig25_desi_pillar_H.pdf Graphic file (type pdf)
 <use ../figures//fig25_desi_pillar_H.pdf>
 Package pdftex.def Info: ../figures//fig25_desi_pillar_H.pdf  used on input lin
@@ -773,20 +771,21 @@ Overfull \hbox (56.69257pt too wide) in paragraph at lines 254--259
 n/12 notebooks/23[]pillar[]J[]joint.ipynb\OT1/cmr/m/n/12 ). 
  []
 
-[29 <../figures//fig25_desi_pillar_H.pdf>]
-<../figures//fig26_pillar_J_joint.pdf, id=1460, 535.94246pt x 352.87834pt>
+[29 <../figures//fig24_pantheon_pillar_G.pdf>]
+<../figures//fig26_pillar_J_joint.pdf, id=1385, 535.94246pt x 352.87834pt>
 File: ../figures//fig26_pillar_J_joint.pdf Graphic file (type pdf)
 <use ../figures//fig26_pillar_J_joint.pdf>
 Package pdftex.def Info: ../figures//fig26_pillar_J_joint.pdf  used on input li
 ne 262.
 (pdftex.def)             Requested size: 312.00119pt x 205.42879pt.
-<../figures//fig29_pillar_M_leverage.pdf, id=1462, 931.92508pt x 366.03609pt>
+ [30 <../figures//fig25_desi_pillar_H.pdf>]
+<../figures//fig29_pillar_M_leverage.pdf, id=1467, 931.92508pt x 366.03609pt>
 File: ../figures//fig29_pillar_M_leverage.pdf Graphic file (type pdf)
 <use ../figures//fig29_pillar_M_leverage.pdf>
 Package pdftex.def Info: ../figures//fig29_pillar_M_leverage.pdf  used on input
  line 277.
 (pdftex.def)             Requested size: 390.0pt x 153.18117pt.
- [30 <../figures//fig26_pillar_J_joint.pdf>]
+
 Overfull \hbox (11.32361pt too wide) in paragraph at lines 290--294
 []\OT1/cmr/m/n/12 To quan-tify the dis-crim-i-na-tion power of plau-si-ble fu-t
 ure cosmic-chronometer
@@ -798,15 +797,16 @@ Overfull \hbox (31.81781pt too wide) in paragraph at lines 290--294
 -u-ra-tion $(\OML/cmm/m/it/12 N; z[]; ^^[[]=H\OT1/cmr/m/n/12 )$,
  []
 
-[31 <../figures//fig29_pillar_M_leverage.pdf>]
-<../figures//fig31_pillar_O_forecast.pdf, id=1643, 931.1578pt x 366.39993pt>
+[31 <../figures//fig26_pillar_J_joint.pdf>]
+<../figures//fig31_pillar_O_forecast.pdf, id=1555, 931.1578pt x 366.39993pt>
 File: ../figures//fig31_pillar_O_forecast.pdf Graphic file (type pdf)
 <use ../figures//fig31_pillar_O_forecast.pdf>
 Package pdftex.def Info: ../figures//fig31_pillar_O_forecast.pdf  used on input
  line 318.
 (pdftex.def)             Requested size: 390.0pt x 153.46202pt.
- [32] [33 <../figures//fig31_pillar_O_forecast.pdf>] (../figures/TABLE_gaussian
-ity.tex)
+ [32 <../figures//fig29_pillar_M_leverage.pdf>] [33 <../figures//fig31_pillar_O
+_forecast.pdf>]
+(../figures/TABLE_gaussianity.tex)
 Overfull \hbox (5.11267pt too wide) in paragraph at lines 357--360
 []\OT1/cmr/m/n/12 Figure []16[] com-pares the dis-si-pa-tive CML (eq. ([]15[]))
  with the weakly damped
@@ -819,118 +819,118 @@ File: ../figures//fig2_ablation.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../figures//fig2_ablation.pdf  used on input line 370.
 
 (pdftex.def)             Requested size: 390.0pt x 261.08762pt.
- [35 <../figures//fig2_ablation.pdf>]
-<../figures//fig3_acoustic_peaks.pdf, id=1850, 225.63347pt x 173.29314pt>
+ [35] [36 <../figures//fig2_ablation.pdf>]
+<../figures//fig3_acoustic_peaks.pdf, id=1854, 225.63347pt x 173.29314pt>
 File: ../figures//fig3_acoustic_peaks.pdf Graphic file (type pdf)
 <use ../figures//fig3_acoustic_peaks.pdf>
 Package pdftex.def Info: ../figures//fig3_acoustic_peaks.pdf  used on input lin
 e 394.
 (pdftex.def)             Requested size: 390.0pt x 299.5418pt.
- (../figures/TABLE_peaks.tex) [36 <../figures//fig3_acoustic_peaks.pdf>]
-<../figures//fig5_freezeout.pdf, id=1903, 710.35008pt x 298.73364pt>
+ (../figures/TABLE_peaks.tex)
+[37 <../figures//fig3_acoustic_peaks.pdf>]
+<../figures//fig5_freezeout.pdf, id=1908, 710.35008pt x 298.73364pt>
 File: ../figures//fig5_freezeout.pdf Graphic file (type pdf)
 <use ../figures//fig5_freezeout.pdf>
 Package pdftex.def Info: ../figures//fig5_freezeout.pdf  used on input line 439
 .
 (pdftex.def)             Requested size: 390.0pt x 164.01227pt.
- [37] [38 <../figures//fig5_freezeout.pdf>]
-<../figures//fig4_twin_experiment.pdf, id=1986, 491.11859pt x 187.57515pt>
+ [38] [39 <../figures//fig5_freezeout.pdf>]
+<../figures//fig4_twin_experiment.pdf, id=1990, 491.11859pt x 187.57515pt>
 File: ../figures//fig4_twin_experiment.pdf Graphic file (type pdf)
 <use ../figures//fig4_twin_experiment.pdf>
 Package pdftex.def Info: ../figures//fig4_twin_experiment.pdf  used on input li
 ne 462.
 (pdftex.def)             Requested size: 390.0pt x 148.96124pt.
-
-[39 <../figures//fig4_twin_experiment.pdf>]
-<../figures//fig8_planck_comparison.pdf, id=2088, 506.80464pt x 435.47305pt>
+ [40 <../figures//fig4_twin_experiment.pdf>]
+<../figures//fig8_planck_comparison.pdf, id=2092, 506.80464pt x 435.47305pt>
 File: ../figures//fig8_planck_comparison.pdf Graphic file (type pdf)
 <use ../figures//fig8_planck_comparison.pdf>
 Package pdftex.def Info: ../figures//fig8_planck_comparison.pdf  used on input 
 line 487.
 (pdftex.def)             Requested size: 390.0pt x 335.12259pt.
- [40 <../figures//fig8_planck_comparison.pdf>]
-<../figures//fig10_grf_baseline.pdf, id=2166, 485.89528pt x 178.266pt>
+ [41 <../figures//fig8_planck_comparison.pdf>]
+<../figures//fig10_grf_baseline.pdf, id=2170, 485.89528pt x 178.266pt>
 File: ../figures//fig10_grf_baseline.pdf Graphic file (type pdf)
 <use ../figures//fig10_grf_baseline.pdf>
 Package pdftex.def Info: ../figures//fig10_grf_baseline.pdf  used on input line
  525.
 (pdftex.def)             Requested size: 390.0pt x 143.08899pt.
- [41]
-<../figures//fig12_convergence.pdf, id=2173, 484.69081pt x 165.9801pt>
+ [42]
+<../figures//fig12_convergence.pdf, id=2177, 484.69081pt x 165.9801pt>
 File: ../figures//fig12_convergence.pdf Graphic file (type pdf)
 <use ../figures//fig12_convergence.pdf>
 Package pdftex.def Info: ../figures//fig12_convergence.pdf  used on input line 
 543.
 (pdftex.def)             Requested size: 390.0pt x 133.55417pt.
- [42 <../figures//fig10_grf_baseline.pdf>]
+ [43 <../figures//fig10_grf_baseline.pdf>]
 Overfull \hbox (4.55922pt too wide) in paragraph at lines 570--582
  [][] 
  []
 
-[43 <../figures//fig12_convergence.pdf>]
-<../figures//fig17_camb_benchmark.pdf, id=2193, 4302.8557pt x 381.7078pt>
+[44 <../figures//fig12_convergence.pdf>]
+<../figures//fig17_camb_benchmark.pdf, id=2197, 4302.8557pt x 381.7078pt>
 File: ../figures//fig17_camb_benchmark.pdf Graphic file (type pdf)
 <use ../figures//fig17_camb_benchmark.pdf>
 Package pdftex.def Info: ../figures//fig17_camb_benchmark.pdf  used on input li
 ne 591.
 (pdftex.def)             Requested size: 390.0pt x 34.59683pt.
-<../figures//fig7_sensitivity.pdf, id=2195, 491.06146pt x 289.0825pt>
+<../figures//fig7_sensitivity.pdf, id=2199, 491.06146pt x 289.0825pt>
 File: ../figures//fig7_sensitivity.pdf Graphic file (type pdf)
 <use ../figures//fig7_sensitivity.pdf>
 Package pdftex.def Info: ../figures//fig7_sensitivity.pdf  used on input line 6
 04.
 (pdftex.def)             Requested size: 390.0pt x 229.59894pt.
-<../figures//fig6_ensemble.pdf, id=2196, 492.1587pt x 144.29909pt>
+<../figures//fig6_ensemble.pdf, id=2200, 492.1587pt x 144.29909pt>
 File: ../figures//fig6_ensemble.pdf Graphic file (type pdf)
 <use ../figures//fig6_ensemble.pdf>
 Package pdftex.def Info: ../figures//fig6_ensemble.pdf  used on input line 614.
 
 (pdftex.def)             Requested size: 390.0pt x 114.34511pt.
- [44 <../figures//fig17_camb_benchmark.pdf>] [45 <../figures//fig7_sensitivity.
+ [45 <../figures//fig17_camb_benchmark.pdf>] [46 <../figures//fig7_sensitivity.
 pdf> <../figures//fig6_ensemble.pdf>]
 Overfull \hbox (1.25151pt too wide) in paragraph at lines 637--639
 []\OT1/cmr/m/n/12 The re-con-structed map pre-serves the Gaus-sian-ity of the t
 ar-get: the Planck
  []
 
-<../figures//fig13_heldout.pdf, id=2348, 482.82492pt x 147.76926pt>
+<../figures//fig13_heldout.pdf, id=2352, 482.82492pt x 147.76926pt>
 File: ../figures//fig13_heldout.pdf Graphic file (type pdf)
 <use ../figures//fig13_heldout.pdf>
 Package pdftex.def Info: ../figures//fig13_heldout.pdf  used on input line 656.
 
 (pdftex.def)             Requested size: 390.0pt x 119.36098pt.
-[46] [47 <../figures//fig13_heldout.pdf>]
-<../figures//fig17_3d_power_spectrum.pdf, id=2410, 231.21375pt x 187.44417pt>
+[47] [48 <../figures//fig13_heldout.pdf>]
+<../figures//fig17_3d_power_spectrum.pdf, id=2414, 231.21375pt x 187.44417pt>
 File: ../figures//fig17_3d_power_spectrum.pdf Graphic file (type pdf)
 <use ../figures//fig17_3d_power_spectrum.pdf>
 Package pdftex.def Info: ../figures//fig17_3d_power_spectrum.pdf  used on input
  line 680.
 (pdftex.def)             Requested size: 390.0pt x 316.20543pt.
-<../figures//fig15_degeneracy_breaking.pdf, id=2411, 408.80003pt x 382.81306pt>
+<../figures//fig15_degeneracy_breaking.pdf, id=2415, 408.80003pt x 382.81306pt>
 
 File: ../figures//fig15_degeneracy_breaking.pdf Graphic file (type pdf)
 <use ../figures//fig15_degeneracy_breaking.pdf>
 Package pdftex.def Info: ../figures//fig15_degeneracy_breaking.pdf  used on inp
 ut line 688.
 (pdftex.def)             Requested size: 390.0pt x 365.21826pt.
-<../figures//fig9_inverse_reconstruction.pdf, id=2412, 515.28508pt x 367.85585p
+<../figures//fig9_inverse_reconstruction.pdf, id=2416, 515.28508pt x 367.85585p
 t>
 File: ../figures//fig9_inverse_reconstruction.pdf Graphic file (type pdf)
 <use ../figures//fig9_inverse_reconstruction.pdf>
 Package pdftex.def Info: ../figures//fig9_inverse_reconstruction.pdf  used on i
 nput line 697.
 (pdftex.def)             Requested size: 390.0pt x 278.41707pt.
- [48 <../figures//fig17_3d_power_spectrum.pdf>] [49 <../figures//fig15_degenera
-cy_breaking.pdf>] [50 <../figures//fig9_inverse_reconstruction.pdf>]
-<../figures//fig16_cosmic_timeline.pdf, id=2595, 1858.2423pt x 1069.99872pt>
+ [49 <../figures//fig17_3d_power_spectrum.pdf>] [50 <../figures//fig15_degenera
+cy_breaking.pdf>] [51 <../figures//fig9_inverse_reconstruction.pdf>]
+<../figures//fig16_cosmic_timeline.pdf, id=2599, 1858.2423pt x 1069.99872pt>
 File: ../figures//fig16_cosmic_timeline.pdf Graphic file (type pdf)
 <use ../figures//fig16_cosmic_timeline.pdf>
 Package pdftex.def Info: ../figures//fig16_cosmic_timeline.pdf  used on input l
 ine 736.
 (pdftex.def)             Requested size: 390.0pt x 224.55942pt.
- [51] [52 <../figures//fig16_cosmic_timeline.pdf>] [53]) (./sections/5_discussi
-on.tex [54] [55] [56] [57])
-(./sections/6_limitations.tex [58] [59]) (./sections/7_conclusion.tex
+ [52] [53 <../figures//fig16_cosmic_timeline.pdf>] [54]) (./sections/5_discussi
+on.tex [55] [56] [57] [58])
+(./sections/6_limitations.tex [59] [60]) (./sections/7_conclusion.tex
 Overfull \hbox (20.2013pt too wide) in paragraph at lines 8--12
 \OT1/cmr/m/n/12 must sat-isfy three con-straints si-mul-ta-ne-ously: (i) be ob-
 serv-able at cosmologically-
@@ -942,7 +942,7 @@ Overfull \hbox (18.01208pt too wide) in paragraph at lines 14--17
 -de-pen-dent Keck/HIRES
  []
 
-[60] [61]) [62]
+[61] [62]) [63]
 Overfull \hbox (121.67831pt too wide) in paragraph at lines 52--54
 \OT1/cmtt/m/n/12 maris205 / riemann _ engine$[]\OT1/cmr/m/n/12 . The Planck SMI
 CA map (\OT1/cmtt/m/n/12 COM[]CMB[]IQU-smica[]2048[]R3.00[]full.fits\OT1/cmr/m/
@@ -950,25 +950,25 @@ n/12 )
  []
 
 (./sections/A_appendix.tex
-<../figures//fig1_hero.pdf, id=2862, 491.42409pt x 382.8246pt>
+<../figures//fig1_hero.pdf, id=2866, 491.42409pt x 382.8246pt>
 File: ../figures//fig1_hero.pdf Graphic file (type pdf)
 <use ../figures//fig1_hero.pdf>
 Package pdftex.def Info: ../figures//fig1_hero.pdf  used on input line 8.
 (pdftex.def)             Requested size: 390.0pt x 303.8242pt.
-) (./main_elsevier.bbl [63] [64 <../figures//fig1_hero.pdf>] [65] [66] [67]
+) (./main_elsevier.bbl [64] [65 <../figures//fig1_hero.pdf>] [66] [67] [68]
 Underfull \hbox (badness 1142) in paragraph at lines 274--278
 \OT1/cmr/m/n/12 set, Phys-i-cal Re-view Let-ters 59 (1987) 521--524.  []$\OT1/c
 mtt/m/n/12 doi : 10 . 1103 /
  []
 
-[68]) [69] (./main_elsevier.aux)
+[69]) [70] (./main_elsevier.aux)
 Package rerunfilecheck Info: File `main_elsevier.out' has not changed.
 (rerunfilecheck)             Checksum: 98083C853063B2E1E4250EB269BB6800;7912.
  ) 
 Here is how much of TeX's memory you used:
- 14275 strings out of 480171
- 236353 string characters out of 5894489
- 534858 words of memory out of 5000000
+ 14276 strings out of 480171
+ 236360 string characters out of 5894489
+ 532858 words of memory out of 5000000
  31702 multiletter control sequences out of 15000+600000
  486081 words of font info for 90 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -1000,10 +1000,10 @@ m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_elsevier.pdf (69 pages, 10274812 bytes).
+Output written on main_elsevier.pdf (70 pages, 10274333 bytes).
 PDF statistics:
- 3232 PDF objects out of 3580 (max. 8388607)
- 1336 compressed objects within 14 object streams
- 275 named destinations out of 1000 (max. 500000)
+ 3236 PDF objects out of 3580 (max. 8388607)
+ 1339 compressed objects within 14 object streams
+ 276 named destinations out of 1000 (max. 500000)
  428 words of extra memory for PDF output out of 10000 (max. 10000000)
 
