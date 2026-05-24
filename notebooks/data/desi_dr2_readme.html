@@ -1,0 +1,782 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://data.desi.lbl.gov/doc/releases/dr2/vac/bao-cosmo-params/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>DESI DR2 BAO cosmology results - DESI Data</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QB3Q7RX1ZB"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QB3Q7RX1ZB",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QB3Q7RX1ZB",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#desi-dr2-bao-cosmology-results" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="DESI Data" class="md-header__button md-logo" aria-label="DESI Data" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DESI Data
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DESI DR2 BAO cosmology results
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DESI Data" class="md-nav__button md-logo" aria-label="DESI Data" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DESI Data
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Releases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../edr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dr1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DR1 (latest)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://desidatamodel.readthedocs.io" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Model [external]
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../vac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value-added Catalogs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../acknowledgments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data License and Acknowledgments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    Datasets
+  </a>
+  
+    <nav class="md-nav" aria-label="Datasets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bao-likelihoods" class="md-nav__link">
+    BAO likelihoods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmic-microwave-background-cmb-likelihoods" class="md-nav__link">
+    Cosmic microwave background (CMB) likelihoods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-ia-supernova-likelihoods" class="md-nav__link">
+    Type Ia supernova likelihoods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-external-priors" class="md-nav__link">
+    Additional external priors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    Data Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    Contact
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="desi-dr2-bao-cosmology-results">DESI DR2 BAO cosmology results<a class="headerlink" href="#desi-dr2-bao-cosmology-results" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This repository contains cosmology chains and posterior maximization results for the DESI DR2 BAO cosmology results referenced in the paper <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250314738D/abstract" target="_blank">DESI DR2 Results II: Measurement of Baryon Acoustic Oscillations and Cosmological Constraints</a>, Phys. Rev. D in press.</p>
+<h2 id="data-access">Data Access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
+<p><strong>Data URL:</strong> <a href="https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params" target="_blank">https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params</a></p>
+<p>NERSC access:
+<div class="highlight"><pre><span></span><code>/global/cfs/cdirs/desi/public/papers/y3/bao-cosmo-params
+</code></pre></div></p>
+<p><strong>Note</strong>: When the full DR2 is released, these data will also be included as a DR2 Value Added Catalog (VAC).</p>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<p>The primary directory contains two folders: <code>cobaya/</code> contains MCMC chains and posterior samples obtained using the <a href="https://cobaya.readthedocs.io/en/latest/" target="_blank"><code>cobaya</code></a> sampling code, and <code>iminuit/</code> contains posterior maximization results determined using the <a href="https://scikit-hep.org/iminuit/" target="_blank"><code>iminuit</code></a> optimization code. Within each of these directories, results for different cosmological model scenarios and combinations of datasets are arranged in subfolders named according to the <code>[model]/[dataset]</code> convention, where <code>[model]</code> and <code>[dataset]</code> can take different values as explained below. The DESI DR2 BAO likelihoods used to produce these results are publicly available at <a href="https://github.com/CobayaSampler/bao_data/tree/master/desi_bao_dr2" target="_blank">https://github.com/CobayaSampler/bao_data/tree/master/desi_bao_dr2</a>.</p>
+<h3 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h3>
+<p>Model naming follows the <em>Planck</em> convention: the base <span class="arithmatex">\(\Lambda\)</span>CDM cosmological model is denoted by the root <code>base</code> in the folder name, with additional free parameters – when present – indicated by suffixes attached to this root. The naming convention relating suffixes to models is as follows:</p>
+<ul>
+<li><code>_w</code>: A dark energy equation of state parameter <span class="arithmatex">\(w\)</span> that is freely varied but restricted to be constant in time</li>
+<li><code>_w_wa</code>: A variable dark energy equation of state with two free parameters, <span class="arithmatex">\(w_0\)</span> and <span class="arithmatex">\(w_a\)</span></li>
+<li><code>_w-binned-3uniform</code>: A dark energy equation of state that is piecewise-constant in 3 uniform bins of redshift</li>
+<li><code>_mnu</code>:  Free sum of neutrino masses, <span class="arithmatex">\(\sum m_\nu\)</span>, with only a non-negativity constraint, <span class="arithmatex">\(\sum m_\nu&gt;0\)</span></li>
+<li><code>_mnu_binary_3</code>: Free sum of neutrino masses, <span class="arithmatex">\(\sum m_\nu\)</span>, with additional physical priors on the minimum mass from the <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv241005380E/abstract" target="_blank">NuFit-6.0</a> flavor-oscillation constraints, incorporating either mass ordering</li>
+<li><code>_omegak</code>: Free curvature parameter, <span class="arithmatex">\(\Omega_\mathrm{K}\)</span></li>
+</ul>
+<p>Suffixes can also be chained together to represent models with more than one free parameter, <em>e.g.</em> the folder <code>base_omegak_w_wa/</code> contains results for the model where base <span class="arithmatex">\(\Lambda\)</span>CDM is extended by allowing free curvature and a time-varying dark energy equation of state.</p>
+<h3 id="datasets">Datasets<a class="headerlink" href="#datasets" title="Permanent link">&para;</a></h3>
+<p>Different datasets or likelihoods are indicated by strings present in the folder names, according to the dictionary below. For combinations of several datasets, the folder names are formed by chaining together building blocks representing different individual datasets, separated by <code>_</code>.</p>
+<h4 id="bao-likelihoods">BAO likelihoods<a class="headerlink" href="#bao-likelihoods" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>desi-bao-[X]</code>: DESI DR2 BAO data from <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250314739D/abstract" target="_blank">DESI DR2 Results I: Baryon Acoustic Oscillations from the Lyman Alpha Forest</a> and <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250314738D/abstract" target="_blank">DESI DR2 Results II: Measurement of Baryon Acoustic Oscillations and Cosmological Constraints</a>; the <code>[X]</code> placeholder specifies the subset of DESI data used and can take the following values:<ul>
+<li><code>bgs</code>: BAO measured in Bright Galaxy Sample, at effective redshift <span class="arithmatex">\(z_\mathrm{eff}=0.295\)</span></li>
+<li><code>lrg-z0</code>: BAO from the first Luminous Red Galaxy (LRG) redshift bin, at <span class="arithmatex">\(z_\mathrm{eff}=0.510\)</span></li>
+<li><code>lrg-z1</code>: BAO from the second LRG redshift bin, at <span class="arithmatex">\(z_\mathrm{eff}=0.706\)</span></li>
+<li><code>lrg</code>: the combination of the above two redshift bins (<code>lrg-z0</code> and <code>lrg-z1</code>)</li>
+<li><code>lrgpluselg</code>: BAO from the combined LRG and Emission Line Galaxy (ELG) sample at <span class="arithmatex">\(z_\mathrm{eff}=0.934\)</span></li>
+<li><code>elg</code>: BAO from higher redshift ELGs, at <span class="arithmatex">\(z_\mathrm{eff}=1.321\)</span></li>
+<li><code>qso</code>: BAO from the quasar sample (QSO), at <span class="arithmatex">\(z_\mathrm{eff}=1.484\)</span></li>
+<li><code>lya</code>: BAO from the Lyman-<span class="arithmatex">\(\alpha\)</span> forest (and cross-correlation with quasars) at <span class="arithmatex">\(z_\mathrm{eff}=2.330\)</span></li>
+<li><code>all</code>: the combination of DESI BAO data in all the above redshift bins</li>
+</ul>
+</li>
+</ul>
+<h4 id="cosmic-microwave-background-cmb-likelihoods">Cosmic microwave background (CMB) likelihoods<a class="headerlink" href="#cosmic-microwave-background-cmb-likelihoods" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>planck2018-lowl-TT-clik</code>: CMB low-<span class="arithmatex">\(\ell\)</span> (<span class="arithmatex">\(\ell\le30\)</span>) TT <code>Commander</code> likelihood from <em>Planck</em> PR3</li>
+<li><code>planck2018-lowl-EE-clik</code>: CMB low-<span class="arithmatex">\(\ell\)</span> EE <code>simall</code> likelihood from <em>Planck</em> PR3</li>
+<li><code>planck-NPIPE-highl-CamSpec-TTTEEE</code>:  <code>CamSpec</code> CMB likelihood for <span class="arithmatex">\(\ell&gt;30\)</span> TT, TE and EE from <em>Planck</em> PR4</li>
+<li><code>planck2018-highl-plik-TTTEEE</code>: alternative <code>plik</code> likelihood for TT, TE and EE at <span class="arithmatex">\(\ell&gt;30\)</span> from <em>Planck</em> PR3</li>
+<li><code>planck2020-hillipop-TTTEEE</code>: alternative <code>hillipop</code> CMB likelihood for <span class="arithmatex">\(\ell&gt;30\)</span> TT, TE and EE from <em>Planck</em> PR4</li>
+<li><code>planck2020-lollipop-lowlE</code>: alternative <code>lollipop</code> CMB likelihood for <span class="arithmatex">\(\ell\le30\)</span> TE and EE from <em>Planck</em> PR4</li>
+<li><code>planck-act-dr6-lensing</code>: CMB lensing data from the combination of <em>Planck</em> PR4 NPIPE and ACT DR6 (using v1.2 of the likelihood provided by the ACT team)</li>
+<li><code>CMB-compressed-theta-ombh2-ombch2</code>: Minimal &ldquo;early-Universe&rdquo; CMB prior in lieu of using the full CMB data</li>
+<li><code>planck2018-thetastar-fixed-marg-nnu</code>: An even more minimal CMB-derived prior on the acoustic angular scale <span class="arithmatex">\(\theta_\ast\)</span></li>
+</ul>
+<p>The default combination of CMB likelihoods used in the <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250314738D/abstract" target="_blank">DESI DR2 Results II: Measurement of Baryon Acoustic Oscillations and Cosmological Constraints</a> paper, and denoted as &ldquo;CMB&rdquo; therein, is <code>planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing</code>.</p>
+<h4 id="type-ia-supernova-likelihoods">Type Ia supernova likelihoods<a class="headerlink" href="#type-ia-supernova-likelihoods" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pantheonplus</code>: SNIa data from the Pantheon+ dataset</li>
+<li><code>union3</code>: SNIa data from the Union3 dataset</li>
+<li><code>desy5sn</code>: SNIa data from the Dark Energy Survey 5-year SN dataset</li>
+</ul>
+<h4 id="additional-external-priors">Additional external priors<a class="headerlink" href="#additional-external-priors" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>schoneberg2024-bbn</code>: A BBN prior on the baryon density <span class="arithmatex">\(\Omega_\mathrm{b}h^2\)</span></li>
+<li><code>schoneberg2024-bbn-fixed-nnu</code>: A more restrictive version of the above BBN prior derived by fixing <span class="arithmatex">\(N_\mathrm{eff}\)</span> rather than marginalising over it</li>
+</ul>
+<p>These individual likelihoods and priors can be combined together in too many ways to exhaustively list here. Combinations can be identified by chaining together the appropriate roots using <code>_</code> separators.</p>
+<h3 id="data-model">Data Model<a class="headerlink" href="#data-model" title="Permanent link">&para;</a></h3>
+<p>The individual <code>cobaya/[model]/[dataset]/</code> directories contain <code>cobaya</code> output files as described in full <a href="https://cobaya.readthedocs.io/en/latest/output.html" target="_blank">here</a> (see also <a href="https://cobaya.readthedocs.io/en/latest/sampler_mcmc.html" target="_blank">here</a> for additional information). The output files in the folders are:</p>
+<ul>
+<li><code>[prefix].[number].txt</code>:  ASCII formatted tables providing posterior samples, where <code>[number]</code> indicates the chain number from 1 to 4; <code>[prefix]</code> is <code>chain</code> for standard runs or <code>chain.post.importance</code> when any likelihoods have been added by importance sampling in post-processing</li>
+<li><code>[prefix].input.yaml</code> or <code>[prefix].updated.yaml</code>: YAML file recording the input settings provided for the MCMC run; the filename contains <code>updated</code> when the any component uses default settings not explicitly provided in the input, which are then recorded in this file. <code>[prefix]</code> takes the value <code>chain</code> for standard runs or <code>chain.post.lensing</code> when CMB lensing is added by importance sampling in post-processing</li>
+<li><code>chain.covmat</code>: ASCII-formatted covariance matrix for sampled cosmological parameters, which can be used as a proposal pdf for new runs using the same settings (not present for post-processed runs)</li>
+<li><code>chain.checkpoint</code>: text file with summary information about the convergence of the MCMC run (not present for post-processed runs)</li>
+</ul>
+<p>Chain data can easily be read and manipulated using the <a href="https://getdist.readthedocs.io/en/latest/" target="_blank"><code>GetDist</code></a> package, but can also be accessed by other commonly used chain-processing software.</p>
+<p>The individual <code>iminuit/[model]/[dataset]/</code> directories contain output files described in full <a href="https://cobaya.readthedocs.io/en/latest/sampler_minimize.html" target="_blank">here</a>. The relevant files are:</p>
+<ul>
+<li><code>bestfit.minimum.txt</code>: ASCII-formatted file providing the parameter values and goodness-of-fit criteria at the maximum of the posterior (MAP)</li>
+<li><code>bestfit.minimum</code>: identical information to the file above, but recorded in <a href="https://getdist.readthedocs.io/en/latest/" target="_blank"><code>GetDist</code></a>-compatible formatting</li>
+</ul>
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<p>Contact <a href="mailto:seshadri.nadathur@port.ac.uk">Seshadri Nadathur</a> for questions about this catalog.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"></script>
+      
+    
+  </body>
+</html>
