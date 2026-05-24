@@ -63,6 +63,24 @@ The DSC $1/\ln^2$ ansatz, like all of these proposals, exhibits a leverage-depen
 What is, to our knowledge, novel here is making the asymmetry mathematically explicit (Pillar~M, 8.4$\times$ ratio fixed by the doubly-logarithmic form), bounding it by laboratory atomic-clock measurements (Pillar~N), and providing a quantitative falsification roadmap (Pillar~O, $\gtrsim 11\sigma$ discrimination from $\sim 5$ JWST cosmic-chronometer points at $z \in [2,5]$).
 Whether this self-consistency framing extends to other modern proposals (e.g.\ EDE) is, in our view, a worthwhile direction for the field.
 
+\paragraph{What is forward prediction and what is inverse fit (a guide for the reader).}
+The CMB-related figures of this manuscript fall in two qualitatively different categories.
+\emph{Forward predictions} (\cref{fig:hero}a in the appendix; \cref{fig:planck}; \cref{fig:camb_chi2}) report the unmodified output of the DSC lattice: random Gaussian initial conditions, evolved by weakly damped St\"ormer--Verlet steps with $1/\ln^2$ cooling, projected onto a HEALPix sphere.
+No fit parameters enter the forward simulation, except possibly an overall amplitude rescaling in the spectral comparison of \cref{sec:camb}.
+These are first-principles predictions of the framework---they show what $1/\ln^2$ cosmology, taken at face value, generates as a sky map and as an angular spectrum.
+The honest verdict on these forward predictions is the one we already report: pixel one-point distributions are close to Planck SMICA (\cref{sec:planck}), but the angular power spectrum gives $\chi^2/{\rm dof} \approx 80$ vs.\ CAMB Planck-2018 (\cref{sec:camb}), and the lattice $D(k)$-peaks fall at $\ell \approx 30, 60, 90$ rather than the observed $\ell \approx 220, 540, 810$ (Pillar~K).
+The first-handed prediction of DSC is therefore that the lattice surrogate, taken alone, does \emph{not} reproduce the observed CMB at the spectrum level.
+
+\emph{Inverse reconstructions} (\cref{fig:inverse} achieving in-sample $r = 0.98$) are something fundamentally different.
+There the differentiable engine optimizes $\sim 10^6$ voxel parameters of the 3D primordial field to match $\sim 10^4$ observed sphere-projected pixels.
+With $\sim 100\times$ more free parameters than data points, reaching high in-sample correlation is mathematical inevitability, not physical reconstruction.
+The held-out hemisphere test (\cref{fig:heldout}, $r = -0.17$) is the appropriate diagnostic and we treat it as such throughout the manuscript.
+The inverse figures should therefore not be read as ``DSC reproduces the Planck CMB'' --- they are demonstrations that the differentiable engine works as advertised, not predictions of the framework.
+
+We separate these two categories explicitly because conflating them would be the most likely misreading of this manuscript.
+The forward figures show what $1/\ln^2$ \emph{actually predicts}; the inverse figures show what the JAX engine \emph{can be made to fit}.
+Both are useful: the former delineates the empirical reach (and limit) of the simple ansatz, while the latter establishes the engine as a methodological building block for simulation-based inference workflows that pair lattice forward models with multi-probe data and explicit volumetric priors.
+
 \paragraph{Forward identifiability vs.\ field-level underdetermination.}
 The forward twin experiment (\cref{sec:twin}) optimizes 3 global physics parameters against $\sim 75$ power-spectrum bins, an overdetermined system that recovers the parameters up to a $c^2$--$\kopt$ degeneracy direction.
 The voxel-level reconstruction (\cref{sec:inverse}), in contrast, attempts to recover $\sim 10^6$ free parameters from $\sim 10^4$ sky pixels.
