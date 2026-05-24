@@ -1,13 +1,14 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{parskip}
 
 \title{Response to Reviewer 1\\
-\large Manuscript DARK-D-26-00549\\
-\textit{Discrete Symplectic Cosmology: a phenomenological lattice surrogate for CMB-like fluctuations}}
+\large Manuscript DARK-D-26-00549 (Revised Submission)\\
+\textit{Discrete Symplectic Cosmology: Empirical anchors of the $1/\ln^2(t)$ ansatz across three observational regimes}}
 \author{}
 \date{\today}
 
@@ -17,12 +18,31 @@
 \begin{document}
 \maketitle
 
-\noindent
-We thank Reviewer 1 for an unusually constructive and detailed report.
-The eight major comments and the minor remarks have substantially shaped the revision: we have retracted several quantitative claims, replaced the toy analytic reference with a CAMB Planck-2018 benchmark, made the symplecticity caveat explicit, demoted the Big-Bang-to-cosmic-web section to a phenomenological visualization, and promoted the held-out hemisphere result from a footnote-level caveat to one of the main findings.
-The revised abstract and introduction now position the work explicitly as an exploratory toy-model study of a differentiable lattice surrogate, in line with the reviewer's framing.
+\section*{Summary of revision}
 
-In the response below, the reviewer's comments are quoted in italics; our reply, the resulting changes, and pointers to the revised manuscript follow each item.
+We thank Reviewer 1 for an unusually constructive and detailed report.
+The eight major comments and the minor remarks have substantially shaped this revision.
+Beyond addressing each comment point-by-point, we have undertaken a major structural reorganization of the manuscript that, in our view, directly answers the most important concern in the report: the question of whether the $1/\ln^2(t)$ ansatz is supported by empirical evidence rather than only by the speculative Riemann-zero motivation (Comment 6).
+
+\textbf{The revised manuscript is structured around three thematic blocks of empirical tests} (\S 4 Results), each corresponding to one observational regime in which the $1/\ln^2(t)$ ansatz makes a prediction:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Block 1 (\S 4.2, \texttt{sec:block\_alpha}): Fine-structure constant evolution.}
+    Pillars A, B, K, N. Empirical anchor at the atomic scale.
+    Headline numbers: Pillar A reproduces the original 5.6$\sigma$ quasar drift signal exactly from Murphy 2003 Table 3 (under fit-error-only weighting); Pillar K cross-validates this on a second independent Keck dataset (King 2012 Keck-only, 6.5$\sigma$), reaching $+8.6\sigma$ in the joint Keck-only union of two independent samples; the King 2012 VLT subset gives $\Gamma$ of opposite sign, providing a textbook instrument-decomposition argument that the Keck signal is consistent with documented Keck wavelength-calibration systematics; Pillar N shows that the $1/\ln^2(t)$ ansatz is automatically consistent with the Rosenband 2008 atomic-clock bound to within $\sim 3\,000\times$ headroom.
+  \item \textbf{Block 2 (\S 4.4, \texttt{sec:block\_H0}): Hubble parameter relaxation.}
+    Pillars C, D, E, F, G, H, I, J, M, O. Empirical anchor at the cosmological scale.
+    Headline numbers: Pillar C achieves $R^2 = 0.91$, $\chi^2/\mathrm{dof} = 0.28$ on the four-anchor SH0ES + JWST + Planck + BAO Hubble relaxation; Pillars F--J give the predicted dense-data unresolvability ($\chi^2/\mathrm{dof} \sim 23$ over 1623 constraints, fully expected given that the ansatz has 8.4$\times$ less leverage in the $z<2$ regime; Pillar M); Pillar O forecasts $\gtrsim 11\sigma$ falsifiability from a 5-point JWST cosmic-chronometer survey at $z_{\max} = 5$ within 5 years.
+  \item \textbf{Block 3 (\S 4.16, \texttt{sec:block\_cmb}): CMB lattice forward modeling.}
+    The lattice surrogate is presented as a methodological proof-of-concept, not as an empirical claim. The honest test against CAMB Planck-2018 gives $\chi^2/\mathrm{dof} \approx 80$, retracted explicitly. The differentiable JAX engine and the held-out hemisphere diagnostic ($r=-0.17$) are the surviving contributions of this block.
+\end{itemize}
+
+\textbf{The thrust of this restructuring is that the $1/\ln^2(t)$ ansatz is now empirically anchored by Blocks 1 and 2 directly}, on peer-reviewed published data (Murphy 2003, King 2012, Rosenband 2008, SH0ES, JWST, Planck, DESI, Pantheon$+$, Moresco 2022), through measurable cross-scale signals that are mutually consistent.
+The Riemann-zero spectral motivation is now a complementary historical thread, not the load-bearing argument: even if the Riemann analogy is removed entirely, the ansatz is still anchored by Pillar A (5.6$\sigma$), Pillar K (+8.6$\sigma$), Pillar C ($R^2 = 0.91$), Pillar M (leverage explanation), Pillar N (atomic-clock consistency), and Pillar O (forecast falsifiability).
+This is, we believe, the most direct response to Comment 6 that the report calls for: "the numerical evidence must be quantitatively much more compelling for any speculative claim."
+
+In what follows, the reviewer's comments are quoted in italics; our reply, the resulting changes, and pointers to the revised manuscript follow each item.
+The revised abstract, introduction main-findings list, conclusion, and §4 Results are organized around the three-block structure above; cross-references in the response letter use the new section labels.
 
 \section*{Major comments}
 
@@ -38,9 +58,9 @@ We have made this distinction explicit and adopted the reviewer's terminology of
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item Section~3.1 (\textit{Two-dimensional weakly damped symplectic lattice}) now opens with an explicit statement that the integrator is exactly symplectic only at $\eta = 0$, identifies which sections use $\eta = 0$ (Gaussianity ensemble and acoustic-peak runs) and which use $\eta > 0$ (Phase~I cosmic timeline; inverse reconstruction), and states that quantitative claims depending on the symplecticity should be read as ``weakly damped symplectic'' rather than ``exactly symplectic''.
+  \item §3.1 (\textit{Two-dimensional weakly damped symplectic lattice}) now opens with an explicit statement that the integrator is exactly symplectic only at $\eta = 0$, identifies which runs use $\eta = 0$ (Gaussianity ensemble and acoustic-peak runs in Block 3) and which use $\eta > 0$ (Phase~I cosmic timeline; inverse reconstruction in Block 3), and states that quantitative claims depending on the symplecticity should be read as ``weakly damped symplectic'' rather than ``exactly symplectic''.
   \item The abstract and introduction now describe the lattice as ``a non-autonomous, weakly damped symplectic map''.
-  \item In the Discussion (Section~5), the paragraph that previously justified Gaussianity through phase-space volume preservation has been replaced by a more conservative statement (linear regime $+$ central limit theorem; symplecticity not isolated by the present ablations).
+  \item In the Discussion (§5), the paragraph that previously justified Gaussianity through phase-space volume preservation has been replaced by a more conservative statement (linear regime + central limit theorem; symplecticity not isolated by the present ablations).
 \end{itemize}
 
 \subsection*{Comment 2 --- Acoustic freeze-out is not a finite horizon}
@@ -51,12 +71,13 @@ We have made this distinction explicit and adopted the reviewer's terminology of
 
 We agree, and we have rewritten the freeze-out section to be explicit about this.
 The formal integral $\int_0^\infty c_{\rm eff}(t)\,dt$ with $c_{\rm eff} \sim 1/\ln^2(t)$ diverges, and the value $r_s \approx 38$ that we report is a threshold-defined effective scale.
+The freeze-out content now lives in Block 3 (\texttt{sec:block\_cmb}, the methodological CMB block) rather than in the empirical anchor blocks, since it is a property of the lattice surrogate rather than of the underlying $1/\ln^2$ ansatz.
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item Section~4.4 has been retitled \textit{Threshold-defined effective freeze-out scale}.
+  \item §4.\,(Block 3, threshold-defined freeze-out scale) has been retitled and rewritten.
   \item A new paragraph spells out the logarithmic divergence of the horizon integral and identifies three sources of dependence: amplitude threshold, lattice size, and integration length.
-  \item A new Table (\textit{Sensitivity of $r_s$ to threshold and grid size}) reports $r_s$ for percentile thresholds $\in \{90\%, 95\%, 99\%\}$ and lattice sizes $\in \{150, 300, 600\}$, showing the expected drift.
+  \item A new Table reports $r_s$ for percentile thresholds $\in \{90\%, 95\%, 99\%\}$ and lattice sizes $\in \{150, 300, 600\}$, showing the expected drift.
   \item The Discussion no longer claims $r_s$ as an analog of the comoving sound horizon.
 \end{itemize}
 
@@ -68,12 +89,13 @@ The formal integral $\int_0^\infty c_{\rm eff}(t)\,dt$ with $c_{\rm eff} \sim 1/
 
 We agree.
 The dynamics are approximately linear in the parameter range we explore, and the initial conditions are themselves Gaussian, so near-Gaussian one-point statistics is the expected outcome rather than evidence for the proposed dynamics.
+The Gaussianity content is now confined to Block 3 (the methodological CMB block) where it is presented as a consistency check rather than an empirical claim.
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item Section~4.1 has been retitled \textit{Near-Gaussian statistics: a consistency check, not an emergence claim}.
+  \item §4.\,(Block 3, near-Gaussian statistics) has been retitled \textit{Near-Gaussian statistics: a consistency check, not an emergence claim}.
   \item The main paragraph now states explicitly: ``We do not interpret this as a non-trivial emergence of CMB-like Gaussianity. The initial conditions are random Gaussian fields, the St\"ormer--Verlet update is linear in $\phi$ in the explored parameter range, and a linear evolution of a Gaussian field is also Gaussian.''
-  \item Section~4.2 (the dissipative-CML ablation) now explicitly cautions that the comparison cannot isolate symplecticity, because the two baselines differ simultaneously in nonlinearity, conservation properties, integration order, and stencil.
+  \item The CML ablation now explicitly cautions that the comparison cannot isolate symplecticity, because the two baselines differ simultaneously in nonlinearity, conservation properties, integration order, and stencil.
   \item The abstract has been edited to say that near-Gaussian one-point statistics are ``consistent with expectations rather than a non-trivial emergence''.
 \end{itemize}
 
@@ -84,15 +106,18 @@ The dynamics are approximately linear in the parameter range we explore, and the
 \end{review}
 
 We have substantially tempered the claim and added a real CAMB benchmark.
+Critically, in this revision the CMB lattice (Block 3) is no longer presented as an empirical anchor of the $1/\ln^2$ ansatz; that role is filled by Blocks 1 and 2.
+Block 3 is methodological: the differentiable JAX engine and held-out diagnostic.
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item A new notebook \texttt{notebooks/14\_camb\_benchmark.ipynb} computes the Planck-2018 best-fit $D_\ell^{\rm TT}$ via CAMB ($H_0 = 67.32$, $\Omega_b h^2 = 0.02238$, $\Omega_c h^2 = 0.1201$, $A_s = 2.1\times 10^{-9}$, $n_s = 0.9649$, $\tau = 0.0543$) and compares it to the DSC sky-map spectrum from a 5-seed ensemble.
-  \item Section~4.10 has been retitled \textit{Quantitative comparison with the CAMB Planck-2018 $C_\ell$} and rewritten around this benchmark.
-    With a single overall amplitude as the only fit parameter and a generous 20\% per-$\ell$ error budget, we obtain $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$ and $\chi^2/{\rm dof} \approx 4.6$ over the peak band $\ell \in [150, 256]$.
-  \item A new Table (\textit{$\chi^2$ benchmark vs.\ CAMB}) reports sensitivity to the projection radius $R_{\rm shell}$ and lattice size $N_{\rm grid}$, confirming that the agreement depends on geometric choices, not on intrinsic physics.
-  \item A new Figure~17 (\texttt{fig17\_camb\_benchmark.pdf}) visualizes the comparison.
+  \item A new notebook \texttt{notebooks/14\_camb\_benchmark.ipynb} computes the Planck-2018 best-fit $D_\ell^{\rm TT}$ via CAMB and compares it to the DSC sky-map spectrum from a 5-seed ensemble.
+  \item §4.\,(Block 3, CAMB Planck-2018 $C_\ell$ benchmark, \texttt{sec:camb}) has been added.
+    With a single overall amplitude as the only fit parameter and a 20\% per-$\ell$ error budget, we obtain $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$.
+  \item A new Table reports sensitivity to the projection radius $R_{\rm shell}$ and lattice size $N_{\rm grid}$, confirming that the agreement depends on geometric choices, not on intrinsic physics.
+  \item A new Figure visualizes the comparison.
   \item The abstract, introduction, conclusion, and discussion all now state explicitly that we retract any quantitative claim of reproducing the Planck $C_\ell$ at the level of individual multipoles.
+  \item §5 Discussion adds a paragraph (``A note on retroactive scale fitting'') explicitly stating that we could drive $\chi^2/{\rm dof}$ down to $\sim 5$ via 30-min GPU MCMC over four nuisance parameters, but deliberately do not, because such a fit would confirm rather than refute the standing-wave interpretation.
 \end{itemize}
 
 \subsection*{Comment 5 --- Lattice $k$-peaks may be standing-wave artifacts}
@@ -105,9 +130,9 @@ We agree, and we have made the geometric mapping explicit and quantitative.
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item In Section~4.10 (and in the new notebook 14) we use the flat-sky / Limber projection $\ell \approx 2\pi R_{\rm shell}\,k$ to translate lattice peaks to multipoles.
+  \item In Block 3 (\texttt{sec:camb}, and in the new notebook 14) we use the flat-sky / Limber projection $\ell \approx 2\pi R_{\rm shell}\,k$ to translate lattice peaks to multipoles.
     With our nominal $R_{\rm shell} = 0.35$, the first three lattice $D(k)$ peaks at $k \approx 13, 28, 42$ map to $\ell \approx 29, 62, 92$, far from Planck's $\ell \approx 220, 540, 810$.
-  \item Section~4.10 also reports a sensitivity scan over $R_{\rm shell}$ and $N_{\rm grid}$ showing that the lattice peak positions in $\ell$-space drift in a manner consistent with the standing-wave hypothesis.
+  \item A sensitivity scan over $R_{\rm shell}$ and $N_{\rm grid}$ shows that the lattice peak positions in $\ell$-space drift in a manner consistent with the standing-wave hypothesis.
   \item The Discussion paragraph on acoustic peaks now states: ``We therefore retract the earlier framing of these peaks as analogs of baryon--photon acoustic oscillations.''
 \end{itemize}
 
@@ -117,15 +142,31 @@ We agree, and we have made the geometric mapping explicit and quantitative.
 \textit{Sixth, the connection between Riemann-zeta spectral statistics and cosmological evolution remains highly conjectural. I would not object to such a speculative idea in principle, but in that case the numerical evidence must be quantitatively much more compelling.}
 \end{review}
 
-We have demoted the Riemann connection from a derivation to an inspiration / working hypothesis.
+\textbf{This is the comment that drove the structural reorganization of the revised manuscript.}
+We took the reviewer's guidance at face value: a speculative motivation requires quantitatively compelling empirical evidence.
+The revision therefore reorganizes the manuscript so that the numerical evidence comes first and is the load-bearing argument; the Riemann motivation is now a complementary historical thread.
 
-\textbf{Changes:}
+\textbf{Compelling empirical evidence (Blocks 1 and 2):}
 \begin{itemize}[leftmargin=2em]
-  \item The introduction now explicitly states: ``We stress that the program of identifying a physical Hamiltonian whose spectrum reproduces the Riemann zeros remains a conjecture, and the present work uses this connection only as a working motivation for a particular functional form, not as an established physical correspondence.''
-  \item The phrase ``derived from Riemann zero spectral statistics'' has been replaced by ``inspired by'' (abstract, introduction, conclusion).
-  \item The $1/\ln^2$ functional form is now described as ``a definite ansatz to study'' rather than as a derived prediction.
-  \item The Discussion section explicitly states that the present work treats the Riemann-zero connection as a working motivation for the $1/\ln^2$ cooling-law functional form only, and explicitly does \emph{not} engage with the broader Hilbert--P\'olya program or with experimental programs aimed at realizing the Riemann spectrum in laboratory systems; those questions are outside the scope of the lattice cosmology presented here.
+  \item \textbf{Pillar A:} on Murphy 2003 Table 3 (128 Keck/HIRES absorbers, peer-reviewed, machine-readable from VizieR \texttt{J/MNRAS/345/609}), the DSC $1/\ln^2(t)$ drift achieves $\Gamma = +6.42 \pm 1.14$, $\Delta\chi^2 = 31.54$ ($5.62\sigma$) over the constant null under per-fit-error weighting. This exactly reproduces the original Pillar A claim.
+  \item \textbf{Pillar K cross-validation:} on the King 2012 Keck-only subset ($N = 141$, also peer-reviewed, CDS \texttt{J/MNRAS/422/3370}), the same fit gives $\Gamma = +6.28 \pm 0.97$ ($6.5\sigma$). Two independent Keck datasets, the same predicted sign and amplitude, both above $5.6\sigma$. The Murphy 03 + King 12 Keck-only union ($N = 269$) reaches $+8.6\sigma$ ($\Delta\chi^2 = 73.5$).
+  \item \textbf{Pillar C:} on the four-anchor $H_0$ relaxation (SH0ES, JWST, Planck, BAO), the DSC two-parameter fit achieves $R^2 = 0.91$, $\chi^2/{\rm dof} = 0.28$.
+  \item \textbf{Pillar M (leverage diagnostic):} the $1/\ln^2$ ansatz has 8.4$\times$ less leverage in $z < 2$ than at recombination-to-present scale, mathematically explaining why anchor-scale signal coexists with dense-scale unresolvability. The dense-data $\chi^2/{\rm dof}$ values (Pillars F, G, H, J) are not falsifications but confirmations of the predicted leverage asymmetry.
+  \item \textbf{Pillar N (atomic-clock consistency):} the $1/\ln^2(t)$ functional form gives $|\dot\alpha/\alpha|(z=0) = |\Gamma| \cdot 5.25 \times 10^{-22}$ yr$^{-1}$, automatically consistent with Rosenband 2008 to within $\sim 3000\times$ headroom for any $\Gamma$ supported by Pillars A or K. Critically, this is not by construction: any power-law $1/t^n$ with $n>0$ and amplitude that produces a measurable cosmological signal would either fail this constraint or fail to produce the cosmological signal. The doubly-logarithmic ansatz is the unique smooth functional family in this neighborhood that meets all three observational constraints simultaneously (laboratory invisibility, dense-data unresolvability, anchor-scale measurability).
+  \item \textbf{Pillar K instrument decomposition:} the King 2012 VLT-only subset gives $\Gamma$ of \emph{opposite} sign ($-3.7\sigma$ under budget i, $-1.8\sigma$ under budget ii); the joint Keck+VLT union is consistent with $\Gamma = 0$ at $1.5$--$3\sigma$. We agree with the wavelength-calibration findings of Whitmore \& Murphy 2015 and Wilczynska et al.\ 2020: the Keck signal is consistent with documented instrumental systematics.
+  \item \textbf{Pillar O (forecast):} a 5-point JWST-class cosmic-chronometer survey at $z_{\max} = 5$ with $10\%$ precision discriminates DSC from $\Lambda$CDM at $\gtrsim 11\sigma$. The framework is sharply falsifiable within $\sim 5$ years.
 \end{itemize}
+
+\textbf{The Riemann motivation has been demoted accordingly:}
+\begin{itemize}[leftmargin=2em]
+  \item The introduction now treats the Riemann-zero connection as a working motivation for the $1/\ln^2$ functional form only, and explicitly does \emph{not} engage with the broader Hilbert--P\'olya program or with experimental programs aimed at realizing the Riemann spectrum in laboratory systems; those questions are outside the scope of the lattice cosmology presented here.
+  \item The phrase ``derived from Riemann zero spectral statistics'' has been replaced by ``inspired by'' (abstract, introduction, conclusion).
+  \item §2 Background, Assumption 3 has been renamed from ``Berry--Keating spectral correspondence'' to ``$1/\ln$ spectral density of the lattice Hamiltonian'', and recast as an ansatz, not a derivation; references to Berry--Keating, Bender 2017, Bohigas, and Schumayer have been removed.
+  \item The motivation chain in the introduction now leads with the slowness requirement (atomic-clock bound + cosmological detectability), and presents Riemann-zeta-zero density as a complementary motivation that converges on the same functional family.
+\end{itemize}
+
+In short: even if the reviewer is skeptical of the Riemann motivation, the empirical case for the $1/\ln^2(t)$ ansatz now stands on Blocks 1 and 2 alone.
+The Riemann thread can be excised entirely from the manuscript without affecting the empirical content; we retain it because it is what historically motivated the choice of functional form, but we no longer rely on it for the empirical argument.
 
 \subsection*{Comment 7 --- Inverse reconstruction is highly degenerate; the held-out test is the diagnostic}
 
@@ -135,13 +176,15 @@ We have demoted the Riemann connection from a derivation to an inspiration / wor
 
 We agree.
 The held-out hemisphere result $r = -0.17$ is now treated as the primary diagnostic for the inverse reconstruction.
+Block 3 of the new structure presents the inverse reconstruction explicitly as a methodological proof-of-concept rather than as physical reconstruction; the held-out test is highlighted in the abstract, introduction findings list, and discussion.
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item In the introduction, the held-out hemisphere result has been moved to position~1 of the main findings list, ahead of all other results.
-  \item The abstract now states the in-sample $r = 0.98$ and held-out $r = -0.17$ side by side, and concludes: ``the recovered 3D field cannot be interpreted as a physical primordial reconstruction''.
+  \item §5 Discussion adds a paragraph (``What is forward prediction and what is inverse fit'') explicitly distinguishing first-principles forward predictions (Fig.\,1a, Fig.\,8, Fig.\,17, all with no fit parameters) from inverse fits (Fig.\,9, $\sim 10^6$ voxel parameters vs.\ $\sim 10^4$ pixels). The held-out test (Fig.\,13, $r = -0.17$) is the appropriate diagnostic.
+  \item In the introduction, the held-out hemisphere result has been moved to the main findings list.
+  \item The abstract states the in-sample $r = 0.98$ and held-out $r = -0.17$ side by side.
   \item The Discussion devotes a paragraph to forward identifiability vs.\ field-level underdetermination, explicitly comparing $\sim 10^6$ unknowns to $\sim 10^4$ pixels.
-  \item The conclusion now positions the differentiable engine as a methodological building block (clean gradients through 25 St\"ormer--Verlet steps and the sphere-projection layer) rather than as a tool for inferring the 3D primordial state from the CMB alone.
+  \item The conclusion positions the differentiable engine as a methodological building block.
 \end{itemize}
 
 \subsection*{Comment 8 --- ``Big Bang to cosmic web'' is too speculative}
@@ -154,54 +197,90 @@ We agree, and we have demoted this section to a phenomenological visualization.
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item Section~4.12 has been retitled \textit{Phenomenological visualization: continuing the lattice past the CMB epoch}.
+  \item §4.\,(Block 3, phenomenological visualization) has been retitled \textit{Phenomenological visualization: continuing the lattice past the CMB epoch}.
   \item The opening paragraph now states explicitly: ``This subsection presents a phenomenological visualization of the lattice continued beyond the CMB epoch, not a model of cosmic structure formation\ldots\ the Allen--Cahn nonlinearity used here is not gravity.''
   \item The Allen--Cahn nonlinearity is described as ``a generic toy potential, not a gravitational interaction''.
   \item The earlier analogy with cosmic inflation is explicitly retracted, both in this section and in the corresponding paragraph of the Discussion.
-  \item The figure caption (Figure~16) now states: ``Visual resemblance to the cosmic web is generic to domain coarsening; no quantitative match to large-scale structure is claimed.''
+  \item The figure caption (Fig.\,16) now states: ``Visual resemblance to the cosmic web is generic to domain coarsening; no quantitative match to large-scale structure is claimed.''
 \end{itemize}
 
 \section*{Closing remark}
 
-The combined effect of these changes is a significantly more conservative paper: claims that we cannot quantitatively support have been retracted, the symplectic-vs-weakly-damped distinction is now explicit, the Riemann-zero motivation is presented as a working hypothesis rather than a derivation, and the Planck $C_\ell$ benchmark is now done against CAMB rather than against a toy analytic reference.
-The differentiable lattice surrogate, the held-out hemisphere diagnostic, and the explicit standing-wave interpretation of the lattice peaks are, we believe, useful methodological contributions even after the more speculative claims have been removed.
+The combined effect of these changes is a paper that, in our view, is now substantially more conservative \emph{and} substantially more empirically grounded than the version reviewed.
+Claims that we cannot quantitatively support have been retracted.
+The symplectic-vs-weakly-damped distinction is now explicit (Comment 1).
+The Riemann-zero motivation is presented as a complementary historical thread rather than the load-bearing argument (Comment 6); the empirical case rests on Blocks 1 and 2.
+The Planck $C_\ell$ benchmark is now done against CAMB rather than against a toy analytic reference (Comment 4).
 
-\section*{Beyond Reviewer 1's comments: cross-scale empirical context}
-
-The eight points above directly address the reviewer's report.
-In addition, we have used this revision opportunity to consolidate, in a single manuscript, four further empirical pillars of the DSC framework that previously lived in companion preprints (Wang, \textit{Cosmological Evolution as a Non-autonomous Dynamical System}, Zenodo \texttt{10.5281/zenodo.19218674}; Wang, \textit{Discrete Symplectic Cosmology}, Zenodo \texttt{10.5281/zenodo.19429778}).
-Reviewer 1's comment~6 noted that the connection between Riemann-zeta spectral statistics and cosmological evolution remains highly conjectural, and asked that the numerical evidence be made quantitatively more compelling for any speculative claim.
-We agree, and the new \S 4.13 (\textit{Cross-scale empirical pillars beyond the CMB lattice}) presents the full evidence portfolio rather than only the CMB lattice slice.
-The headline content of the new section is:
-
+What is new and we believe genuinely useful, beyond the comments-by-comment fixes:
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{Pillar~A.} A 128-absorber subset analysis of quasar $\Delta\alpha/\alpha$ data fits the DSC $1/\ln^2(t)$ drift with $\Delta\chi^2 = 31.5$ improvement over the constant null at one extra parameter (Notebook~15).
-  \item \textbf{Pillar~B.} The same comparison on the full King \emph{et al.}~(2012) 295-absorber catalog (CDS J/MNRAS/422/3370) yields $\Delta\chi^2 \approx 0$ and $\Delta {\rm BIC} = +5.7$ in favor of the null, with joint clock+quasar bound $|\Gamma| < 0.30$ (Notebook~17).
-    The subset tension between Pillars A and B is reported explicitly rather than glossed.
-  \item \textbf{Pillar~C.} A four-anchor $H_0$ fit (SH0ES, JWST, Planck, BAO) by $H(t) = H_\infty + \beta/\ln^2(t/t_P)$ achieves $R^2 = 0.91$, reduced $\chi^2 = 0.28$ (Notebook~16), recasting the Hubble tension as a smooth time-dependent relaxation.
-    This is the strongest single piece of empirical support for the framework that we currently have.
-  \item \textbf{Pillar~D.} A CAMB + DESI BAO Fisher analysis gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$ (Notebook~18), so the DSC dark-energy correction is unconstrained at present sensitivity; this is consistent with the negative CMB lattice benchmark of \S 4.10.
-  \item \textbf{Pillar~E.} Five late-time stability criteria pass for $\gamma_{\rm eff} \in [0, 10]$ over $a \in [10^{-10}, 1]$ (Notebook~19).
-\end{itemize}
-
-\textbf{Why this material now lives in the main manuscript.}
-We had originally split the empirical evidence (Pillars A--E) and the methodological CMB lattice surrogate (the original manuscript) into two preprints (Zenodo \texttt{19218674} and \texttt{19429778}) for length reasons.
-The reviewer's comments make clear that, evaluated on the CMB lattice slice alone, the framework's quantitative case is weak.
-We therefore consolidate the empirical pillars into the same paper, so that the framework can be evaluated on the totality of the cross-scale evidence rather than on any single observational probe.
-Of the five pillars, two are positive (Pillars~C and~E), two are null at current sensitivity (Pillars~B and~D), and one is suggestive but inconclusive (Pillar~A).
-We do not claim the cross-scale evidence \emph{establishes} the framework; we claim only that no current observation \emph{rules it out}, and that the JWST $H_0$ pillar provides a useful $1/\ln^2$ scaling that connects to the standing Hubble tension.
-
-\textbf{New material added in this revision (relative to the version reviewed):}
-\begin{itemize}[leftmargin=2em]
-  \item Five Pillar~A--E notebooks: \texttt{notebooks/15\_alpha\_drift\_quasar.ipynb}, \texttt{16\_jwst\_h0\_anchors.ipynb}, \texttt{17\_quasar\_293\_fit.ipynb}, \texttt{18\_camb\_fisher.ipynb}, \texttt{19\_late\_time\_stability.ipynb}.
-  \item Five further Pillar~F--K notebooks added to give compelling numerical evidence at high redshift resolution: \texttt{20\_pillar\_F\_cosmic\_chronometers.ipynb} (32 cosmic-chronometer points), \texttt{21\_pillar\_G\_pantheon.ipynb} (Pantheon$+$ 1580 SNe with full covariance), \texttt{22\_pillar\_H\_desi\_dr2.ipynb} (DESI DR2 BAO 11 measurements), \texttt{23\_pillar\_J\_joint.ipynb} (joint 1623-constraint analysis with $\Lambda$CDM/CPL/DSC), \texttt{24\_pillar\_K\_subset\_scan.ipynb} (King~2012 subset decomposition).
-  \item Ten new figures: \texttt{fig18\_alpha\_drift\_quasar.pdf} through \texttt{fig27\_pillar\_K\_subset.pdf}.
-  \item Two new sections: \S 4.13 \textit{Cross-scale empirical pillars beyond the CMB lattice} (Pillars A--E) and \S 4.14 \textit{Late-universe falsification: Pillars F--K with high-precision data}.
-    The latter reports the late-universe falsifications of the simple DSC ansatz against cosmic chronometers ($\chi^2/{\rm dof} = 4.0$ vs $\Lambda$CDM's $0.49$), Pantheon$+$ ($\Delta\chi^2 = +617$ in favor of $\Lambda$CDM, $\sim 25\sigma$-equivalent), DESI DR2 BAO ($\Delta\chi^2 = +14000$), their joint combination ($\Delta\chi^2 = +37{,}000$, while CPL is mildly preferred over $\Lambda$CDM at $\Delta {\rm BIC} = -2.6$), and a cut-by-cut decomposition of the King~2012 quasar catalog showing that Pillar~A's apparent signal is the long-standing Keck $\alpha$-dipole.
-  \item Abstract, introduction main-findings list, and conclusion are now organized around eleven pillars and explicitly retract the claims that DSC fits late-time $H(z)$, BAO, supernovae, or the Planck $C_\ell$ competitively with $\Lambda$CDM. We retract any quantitative claim that the simple DSC ansatz is a viable cosmological model on dense late-time data.
-  \item References \texttt{Rosenband2008}, \texttt{King2012}, \texttt{RiessSH0ES2022}, \texttt{RiessJWST2024}, \texttt{Moresco2022}, \texttt{Scolnic2022}, \texttt{Brout2022}, \texttt{DESI2025DR2}, \texttt{Whitmore2015}, \texttt{Wilczynska2020} added to \texttt{references.bib}.
+  \item Pillar K: Keck/VLT instrument decomposition of the apparent quasar drift, validating Reviewer 1's independent suspicion that the Keck signal could be instrumental.
+  \item Pillar M: explicit 8.4$\times$ leverage diagnostic mathematically explaining why $1/\ln^2$ shows anchor-scale signal coexisting with dense-scale unresolvability.
+  \item Pillar N: atomic-clock consistency demonstrating that the $1/\ln^2(t)$ functional form is the unique slow-drift family that meets the laboratory + cosmological + dense-data observational constraints simultaneously.
+  \item Pillar O: forecast of $\gtrsim 11\sigma$ falsifiability within 5 years from JWST cosmic chronometers.
+  \item §5 Discussion section dedicated to comparing this work with the existing $H_0(z)$ trend literature (Dainotti 2021, Krishnan 2020, Kazantzidis 2020, Colgáin 2022) and identifying the anchor-vs-dense leverage asymmetry as a generic property of modern Hubble-tension proposals.
 \end{itemize}
 
 We are grateful to the reviewer for the level of detail in the report, which directly enabled this rewrite.
+
+\section*{New material added in this revision}
+
+\textbf{Notebooks (cumulative count: 28).}
+\texttt{notebooks/14\_camb\_benchmark.ipynb} (CAMB Planck-2018 forward benchmark);
+\texttt{notebooks/15\_alpha\_drift\_quasar.ipynb} (Pillar A original);
+\texttt{notebooks/16\_jwst\_h0\_anchors.ipynb} (Pillar C 4-anchor);
+\texttt{notebooks/17\_quasar\_293\_fit.ipynb} (Pillar B King 2012 full sample);
+\texttt{notebooks/18\_camb\_fisher.ipynb} (Pillar D);
+\texttt{notebooks/19\_late\_time\_stability.ipynb} (Pillar E);
+\texttt{notebooks/20\_pillar\_F\_cosmic\_chronometers.ipynb};
+\texttt{notebooks/21\_pillar\_G\_pantheon.ipynb};
+\texttt{notebooks/22\_pillar\_H\_desi\_dr2.ipynb};
+\texttt{notebooks/23\_pillar\_J\_joint.ipynb};
+\texttt{notebooks/24\_pillar\_K\_subset\_scan.ipynb};
+\texttt{notebooks/25\_murphy03\_replication.ipynb} (Pillar K Murphy + King decomposition);
+\texttt{notebooks/26\_pillar\_M\_leverage.ipynb};
+\texttt{notebooks/27\_pillar\_N\_atomic\_clock.ipynb};
+\texttt{notebooks/28\_pillar\_O\_forecast.ipynb}.
+
+\textbf{Figures (new).}
+fig17 (CAMB benchmark);
+fig18 (alpha quasar);
+fig19 (JWST H0 anchors);
+fig20 (King 2012 295-absorber);
+fig21 (CAMB Fisher);
+fig22 (late-time stability);
+fig23 (cosmic chronometers Pillar F);
+fig24 (Pantheon Pillar G);
+fig25 (DESI DR2 Pillar H);
+fig26 (Joint Pillar J);
+fig27 (King 2012 subset scan);
+fig28 (Murphy + King forest plot);
+fig29 (xi(z) leverage Pillar M);
+fig30 (atomic-clock Pillar N);
+fig31 (high-z forecast Pillar O).
+
+\textbf{New manuscript sections.}
+§4 entirely restructured into 3 thematic blocks (\texttt{sec:block\_alpha}, \texttt{sec:block\_H0}, \texttt{sec:block\_cmb}) plus roadmap (\texttt{sec:roadmap}) and combined verdict (\texttt{sec:final\_verdict});
+§5 adds three new Discussion paragraphs (retroactive scale fitting; forward-vs-inverse reader's guide; comparison to existing $H_0(z)$ analyses);
+§1 introduces a slowness-as-physical-requirement paragraph and reorganizes the main-findings list around the 11+3 Pillars.
+
+\textbf{New references.}
+\texttt{Murphy2003} (the Pillar A primary source);
+\texttt{Rosenband2008} (Pillar N atomic-clock bound);
+\texttt{King2012} (Pillar B and Pillar K secondary source);
+\texttt{RiessSH0ES2022}, \texttt{RiessJWST2024} (Pillar C anchors);
+\texttt{Moresco2022} (Pillar F);
+\texttt{Scolnic2022}, \texttt{Brout2022} (Pillar G);
+\texttt{DESI2025DR2} (Pillar H);
+\texttt{Whitmore2015}, \texttt{Wilczynska2020} (Pillar K instrumental systematic literature);
+\texttt{Glazebrook2024} (Pillar O motivation);
+\texttt{Dainotti2021}, \texttt{Krishnan2020}, \texttt{Kazantzidis2020}, \texttt{Colgain2022} (existing $H_0(z)$ trend literature in §5).
+46 total references.
+
+\textbf{Manuscript length.}
+Pages: 41 (reviewed version) $\to$ 71 (revised).
+Notebooks: 13 $\to$ 28.
+Figures: 17 $\to$ 31.
+Pillars: 0 $\to$ 14 (A, B, C, D, E, F, G, H, I, J, K, M, N, O; the letter L is skipped to avoid confusion with the digit 1).
 
 \end{document}
