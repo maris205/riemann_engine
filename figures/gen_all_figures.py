@@ -318,38 +318,43 @@ def gen_fig5():
         c2h.append(c2t)
         if t in [5, 30, 100, 300]: snaps[t] = phi.copy()
 
-    fig = plt.figure(figsize=(10.5, 5.4))
-    gs = fig.add_gridspec(2, 10, height_ratios=[1.0, 1.4],
-                          hspace=0.55, wspace=1.2,
-                          left=0.07, right=0.95, top=0.92, bottom=0.10)
+    fig = plt.figure(figsize=(10.5, 4.6))
+    gs = fig.add_gridspec(2, 12, height_ratios=[1.05, 1.0],
+                          hspace=0.60, wspace=1.2,
+                          left=0.06, right=0.95, top=0.92, bottom=0.13)
 
     snap_times = sorted(snaps.keys())  # [0, 5, 30, 100, 300]
+    # Top row: 5 snapshots across columns 1..11 (each spans 2 cols, leave 0 and 11 empty)
+    snap_spans = [(1, 3), (3, 5), (5, 7), (7, 9), (9, 11)]
     for i, t in enumerate(snap_times):
-        ax = fig.add_subplot(gs[0, 2*i:2*i+2])
+        a, b = snap_spans[i]
+        ax = fig.add_subplot(gs[0, a:b])
         ax.imshow(np.sqrt(np.abs(snaps[t])), cmap='inferno', origin='lower',
                   extent=[0,N,0,N])
         ax.set_title(f't={t}', fontsize=8)
         ax.axis('off')
 
-    # (e) on bottom-left half, (f) on bottom-right half, with empty gap column between
+    # (e) cols 0:5, GAP cols 5:7 (2-col gap for twin-y label of (e)), (f) cols 7:12
     ax1 = fig.add_subplot(gs[1, 0:5])
     ax1.plot(radii, color=C_DSC, lw=1.5)
     ax1.axhline(radii[-1], color=C_DSC, ls=':', alpha=0.4)
-    ax1.set_xlabel('Time step')
-    ax1.set_ylabel('Wavefront radius')
+    ax1.set_xlabel('Time step', fontsize=8)
+    ax1.set_ylabel('Wavefront radius', fontsize=8)
+    ax1.tick_params(labelsize=7)
     ax1.set_title(f'(e) Acoustic horizon $r_s \\approx {radii[-1]:.0f}$', fontsize=9)
 
     ax1b = ax1.twinx()
     ax1b.plot(c2h, color=C_DISS, ls='--', lw=1, alpha=0.6)
-    ax1b.set_ylabel(r'$c^2_{\rm eff}$', color=C_DISS, fontsize=9)
-    ax1b.tick_params(axis='y', colors=C_DISS)
+    ax1b.set_ylabel(r'$c^2_{\rm eff}$', color=C_DISS, fontsize=8)
+    ax1b.tick_params(axis='y', colors=C_DISS, labelsize=7)
 
-    ax2 = fig.add_subplot(gs[1, 5:10])
+    ax2 = fig.add_subplot(gs[1, 7:12])
     t_arr = np.arange(len(radii))
     ax2.plot(t_arr, radii, color=C_DSC, lw=1.5)
     ax2.fill_between(t_arr, 0, radii, alpha=0.08, color=C_DSC)
-    ax2.set_xlabel('Time')
-    ax2.set_ylabel('Comoving distance')
+    ax2.set_xlabel('Time', fontsize=8)
+    ax2.set_ylabel('Comoving distance', fontsize=8)
+    ax2.tick_params(labelsize=7)
     ax2.set_title('(f) Causal structure', fontsize=9)
 
     save_fig(fig, 'fig5_freezeout')
