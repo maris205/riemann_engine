@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  24 MAY 2026 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.22)  25 MAY 2026 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -407,72 +407,38 @@ j\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 z \OT1/cmr/m/n/12 =
  []
 
 [6] [7]
-Overfull \hbox (101.55928pt too wide) in paragraph at lines 228--244
-\OT1/cmr/m/n/12 orig-i-nal); \OT1/cmtt/m/n/12 notebooks/16[]jwst[]h0[]anchors.i
-pynb \OT1/cmr/m/n/12 (Pil-lar C 4-anchor); \OT1/cmtt/m/n/12 notebooks/17[]quasa
-r[]293[]fit.ipynb
- []
-
-
-Overfull \hbox (178.7663pt too wide) in paragraph at lines 228--244
-\OT1/cmr/m/n/12 (Pil-lar B King 2012 full sam-ple); \OT1/cmtt/m/n/12 notebooks/
-18[]camb[]fisher.ipynb \OT1/cmr/m/n/12 (Pil-lar D); \OT1/cmtt/m/n/12 notebooks/
-19[]late[]time[]stability.ipynb
- []
-
-
-Overfull \hbox (108.60155pt too wide) in paragraph at lines 228--244
-\OT1/cmr/m/n/12 (Pil-lar E); \OT1/cmtt/m/n/12 notebooks/20[]pillar[]F[]cosmic[]
-chronometers.ipynb\OT1/cmr/m/n/12 ; \OT1/cmtt/m/n/12 notebooks/21[]pillar[]G[]p
-antheon.ipynb\OT1/cmr/m/n/12 ;
- []
-
-
-Overfull \hbox (208.52127pt too wide) in paragraph at lines 228--244
-\OT1/cmtt/m/n/12 notebooks/22[]pillar[]H[]desi[]dr2.ipynb\OT1/cmr/m/n/12 ; \OT1
-/cmtt/m/n/12 notebooks/23[]pillar[]J[]joint.ipynb\OT1/cmr/m/n/12 ; \OT1/cmtt/m/
-n/12 notebooks/24[]pillar[]K[]subset[]scan.ipynb\OT1/cmr/m/n/12 ;
- []
-
-
-Overfull \hbox (11.52707pt too wide) in paragraph at lines 228--244
-\OT1/cmtt/m/n/12 notebooks/26[]pillar[]M[]leverage.ipynb\OT1/cmr/m/n/12 ; \OT1/
-cmtt/m/n/12 notebooks/27[]pillar[]N[]atomic[]clock.ipynb\OT1/cmr/m/n/12 ;
- []
-
-[8]
-Overfull \hbox (29.49217pt too wide) in paragraph at lines 262--266
+Overfull \hbox (29.49217pt too wide) in paragraph at lines 245--249
 []\OT1/cmr/bx/n/12 New manuscript sec-tions. \TS1/cmr/m/n/12 §\OT1/cmr/m/n/12 4
  en-tirely re-struc-tured into 3 the-matic blocks (\OT1/cmtt/m/n/12 sec:block[]
 alpha\OT1/cmr/m/n/12 ,
  []
 
 
-Overfull \hbox (86.1751pt too wide) in paragraph at lines 262--266
+Overfull \hbox (86.1751pt too wide) in paragraph at lines 245--249
 \OT1/cmtt/m/n/12 sec:block[]H0\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 sec:block[]cmb
 \OT1/cmr/m/n/12 ) plus roadmap (\OT1/cmtt/m/n/12 sec:roadmap\OT1/cmr/m/n/12 ) a
 nd com-bined ver-dict (\OT1/cmtt/m/n/12 sec:final[]verdict\OT1/cmr/m/n/12 );
  []
 
 
-Overfull \hbox (3.2468pt too wide) in paragraph at lines 267--279
+Overfull \hbox (3.2468pt too wide) in paragraph at lines 250--262
 \OT1/cmr/m/n/12 atomic-clock bound); \OT1/cmtt/m/n/12 King2012 \OT1/cmr/m/n/12 
 (Pil-lar B and Pil-lar K sec-ondary source); \OT1/cmtt/m/n/12 RiessSH0ES2022\OT
 1/cmr/m/n/12 ,
  []
 
-[9] (./response_to_reviewer1.aux)
+[8] [9] (./response_to_reviewer1.aux)
 Package rerunfilecheck Info: File `response_to_reviewer1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  10651 strings out of 480171
  161723 string characters out of 5894489
- 469104 words of memory out of 5000000
+ 469095 words of memory out of 5000000
  28466 multiletter control sequences out of 15000+600000
  479563 words of font info for 67 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 60i,6n,63p,809b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,5n,63p,809b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
  </root/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx1200.600pk> </
 root/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/te
@@ -487,7 +453,7 @@ cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on response_to_reviewer1.pdf (9 pages, 192937 bytes).
+Output written on response_to_reviewer1.pdf (9 pages, 190589 bytes).
 PDF statistics:
  139 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream

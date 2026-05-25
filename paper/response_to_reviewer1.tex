@@ -111,7 +111,7 @@ Block 3 is methodological: the differentiable JAX engine and held-out diagnostic
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item A new notebook \texttt{notebooks/14\_camb\_benchmark.ipynb} computes the Planck-2018 best-fit $D_\ell^{\rm TT}$ via CAMB and compares it to the DSC sky-map spectrum from a 5-seed ensemble.
+  \item A new CAMB benchmark (Fig.~17) computes the Planck-2018 best-fit $D_\ell^{\rm TT}$ via CAMB and compares it to the DSC sky-map spectrum from a 5-seed ensemble.
   \item §4.\,(Block 3, CAMB Planck-2018 $C_\ell$ benchmark, \texttt{sec:camb}) has been added.
     With a single overall amplitude as the only fit parameter and a 20\% per-$\ell$ error budget, we obtain $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$.
   \item A new Table reports sensitivity to the projection radius $R_{\rm shell}$ and lattice size $N_{\rm grid}$, confirming that the agreement depends on geometric choices, not on intrinsic physics.
@@ -130,7 +130,7 @@ We agree, and we have made the geometric mapping explicit and quantitative.
 
 \textbf{Changes:}
 \begin{itemize}[leftmargin=2em]
-  \item In Block 3 (\texttt{sec:camb}, and in the new notebook 14) we use the flat-sky / Limber projection $\ell \approx 2\pi R_{\rm shell}\,k$ to translate lattice peaks to multipoles.
+  \item In Block 3 (\texttt{sec:camb}) we use the flat-sky / Limber projection $\ell \approx 2\pi R_{\rm shell}\,k$ to translate lattice peaks to multipoles.
     With our nominal $R_{\rm shell} = 0.35$, the first three lattice $D(k)$ peaks at $k \approx 13, 28, 42$ map to $\ell \approx 29, 62, 92$, far from Planck's $\ell \approx 220, 540, 810$.
   \item A sensitivity scan over $R_{\rm shell}$ and $N_{\rm grid}$ shows that the lattice peak positions in $\ell$-space drift in a manner consistent with the standing-wave hypothesis.
   \item The Discussion paragraph on acoustic peaks now states: ``We therefore retract the earlier framing of these peaks as analogs of baryon--photon acoustic oscillations.''
@@ -224,23 +224,6 @@ What is new and we believe genuinely useful, beyond the comments-by-comment fixe
 We are grateful to the reviewer for the level of detail in the report, which directly enabled this rewrite.
 
 \section*{New material added in this revision}
-
-\textbf{Notebooks (cumulative count: 28).}
-\texttt{notebooks/14\_camb\_benchmark.ipynb} (CAMB Planck-2018 forward benchmark);
-\texttt{notebooks/15\_alpha\_drift\_quasar.ipynb} (Pillar A original);
-\texttt{notebooks/16\_jwst\_h0\_anchors.ipynb} (Pillar C 4-anchor);
-\texttt{notebooks/17\_quasar\_293\_fit.ipynb} (Pillar B King 2012 full sample);
-\texttt{notebooks/18\_camb\_fisher.ipynb} (Pillar D);
-\texttt{notebooks/19\_late\_time\_stability.ipynb} (Pillar E);
-\texttt{notebooks/20\_pillar\_F\_cosmic\_chronometers.ipynb};
-\texttt{notebooks/21\_pillar\_G\_pantheon.ipynb};
-\texttt{notebooks/22\_pillar\_H\_desi\_dr2.ipynb};
-\texttt{notebooks/23\_pillar\_J\_joint.ipynb};
-\texttt{notebooks/24\_pillar\_K\_subset\_scan.ipynb};
-\texttt{notebooks/25\_murphy03\_replication.ipynb} (Pillar K Murphy + King decomposition);
-\texttt{notebooks/26\_pillar\_M\_leverage.ipynb};
-\texttt{notebooks/27\_pillar\_N\_atomic\_clock.ipynb};
-\texttt{notebooks/28\_pillar\_O\_forecast.ipynb}.
 
 \textbf{Figures (new).}
 fig17 (CAMB benchmark);
