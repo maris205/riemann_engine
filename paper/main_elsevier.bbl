@@ -86,19 +86,11 @@ L.~Wang, The emergence of prime distribution from low-dimensional deterministic
 \newblock \href {https://doi.org/10.1080/27684830.2026.2684334}
   {\path{doi:10.1080/27684830.2026.2684334}}.
 
-\bibitem{WangEvolution}
-L.~Wang, {Cosmological Evolution as a Non-autonomous Dynamical System:
-  Empirical Evidence from the Fine-Structure Constant, Hubble Tension, and
-  Riemann Zeros}, v1.0 (2026).
-\newblock \href {https://doi.org/10.5281/zenodo.19218674}
-  {\path{doi:10.5281/zenodo.19218674}}.
-
-\bibitem{Wang2026}
-L.~Wang, {Discrete Symplectic Cosmology: A Phenomenological Framework for
-  Time-dependent Vacuum Energy from Planck-Lattice Spectral Statistics}, v2.0
-  (2026).
-\newblock \href {https://doi.org/10.5281/zenodo.19429778}
-  {\path{doi:10.5281/zenodo.19429778}}.
+\bibitem{Wang2026Spectral}
+L.~Wang, {Spectral Isomorphism between Renormalization Flow in Non-Autonomous
+  Quadratic Maps and Riemann Zeros}, v4.0 (2026).
+\newblock \href {https://doi.org/10.5281/zenodo.19045440}
+  {\path{doi:10.5281/zenodo.19045440}}.
 
 \bibitem{Hairer2006}
 E.~Hairer, C.~Lubich, G.~Wanner, {Geometric Numerical Integration:

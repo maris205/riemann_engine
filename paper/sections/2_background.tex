@@ -4,7 +4,7 @@
 \subsection{The DSC framework}
 \label{sec:dsc}
 
-Discrete Symplectic Cosmology (DSC)~\citep{Wang2026} models cosmic evolution as a non-autonomous dynamical system on a four-dimensional lattice $\calL = \Z^3 \times \N$, where spatial sites are separated by the Planck length $\lP = \sqrt{\hbar G/c^3} \approx 1.616 \times 10^{-35}$\,m and temporal ticks by the Planck time $\tP = \sqrt{\hbar G/c^5} \approx 5.391 \times 10^{-44}$\,s.
+Discrete Symplectic Cosmology (DSC) models cosmic evolution as a non-autonomous dynamical system on a four-dimensional lattice $\calL = \Z^3 \times \N$, where spatial sites are separated by the Planck length $\lP = \sqrt{\hbar G/c^3} \approx 1.616 \times 10^{-35}$\,m and temporal ticks by the Planck time $\tP = \sqrt{\hbar G/c^5} \approx 5.391 \times 10^{-44}$\,s.
 Three assumptions define the framework:
 
 \paragraph{Assumption 1 (Discrete spacetime).}
@@ -29,7 +29,7 @@ We posit that the spectral density of the (effective) lattice Hamiltonian satisf
 which is mathematically the same form satisfied by the Riemann zeta zeros.
 This is an \emph{ansatz} on the spectral density, not a derivation: we adopt it because it produces a closed-form $1/\ln^2$ cooling law (\cref{sec:cooling_derivation}) that is the central testable hypothesis of this paper.
 We do not engage with the broader question of whether a physical Hamiltonian exists whose eigenvalues are literally the Riemann zeros (the Hilbert--P\'olya program), nor with experimental programs aimed at realizing such a spectrum in laboratory systems.
-The numerical spectral observation that period-doubling renormalization flow exhibits a level-counting law of the same logarithmic form~\citep{Wang2026} provides additional motivation for adopting \cref{eq:rvm} as the working ansatz.
+The numerical spectral observation that period-doubling renormalization flow exhibits a level-counting law of the same logarithmic form~\citep{Wang2026Spectral} provides additional motivation for adopting \cref{eq:rvm} as the working ansatz.
 
 \subsection{Derivation of the $1/\ln^2$ cooling law}
 \label{sec:cooling_derivation}
@@ -53,11 +53,11 @@ Identifying this fluctuation with the time-dependent part of the control paramet
 \end{equation}
 where $\mudyn \approx 1.5437$ is the asymptotic critical value (the 2D effective critical baseline), $\kopt \approx \alpha_F/2 \approx 1.248$ is conjectured to relate to the Feigenbaum spatial rescaling constant $\alpha_F = 2.5029\ldots$, and $c_0 = 10$ regularizes the logarithmic divergence at $n = 0$.
 
-This is the \emph{physically motivated} cooling schedule: $p = 2$ is singled out among the family $\epsilon(n) = k/\ln^p(n)$ as the unique exponent for which (a) the time-averaged Lyapunov exponent $\bar{\lambda}(N) \to 0$ as $N \to \infty$ (asymptotic criticality), and (b) the cumulative perturbation $\sum \sqrt{\epsilon(n)}$ diverges (non-trivial exploration), while (c) the Riemann zero density provides the physical value $p = 2$~\citep{Wang2026}.
+This is the \emph{physically motivated} cooling schedule: $p = 2$ is singled out among the family $\epsilon(n) = k/\ln^p(n)$ as the unique exponent for which (a) the time-averaged Lyapunov exponent $\bar{\lambda}(N) \to 0$ as $N \to \infty$ (asymptotic criticality), and (b) the cumulative perturbation $\sum \sqrt{\epsilon(n)}$ diverges (non-trivial exploration), while (c) the Riemann zero density provides the physical value $p = 2$~\citep{Wang2026Spectral}.
 
 The framework yields two key cosmological consequences:
 \begin{itemize}
-  \item A dynamical cosmological term~\citep{Wang2026}:
+  \item A dynamical cosmological term:
   \begin{equation}
     \Lambda(t) = \Lambda_\infty + \frac{\gamma}{\ln^2(t/\tP)}\,,
     \label{eq:lambda}

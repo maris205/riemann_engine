@@ -175,7 +175,8 @@ With four data points and two parameters this is two degrees of freedom, so the 
   \label{fig:jwst_h0}
 \end{figure}
 \paragraph{Pillar D: CAMB + BAO Fisher constraint on $\gamma_{\rm eff}$.}
-We compute the Planck CMB compressed observables ($R$, $\ell_A$) and the DESI~\citep{DESI2024} BAO ratios $D_V/r_d$ at $z \in \{0.15, 0.38, 0.51, 0.61, 0.70, 1.48, 2.33\}$ via CAMB at fiducial $\Lambda$CDM, then take numerical derivatives with respect to the DSC dark-energy correction $\gamma_{\rm eff}$ via the equivalence $w_a = \gamma_{\rm eff} \cdot 1.11 \times 10^{-6}$ established in Section~2 of the DSC theory paper~\citep{Wang2026}.
+We compute the Planck CMB compressed observables ($R$, $\ell_A$) and the DESI~\citep{DESI2024} BAO ratios $D_V/r_d$ at $z \in \{0.15, 0.38, 0.51, 0.61, 0.70, 1.48, 2.33\}$ via CAMB at fiducial $\Lambda$CDM, then take numerical derivatives with respect to the DSC dark-energy correction $\gamma_{\rm eff}$.
+The mapping between $\gamma_{\rm eff}$ and the standard CPL $w_a$ parameter is the linearization $w_a = \gamma_{\rm eff} \cdot 1.11 \times 10^{-6}$, obtained by Taylor-expanding the $1/\ln^2(t/t_P)$ correction to $\Lambda(t)$ around the present epoch.
 Building the Fisher matrix from these derivatives gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$, i.e.\ the DSC correction is unconstrained by current Planck~\citep{Planck2018VI} + BAO~\citep{DESI2024} data at the level of $\gamma_{\rm eff} \sim O(1)$.
 The maximum fractional change to the CMB TT spectrum is $\sim 12.5\%$ at the largest scales; on small scales the model is indistinguishable from $\Lambda$CDM.
 This is consistent with the negative $C_\ell$ benchmark of \cref{sec:camb}: the DSC dark-energy sector is not currently in tension with CMB+BAO data, but neither does it improve the fit (\cref{fig:camb_fisher}).
@@ -628,7 +629,7 @@ The reconstructed map preserves the Gaussianity of the target: the Planck skewne
 At higher resolution ($\nside = 32$, 12{,}288 pixels), the correlation remains high ($r = 0.929$) with finer spatial detail resolved.
 
 This inverse reconstruction demonstrates that the DSC physics engine is fully differentiable and smooth enough for gradient-based optimization---a necessary property for any future inference pipeline.
-On GPU with $128^3$ voxels and $\nside = 64$ (49{,}152 pixels), the reconstruction achieves near-perfect agreement with Planck at sub-percent MSE levels~\citep{Wang2026}.
+On GPU with $128^3$ voxels and $\nside = 64$ (49{,}152 pixels), the reconstruction achieves near-perfect agreement with Planck at sub-percent MSE levels.
 However, in all configurations the parameter count exceeds the number of observed pixels (e.g., $2.1 \times 10^6$ parameters vs.\ $4.9 \times 10^4$ pixels for the GPU version), making the inverse problem severely underdetermined.
 
 \paragraph{Held-out generalization test.}
