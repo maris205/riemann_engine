@@ -104,7 +104,7 @@ Over 45 evolution steps, the cumulative volume factor is $(1 - 0.015)^{45} \appr
 The Laplacian coupling does not modify this determinant because $\nabla^2_{\mathrm{lat}}$ is a linear operator with trace zero.
 
 This quantifies the sense in which the damped system is ``nearly symplectic'': it is exactly symplectic at each step modulo a $(1-\eta)$ contraction factor that is close to unity for small $\eta$.
-For the undamped ($\eta = 0$) case used in the acoustic-peak experiments (\cref{sec:peaks}), the evolution is \emph{exactly} symplectic.
+For the undamped ($\eta = 0$) case used in the acoustic-peak experiments (Supplementary Material), the evolution is \emph{exactly} symplectic.
 By the backward error analysis of symplectic integrators~\citep{Hairer2006}, the undamped map is the exact flow of a modified Hamiltonian $\tilde{H}$ satisfying $|\tilde{H} - H| = O(c_{\mathrm{eff}}^2)$, preventing secular energy drift.
 
 \begin{figure}[htbp]
@@ -129,4 +129,4 @@ A perturbation launched at time $n_0$ propagates a comoving distance
 which diverges logarithmically---so the formal horizon is infinite.
 However, the integrand decays so slowly that the wavefront velocity drops below any fixed threshold $v_{\min}$ after a finite number of steps $n^* \sim \exp(c_{\mathrm{base}}/v_{\min})$, producing an \emph{effective} finite acoustic horizon $r_s^{\mathrm{eff}}$ that is well-defined for any finite simulation.
 This is the DSC analog of baryon--photon decoupling in $\Lambda$CDM: the lattice does not require an abrupt phase transition to generate a finite sound horizon; instead, the $1/\ln^2$ cooling provides gradual, asymptotic freeze-out.
-We note that the formal divergence of $r_s$ distinguishes the DSC mechanism from standard recombination, where the integral converges; the ``finite horizon'' reported in \cref{sec:horizon} refers to this effective, threshold-dependent quantity.
+We note that the formal divergence of $r_s$ distinguishes the DSC mechanism from standard recombination, where the integral converges; the ``finite horizon'' reported in the Supplementary Material refers to this effective, threshold-dependent quantity.

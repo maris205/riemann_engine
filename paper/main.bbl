@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{12}%
+\begin{thebibliography}{41}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,21 +50,154 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{\citenamefont {{Planck Collaboration}}(2020)}]{Planck2018VI}%
+\bibitem [{\citenamefont {{Planck
+  Collaboration}}(2020{\natexlab{a}})}]{Planck2018I}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{Planck 2018
+  results. I. Overview and the cosmological legacy of Planck}},\ }\href
+  {https://doi.org/10.1051/0004-6361/201833880} {\bibfield  {journal} {\bibinfo
+   {journal} {Astronomy \& Astrophysics}\ }\textbf {\bibinfo {volume} {641}},\
+  \bibinfo {pages} {A1} (\bibinfo {year} {2020}{\natexlab{a}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {{Planck
+  Collaboration}}(2020{\natexlab{b}})}]{Planck2018VI}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
   Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{Planck 2018
   results. VI. Cosmological parameters}},\ }\href
   {https://doi.org/10.1051/0004-6361/201833910} {\bibfield  {journal} {\bibinfo
    {journal} {Astronomy \& Astrophysics}\ }\textbf {\bibinfo {volume} {641}},\
-  \bibinfo {pages} {A6} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Wang}(2026)}]{Wang2026}%
+  \bibinfo {pages} {A6} (\bibinfo {year} {2020}{\natexlab{b}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {{Planck
+  Collaboration}}(2020{\natexlab{c}})}]{Planck2018IX}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{Planck 2018
+  results. IX. Constraints on primordial non-Gaussianity}},\ }\href
+  {https://doi.org/10.1051/0004-6361/201935891} {\bibfield  {journal} {\bibinfo
+   {journal} {Astronomy \& Astrophysics}\ }\textbf {\bibinfo {volume} {641}},\
+  \bibinfo {pages} {A9} (\bibinfo {year} {2020}{\natexlab{c}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {{Planck
+  Collaboration}}(2020{\natexlab{d}})}]{Planck2018V}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{Planck 2018
+  results. V. CMB power spectra and likelihoods}},\ }\href
+  {https://doi.org/10.1051/0004-6361/201936386} {\bibfield  {journal} {\bibinfo
+   {journal} {Astronomy \& Astrophysics}\ }\textbf {\bibinfo {volume} {641}},\
+  \bibinfo {pages} {A5} (\bibinfo {year} {2020}{\natexlab{d}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Dodelson}\ and\ \citenamefont
+  {Schmidt}(2020)}]{Dodelson2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Dodelson}}\ and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Schmidt}},\ }\href@noop {} {\emph {\bibinfo {title} {{Modern Cosmology}}}},\
+  \bibinfo {edition} {2nd}\ ed.\ (\bibinfo  {publisher} {Academic Press},\
+  \bibinfo {year} {2020})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{Planck
+  Collaboration}}(2020{\natexlab{e}})}]{Planck2018X}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{Planck 2018
+  results. X. Constraints on inflation}},\ }\href
+  {https://doi.org/10.1051/0004-6361/201833887} {\bibfield  {journal} {\bibinfo
+   {journal} {Astronomy \& Astrophysics}\ }\textbf {\bibinfo {volume} {641}},\
+  \bibinfo {pages} {A10} (\bibinfo {year} {2020}{\natexlab{e}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Mukhanov}(2005)}]{Mukhanov2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Mukhanov}},\ }\href {https://doi.org/10.1017/CBO9780511790553} {\emph
+  {\bibinfo {title} {{Physical Foundations of Cosmology}}}}\ (\bibinfo
+  {publisher} {Cambridge University Press},\ \bibinfo {year}
+  {2005})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Durrer}(2008)}]{Durrer2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Durrer}},\ }\href {https://doi.org/10.1017/CBO9780511817205} {\emph
+  {\bibinfo {title} {{The Cosmic Microwave Background}}}}\ (\bibinfo
+  {publisher} {Cambridge University Press},\ \bibinfo {year}
+  {2008})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Di~Valentino}\ \emph {et~al.}(2021)\citenamefont
+  {Di~Valentino}, \citenamefont {Mena}, \citenamefont {Pan}, \citenamefont
+  {Visinelli}, \citenamefont {Yang}, \citenamefont {Melchiorri}, \citenamefont
+  {Mota}, \citenamefont {Riess},\ and\ \citenamefont {Silk}}]{DiValentino2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Di~Valentino}}, \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Mena}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Pan}}, \bibinfo {author}
+  {\bibfnamefont {L.}~\bibnamefont {Visinelli}}, \bibinfo {author}
+  {\bibfnamefont {W.}~\bibnamefont {Yang}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Melchiorri}}, \bibinfo {author} {\bibfnamefont {D.~F.}\
+  \bibnamefont {Mota}}, \bibinfo {author} {\bibfnamefont {A.~G.}\ \bibnamefont
+  {Riess}},\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Silk}},\
+  }\bibfield  {title} {\bibinfo {title} {{In the realm of the Hubble
+  tension---a review of solutions}},\ }\href
+  {https://doi.org/10.1088/1361-6382/ac086d} {\bibfield  {journal} {\bibinfo
+  {journal} {Classical and Quantum Gravity}\ }\textbf {\bibinfo {volume}
+  {38}},\ \bibinfo {pages} {153001} (\bibinfo {year} {2021})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Sch{\"o}neberg}\ \emph {et~al.}(2022)\citenamefont
+  {Sch{\"o}neberg}, \citenamefont {Franco~Abell{\'a}n}, \citenamefont
+  {P{\'e}rez~S{\'a}nchez}, \citenamefont {Witte}, \citenamefont {Poulin},\ and\
+  \citenamefont {Lesgourgues}}]{Schoneberg2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Sch{\"o}neberg}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Franco~Abell{\'a}n}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {P{\'e}rez~S{\'a}nchez}}, \bibinfo {author} {\bibfnamefont {S.~J.}\
+  \bibnamefont {Witte}}, \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Poulin}},\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Lesgourgues}},\ }\bibfield  {title} {\bibinfo {title} {{The H0 Olympics: A
+  fair ranking of proposed models}},\ }\href
+  {https://doi.org/10.1016/j.physrep.2022.07.001} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physics Reports}\ }\textbf {\bibinfo {volume} {984}},\
+  \bibinfo {pages} {1} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{DESI Collaboration}}(2024)}]{DESI2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{DESI
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{DESI 2024 VI:
+  Cosmological Constraints from the Measurements of Baryon Acoustic
+  Oscillations}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {arXiv preprint}\ } (\bibinfo {year} {2024})},\ \Eprint
+  {https://arxiv.org/abs/2404.03002} {2404.03002} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Uzan}(2003)}]{Uzan2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont
+  {Uzan}},\ }\bibfield  {title} {\bibinfo {title} {{The fundamental constants
+  and their variation: observational and theoretical status}},\ }\href
+  {https://doi.org/10.1103/RevModPhys.75.403} {\bibfield  {journal} {\bibinfo
+  {journal} {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume} {75}},\
+  \bibinfo {pages} {403} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Martins}(2017)}]{Martins2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~J. A.~P.}\
+  \bibnamefont {Martins}},\ }\bibfield  {title} {\bibinfo {title} {{The status
+  of varying constants: a review of the physics, searches and implications}},\
+  }\href {https://doi.org/10.1088/1361-6633/aa860e} {\bibfield  {journal}
+  {\bibinfo  {journal} {Reports on Progress in Physics}\ }\textbf {\bibinfo
+  {volume} {80}},\ \bibinfo {pages} {126902} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wang}(2026{\natexlab{a}})}]{Wang2026Prime}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
-  {Wang}},\ }\href {https://doi.org/10.5281/zenodo.19429778} {\bibinfo {title}
-  {{Discrete Symplectic Cosmology: A Phenomenological Framework for
-  Time-dependent Vacuum Energy from Planck-Lattice Spectral Statistics}}}
-  (\bibinfo {year} {2026}),\ \bibinfo {note} {v2.0}\BibitemShut {NoStop}%
+  {Wang}},\ }\bibfield  {title} {\bibinfo {title} {The emergence of prime
+  distribution from low-dimensional deterministic chaos},\ }\bibfield
+  {journal} {\bibinfo  {journal} {Research in Mathematics}\ }\textbf {\bibinfo
+  {volume} {13}},\ \href {https://doi.org/10.1080/27684830.2026.2684334}
+  {10.1080/27684830.2026.2684334} (\bibinfo {year}
+  {2026}{\natexlab{a}})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wang}(2026{\natexlab{b}})}]{Wang2026Spectral}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Wang}},\ }\href {https://doi.org/10.5281/zenodo.19045440} {\bibinfo {title}
+  {{Spectral Isomorphism between Renormalization Flow in Non-Autonomous
+  Quadratic Maps and Riemann Zeros}}} (\bibinfo {year} {2026}{\natexlab{b}}),\
+  \bibinfo {note} {v4.0}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Hairer}\ \emph {et~al.}(2006)\citenamefont {Hairer},
   \citenamefont {Lubich},\ and\ \citenamefont {Wanner}}]{Hairer2006}%
   \BibitemOpen
@@ -75,6 +208,178 @@
   Numerical Integration: Structure-Preserving Algorithms for Ordinary
   Differential Equations}}}},\ \bibinfo {edition} {2nd}\ ed.\ (\bibinfo
   {publisher} {Springer},\ \bibinfo {year} {2006})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Leimkuhler}\ and\ \citenamefont
+  {Reich}(2004)}]{Leimkuhler2004}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Leimkuhler}}\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Reich}},\ }\href {https://doi.org/10.1017/CBO9780511614118} {\emph {\bibinfo
+  {title} {{Simulating Hamiltonian Dynamics}}}}\ (\bibinfo  {publisher}
+  {Cambridge University Press},\ \bibinfo {year} {2004})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Modi}\ \emph {et~al.}(2021)\citenamefont {Modi},
+  \citenamefont {Lanusse},\ and\ \citenamefont {Seljak}}]{Modi2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Modi}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Lanusse}},\ and\
+  \bibinfo {author} {\bibfnamefont {U.}~\bibnamefont {Seljak}},\ }\bibfield
+  {title} {\bibinfo {title} {{FlowPM: Distributed TensorFlow implementation of
+  the FastPM cosmological N-body solver}},\ }\href
+  {https://doi.org/10.1016/j.ascom.2021.100505} {\bibfield  {journal} {\bibinfo
+   {journal} {Astronomy and Computing}\ }\textbf {\bibinfo {volume} {37}},\
+  \bibinfo {pages} {100505} (\bibinfo {year} {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Li}\ \emph {et~al.}(2022)\citenamefont {Li},
+  \citenamefont {Lu},\ and\ \citenamefont {Seljak}}]{Li2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Li}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Lu}},\ and\
+  \bibinfo {author} {\bibfnamefont {U.}~\bibnamefont {Seljak}},\ }\bibfield
+  {title} {\bibinfo {title} {{Differentiable cosmological simulation with the
+  adjoint method}},\ }\href {https://doi.org/10.3847/1538-4365/ac5f4a}
+  {\bibfield  {journal} {\bibinfo  {journal} {The Astrophysical Journal
+  Supplement Series}\ }\textbf {\bibinfo {volume} {259}},\ \bibinfo {pages}
+  {36} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Campagne}\ \emph {et~al.}(2023)\citenamefont
+  {Campagne}, \citenamefont {Lanusse}, \citenamefont {Zuntz} \emph
+  {et~al.}}]{Campagne2023}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-E.}\ \bibnamefont
+  {Campagne}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Lanusse}},
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Zuntz}}, \emph {et~al.},\
+  }\bibfield  {title} {\bibinfo {title} {{JAX-COSMO: An End-to-End
+  Differentiable and GPU Accelerated Cosmology Library}},\ }\href
+  {https://doi.org/10.21105/astro.2302.05163} {\bibfield  {journal} {\bibinfo
+  {journal} {The Open Journal of Astrophysics}\ }\textbf {\bibinfo {volume}
+  {6}},\ \bibinfo {pages} {15} (\bibinfo {year} {2023})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cranmer}\ \emph {et~al.}(2020)\citenamefont
+  {Cranmer}, \citenamefont {Brehmer},\ and\ \citenamefont
+  {Louppe}}]{Cranmer2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Cranmer}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Brehmer}},\
+  and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Louppe}},\
+  }\bibfield  {title} {\bibinfo {title} {{The frontier of simulation-based
+  inference}},\ }\href {https://doi.org/10.1073/pnas.1912789117} {\bibfield
+  {journal} {\bibinfo  {journal} {Proceedings of the National Academy of
+  Sciences}\ }\textbf {\bibinfo {volume} {117}},\ \bibinfo {pages} {30055}
+  (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Alsing}\ \emph {et~al.}(2019)\citenamefont {Alsing},
+  \citenamefont {Wandelt},\ and\ \citenamefont {Feeney}}]{Alsing2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Alsing}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Wandelt}},\
+  and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Feeney}},\
+  }\bibfield  {title} {\bibinfo {title} {{Massive optimal data compression and
+  density estimation for scalable, likelihood-free inference in cosmology}},\
+  }\href {https://doi.org/10.1093/mnras/stz1960} {\bibfield  {journal}
+  {\bibinfo  {journal} {Monthly Notices of the Royal Astronomical Society}\
+  }\textbf {\bibinfo {volume} {488}},\ \bibinfo {pages} {4440} (\bibinfo {year}
+  {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Figueroa}\ \emph {et~al.}(2021)\citenamefont
+  {Figueroa}, \citenamefont {Florio}, \citenamefont {Torrenti},\ and\
+  \citenamefont {Valkenburg}}]{Figueroa2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~G.}\ \bibnamefont
+  {Figueroa}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Florio}},
+  \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Torrenti}},\ and\
+  \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Valkenburg}},\ }\bibfield
+   {title} {\bibinfo {title} {{The art of simulating the early Universe. Part
+  I. Integration techniques and canonical cases}},\ }\href
+  {https://doi.org/10.1088/1475-7516/2021/04/035} {\bibfield  {journal}
+  {\bibinfo  {journal} {Journal of Cosmology and Astroparticle Physics}\
+  }\textbf {\bibinfo {volume} {2021}},\ \bibinfo {pages} {035}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Caravano}\ \emph {et~al.}(2022)\citenamefont
+  {Caravano}, \citenamefont {Komatsu}, \citenamefont {Linde},\ and\
+  \citenamefont {Lozanov}}]{Caravano2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Caravano}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Komatsu}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Linde}},\ and\ \bibinfo
+  {author} {\bibfnamefont {K.~D.}\ \bibnamefont {Lozanov}},\ }\bibfield
+  {title} {\bibinfo {title} {{Lattice simulations of inflation}},\ }\href@noop
+  {} {\bibfield  {journal} {\bibinfo  {journal} {arXiv preprint}\ } (\bibinfo
+  {year} {2022})},\ \Eprint {https://arxiv.org/abs/2209.13616} {2209.13616}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rosenband}\ \emph {et~al.}(2008)\citenamefont
+  {Rosenband}, \citenamefont {Hume}, \citenamefont {Schmidt}, \citenamefont
+  {Chou}, \citenamefont {Brusch}, \citenamefont {Lorini}, \citenamefont
+  {Oskay}, \citenamefont {Drullinger}, \citenamefont {Fortier}, \citenamefont
+  {Stalnaker}, \citenamefont {Diddams}, \citenamefont {Swann}, \citenamefont
+  {Newbury}, \citenamefont {Itano}, \citenamefont {Wineland},\ and\
+  \citenamefont {Bergquist}}]{Rosenband2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Rosenband}}, \bibinfo {author} {\bibfnamefont {D.~B.}\ \bibnamefont {Hume}},
+  \bibinfo {author} {\bibfnamefont {P.~O.}\ \bibnamefont {Schmidt}}, \bibinfo
+  {author} {\bibfnamefont {C.~W.}\ \bibnamefont {Chou}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Brusch}}, \bibinfo {author} {\bibfnamefont
+  {L.}~\bibnamefont {Lorini}}, \bibinfo {author} {\bibfnamefont {W.~H.}\
+  \bibnamefont {Oskay}}, \bibinfo {author} {\bibfnamefont {R.~E.}\ \bibnamefont
+  {Drullinger}}, \bibinfo {author} {\bibfnamefont {T.~M.}\ \bibnamefont
+  {Fortier}}, \bibinfo {author} {\bibfnamefont {J.~E.}\ \bibnamefont
+  {Stalnaker}}, \bibinfo {author} {\bibfnamefont {S.~A.}\ \bibnamefont
+  {Diddams}}, \bibinfo {author} {\bibfnamefont {W.~C.}\ \bibnamefont {Swann}},
+  \bibinfo {author} {\bibfnamefont {N.~R.}\ \bibnamefont {Newbury}}, \bibinfo
+  {author} {\bibfnamefont {W.~M.}\ \bibnamefont {Itano}}, \bibinfo {author}
+  {\bibfnamefont {D.~J.}\ \bibnamefont {Wineland}},\ and\ \bibinfo {author}
+  {\bibfnamefont {J.~C.}\ \bibnamefont {Bergquist}},\ }\bibfield  {title}
+  {\bibinfo {title} {{Frequency ratio of Al$^+$ and Hg$^+$ single-ion optical
+  clocks; metrology at the 17th decimal place}},\ }\href
+  {https://doi.org/10.1126/science.1154622} {\bibfield  {journal} {\bibinfo
+  {journal} {Science}\ }\textbf {\bibinfo {volume} {319}},\ \bibinfo {pages}
+  {1808} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Riess}\ \emph {et~al.}(2022)\citenamefont {Riess}
+  \emph {et~al.}}]{RiessSH0ES2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~G.}\ \bibnamefont
+  {Riess}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {{A
+  Comprehensive Measurement of the Local Value of the Hubble Constant with
+  1~km~s$^{-1}$~Mpc$^{-1}$ Uncertainty from the Hubble Space Telescope and the
+  SH0ES Team}},\ }\href {https://doi.org/10.3847/2041-8213/ac5c5b} {\bibfield
+  {journal} {\bibinfo  {journal} {The Astrophysical Journal Letters}\ }\textbf
+  {\bibinfo {volume} {934}},\ \bibinfo {pages} {L7} (\bibinfo {year}
+  {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Riess}\ \emph {et~al.}(2024)\citenamefont {Riess}
+  \emph {et~al.}}]{RiessJWST2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~G.}\ \bibnamefont
+  {Riess}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {{JWST
+  Observations Reject Unrecognized Crowding of Cepheid Photometry as an
+  Explanation for the Hubble Tension at 8$\sigma$ Confidence}},\ }\href
+  {https://doi.org/10.3847/2041-8213/ad1ddd} {\bibfield  {journal} {\bibinfo
+  {journal} {The Astrophysical Journal Letters}\ }\textbf {\bibinfo {volume}
+  {962}},\ \bibinfo {pages} {L17} (\bibinfo {year} {2024})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Glazebrook}\ \emph {et~al.}(2024)\citenamefont
+  {Glazebrook}, \citenamefont {Nanayakkara}, \citenamefont {Schreiber},
+  \citenamefont {Lagos}, \citenamefont {Kawinwanichakij}, \citenamefont
+  {Jacobs}, \citenamefont {Chittenden}, \citenamefont {Brammer}, \citenamefont
+  {Kacprzak}, \citenamefont {Labb{\'e}}, \citenamefont {Marchesini},
+  \citenamefont {Marsan}, \citenamefont {Papovich}, \citenamefont {Quadri},
+  \citenamefont {Remus}, \citenamefont {Tran}, \citenamefont {Esdaile},\ and\
+  \citenamefont {Forrest}}]{Glazebrook2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Glazebrook}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Nanayakkara}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Schreiber}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Lagos}},
+  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Kawinwanichakij}},
+  \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Jacobs}}, \bibinfo
+  {author} {\bibfnamefont {H.}~\bibnamefont {Chittenden}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Brammer}}, \bibinfo {author} {\bibfnamefont
+  {G.~G.}\ \bibnamefont {Kacprzak}}, \bibinfo {author} {\bibfnamefont
+  {I.}~\bibnamefont {Labb{\'e}}}, \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Marchesini}}, \bibinfo {author} {\bibfnamefont {Z.~C.}\
+  \bibnamefont {Marsan}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Papovich}}, \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont
+  {Quadri}}, \bibinfo {author} {\bibfnamefont {R.-S.}\ \bibnamefont {Remus}},
+  \bibinfo {author} {\bibfnamefont {K.-V.}\ \bibnamefont {Tran}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Esdaile}},\ and\ \bibinfo {author}
+  {\bibfnamefont {B.}~\bibnamefont {Forrest}},\ }\bibfield  {title} {\bibinfo
+  {title} {{A massive galaxy that formed its stars at $z\approx 11$}},\ }\href
+  {https://doi.org/10.1038/s41586-024-07191-9} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {628}},\ \bibinfo {pages}
+  {277} (\bibinfo {year} {2024})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Kloeden}\ and\ \citenamefont
   {Rasmussen}(2011)}]{Kloeden2011}%
   \BibitemOpen
@@ -83,28 +388,6 @@
   {Rasmussen}},\ }\href {https://doi.org/10.1090/surv/176} {\emph {\bibinfo
   {title} {{Nonautonomous Dynamical Systems}}}}\ (\bibinfo  {publisher}
   {American Mathematical Society},\ \bibinfo {year} {2011})\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Bohigas}\ \emph {et~al.}(1984)\citenamefont
-  {Bohigas}, \citenamefont {Giannoni},\ and\ \citenamefont
-  {Schmit}}]{Bohigas1984}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
-  {Bohigas}}, \bibinfo {author} {\bibfnamefont {M.-J.}\ \bibnamefont
-  {Giannoni}},\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Schmit}},\ }\bibfield  {title} {\bibinfo {title} {{Characterization of
-  chaotic quantum spectra and universality of level fluctuation laws}},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.52.1} {\bibfield  {journal} {\bibinfo
-  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume} {52}},\
-  \bibinfo {pages} {1} (\bibinfo {year} {1984})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Berry}\ and\ \citenamefont
-  {Keating}(1999)}]{BerryKeating1999}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~V.}\ \bibnamefont
-  {Berry}}\ and\ \bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
-  {Keating}},\ }\bibfield  {title} {\bibinfo {title} {{The Riemann zeros and
-  eigenvalue asymptotics}},\ }\href {https://doi.org/10.1137/S0036144598347497}
-  {\bibfield  {journal} {\bibinfo  {journal} {SIAM Review}\ }\textbf {\bibinfo
-  {volume} {41}},\ \bibinfo {pages} {236} (\bibinfo {year} {1999})}\BibitemShut
   {NoStop}%
 \bibitem [{\citenamefont {G{\'o}rski}\ \emph {et~al.}(2005)\citenamefont
   {G{\'o}rski}, \citenamefont {Hivon}, \citenamefont {Banday}, \citenamefont
@@ -144,6 +427,59 @@
   {booktitle} {Proceedings of the 25th ACM SIGKDD International Conference on
   Knowledge Discovery \& Data Mining}}}\ (\bibinfo {year} {2019})\ pp.\
   \bibinfo {pages} {2623--2631}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Murphy}\ \emph {et~al.}(2003)\citenamefont {Murphy},
+  \citenamefont {Webb},\ and\ \citenamefont {Flambaum}}]{Murphy2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~T.}\ \bibnamefont
+  {Murphy}}, \bibinfo {author} {\bibfnamefont {J.~K.}\ \bibnamefont {Webb}},\
+  and\ \bibinfo {author} {\bibfnamefont {V.~V.}\ \bibnamefont {Flambaum}},\
+  }\bibfield  {title} {\bibinfo {title} {{Further evidence for a variable
+  fine-structure constant from Keck/HIRES QSO absorption spectra}},\ }\href
+  {https://doi.org/10.1046/j.1365-8711.2003.06970.x} {\bibfield  {journal}
+  {\bibinfo  {journal} {Monthly Notices of the Royal Astronomical Society}\
+  }\textbf {\bibinfo {volume} {345}},\ \bibinfo {pages} {609} (\bibinfo {year}
+  {2003})},\ \Eprint {https://arxiv.org/abs/astro-ph/0306483}
+  {astro-ph/0306483} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Whitmore}\ and\ \citenamefont
+  {Murphy}(2015)}]{Whitmore2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~B.}\ \bibnamefont
+  {Whitmore}}\ and\ \bibinfo {author} {\bibfnamefont {M.~T.}\ \bibnamefont
+  {Murphy}},\ }\bibfield  {title} {\bibinfo {title} {{Impact of instrumental
+  systematic errors on fine-structure constant measurements with quasar
+  spectra}},\ }\href {https://doi.org/10.1093/mnras/stu2420} {\bibfield
+  {journal} {\bibinfo  {journal} {Monthly Notices of the Royal Astronomical
+  Society}\ }\textbf {\bibinfo {volume} {447}},\ \bibinfo {pages} {446}
+  (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wilczynska}\ \emph {et~al.}(2020)\citenamefont
+  {Wilczynska}, \citenamefont {Webb}, \citenamefont {Bainbridge}, \citenamefont
+  {Barrow}, \citenamefont {Bosman}, \citenamefont {Carswell}, \citenamefont
+  {Dabrowski}, \citenamefont {Dumont}, \citenamefont {Lee}, \citenamefont
+  {Leite}, \citenamefont {Leszczyńska}, \citenamefont {Liske}, \citenamefont
+  {Marosek}, \citenamefont {Martins}, \citenamefont {Milaković}, \citenamefont
+  {Molaro},\ and\ \citenamefont {Pasquini}}]{Wilczynska2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~R.}\ \bibnamefont
+  {Wilczynska}}, \bibinfo {author} {\bibfnamefont {J.~K.}\ \bibnamefont
+  {Webb}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Bainbridge}},
+  \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont {Barrow}}, \bibinfo
+  {author} {\bibfnamefont {S.~E.~I.}\ \bibnamefont {Bosman}}, \bibinfo {author}
+  {\bibfnamefont {R.~F.}\ \bibnamefont {Carswell}}, \bibinfo {author}
+  {\bibfnamefont {M.~P.}\ \bibnamefont {Dabrowski}}, \bibinfo {author}
+  {\bibfnamefont {V.}~\bibnamefont {Dumont}}, \bibinfo {author} {\bibfnamefont
+  {C.-C.}\ \bibnamefont {Lee}}, \bibinfo {author} {\bibfnamefont {A.~C.}\
+  \bibnamefont {Leite}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Leszczyńska}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Liske}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Marosek}}, \bibinfo
+  {author} {\bibfnamefont {C.~J. A.~P.}\ \bibnamefont {Martins}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Milaković}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Molaro}},\ and\ \bibinfo {author}
+  {\bibfnamefont {L.}~\bibnamefont {Pasquini}},\ }\bibfield  {title} {\bibinfo
+  {title} {{Four direct measurements of the fine-structure constant 13 billion
+  years ago}},\ }\href {https://doi.org/10.1126/sciadv.aay9672} {\bibfield
+  {journal} {\bibinfo  {journal} {Science Advances}\ }\textbf {\bibinfo
+  {volume} {6}},\ \bibinfo {pages} {eaay9672} (\bibinfo {year}
+  {2020})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Regge}(1961)}]{Regge1961}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
@@ -164,16 +500,62 @@
   {https://doi.org/10.1103/PhysRevLett.59.521} {\bibfield  {journal} {\bibinfo
   {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume} {59}},\
   \bibinfo {pages} {521} (\bibinfo {year} {1987})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Alsing}\ \emph {et~al.}(2019)\citenamefont {Alsing},
-  \citenamefont {Wandelt},\ and\ \citenamefont {Feeney}}]{Alsing2019}%
+\bibitem [{\citenamefont {Dainotti}\ \emph {et~al.}(2021)\citenamefont
+  {Dainotti}, \citenamefont {De~Simone}, \citenamefont {Schiavone},
+  \citenamefont {Montani}, \citenamefont {Rinaldi},\ and\ \citenamefont
+  {Lambiase}}]{Dainotti2021}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
-  {Alsing}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Wandelt}},\
-  and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Feeney}},\
-  }\bibfield  {title} {\bibinfo {title} {{Massive optimal data compression and
-  density estimation for scalable, likelihood-free inference in cosmology}},\
-  }\href {https://doi.org/10.1093/mnras/stz1960} {\bibfield  {journal}
-  {\bibinfo  {journal} {Monthly Notices of the Royal Astronomical Society}\
-  }\textbf {\bibinfo {volume} {488}},\ \bibinfo {pages} {4440} (\bibinfo {year}
-  {2019})}\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~G.}\ \bibnamefont
+  {Dainotti}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {De~Simone}},
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Schiavone}}, \bibinfo
+  {author} {\bibfnamefont {G.}~\bibnamefont {Montani}}, \bibinfo {author}
+  {\bibfnamefont {E.}~\bibnamefont {Rinaldi}},\ and\ \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Lambiase}},\ }\bibfield  {title} {\bibinfo
+  {title} {{On the Hubble Constant Tension in the SNe Ia Pantheon Sample}},\
+  }\href {https://doi.org/10.3847/1538-4357/abeb73} {\bibfield  {journal}
+  {\bibinfo  {journal} {The Astrophysical Journal}\ }\textbf {\bibinfo {volume}
+  {912}},\ \bibinfo {pages} {150} (\bibinfo {year} {2021})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Krishnan}\ \emph {et~al.}(2020)\citenamefont
+  {Krishnan}, \citenamefont {{\'O}~Colg{\'a}in}, \citenamefont
+  {Sheikh-Jabbari},\ and\ \citenamefont {Yang}}]{Krishnan2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Krishnan}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {{\'O}~Colg{\'a}in}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sheikh-Jabbari}},\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Yang}},\ }\bibfield  {title} {\bibinfo {title} {{Is there an early Universe
+  solution to Hubble tension?}},\ }\href
+  {https://doi.org/10.1103/PhysRevD.102.103525} {\bibfield  {journal} {\bibinfo
+   {journal} {Physical Review D}\ }\textbf {\bibinfo {volume} {102}},\ \bibinfo
+  {pages} {103525} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kazantzidis}\ and\ \citenamefont
+  {Perivolaropoulos}(2020)}]{Kazantzidis2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Kazantzidis}}\ and\ \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Perivolaropoulos}},\ }\bibfield  {title} {\bibinfo {title} {{Hints of a
+  local matter underdensity or modified gravity in the low z Pantheon data}},\
+  }\href {https://doi.org/10.1103/PhysRevD.102.023520} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review D}\ }\textbf {\bibinfo {volume}
+  {102}},\ \bibinfo {pages} {023520} (\bibinfo {year} {2020})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {{\'O}~Colg{\'a}in}\ \emph {et~al.}(2022)\citenamefont
+  {{\'O}~Colg{\'a}in}, \citenamefont {Sheikh-Jabbari}, \citenamefont {Solomon},
+  \citenamefont {Bargiacchi}, \citenamefont {Capozziello}, \citenamefont
+  {Dainotti},\ and\ \citenamefont {Stojkovic}}]{Colgain2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {{\'O}~Colg{\'a}in}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sheikh-Jabbari}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Solomon}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Bargiacchi}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Capozziello}}, \bibinfo
+  {author} {\bibfnamefont {M.~G.}\ \bibnamefont {Dainotti}},\ and\ \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Stojkovic}},\ }\bibfield  {title}
+  {\bibinfo {title} {{Revealing intrinsic flat $\Lambda$CDM biases with
+  standardizable candles}},\ }\href
+  {https://doi.org/10.1103/PhysRevD.106.L041301} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review D}\ }\textbf {\bibinfo {volume}
+  {106}},\ \bibinfo {pages} {L041301} (\bibinfo {year} {2022})}\BibitemShut
+  {NoStop}%
 \end{thebibliography}%

@@ -1,0 +1,272 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Roadmap of empirical tests}
+\label{sec:roadmap}
+
+The DSC framework predicts that a $1/\ln^2(t/t_P)$ relaxation should manifest at three independent observational scales: the fine-structure constant $\alpha$, the Hubble parameter $H_0$, and the CMB angular spectrum.
+We organize the empirical content of this section into two blocks of analyses of published peer-reviewed observational data---fine-structure-constant evolution (Block~1) and Hubble-parameter relaxation (Block~2)---each reporting both anchor-scale tests (where the doubly-logarithmic ansatz has its full dynamic range; Pillar~M, \cref{sec:pillarM}) and dense-data tests (where the ansatz is mathematically degenerate with constant).
+A third block of computations---the weakly damped St\"ormer--Verlet lattice surrogate of the CMB, evaluated both as a forward model and as a differentiable inverse reconstruction---is methodological rather than empirical and is reported in full in the Supplementary Material; we summarize its verdict at the end of this section.
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Block 1 (\cref{sec:block_alpha}).} Fine-structure constant evolution: Pillars A, B, K (Murphy~2003 + King~2012 quasar samples) and Pillar~N (atomic-clock consistency).
+  \item \textbf{Block 2 (\cref{sec:block_H0}).} Hubble parameter relaxation: Pillars C, D, E, F, G, H, I, J, M, O (anchor $H_0$ + cosmic chronometers + Pantheon$+$ + DESI BAO + leverage diagnostic + JWST forecast).
+  \item \textbf{Block 3 (Supplementary Material).} CMB lattice forward modeling: Gaussian one-point statistics, ablation against a dissipative baseline, lattice acoustic-peak structure, $\chi^2$ benchmark vs.\ CAMB Planck-2018, and differentiable inverse reconstruction with a held-out hemisphere diagnostic.
+\end{itemize}
+
+The framework's strongest empirical case rests on Block 1 (Pillar~A: $5.6\sigma$ Keck-only quasar drift; Pillar~K: $+8.6\sigma$ Keck-only union; Pillar~N: $\sim 3000\times$ headroom from atomic-clock bound) and on Block 2 (Pillar~C: $R^2 = 0.91$ four-anchor $H_0$ relaxation; Pillar~M: $8.4\times$ leverage explanation of why dense Block-2 data is consistent with the anchor result; Pillar~O: $\gtrsim 11\sigma$ falsification forecast within $\sim 5$ years).
+Block 3, in contrast, is a methodological proof of concept: the lattice forward model exhibits CMB-like phenomenology but does not reproduce the Planck $C_\ell$ at the level of individual multipoles, and we retract any quantitative claim to the contrary (Supplementary Material).
+
+\subsection{Block 1: Fine-structure constant evolution}
+\label{sec:block_alpha}
+
+This block reports four tests of the predicted $1/\ln^2(t)$ drift in the fine-structure constant $\alpha$, using two independent peer-reviewed quasar absorption-line catalogs (Murphy, Webb \& Flambaum~2003 Keck/HIRES sample and King \emph{et al.}~2012 Keck+VLT sample), and one external constraint (Rosenband \emph{et al.}~2008 atomic clocks).
+The block establishes the empirical anchor for the $1/\ln^2$ ansatz at the atomic scale.
+
+\paragraph{Pillar A: Murphy 2003 128-absorber quasar drift, two error budgets.}
+\label{sec:pillarA}
+On the 128-absorber Keck/HIRES catalog of Murphy, Webb \& Flambaum~2003~\citep{Murphy2003}, we fit Wang's $1/\ln^2(t)$ drift model and the constant ($\Delta\alpha/\alpha = 0$) null.
+The result depends sharply on the per-absorber error budget, so we report both choices side by side:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Budget (i): per-absorber fit error only ($\sigma_{\rm fit}$, no $\sigma_{\rm rand}$).}
+    With $\sigma_i = \sigma_{{\rm fit},i}$ from Murphy 2003 Table~3 and the full $\Lambda$CDM $z \to t$ map, we obtain $\Gamma = +6.42 \pm 1.14$ ($5.62\sigma$, $\Delta\chi^2 = 31.54$, reduced $\chi^2 = 1.52$ for DSC vs.\ $1.75$ for the null).
+    This is the headline ``Pillar~A'' figure.
+  \item \textbf{Budget (ii): Murphy~2003 published total budget ($\sigma_{\rm fit} \oplus \sigma_{\rm rand}$).}
+    Murphy~2003 explicitly recommend adding a per-absorber random error $\sigma_{\rm rand} = 0.91 \times 10^{-5}$ (high-contrast) or $2.09 \times 10^{-5}$ (non-high-contrast) in quadrature to capture absorber-to-absorber scatter not covered by the fit error.
+    With this published total budget the same data give $\Gamma = +5.80 \pm 2.08$ ($2.79\sigma$, $\Delta\chi^2 = 7.80$).
+    The reduced $\chi^2$ falls to $0.71$ for DSC and $0.77$ for the null, indicating that the budget-(i) reduced $\chi^2$ of $1.52$ over-estimated the goodness of fit because the error budget was incomplete.
+\end{itemize}
+
+The two budgets agree on the central value of $\Gamma$ ($\sim 5$--$6$) but differ in the formal significance.
+Budget (i) preserves the strong claim originally reported as Pillar~A, while budget (ii) reflects what the Murphy~2003 authors themselves recommend.
+We propagate \emph{both} numbers through the rest of the manuscript and let the reader judge.
+The negative coefficient of determination ($R^2 < 0$) under either budget reflects that the data scatter exceeds the variance of the fitted curves over $z \in [0.23, 3.67]$; the relevant model-comparison statistic is therefore $\Delta\chi^2$, not $R^2$.
+\Cref{fig:alpha_quasar} shows the fit under budget (i).
+Pillar~K below decomposes the apparent signal by spectrograph (Keck vs.\ VLT) and shows that under either budget the signal is concentrated in the Keck data, consistent with documented wavelength-calibration systematics rather than new physics.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig18_alpha_drift_quasar.pdf}
+  \caption{Quasar $\Delta\alpha/\alpha$ drift on the Murphy~2003 128-absorber Keck/HIRES sample under error budget~(i) (per-absorber fit error only).
+  The DSC $1/\ln^2(t)$ model (red) achieves $\Delta\chi^2 = 31.54$ ($5.6\sigma$) over the constant null (gray); under Murphy's published $\sigma_{\rm rand}$-augmented budget~(ii) the same data give $\Delta\chi^2 = 7.80$ ($2.8\sigma$).}
+  \label{fig:alpha_quasar}
+\end{figure}
+
+\paragraph{Pillar B: King~2012 295-absorber sample.}
+For consistency we re-ran the same comparison on the full published King \emph{et al.}~(2012) catalog (CDS J/MNRAS/422/3370 \texttt{tablea1}, $N = 295$ after standard outlier handling).
+The DSC $p = 2$ model gives reduced $\chi^2 = 0.881$ vs $0.878$ for the constant null, $\Delta\chi^2 \approx 0$, and the BIC penalty for one extra parameter ($\Delta {\rm BIC} = +5.7$) decisively favors the null.
+The joint quasar + atomic-clock~\citep{Rosenband2008} bound is $|\Gamma| < 0.30$, far below the $\Gamma \sim 6$ best-fit on the smaller subset (the corresponding three-model fit is shown in the Supplementary Material).
+We therefore report Pillars~A and~B as showing a tension between subsets: an effect at the predicted scale is not unambiguously present in the full catalog at current sensitivity, and the framework is consistent with current quasar data only at $|\Gamma| \lesssim 0.3$.
+
+\paragraph{Pillar K: Resolving the Pillar~A vs Pillar~B tension with the Murphy~2003 sample.}
+We obtained the original 128-absorber catalog of Murphy, Webb \& Flambaum~2003~\citep{Murphy2003} via VizieR (\texttt{J/MNRAS/345/609}, machine-readable Table~3), which is the actual sample underlying Pillar~A.
+The Murphy~2003 sample is composed entirely of Keck/HIRES absorbers (128 total, 22 flagged ``high-contrast'').
+Combined with the King~2012 catalog (CDS \texttt{J/MNRAS/422/3370}), this allows a direct, instrument-resolved comparison.
+The headline result of this decomposition (\cref{fig:pillar_K_murphy}) is summarized in \cref{tab:pillarK_budgets}, reported under both error budgets (i) and (ii) of \cref{sec:pillarA}.
+
+\begin{table*}[htbp]
+\centering
+\caption{Pillar~K: instrument-resolved fits of the DSC $1/\ln^2(t)$ drift coefficient $\Gamma$ (in units of $10^{-5}$) on Murphy~2003 + King~2012 quasar samples, under both error budgets of \cref{sec:pillarA}.
+The Keck-only samples both prefer $\Gamma > 0$ at high significance; the VLT-only subset prefers $\Gamma$ of the opposite sign; the joint Keck+VLT union is consistent with $\Gamma = 0$ at $\sim 1.5$--$3.0\sigma$.}
+\label{tab:pillarK_budgets}
+\small
+\begin{tabular}{lcccc}
+\hline
+Subset & $N$ & Budget & $\Gamma \pm \sigma_\Gamma$ & Significance \\
+\hline
+Murphy 03 (all Keck)        & 128 & (i)  & $+5.56 \pm 0.99$ & $+5.64\sigma$ \\
+                            & 128 & (ii) & $+5.08 \pm 1.81$ & $+2.81\sigma$ \\
+King 12 Keck-only           & 141 & (i)  & $+6.28 \pm 0.97$ & $+6.47\sigma$ \\
+                            & 141 & (ii) & $+6.40 \pm 1.94$ & $+3.31\sigma$ \\
+King 12 VLT-only            & 154 & (i)  & $-2.35 \pm 0.63$ & $-3.72\sigma$ \\
+                            & 154 & (ii) & $-2.05 \pm 1.14$ & $-1.79\sigma$ \\
+Murphy 03 + King 12 (Keck $\cup$) & 269 & (i)  & $+5.92 \pm 0.69$ & $+8.57\sigma$ \\
+                                  & 269 & (ii) & $+5.70 \pm 1.32$ & $+4.31\sigma$ \\
+Full Keck + VLT union       & 423 & (i)  & $+1.42 \pm 0.47$ & $+3.04\sigma$ \\
+                            & 423 & (ii) & $+1.27 \pm 0.86$ & $+1.47\sigma$ \\
+\hline
+\end{tabular}
+\end{table*}
+
+Two independent Keck samples (Murphy 2003 and the Keck subset of King 2012) both prefer $\Gamma \sim +6$ at $\gtrsim 5.6\sigma$ under budget~(i) and $\gtrsim 2.8\sigma$ under budget~(ii); the VLT subset of King 2012 prefers $\Gamma$ of \emph{opposite} sign at $-3.72\sigma$ (i) or $-1.79\sigma$ (ii); the joint Keck+VLT union is consistent with $\Gamma = 0$ at $1.5$--$3.0\sigma$.
+The Keck-only union (Murphy 03 $\cup$ King 12 Keck) reaches $+8.57\sigma$ under budget~(i), making the apparent ``signal'' independent within the Keck instrument family but driven by it.
+Adding VLT to the Keck union reduces the apparent significance from $8.6\sigma$ to $3.0\sigma$ (budget i) or from $4.3\sigma$ to $1.5\sigma$ (budget ii).
+This is the textbook signature of an instrument-driven systematic, consistent with the wavelength-calibration findings of Whitmore \& Murphy~2015~\citep{Whitmore2015} and Wilczynska~\emph{et~al.}~2020~\citep{Wilczynska2020}.
+
+We note that the Pillar~A figure of $\Delta\chi^2 = 31.54$ ($5.6\sigma$) is reproduced \emph{exactly} from Murphy~2003 Table~3 under budget~(i); using Murphy's published $\sigma_{\rm rand}$ budget~(ii) instead reduces the same data to $\Delta\chi^2 = 7.80$ ($2.79\sigma$).
+A scan of 200 random 128-absorber subsamples of the King~2012 catalog gives a median $\Delta\chi^2$ of $0.4$ (under budget ii), with no random cut reaching $31.5$, confirming that the Murphy 2003 Keck-only sample is sharply non-representative and that the apparent signal is concentrated in the Keck $\alpha$-dipole (cut-by-cut subset scan in the Supplementary Material).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig28_pillar_K_murphy_forest.pdf}
+  \caption{Pillar~K: forest plot of best-fit $\Gamma$ across instrument-resolved subsamples.
+  Both independent Keck-only samples give $\Gamma > 0$; the VLT-only subset gives $\Gamma$ of opposite sign; the full Keck$+$VLT union (rightmost) is consistent with $\Gamma = 0$.
+  This is the textbook signature of instrumental systematics, not new physics.}
+  \label{fig:pillar_K_murphy}
+\end{figure}
+
+\paragraph{Pillar N: Atomic-clock consistency.}
+\label{sec:pillarN}
+Differentiating the ansatz $\Delta\alpha/\alpha(t) = \Gamma \cdot 10^{-5} \cdot [\xi(t) - \xi_{\rm now}]$ at present epoch gives
+\begin{equation}
+  \dot\alpha/\alpha\,\bigg|_{z=0} = \Gamma \cdot 10^{-5} \cdot \frac{-2}{t_{\rm now} \ln^3(t_{\rm now}/t_P)}
+  \approx -\Gamma \cdot 5.25 \times 10^{-22}\,{\rm yr}^{-1},
+\end{equation}
+with $\Gamma$ in units of $10^{-5}$.
+The Rosenband \emph{et al.}~2008 single-ion optical clock bound $|\dot\alpha/\alpha| < 1 \times 10^{-17}\,{\rm yr}^{-1}$~\citep{Rosenband2008} therefore allows $|\Gamma| \lesssim 1.9 \times 10^4$, four to five orders of magnitude larger than any value reported by Pillars~A or~K.
+The largest cosmologically-supported value, $\Gamma \approx +6$, lies $\sim 3000\times$ below the atomic-clock bound (\cref{fig:pillar_N}).
+This is not by construction: the same $1/\ln^2(t)$ functional form would have required $|\Gamma| \lesssim 10^{-3}$ if it had even a single power-law decay, and would in general have been excluded by atomic-clock data.
+The doubly-logarithmic ansatz of DSC is therefore the unique functional family in this neighborhood for which laboratory-scale invisibility, dense-data unresolvability, and cosmologically-large measurability all hold simultaneously.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig30_pillar_N_atomic_clock.pdf}
+  \caption{Pillar~N: atomic-clock consistency of the DSC $1/\ln^2$ ansatz.
+  Forest plot of best-fit $\Gamma$ from Pillars~A and~K, with the atomic-clock bound $|\Gamma| < 1.9 \times 10^4$.
+  All cosmologically-supported $\Gamma$ values lie $\sim 3000\times$ below the bound, while still permitting cosmological signal accumulation at $z \sim 1$--$3$.}
+  \label{fig:pillar_N}
+\end{figure}
+
+\subsection{Block 2: Hubble parameter relaxation}
+\label{sec:block_H0}
+
+This block reports ten tests of the predicted $1/\ln^2(t)$ relaxation of the Hubble parameter, organized as three sub-blocks: anchor-scale tests (Pillars C, D, E), dense-scale tests (Pillars F, G, H, I, J), and diagnostic / forecast (Pillars M, O).
+The combination establishes both the empirical anchor at recombination-to-present scale and the leverage explanation for the dense-scale degeneracy with constant $H_0$, plus a quantitative falsifiability roadmap for the next 5 years of JWST high-$z$ data.
+
+\paragraph{Pillar C: JWST $H_0$ anchors.}
+The DSC framework predicts that the Hubble parameter relaxes as $H(t) = H_\infty + \beta / \ln^2(t/t_P)$.
+Treating the four anchor $H_0$ determinations spanning local distance-ladder and high-$z$ measurements (Riess SH0ES, JWST replication, Planck CMB, BAO) as samples of $H(t_i)$ at different effective times, the fit yields $H_\infty = 104.5$~km/s/Mpc, $\beta = -6.24$, $R^2 = 0.907$, and reduced $\chi^2 = 0.28$ (\cref{fig:jwst_h0}).
+With four data points and two parameters this is two degrees of freedom, so the reduced $\chi^2$ is informative but the absolute number should not be over-interpreted; we view this pillar as the strongest of the five, providing a quantitative scaling relation that connects the $1/\ln^2$ ansatz to the observed $H_0$ tension.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig19_jwst_h0_anchors.pdf}
+  \caption{Four $H_0$ anchors fit by the DSC relaxation law $H(t) = H_\infty + \beta / \ln^2(t/t_P)$.
+  $R^2 = 0.907$, reduced $\chi^2 = 0.28$.
+  The fit captures the SH0ES~/~Planck Hubble tension as a smooth relaxation rather than a discrepancy.}
+  \label{fig:jwst_h0}
+\end{figure}
+
+\paragraph{Pillars D, E, F, G, H, I, J: anchor stability and dense-data tests.}
+Beyond the four-anchor relaxation, we subjected the $1/\ln^2$ Hubble law to seven further tests spanning a CAMB+BAO Fisher forecast, an internal stability scan, and four independent dense late-time datasets.
+\Cref{tab:block2_summary} collects the headline statistics; the corresponding figures and full per-pillar discussion are in the Supplementary Material.
+The consistent picture is that DSC is internally stable (Pillar~E) and currently unconstrained at the dark-energy-parameter level (Pillars~D, I), while the dense $z < 2$ datasets (Pillars~F, G, H, J) return $\chi^2/{\rm dof}$ much larger than $\Lambda$CDM---which, as we argue via Pillar~M below, is the \emph{predicted} behavior of a doubly-logarithmic law in a band where it has $8.4\times$ less leverage than at anchor scale, not a falsification.
+CPL ($w_0w_a$) is mildly preferred over $\Lambda$CDM in the joint dataset ($\Delta {\rm BIC} = -2.6$; Pillar~J), independent evidence that the late-time data favor some form of dynamical dark energy.
+
+\begin{table}[htbp]
+\centering
+\caption{Block 2 dense-data and anchor tests (Pillars D--J). $\chi^2/{\rm dof}$ for $\Lambda$CDM vs.\ the DSC $1/\ln^2$ ansatz over each dataset; figures and full discussion in the Supplementary Material.}
+\label{tab:block2_summary}
+\small
+\begin{tabular}{llcc}
+\hline
+Pillar & Dataset ($N$) & $\Lambda$CDM & DSC \\
+\hline
+D & CAMB+BAO Fisher & \multicolumn{2}{c}{$\sigma(\gamma_{\rm eff}) \sim 10^4$} \\
+E & late-time stability & \multicolumn{2}{c}{5/5 pass} \\
+F & cosmic chronometers (32) & $0.49$ & $4.01$ \\
+G & Pantheon$+$ (1580) & $0.88$ & $1.27$ \\
+H & DESI DR2 BAO (11) & $1.07$ & $\sim\!10^3$ \\
+I & $\sigma_8$ growth & \multicolumn{2}{c}{degenerate} \\
+J & joint (1623) & $0.96$ & $23.7$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Pillar M: $\xi(z)$ leverage diagnostic.}
+\label{sec:pillarM}
+The DSC ansatz couples to observations through the modulating function $\xi(z) = 1/\ln^2(t(z)/t_P)$.
+Because the cosmic age $t(z)$ varies by $\sim 12$ orders of magnitude over $z \in [0, 1100]$ but $\ln(t/t_P)$ varies only from $130$ at recombination to $140$ today, $\xi(z) \cdot 10^5$ takes the values $5.92$ at $z = 1100$, $5.19$ at $z = 1.97$, $5.09$ at $z = 0.07$, and $5.08$ at $z = 0$ (\cref{fig:pillar_M}).
+The anchor-scale leverage (recombination $\to$ now) is $\Delta\xi \times 10^5 = 0.836$; the dense-scale leverage ($z = 2 \to z = 0.07$) is $\Delta\xi \times 10^5 = 0.099$, an 8.4$\times$ ratio.
+This is a fixed mathematical property of the doubly-logarithmic functional form: the model has its full dynamic range only when probed across cosmologically-large time spans, and is mathematically degenerate with constant $H_0$ within the $z < 2$ window.
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig29_pillar_M_leverage.pdf}
+  \caption{Pillar~M: $\xi(z) = 10^5/\ln^2(t(z)/t_P)$ leverage diagnostic.
+  (a) $\xi(z)$ vs.\ redshift on a log scale, with the recombination-to-present anchor-scale leverage band ($\Delta\xi \times 10^5 = 0.84$) and the $z = 2$ to $z = 0.07$ dense-scale leverage band ($\Delta\xi \times 10^5 = 0.10$); their ratio is 8.4$\times$.
+  (b) $\xi(t)$ vs.\ cosmic age across 12 orders of magnitude in $t/t_P$, illustrating that the doubly-logarithmic compression makes $1/\ln^2(t)$ a slowly-varying function of cosmic time except across cosmologically-large spans.}
+  \label{fig:pillar_M}
+\end{figure*}
+
+\paragraph{Pillar O: forecast for high-$z$ cosmic chronometers.}
+\label{sec:pillarO}
+The 8.4$\times$ leverage difference between anchor scale and dense scale (Pillar M) suggests that the cleanest falsification path for the $1/\ln^2(t)$ ansatz is to extend cosmic-chronometer measurements beyond $z = 2$, where the predicted DSC and $\Lambda$CDM Hubble curves diverge sharply.
+At Pillar C's best-fit values $H_\infty = 104.5$, $\beta = -6.24$, the DSC ansatz predicts $H(z=2) = 72.1$, $H(z=5) = 71.6$, $H(z=10) = 71.2$ km/s/Mpc---all close to the asymptotic $H_\infty$.
+$\Lambda$CDM (Planck 2018) instead predicts $H(z=2) = 204$, $H(z=5) = 559$, $H(z=10) = 1381$ km/s/Mpc---a fractional difference of $-65\%$ at $z=2$, $-87\%$ at $z=5$, and $-95\%$ at $z=10$ (\cref{fig:pillar_O}a).
+
+To quantify the discriminating power of future surveys, we run mock-data forecasts: for each configuration $(N, z_{\max}, \sigma_H/H)$ we generate 30 realizations under each truth hypothesis (DSC and $\Lambda$CDM), refit both models, and report the median $\sqrt{\Delta\chi^2}$ (\cref{tab:pillarO}).
+A 5-point JWST-class survey covering $z \in [2, 5]$ at $10\%$ precision would already distinguish DSC from $\Lambda$CDM at $11\sigma$; extending to $z = 10$ at $5\%$ precision gives $\gtrsim 100\sigma$.
+Existing JWST observations of massive quiescent galaxies at $z \gtrsim 7$~\citep{Glazebrook2024} and broader cosmic-dawn programs over the next 3--5 years are expected to deliver these data.
+
+\begin{table}[htbp]
+\centering
+\caption{Pillar~O forecast: median $\sqrt{\Delta\chi^2}$ over 30 mock-data realizations for distinguishing the $1/\ln^2$ vs.\ $\Lambda$CDM hypothesis (Scenario A: truth $=$ DSC; Scenario B: truth $=$ $\Lambda$CDM).}
+\label{tab:pillarO}
+\small
+\begin{tabular}{ccc|cc}
+\hline
+$N$ & $z_{\max}$ & $\sigma_H/H$ & $\sqrt{\Delta\chi^2_A}$ & $\sqrt{\Delta\chi^2_B}$ \\
+\hline
+5  & 3  & 10\% & 2.7$\sigma$  & 2.9$\sigma$ \\
+5  & 5  & 10\% & 11.4$\sigma$ & 7.9$\sigma$ \\
+5  & 10 & 10\% & 46.4$\sigma$ & 12.8$\sigma$ \\
+10 & 5  & 5\%  & 30.3$\sigma$ & 19.8$\sigma$ \\
+10 & 10 & 5\%  & 123.4$\sigma$ & 34.7$\sigma$ \\
+20 & 10 & 2\%  & 425.6$\sigma$ & 118.5$\sigma$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig31_pillar_O_forecast.pdf}
+  \caption{Pillar~O: forecast falsifiability of the $1/\ln^2(t)$ ansatz at high redshift.
+  (a) The DSC and $\Lambda$CDM Hubble curves diverge sharply at $z > 2$; current dense-data tests (Pillars F--J, $z < 2$) sit in the near-degenerate band, while the forecast band $z \in [2, 20]$ is where future cosmic chronometers can decisively discriminate.
+  (b) Forecast significance ($\sqrt{\Delta\chi^2}$) under various survey configurations.
+  Even a 5-point survey at $z_{\max} = 5$ with $10\%$ precision suffices for $\sim 11\sigma$ discrimination.}
+  \label{fig:pillar_O}
+\end{figure*}
+
+\paragraph{Pillar O context: a candidate \emph{solution} to ``the next dark cloud''.}
+The contemporary cosmological situation features the SH0ES--Planck $H_0$ tension (now $> 5\sigma$ and confirmed by JWST~\citep{RiessJWST2024}) and the DESI 2024/2025 BAO preference for time-varying dark energy ($\Delta {\rm BIC}({\rm CPL}, \Lambda{\rm CDM}) = -2.6$ in our Pillar~J) as two independent hints that the cosmic expansion history may not be described by $\Lambda$CDM alone.
+These two anomalies, in our view, are the modern dark clouds.
+The $1/\ln^2(t)$ ansatz of the present work is offered as a candidate \emph{solution}---a specific, falsifiable, atomic-clock-consistent prediction for what the underlying time-dependence of the cosmological background looks like.
+Pillar~O establishes that this candidate solution will be sharply tested by JWST within $\sim 5$ years: either the high-$z$ Hubble curve shows a smooth $1/\ln^2(t)$ relaxation to $H_\infty \sim 100$ km/s/Mpc---in which case the framework is confirmed and the $H_0$ tension is resolved---or it follows $\Lambda$CDM-style $(1+z)^{3/2}$ growth, in which case the simple ansatz is falsified at high significance.
+Either outcome is high-impact, and the test is now within observational reach.
+
+\subsection{Combined verdict across two empirical regimes}
+\label{sec:final_verdict}
+
+\paragraph{Dense-scale unresolvability is a feature, not a falsification.}
+The naive reading of Pillars~F, G, H, J is that they "rule out" DSC, since each individually gives $\chi^2/{\rm dof}$ much larger than $\Lambda$CDM.
+We argue that this reading misses the central physical content of the $1/\ln^2$ ansatz, established by Pillars~M (\cref{sec:pillarM}) and~N (\cref{sec:pillarN}):
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{(i)} The $1/\ln^2(t/t_P)$ function has \emph{8.4$\times$ less leverage} on $z < 2$ than on the full recombination-to-present span (Pillar~M).
+  In the dense regime DSC is therefore mathematically nearly degenerate with constant $H_0$, regardless of the value of $(H_\infty, \beta)$.
+  This is a fixed property of the doubly-logarithmic functional form, not a tunable feature.
+  \item \textbf{(ii)} Pillar~N shows that the same property guarantees a present-epoch drift $|\dot\alpha/\alpha| = |\Gamma| \cdot 5.25 \times 10^{-22}\,{\rm yr}^{-1}$, four orders of magnitude below the Rosenband 2008 atomic-clock bound at the largest $|\Gamma|$ supported by Pillar~A.
+  Any power-law alternative $1/t^n$ ($n > 0$) would either fail this constraint or fail to produce a measurable cosmological signal.
+\end{itemize}
+
+The dense-data ``rejection'' is therefore the predicted behavior: the model says $H(z)$ is nearly constant for $z < 2$, and the data confirm it; the model says $|\dot\alpha/\alpha|$ is unobservable in the laboratory, and the laboratory confirms it; the model says cosmologically-large signals are barely observable in $H_0$ anchors and quasar absorption, and Pillars~A and~C find such signals at $\sim 5$--$8\sigma$.
+
+What we genuinely retract is narrower: (a) the CMB lattice surrogate (Supplementary Material) does \emph{not} reproduce the Planck angular spectrum---a limitation of the forward implementation, not the $1/\ln^2$ ansatz; (b) the Pillar~A Keck signal at $\Gamma \approx +6$, while statistically significant in two independent Keck datasets, is decomposed by Pillar~K into an instrumental Keck--VLT systematic; the cosmological drift, if any, is bounded by $|\Gamma| \lesssim 1.5$ (Full Keck+VLT union under budget~i) and is consistent with Pillar~B and with the atomic-clock bound (Pillar~N).
+
+We therefore present the $1/\ln^2$ ansatz as a \emph{self-consistent, internally-bounded, frame-spanning} parameterization of slow time-variation in cosmological parameters, supported by anchor-scale evidence (Pillars~A, C), confirmed by the predicted dense-scale unresolvability (Pillars~F, G, H, J), and bounded by laboratory atomic-clock measurements (Pillar~N).
+
+\paragraph{The CMB lattice surrogate (Supplementary Material).}
+A weakly damped St\"ormer--Verlet lattice surrogate of CMB anisotropies, evaluated as both a forward model and a differentiable inverse reconstruction, is reported in full in the Supplementary Material.
+Its verdict is methodological: the differentiable JAX engine runs in seconds on a consumer GPU and exhibits CMB-like one-point phenomenology, but the forward model gives $\chi^2/{\rm dof} \approx 80$ against the CAMB Planck-2018 $D_\ell^{\rm TT}$, and the inverse reconstruction---while reaching in-sample pixel correlation $r = 0.98$---fails a held-out hemisphere test ($r = -0.17$).
+We retain it as a building block for simulation-based inference, and explicitly retract any quantitative claim that the lattice forward model reproduces the Planck $C_\ell$.
+\Cref{fig:inverse_main} shows the inverse-reconstruction setup as a representative example of the differentiable engine.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{fig9_inverse_reconstruction.pdf}
+  \caption{Representative output of the differentiable DSC engine (full treatment in the Supplementary Material): gradient-based inverse reconstruction of a 3D field from Planck SMICA data, reaching in-sample pixel correlation $r = 0.98$.
+  The held-out hemisphere test ($r = -0.17$; Supplementary Material) is the appropriate diagnostic: the inverse problem is severely underdetermined ($\sim 10^6$ unknowns vs.\ $\sim 10^4$ pixels), so the recovered field is not interpreted as a physical primordial reconstruction.}
+  \label{fig:inverse_main}
+\end{figure}

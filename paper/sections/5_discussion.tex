@@ -1,34 +1,10 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{What the Gaussianity finding does and does not show.}
-The near-Gaussian one-point statistics of the lattice are consistent with two simple expectations rather than a non-trivial emergence.
-First, the initial conditions are random Gaussian fields, and the St\"ormer--Verlet update is linear in $\phi$ in the parameter range we explore; a linear evolution of a Gaussian field is also Gaussian.
-Second, each pixel of the projected sky is a sum over many lattice modes, and the central limit theorem favors Gaussianity regardless of the individual mode statistics.
-The contrast with the dissipative CML baseline (kurtosis $= -1.60$) shows that strongly nonlinear dynamics destroy this Gaussianity, but the comparison cannot isolate symplecticity as the active ingredient: the two baselines differ in nonlinearity, conservation properties, and integration order simultaneously.
-
-\paragraph{Lattice peaks vs.\ baryon--photon acoustic oscillations.}
-The peaks in the lattice $D(k)$ arise from standing-wave physics on a finite-volume lattice with a time-dependent effective propagation speed.
-On a sphere of radius $R$ inside the lattice they project, in the flat-sky limit, to multipoles $\ell \approx 2\pi R_{\rm shell}\,k$.
-With the geometry we use this gives $\ell \approx 30, 60, 90$ for the first three lattice peaks, far from the Planck multipoles $\ell \approx 220, 540, 810$.
-The peak positions in $\ell$-space drift with the projection radius and the lattice size (\cref{sec:camb}), which is the behavior expected from standing waves rather than from physical acoustic oscillations.
-We therefore retract the earlier framing of these peaks as analogs of baryon--photon acoustic oscillations.
-
-\paragraph{A note on retroactive scale fitting (capability we deliberately do not exercise).}
-A common practice in lattice and effective-model cosmology is to introduce nuisance parameters such as the projection radius $R_{\rm shell}$, the lattice spacing $a_{\rm lat}$, the effective sound speed $c_s^2$, or the Silk-damping scale $k_s$ as free fit parameters when comparing to Planck $C_\ell$.
-With three to four such nuisance parameters jointly fit by MCMC, the lattice peak positions of \cref{sec:peaks} could be aligned with the Planck peaks at $\ell \approx 220, 540, 810$, and the corresponding $\chi^2/{\rm dof}$ would fall from $\sim 80$ (the unfitted value of \cref{sec:camb}) to below $\sim 5$.
-Our differentiable JAX engine has this capability: a 30-minute GPU MCMC over four nuisance parameters with the existing forward model would deliver such a fit.
-We deliberately do \emph{not} do this, for two reasons.
-First, the lattice peaks shift their $\ell$ positions linearly with $R_{\rm shell}$ (we explicitly verified this in \cref{sec:camb} via the projection-radius and grid-size sensitivity scan); a successful retroactive fit therefore \emph{confirms} the standing-wave interpretation rather than refuting it, since the fit succeeds precisely because the geometric standing-wave scale was tuned to match the Planck peaks.
-Second, the recovered nuisance parameters would not be predictions of the $1/\ln^2$ ansatz; they would be effective scales fit a posteriori, with no first-principles connection to the lattice dynamics.
-We report the unfitted, geometry-fixed $\chi^2/{\rm dof} \approx 80$ as the honest test of whether the unmodified $1/\ln^2$ lattice forward model reproduces the Planck spectrum, and the answer is no.
-A reader interested in the post-fit $\chi^2/{\rm dof}$ value can reproduce it from the existing notebooks; the engine can do it, we choose not to claim it.
-
 \paragraph{Status of the connection to the DSC framework.}
-The simulations here implement the $1/\ln^2$ cooling law as a definite ansatz to study, not as a derived prediction of Planck-scale physics.
-The motivation from Riemann zero spectral statistics is treated here as a working motivation for the $1/\ln^2$ functional form of the cooling law, not as an established physical correspondence.
+The framework studied here implements the $1/\ln^2$ cooling law as a definite ansatz, not as a derived prediction of Planck-scale physics.
+The motivation from Riemann zero spectral statistics is treated as a working motivation for the $1/\ln^2$ functional form, not as an established physical correspondence.
 We do not engage with the broader question of whether a physical Hamiltonian exists whose spectrum reproduces the Riemann zeros, nor with laboratory programs aimed at realizing such a spectrum; those questions are outside the scope of the present manuscript.
-Within the lattice surrogate we observe that the $1/\ln^2(t)$ cooling controls the location of the threshold-defined effective freeze-out scale (\cref{sec:horizon}), but this scale is sensitive to threshold and grid parameters and we do not interpret it as an analog of the comoving sound horizon.
 
 \paragraph{Comparison with related approaches.}
 Coupled map lattices have been studied as models for spatiotemporal chaos and pattern formation~\citep{Kaneko1992}, but not in a cosmological context with adiabatic cooling.
@@ -42,12 +18,12 @@ Dainotti~\emph{et al.}~2021~\citep{Dainotti2021} binned the Pantheon Type Ia sup
 Krishnan~\emph{et al.}~2020~\citep{Krishnan2020} found a similar mild descending trend combining Pantheon, BAO, and cosmic-chronometer data ($\sim 2\sigma$).
 Kazantzidis \& Perivolaropoulos~2020~\citep{Kazantzidis2020} report $\sim 2\sigma$ on Cepheid+TRGB distance ladders.
 Colg{\'a}in~\emph{et al.}~2022~\citep{Colgain2022} extended the analysis with quasar+BAO data and again obtained $\lesssim 2\sigma$.
-The Hubble-tension model census of Schöneberg~\emph{et al.}~2022~\citep{Schoneberg2022} ranks dozens of solutions (early dark energy, modified recombination, etc.) and notes that none currently survive joint multi-probe scrutiny.
+The Hubble-tension model census of Sch\"oneberg~\emph{et al.}~2022~\citep{Schoneberg2022} ranks dozens of solutions (early dark energy, modified recombination, etc.) and notes that none currently survive joint multi-probe scrutiny.
 
 Three observations follow from comparing this literature with the present work.
 
-(i)~\emph{Functional form.} Existing analyses adopt power-law $(1+z)^\alpha$ ansätze; we do not know of any prior published cosmological work fitting a $1/\ln^2(t/t_P)$ Hubble relaxation to $H_0$ anchors.
-The functional form here is independent of the literature ansätze, motivated by the Riemann-zeta-zero spectral density (\cref{sec:dsc}) and by the slowness requirement of \cref{sec:pillarN}.
+(i)~\emph{Functional form.} Existing analyses adopt power-law $(1+z)^\alpha$ ans\"atze; we do not know of any prior published cosmological work fitting a $1/\ln^2(t/t_P)$ Hubble relaxation to $H_0$ anchors.
+The functional form here is independent of the literature ans\"atze, motivated by the Riemann-zeta-zero spectral density (\cref{sec:dsc}) and by the slowness requirement of \cref{sec:pillarN}.
 
 (ii)~\emph{Leverage choice.} The literature analyses operate exclusively within the $z < 2.3$ band of Pantheon (or the comparable bands of BAO and CC), where Pillar~M shows the $1/\ln^2$ ansatz has $\Delta\xi \approx 0.10$ of dynamic range.
 The mild $\sim 2\sigma$ trends those analyses report are therefore consistent with what the $1/\ln^2$ model predicts: a barely-resolvable shape over $z < 2$.
@@ -56,39 +32,16 @@ The two analyses are not in tension; they are different leverage slices of the s
 
 (iii)~\emph{The anchor-vs-dense asymmetry is a generic property of the field.}
 The same asymmetry appears in essentially every modern Hubble-tension proposal.
-Early Dark Energy~\citep{Schoneberg2022} resolves the SH0ES--Planck anchor difference by modifying recombination physics, but is in tension with low-redshift growth-rate measurements ($\sigma_8$ tension; the so-called yin-yang problem).
+Early Dark Energy~\citep{Schoneberg2022} resolves the SH0ES--Planck anchor difference by modifying recombination physics, but is in tension with low-redshift growth-rate measurements ($\sigma_8$ tension).
 CPL ($w_0w_a$) achieves a marginal $\Delta {\rm BIC} = -2.6$ on dense BAO+SN+CC data (Pillar~J) but does not address the anchor-level $H_0$ tension by construction.
-Modified-recombination scenarios match Planck but introduce tensions elsewhere.
 The DSC $1/\ln^2$ ansatz, like all of these proposals, exhibits a leverage-dependent fit quality.
 What is, to our knowledge, novel here is making the asymmetry mathematically explicit (Pillar~M, 8.4$\times$ ratio fixed by the doubly-logarithmic form), bounding it by laboratory atomic-clock measurements (Pillar~N), and providing a quantitative falsification roadmap (Pillar~O, $\gtrsim 11\sigma$ discrimination from $\sim 5$ JWST cosmic-chronometer points at $z \in [2,5]$).
 Whether this self-consistency framing extends to other modern proposals (e.g.\ EDE) is, in our view, a worthwhile direction for the field.
 
-\paragraph{What is forward prediction and what is inverse fit (a guide for the reader).}
-The CMB-related figures of this manuscript fall in two qualitatively different categories.
-\emph{Forward predictions} (\cref{fig:hero}a in the appendix; \cref{fig:planck}; \cref{fig:camb_chi2}) report the unmodified output of the DSC lattice: random Gaussian initial conditions, evolved by weakly damped St\"ormer--Verlet steps with $1/\ln^2$ cooling, projected onto a HEALPix sphere.
-No fit parameters enter the forward simulation, except possibly an overall amplitude rescaling in the spectral comparison of \cref{sec:camb}.
-These are first-principles predictions of the framework---they show what $1/\ln^2$ cosmology, taken at face value, generates as a sky map and as an angular spectrum.
-The honest verdict on these forward predictions is the one we already report: pixel one-point distributions are close to Planck SMICA (\cref{sec:planck}), but the angular power spectrum gives $\chi^2/{\rm dof} \approx 80$ vs.\ CAMB Planck-2018 (\cref{sec:camb}), and the lattice $D(k)$-peaks fall at $\ell \approx 30, 60, 90$ rather than the observed $\ell \approx 220, 540, 810$ (Pillar~K).
-The first-handed prediction of DSC is therefore that the lattice surrogate, taken alone, does \emph{not} reproduce the observed CMB at the spectrum level.
-
-\emph{Inverse reconstructions} (\cref{fig:inverse} achieving in-sample $r = 0.98$) are something fundamentally different.
-There the differentiable engine optimizes $\sim 10^6$ voxel parameters of the 3D primordial field to match $\sim 10^4$ observed sphere-projected pixels.
-With $\sim 100\times$ more free parameters than data points, reaching high in-sample correlation is mathematical inevitability, not physical reconstruction.
-The held-out hemisphere test (\cref{fig:heldout}, $r = -0.17$) is the appropriate diagnostic and we treat it as such throughout the manuscript.
-The inverse figures should therefore not be read as ``DSC reproduces the Planck CMB'' --- they are demonstrations that the differentiable engine works as advertised, not predictions of the framework.
-
-We separate these two categories explicitly because conflating them would be the most likely misreading of this manuscript.
-The forward figures show what $1/\ln^2$ \emph{actually predicts}; the inverse figures show what the JAX engine \emph{can be made to fit}.
-Both are useful: the former delineates the empirical reach (and limit) of the simple ansatz, while the latter establishes the engine as a methodological building block for simulation-based inference workflows that pair lattice forward models with multi-probe data and explicit volumetric priors.
-
-\paragraph{Forward identifiability vs.\ field-level underdetermination.}
-The forward twin experiment (\cref{sec:twin}) optimizes 3 global physics parameters against $\sim 75$ power-spectrum bins, an overdetermined system that recovers the parameters up to a $c^2$--$\kopt$ degeneracy direction.
-The voxel-level reconstruction (\cref{sec:inverse}), in contrast, attempts to recover $\sim 10^6$ free parameters from $\sim 10^4$ sky pixels.
-The high in-sample correlation $r = 0.98$ is not surprising at this ratio of unknowns to data, and the held-out hemisphere result $r = -0.17$ is the appropriate diagnostic: the inverse problem is severely underdetermined and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
-We therefore present the differentiable engine---gradients flowing cleanly through 25 St\"ormer--Verlet steps and the sphere-projection layer---as a methodological building block for future multi-probe inference workflows that pair lattice forward models with volumetric priors, rather than as a tool for inferring the 3D primordial state from CMB data alone.
-
-\paragraph{The continuation past the CMB-epoch step is a phenomenological visualization.}
-The V-shape transition in field variance (\cref{sec:timeline}) is produced by a $1/\ln^2(t)$ cooling phase followed by an Allen--Cahn coarsening phase.
-The Allen--Cahn nonlinearity is a generic toy potential, not a gravitational interaction, and the resulting domain morphology is generic to coarsening dynamics.
-We retract the earlier suggestion of an analogy with cosmic inflation: the smoothing in our run is driven by an effective sound-speed decay rather than by a slow-roll scalar field, and the analogy is not quantitative.
-The cosmic-timeline figure should be read as an illustration of the lattice's behavior under a chosen toy nonlinearity, not as a model of cosmic structure formation.
+\paragraph{Forward prediction vs.\ inverse fit in the CMB lattice surrogate.}
+The CMB lattice surrogate (Supplementary Material) produces two qualitatively different kinds of result, and conflating them would be the most likely misreading of this work.
+\emph{Forward predictions} report the unmodified output of the $1/\ln^2$ lattice with no fit parameters (beyond an overall amplitude): pixel one-point distributions are close to Planck SMICA, but the angular power spectrum gives $\chi^2/{\rm dof} \approx 80$ vs.\ CAMB Planck-2018, and the lattice $D(k)$-peaks fall at $\ell \approx 30, 60, 90$ rather than the observed $\ell \approx 220, 540, 810$.
+The honest verdict is that the lattice surrogate, taken alone, does \emph{not} reproduce the observed CMB at the spectrum level, and we retract any claim to the contrary.
+\emph{Inverse reconstructions} optimize $\sim 10^6$ voxel parameters against $\sim 10^4$ pixels; the high in-sample correlation ($r = 0.98$) is a mathematical inevitability at this ratio, and the held-out hemisphere test ($r = -0.17$) is the appropriate diagnostic.
+We present the differentiable engine as a methodological building block for simulation-based inference, not as evidence for a particular 3D primordial state.
+The full forward/inverse analysis, the retroactive-scale-fitting capability we deliberately do not exercise, and the phenomenological post-CMB continuation are reported in the Supplementary Material.

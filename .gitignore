@@ -2,3 +2,11 @@ submission/
 submission_PDU_*.zip
 submission_single/
 submission_PDU_single.zip
+submission_main.zip
+submission_supplementary.zip
+/tmp/pkg_*
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+gemini/
+*.fits
