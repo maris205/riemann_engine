@@ -1,5 +1,6 @@
 \documentclass[11pt]{letter}
 \usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
 \usepackage{hyperref}
 
 \signature{Liang Wang}
@@ -7,24 +8,25 @@
 
 \begin{document}
 
-\begin{letter}{Editorial Office\\Results in Physics}
+\begin{letter}{Editorial Office\\Next Research}
 
 \opening{Dear Editor,}
 
-We would like to submit our manuscript entitled \textbf{``Differentiable Discrete Symplectic Cosmology: Forward Simulation and Inverse Reconstruction of CMB-like Fluctuations''} for consideration in \textit{Results in Physics}.
+I am pleased to submit my manuscript entitled \textbf{``Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a $1/\ln^2(t)$ Cooling Law''} for consideration in \textit{Next Research}.
 
-This paper presents a differentiable computational framework based on symplectic lattice dynamics with a $1/\ln^2(t)$ adiabatic cooling law, capable of generating temperature fluctuation fields that reproduce key statistical features of the cosmic microwave background (CMB). Our main results include:
+This manuscript is transferred from \textit{Physics of the Dark Universe} (manuscript DARK-D-26-00549R1), where the Scientific Handling Editor issued a ``Transfer Recommended Accept'' decision recommending \textit{Next Research} as a more suitable venue. I am grateful for that recommendation and believe the work is indeed a strong fit for a journal that evaluates technical soundness and methodological rigor across disciplines.
+
+The paper studies a single, definite hypothesis---a $1/\ln^2(t)$ adiabatic cooling law, motivated by the spectral statistics of the Riemann zeta zeros---and subjects it to fourteen independent empirical, computational, and forecast tests (Pillars A--O) spanning three observational regimes:
 
 \begin{itemize}
-\item Near-Gaussian statistics from symplectic evolution, validated by a 20-run ensemble and ablation against a dissipative baseline;
-\item Acoustic-like oscillation peaks emerging naturally from lattice wave propagation;
-\item A fully differentiable physics engine (implemented in JAX) that enables gradient-based inverse reconstruction of 3D primordial fields from real Planck SMICA data, achieving pixel correlation $r = 0.98$;
-\item A full cosmic timeline simulation from Big Bang to cosmic web, revealing a V-shape thermodynamic transition driven by the cooling law.
+\item \textbf{Fine-structure-constant drift.} On the Murphy 2003 Keck/HIRES quasar sample the $1/\ln^2(t)$ drift is detected at $5.6\sigma$, cross-validated on the independent King 2012 Keck-only sample ($+8.6\sigma$ in the union); a Keck/VLT instrument decomposition shows the signal is consistent with documented wavelength-calibration systematics.
+\item \textbf{Hubble-parameter relaxation.} A four-anchor $H_0$ relaxation (SH0ES, JWST, Planck, BAO) gives $R^2 = 0.91$; dense late-time data (cosmic chronometers, Pantheon$+$, DESI DR2) are shown to be \emph{predictably} unresolvable, and a leverage diagnostic explains this quantitatively. An atomic-clock-consistency analysis and a JWST-class forecast ($\gtrsim 11\sigma$ discrimination within $\sim 5$ years) complete this regime.
+\item \textbf{CMB lattice forward model.} A differentiable JAX implementation of weakly damped St\"ormer--Verlet lattice dynamics is presented as a methodological building block; we explicitly retract any quantitative claim of reproducing the Planck angular power spectrum.
 \end{itemize}
 
-All simulation code and Jupyter notebooks are publicly available. The manuscript has not been published elsewhere and is not under consideration by another journal.
+In response to the transfer editor's comments, I have (i) retitled the manuscript to reflect that the load-bearing results are the cross-scale empirical tests rather than the CMB forward model, so the paper's title and identity are now self-consistent; and (ii) added a Declaration of Generative AI and AI-Assisted Technologies, transparently documenting that an AI coding assistant was used for manuscript drafting, analysis code, and figure generation, while all scientific content and verification remain the author's sole responsibility. All quantitative tests use publicly available, peer-reviewed datasets, and the complete code and Jupyter notebooks are openly available at \url{https://github.com/maris205/riemann_engine}.
 
-We believe this work is well suited for \textit{Results in Physics} given its emphasis on numerical experiments, quantitative comparison with observational data, and the novel application of differentiable programming to cosmological simulation.
+The manuscript has not been published elsewhere and is not under consideration by any other journal. I confirm I am the sole author and have no competing interests to declare.
 
 Thank you for your consideration.
 

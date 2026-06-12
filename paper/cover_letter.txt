@@ -1,0 +1,26 @@
+Dear Editor,
+
+I am pleased to submit my manuscript entitled "Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a 1/ln^2(t) Cooling Law" for consideration in Next Research.
+
+This manuscript is transferred from Physics of the Dark Universe (manuscript DARK-D-26-00549R1), where the Scientific Handling Editor issued a "Transfer Recommended Accept" decision recommending Next Research as a more suitable venue. I am grateful for that recommendation and believe the work is indeed a strong fit for a journal that evaluates technical soundness and methodological rigor across disciplines.
+
+The paper studies a single, definite hypothesis -- a 1/ln^2(t) adiabatic cooling law, motivated by the spectral statistics of the Riemann zeta zeros -- and subjects it to fourteen independent empirical, computational, and forecast tests (Pillars A-O) spanning three observational regimes:
+
+1. Fine-structure-constant drift. On the Murphy 2003 Keck/HIRES quasar sample the 1/ln^2(t) drift is detected at 5.6 sigma, cross-validated on the independent King 2012 Keck-only sample (+8.6 sigma in the union); a Keck/VLT instrument decomposition shows the signal is consistent with documented wavelength-calibration systematics.
+
+2. Hubble-parameter relaxation. A four-anchor H0 relaxation (SH0ES, JWST, Planck, BAO) gives R^2 = 0.91; dense late-time data (cosmic chronometers, Pantheon+, DESI DR2) are shown to be predictably unresolvable, and a leverage diagnostic explains this quantitatively. An atomic-clock-consistency analysis and a JWST-class forecast (>= 11 sigma discrimination within ~5 years) complete this regime.
+
+3. CMB lattice forward model. A differentiable JAX implementation of weakly damped Stormer-Verlet lattice dynamics is presented as a methodological building block; I explicitly retract any quantitative claim of reproducing the Planck angular power spectrum.
+
+In response to the transfer editor's comments, I have (i) retitled the manuscript to reflect that the load-bearing results are the cross-scale empirical tests rather than the CMB forward model, so the paper's title and identity are now self-consistent; and (ii) added a Declaration of Generative AI and AI-Assisted Technologies, transparently documenting that an AI coding assistant was used for manuscript drafting, analysis code, and figure generation, while all scientific content and verification remain the author's sole responsibility. All quantitative tests use publicly available, peer-reviewed datasets, and the complete code and Jupyter notebooks are openly available at https://github.com/maris205/riemann_engine.
+
+The manuscript has not been published elsewhere and is not under consideration by any other journal. I confirm I am the sole author and have no competing interests to declare.
+
+Thank you for your consideration.
+
+Sincerely,
+Liang Wang
+School of Artificial Intelligence and Automation
+Huazhong University of Science and Technology
+Wuhan 430070, P.R. China
+wangliang.f@gmail.com
