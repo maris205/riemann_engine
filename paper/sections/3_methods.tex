@@ -1,84 +1,79 @@
-\section{Numerical Methods}
+\section{Data and fitting}
 \label{sec:methods}
 
-\subsection{Two-dimensional weakly damped symplectic lattice}
-\label{sec:2d}
+\subsection{Four anchors}
+\label{sec:anchor-data}
 
-We simulate an $N \times N$ lattice ($N = 300$) with periodic boundary conditions.
-The integrator is St\"ormer--Verlet with an optional Hubble-like drag $\eta\,\dot\phi$, which is exactly symplectic only when $\eta = 0$ and is weakly area-contracting (conformally symplectic) when $\eta > 0$.
-For the 2D Gaussianity ensemble and the acoustic-peak runs (Supplementary Material) we set $\eta = 0$, so symplectic structure is preserved exactly up to floating-point error; weak damping ($\eta \in [0.01, 0.06]$) is introduced only in the Phase~I cosmic-timeline run and in the inverse reconstruction (Supplementary Material), where it is needed to stabilize gradient flow.
-Whenever a quantitative claim in this paper depends on the symplecticity of the integrator we make this distinction explicit; all sections that combine the lattice with the inverse reconstruction or the late-time continuation should be read as ``weakly damped symplectic'', not as ``exactly symplectic''.
-
-The initial field $\phi_0(\bm{x})$ is drawn from a scale-invariant spectrum: in Fourier space, the amplitude is $\hat{\phi}(\bm{k}) \propto |\bm{k}|^{-3/2}$, giving $P(k) \propto k^{-3}$.
-This mimics the approximately scale-invariant primordial power spectrum.
-The field is normalized to unit variance with zero mean.
-
-Evolution follows \cref{eq:sv} with a 2D isotropic Laplacian kernel:
-\begin{equation}
-  K = \frac{1}{12}\begin{pmatrix} 1 & 2 & 1 \\ 2 & -12 & 2 \\ 1 & 2 & 1 \end{pmatrix}\,,
-  \label{eq:kernel}
-\end{equation}
-applied via convolution with periodic (wrapped) boundary conditions.
-Unless otherwise stated, the baseline parameters are $c^2_{\mathrm{base}} = 0.45$, $c_0 = 10$, $\eta = 0$ (no drag), and the evolution runs for 45 steps.
-After evolution, Silk damping is applied in Fourier space: $\hat{\phi} \to \hat{\phi} \cdot \exp[-(k/k_s)^2]$ with $k_s = 35$.
-
-The ``temperature'' field is defined as the normalized fluctuation $T(\bm{x}) = [\phi(\bm{x}) - \bar{\phi}] / \sigma_\phi$.
-
-\subsection{Three-dimensional lattice and sphere projection}
-\label{sec:3d}
-
-For full-sky CMB map generation, we extend to a $N^3$ cubic lattice ($N = 96$--$128$) with the 3D Laplacian:
-\begin{equation}
-  \nabla^2_{\mathrm{lat}} \phi = \frac{1}{6}\sum_{i=1}^{3} (\phi_{\bm{x}+\hat{e}_i} + \phi_{\bm{x}-\hat{e}_i}) - \phi_{\bm{x}}\,,
-\end{equation}
-and the St\"ormer--Verlet update \cref{eq:sv} with parameters $c^2_{\mathrm{base}} = 0.45$, $\eta = 0.01$--$0.015$, and an optional weak nonlinear term $-\alpha\,\phi^2$ ($\alpha = 0.005$) to model gravitational structure formation.
-The initial 3D field uses amplitude spectrum $|\hat{\phi}(\bm{k})| \propto k^{-3/4}$, giving $P(k) \propto k^{-3/2}$ in 3D; this corresponds to a spectral index chosen to produce scale-invariant variance per logarithmic $k$-bin in three dimensions, analogous to the $P(k) \propto k^{-3}$ used in the 2D case.
-
-Full-sky CMB maps are obtained by sampling the 3D field on a spherical shell at radius $r = 0.35 N$ centered on the lattice midpoint.
-We use two projection methods:
-\begin{enumerate}
-  \item \textbf{Mollweide grid sampling}: a $400 \times 800$ grid in $(\theta, \varphi)$ is mapped to Cartesian indices $(x, y, z) = (N/2 + r\cos\theta\cos\varphi, N/2 + r\cos\theta\sin\varphi, N/2 + r\sin\theta)$, with nearest-neighbor lookup.
-  \item \textbf{HEALPix sampling}: using \texttt{healpy}~\citep{Gorski2005}, pixel centers at $\nside = 64$ are mapped to 3D coordinates and sampled via trilinear interpolation (\texttt{scipy.ndimage.map\_coordinates}).
+The anchor fit uses four published numbers.
+Each number is an inference of the present-day Hubble constant from a named analysis.
+The epoch attached to it is assigned for this fit.
+\begin{enumerate}[leftmargin=1.4em]
+  \item Planck 2018, $67.4\pm0.5\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{Planck2018VI}, assigned to $t=3.8\times10^{5}\,\mathrm{yr}$.
+  \item CCHP TRGB, $70.4\pm1.9\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{Freedman2025}, assigned to $t=1.5\,\mathrm{Gyr}$.
+        Freedman et al.\ also quote a combined TRGB estimate $70.39\pm1.22\,(\mathrm{stat})\pm1.33\,(\mathrm{sys})\pm0.70\,(\sigma_{\mathrm{SN}})$.
+        The fit retains $70.4\pm1.9$, which is the value used to obtain the regression below.
+  \item Mira calibration, $72.37\pm2.97\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{Huang2024Miras}, assigned to $t=6.0\,\mathrm{Gyr}$.
+        This measurement uses HST WFC3/IR.
+        It is not a JWST determination, and the previous text should not be read as calling it one.
+  \item SH0ES Cepheids, $73.04\pm1.04\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{RiessSH0ES2022}, assigned to $t=13.8\,\mathrm{Gyr}$.
 \end{enumerate}
+There is no BAO anchor in this fit.
+The previous manuscript's list ``SH0ES, JWST, Planck, BAO'' misnamed the sample that entered the regression.
 
-\subsection{Dissipative baseline: coupled map lattice}
-\label{sec:cml}
+The stellar epochs encode the hypothesis that a calibrator carries the expansion rate of its formation era.
+That hypothesis is not tested by the regression.
+Under the ordinary reading, all four numbers estimate one present-day $H_{0}$, and the constant model of \cref{sec:anchors} is the appropriate null.
+The fit is inverse-variance weighted least squares of Eq.~\eqref{eq:H}, which is linear in $(H_{\infty},\beta)$.
+Parameter variances are the diagonal of the weighted least-squares covariance with absolute $\sigma$.
+The quoted $R^{2}$ is unweighted and is only a description of the residuals.
+With four points and two parameters, $\nu=2$.
 
-For ablation, we compare against a dissipative coupled map lattice (CML)~\citep{Kaneko1992}:
-\begin{equation}
-  \phi_{n+1}(\bm{x}) = f[\phi_n(\bm{x})] + \varepsilon\,\nabla^2_{\mathrm{lat}} f[\phi_n(\bm{x})]\,,
-  \label{eq:cml}
-\end{equation}
-where $f(x) = 1 - \mu(n) x^2$ is the logistic map with the DSC cooling schedule \cref{eq:cooling} ($\mu_c = 1.5437$, $\kopt = 1.248$), and $\varepsilon = 0.55$ is the diffusion coefficient.
-This model is first-order (no $\phi_{n-1}$ term) and dissipative ($|\det DF| < 1$), violating Assumption~2.
-We evolve for 150 steps with rescaled initial amplitude ($\sigma_0 = 0.1$) for numerical stability.
+Leave-one-anchor-out repeats the regression on each subset of three and predicts the held-out point.
+The prediction variance includes the covariance of $(H_{\infty},\beta)$.
+A residual divided by the measurement error alone is not a measure of stability when the prediction itself is uncertain.
 
-\subsection{Analysis pipeline}
-\label{sec:analysis}
+\subsection{Cosmic chronometers}
+\label{sec:cc-data}
 
-\paragraph{Power spectrum.}
-We compute the radially averaged 2D power spectrum $P(k) = \langle |\hat{\phi}(\bm{k})|^2 \rangle_{|\bm{k}|=k}$ and the scaled spectrum $D(k) = k^2 P(k)$.
-For HEALPix maps, we compute the angular power spectrum $C_\ell$ via \texttt{healpy.anafast} and form $D_\ell = \ell(\ell+1)C_\ell / 2\pi$.
+The expansion-rate comparison uses 32 cosmic-chronometer $H(z)$ values transcribed in the analysis script from the compilation used in the previous draft and attributed there to \citep{Moresco2022} and the source papers named in the script.
+Flat $\Lambda$CDM and flat CPL are fitted to these points with the same Gaussian errors.
+\begin{align}
+  E_{\Lambda}^{2}(z)&=\Omega_{m}(1+z)^{3}+(1-\Omega_{m}),
+  \label{eq:lcdm}\\
+  w(a)&=w_{0}+w_{a}(1-a),
+  \label{eq:cplw}\\
+  f_{\mathrm{DE}}(z)&=(1+z)^{3(1+w_{0}+w_{a})}\exp\!\left(-\frac{3w_{a}z}{1+z}\right),
+  \label{eq:fde}\\
+  H(z)&=H_{0}\left[\Omega_{m}(1+z)^{3}+(1-\Omega_{m})f_{\mathrm{DE}}(z)\right]^{1/2}.
+  \label{eq:cpl}
+\end{align}
+CPL has four parameters, $(H_{0},\Omega_{m},w_{0},w_{a})$~\citep{Chevallier2001,Linder2003}.
+Flat $\Lambda$CDM is the nested point $w_{0}=-1$, $w_{a}=0$.
+The relaxation form on the same points is Eq.~\eqref{eq:H} evaluated at the cosmic time $t(z)$ of the fiducial flat background ($H_{0}=67.4$, $\Omega_{m}=0.315$), with $(H_{\infty},\beta)$ free.
+That background is a clock for $\xi(z)$.
+Scoring the anchor-fitted parameters on the chronometers, without refitting, is reported separately and is not given a parameter penalty.
 
-\paragraph{Gaussianity metrics.}
-For each temperature field, we compute the skewness $\gamma_1 = \langle T^3 \rangle / \sigma^3$ and excess kurtosis $\gamma_2 = \langle T^4 \rangle / \sigma^4 - 3$, with theoretical standard errors $\sigma_{\gamma_1} = \sqrt{6/N_{\mathrm{pix}}}$ and $\sigma_{\gamma_2} = \sqrt{24/N_{\mathrm{pix}}}$.
-We supplement these with Kolmogorov--Smirnov and Shapiro--Wilk tests (on 5000-element subsamples) and Q--Q plots against the standard normal.
+Information criteria use $\mathrm{AIC}=\chi^{2}+2k$ and $\mathrm{BIC}=\chi^{2}+k\ln N$, with the data-dependent normalisation omitted because it cancels in a comparison at fixed errors.
+For one extra nested parameter the likelihood-ratio $p$-value is the survival function of $\chi^{2}$ with one degree of freedom, and $z=\sqrt{\Delta\chi^{2}}$ equals $|\mathrm{estimate}|/\sigma$ when the estimate is Gaussian.
+For CPL versus $\Lambda$CDM the extra count is two, and the $p$-value uses $\chi^{2}$ with two degrees of freedom.
+These conversions are not quoted as detection significances for the anchor regression.
 
-\paragraph{Spectral correlation.}
-To compare DSC and $\Lambda$CDM spectral shapes, we compute the Pearson correlation coefficient between $\ln D(k)_{\mathrm{DSC}}$ and $\ln D(k)_{\Lambda\mathrm{CDM}}$ over the range $k \in [2, 60]$, after normalizing both to equal integrated power.
+\subsection{Quasar summaries}
+\label{sec:quasar-methods}
 
-\paragraph{Toy analytic reference spectrum.}
-For 2D power spectrum shape comparisons, we use a simplified analytic formula
-\begin{equation}
-  D(k)_{\mathrm{ref}} = e^{-(k/35)^2}\!\left[1 + 1.2\sin^2\!\left(\frac{\pi k}{12}\right)\right]\frac{50}{k + 10}\,,
-  \label{eq:mock}
-\end{equation}
-which captures the qualitative features of acoustic oscillation peaks and Silk damping in a simplified form.
-We stress that this is a toy reference used only for qualitative shape comparison; quantitative benchmarking against the observed CMB is performed in the Supplementary Material using the real Planck SMICA angular power spectrum~\citep{Planck2018V}.
+Murphy et al.\ Table~3 contains 128 absorber summaries~\citep{Murphy2003}.
+Twenty-two rows carry the high-contrast flag.
+The catalogue note says to add $2.09\times10^{-5}$ in quadrature to those flagged systems to form the fiducial sample.
+The fit-error-only regression is reported beside that fiducial rule.
+An Einstein--de~Sitter age $t(z)=t_{0}/(1+z)^{3/2}$ is computed only as a diagnostic of the previous numerical inconsistency.
+It is not a result of this revision.
 
-\subsection{Simulation-based inference}
-\label{sec:sbi}
+King et al.\ Table~A1 contains 295 rows~\citep{King2012}.
+Two rows are removed because the authors' outlier flag is set, leaving 293, of which 140 are Keck and 153 are VLT.
+The weighted-mean extra variances used here are the combined-dipole values in that paper: $0$, $1.743\times10^{-5}$ and $0.905\times10^{-5}$ for Keck low-contrast, Keck high-contrast and VLT.
+A fit that uses only the tabulated fit errors is reported as a sensitivity check.
+Redshifts are converted to age with the same flat integral as in \cref{sec:clock}.
+The design column is $L(t)^{-2}-L_{0}^{-2}$, and $\Gamma$ is the through-origin weighted least-squares coefficient.
 
-To test whether the DSC lattice parameters can be inferred from observed power spectra, we perform a twin experiment using Bayesian optimization~\citep{Akiba2019}.
-A ``ground truth'' universe is simulated with hidden parameters $(c^2 = 0.650, \eta = 0.015, \kopt = 2.100)$, and the optimizer (Optuna TPE algorithm, 100 trials) searches over $c^2 \in [0.3, 0.9]$, $\eta \in [0.005, 0.05]$, $\kopt \in [1.0, 4.0]$ to minimize the mean squared error between normalized $D(k)$ spectra.
-The initial field is fixed (seed = 42) to isolate parameter effects.
+Of the 128 Murphy absorption redshifts, 126 match a King Keck redshift to better than $5\times10^{-6}$.
+The two catalogues are not independent Keck samples, and their likelihoods are not multiplied.
