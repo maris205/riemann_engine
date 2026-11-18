@@ -1,47 +1,43 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{Status of the connection to the DSC framework.}
-The framework studied here implements the $1/\ln^2$ cooling law as a definite ansatz, not as a derived prediction of Planck-scale physics.
-The motivation from Riemann zero spectral statistics is treated as a working motivation for the $1/\ln^2$ functional form, not as an established physical correspondence.
-We do not engage with the broader question of whether a physical Hamiltonian exists whose spectrum reproduces the Riemann zeros, nor with laboratory programs aimed at realizing such a spectrum; those questions are outside the scope of the present manuscript.
+\subsection{Reading of the four-anchor fit}
+\label{sec:disc-fit}
 
-\paragraph{Comparison with related approaches.}
-Coupled map lattices have been studied as models for spatiotemporal chaos and pattern formation~\citep{Kaneko1992}, but not in a cosmological context with adiabatic cooling.
-Lattice cosmology approaches~\citep{Regge1961} discretize Einstein's equations directly, while causal set theory~\citep{Bombelli1987} replaces the manifold with a partial order.
-The DSC lattice differs from both: it does not attempt to recover general relativity from the lattice, and it should not be read as an alternative formulation of cosmology.
-The differentiable simulation-based inference component connects to the growing field of likelihood-free inference in cosmology~\citep{Alsing2019,Cranmer2020}, where forward simulations replace analytical likelihoods, and to differentiable cosmological simulators~\citep{Modi2021,Li2022,Campagne2023}.
+The numerical content of Pillar~C is a two-parameter curve that passes close to four assigned $(t,H)$ pairs, with the quoted $R^2$ and $\chi^2/\mathrm{dof}$ of \cref{sec:pillarC}.
+The phenomenological reading, that the cosmic expansion rate has followed \cref{eq:hubble}, needs two further steps that this fit does not supply.
+The first is an agreement on which four measurements are the anchors: the notebook inputs in \cref{tab:anchors} and the prose list SH0ES, JWST, Planck, and BAO are not the same list.
+The second is a justification for placing present-day $H_0$ inferences at the assigned times.
+In particular, the Planck $\Lambda$CDM inference of the present-day Hubble constant is not the expansion rate at recombination.
+Until those steps are supplied, the fit remains a description of the assigned pairs.
+The intercept $H_\infty = 104.5\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ is the $t\to\infty$ intercept of that description under the $10^{5}$ normalization.
+It is larger than the anchor values because $\beta$ is negative.
 
-\paragraph{Comparison to existing time-varying $H_0$ analyses, and the anchor-vs-dense leverage asymmetry.}
-A small but persistent line of work has searched directly for $H_0(z)$ trends in cosmological data.
-Dainotti~\emph{et al.}~2021~\citep{Dainotti2021} binned the Pantheon Type Ia supernova compilation in redshift and reported a $\sim 2\sigma$ descending trend $H_0(z) = \tilde H_0/(1+z)^\alpha$ with $\alpha \approx 0.01$.
-Krishnan~\emph{et al.}~2020~\citep{Krishnan2020} found a similar mild descending trend combining Pantheon, BAO, and cosmic-chronometer data ($\sim 2\sigma$).
-Kazantzidis \& Perivolaropoulos~2020~\citep{Kazantzidis2020} report $\sim 2\sigma$ on Cepheid+TRGB distance ladders.
-Colg{\'a}in~\emph{et al.}~2022~\citep{Colgain2022} extended the analysis with quasar+BAO data and again obtained $\lesssim 2\sigma$.
-The Hubble-tension model census of Sch\"oneberg~\emph{et al.}~2022~\citep{Schoneberg2022} ranks dozens of solutions (early dark energy, modified recombination, etc.) and notes that none currently survive joint multi-probe scrutiny.
+\subsection{Relation to other $H_0(z)$ fits}
+\label{sec:disc-literature}
 
-Three observations follow from comparing this literature with the present work.
+Several groups have fitted smooth trends in low-redshift distance data, typically with a power of $(1+z)$, and have reported mild preferences~\citep{Dainotti2021,Krishnan2020,Kazantzidis2020,Colgain2022}.
+The Hubble-tension census of Sch\"oneberg et al.~\citep{Schoneberg2022} reviews a wide range of physical proposals.
+Equation~\eqref{eq:hubble} is a different fitting function from those power laws.
+The dynamic range of $\xi(t)$ inside $z<2$ is small (\cref{sec:pillarM}), so a mild low-redshift trend neither confirms nor excludes the four-anchor curve.
+The late-time $\chi^2$ values in \cref{tab:dense} already show that the same function is a poor description of DESI DR2 and a worse description than flat $\Lambda$CDM of the other listed samples.
+A published CPL preference on BAO and supernova compilations is a statement about CPL.
+The submitted $\Delta\mathrm{BIC}=-2.6$ is not reused here as a comparison against \cref{eq:hubble}.
 
-(i)~\emph{Functional form.} Existing analyses adopt power-law $(1+z)^\alpha$ ans\"atze; we do not know of any prior published cosmological work fitting a $1/\ln^2(t/t_P)$ Hubble relaxation to $H_0$ anchors.
-The functional form here is independent of the literature ans\"atze, motivated by the Riemann-zeta-zero spectral density (\cref{sec:dsc}) and by the slowness requirement of \cref{sec:pillarN}.
+\subsection{Quasar subsets and the laboratory bound}
+\label{sec:disc-alpha}
 
-(ii)~\emph{Leverage choice.} The literature analyses operate exclusively within the $z < 2.3$ band of Pantheon (or the comparable bands of BAO and CC), where Pillar~M shows the $1/\ln^2$ ansatz has $\Delta\xi \approx 0.10$ of dynamic range.
-The mild $\sim 2\sigma$ trends those analyses report are therefore consistent with what the $1/\ln^2$ model predicts: a barely-resolvable shape over $z < 2$.
-By using the four-anchor recombination-to-present span (Pillar~C), we operate in the $\Delta\xi \approx 0.84$ regime where the same ansatz has 8.4$\times$ the leverage---hence $R^2 = 0.91, \chi^2/{\rm dof} = 0.28$ rather than $\sim 2\sigma$.
-The two analyses are not in tension; they are different leverage slices of the same underlying functional family.
+The exploratory table shows a Keck-only positive coefficient, a VLT-only negative coefficient, and a combined coefficient closer to zero, together with an unresolved clash between $+6.42\pm 1.14$ and $+5.56\pm 0.99$ on the Murphy sample.
+Whitmore and Murphy~\citep{Whitmore2015} and Wilczynska et al.~\citep{Wilczynska2020} document instrumental contributions that can move a Keck $\Delta\alpha/\alpha$ inference.
+That literature makes an instrumental reading available.
+It does not, on the evidence assembled here, exclude a subset fluctuation.
+The laboratory translation in \cref{sec:pillarN} limits how large $|\Gamma|$ can be if \cref{eq:alpha} is assumed.
+It does not show that the quasar catalogs have measured a nonzero value inside that limit.
 
-(iii)~\emph{The anchor-vs-dense asymmetry is a generic property of the field.}
-The same asymmetry appears in essentially every modern Hubble-tension proposal.
-Early Dark Energy~\citep{Schoneberg2022} resolves the SH0ES--Planck anchor difference by modifying recombination physics, but is in tension with low-redshift growth-rate measurements ($\sigma_8$ tension).
-CPL ($w_0w_a$) achieves a marginal $\Delta {\rm BIC} = -2.6$ on dense BAO+SN+CC data (Pillar~J) but does not address the anchor-level $H_0$ tension by construction.
-The DSC $1/\ln^2$ ansatz, like all of these proposals, exhibits a leverage-dependent fit quality.
-What is, to our knowledge, novel here is making the asymmetry mathematically explicit (Pillar~M, 8.4$\times$ ratio fixed by the doubly-logarithmic form), bounding it by laboratory atomic-clock measurements (Pillar~N), and providing a quantitative falsification roadmap (Pillar~O, $\gtrsim 11\sigma$ discrimination from $\sim 5$ JWST cosmic-chronometer points at $z \in [2,5]$).
-Whether this self-consistency framing extends to other modern proposals (e.g.\ EDE) is, in our view, a worthwhile direction for the field.
+\subsection{Material removed from this revision}
+\label{sec:disc-removed}
 
-\paragraph{Forward prediction vs.\ inverse fit in the CMB lattice surrogate.}
-The CMB lattice surrogate (Supplementary Material) produces two qualitatively different kinds of result, and conflating them would be the most likely misreading of this work.
-\emph{Forward predictions} report the unmodified output of the $1/\ln^2$ lattice with no fit parameters (beyond an overall amplitude): pixel one-point distributions are close to Planck SMICA, but the angular power spectrum gives $\chi^2/{\rm dof} \approx 80$ vs.\ CAMB Planck-2018, and the lattice $D(k)$-peaks fall at $\ell \approx 30, 60, 90$ rather than the observed $\ell \approx 220, 540, 810$.
-The honest verdict is that the lattice surrogate, taken alone, does \emph{not} reproduce the observed CMB at the spectrum level, and we retract any claim to the contrary.
-\emph{Inverse reconstructions} optimize $\sim 10^6$ voxel parameters against $\sim 10^4$ pixels; the high in-sample correlation ($r = 0.98$) is a mathematical inevitability at this ratio, and the held-out hemisphere test ($r = -0.17$) is the appropriate diagnostic.
-We present the differentiable engine as a methodological building block for simulation-based inference, not as evidence for a particular 3D primordial state.
-The full forward/inverse analysis, the retroactive-scale-fitting capability we deliberately do not exercise, and the phenomenological post-CMB continuation are reported in the Supplementary Material.
+The Riemann-zeta motivation is not used.
+The lattice CMB forward model, the inverse reconstruction, the held-out hemisphere test, the acoustic freeze-out scale, and the post-recombination lattice visualization are not part of this paper.
+No conclusion below depends on them.
+The Supplementary Material retains the late-time and quasar figures that correspond to \cref{sec:alpha,sec:dense}, with captions that match the reading given here.

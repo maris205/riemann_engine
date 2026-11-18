@@ -1,0 +1,478 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+
+\title{Response to the reviewers\\
+\large Manuscript NEXRES-D-26-02183\\
+\textit{A Four-Anchor Phenomenological Fit of a $1/\ln^2(t/t_{\mathrm{P}})$ Hubble Relaxation}}
+\author{Liang Wang}
+\date{Draft for the revision due 27 November 2026. Not yet resubmitted.}
+
+\definecolor{revcolor}{HTML}{444444}
+\newenvironment{review}{\par\color{revcolor}\itshape\leftskip=1.2em\rightskip=0.4em\noindent}{\par\leftskip=0pt\rightskip=0pt}
+\newcommand{\revtodo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+
+\begin{document}
+\maketitle
+
+Dear Dr Biswas,
+
+Thank you for handling manuscript NEXRES-D-26-02183 and for the reports from both reviewers.
+The revision follows Reviewer~1 and narrows the paper.
+The point-by-point replies are below.
+Locations refer to sections of the revised manuscript.
+Page numbers are omitted because the draft has not been frozen for production.
+Items that need a refit are marked in red.
+No new fitted value has been invented to fill those items.
+
+\section*{Summary of the revision}
+
+\begin{itemize}[leftmargin=1.4em]
+  \item The core empirical result is the four-anchor Hubble fit (Pillar~C), kept with its quoted summary $H_\infty = 104.5\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$, $\beta = -6.24\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$, $R^2 = 0.91$, and $\chi^2/\mathrm{dof} = 0.28$ on two degrees of freedom.
+  The working equation is $H(t) = H_\infty + \beta\,10^{5}/\ln^2(t/t_{\mathrm{P}})$, which is the normalization in the figure and forecast notebooks.
+  That factor reconciles the intercept $104.5$ with the quoted finite-redshift values near $71$--$72$.
+  \item The Riemann-zeta motivation has been removed.
+  The fitting function is described as a selected phenomenological ansatz.
+  No uniqueness claim remains.
+  \item The lattice CMB forward model, the inverse reconstruction, and the acoustic freeze-out discussion have been removed from the main text and from the Supplementary Material (\texttt{sections/S\_cmb\_lattice.tex} is withdrawn and is not input).
+  There is no three-scale validation claim.
+  \item The Keck, VLT, and full-sample quasar comparison is exploratory.
+  Detection language has been removed.
+  A side-by-side table of the submitted quotations is in Section~4.2.
+  The clash between $\Gamma = +6.42\pm 1.14$ and $\Gamma = +5.56\pm 0.99$ is left unresolved.
+  \item Pillar~M now states a falsification standard.
+  A $\chi^2/\mathrm{dof}$ of order $10^{3}$ on DESI DR2 is described as a poor fit.
+  \item The Elsevier wrapper journal line is Next Research.
+  The title and abstract have been rewritten for the narrowed scope.
+  \item \revtodo{Still required before resubmission: one Murphy-sample refit; the anchor-list confirmation, covariance, and leave-one-anchor-out table; a common-likelihood AIC/BIC comparison of the ansatz, flat $\Lambda$CDM, and CPL; a forecast with a stated covariance; pinned software versions and one constant table.}
+\end{itemize}
+
+\section*{Reviewer 1}
+
+\subsection*{R1.1}
+\begin{review}
+Internal inconsistency in the headline result ($\Gamma = +6.42\pm 1.14$ in Section~4.2 versus $+5.56\pm 0.99$ in the abstract, the conclusion, and Table~1).
+\end{review}
+
+The two quotations are both still visible, and neither has been chosen.
+Section~4.2 of the submitted manuscript quotes $\Gamma = +6.42\pm 1.14$ and $\Delta\chi^2 = 31.54$ for the Murphy sample under the fit-error budget.
+The instrument table in that section, the submitted abstract, and one conclusion sentence quote $\Gamma = +5.56\pm 0.99$.
+The conclusion also quotes $\Delta\chi^2 = 31.83$.
+The revised Section~4.2 prints this clash and withdraws every detection claim that depended on either number.
+The quasar material is labeled exploratory.
+
+\revtodo{Refit the Murphy et al.\ (2003) sample once, under one stated error budget, and replace both quotations with that single result. Do not adopt $+6.42\pm 1.14$ or $+5.56\pm 0.99$ by hand.}
+
+Change: Abstract; Section~4.2 and Table of quoted subset coefficients; Conclusion.
+
+\subsection*{R1.2}
+\begin{review}
+Subset dependence of the quasar drift signal (Keck-only, null on the full King 2012 catalog, sign reversal in the VLT-only subset).
+\end{review}
+
+Section~4.2 and the Supplementary Material place the full King et al.\ (2012) catalog, the Keck-only subset, and the VLT-only subset side by side, using the coefficients quoted in the submitted manuscript.
+On those quotations the Keck-only sign is positive, the VLT-only sign is negative, and the full catalog was quoted with $\Delta\mathrm{BIC} = +5.7$ in favor of a constant.
+The text states that no pre-registered subset protocol exists, and it leaves both readings open: an instrumental systematic, and a subsample fluctuation.
+Words such as detection, confirmation, and cross-validation have been removed from this comparison.
+
+\revtodo{After the R1.1 refit, recompute the three columns (full sample, Keck-only, VLT-only) under the same budget. The present table is a record of the submitted quotations.}
+
+Change: Section~4.2; Supplementary figures for the King catalog and the subset scan.
+
+\subsection*{R1.3}
+\begin{review}
+Non-falsifiable framing of the leverage argument (Pillar~M); $\chi^2/\mathrm{dof}\sim 10^{3}$ conflated with resolvability.
+\end{review}
+
+Section~4.4 keeps the arithmetic range of $10^{5}/\ln^2(t/t_{\mathrm{P}})$ as a property of the selected function and separates it from goodness of fit.
+The falsification standard is stated there: the four-anchor description fails if a leave-one-anchor-out refit misses the omitted anchor, or if a direct $H(z)$ measurement with a stated covariance falls outside the curve; each dense sample fails separately when its own $\chi^2$ is unacceptable.
+A non-detection where the function barely moves is recorded as a non-detection.
+A detection in that window would be a failure of the expectation that the function is unresolved there.
+Section~4.3 calls the DESI DR2 value $\chi^2/\mathrm{dof}\sim 10^{3}$ a poor fit.
+The conclusion does not list that value as support.
+
+\revtodo{The leave-one-anchor-out half of the standard has no numbers yet. Insert them only after the refit in R2.5.}
+
+Change: Sections~4.3 and~4.4; Discussion; Conclusion.
+
+\subsection*{R1.4}
+\begin{review}
+Retraction of the lattice CMB forward model and inverse reconstruction, and the resulting gap in the three-scale claim.
+\end{review}
+
+This material has been removed from the revision, as Reviewer~1 recommended.
+The main text and the Supplementary Material no longer contain the lattice forward model, the inverse reconstruction, the held-out hemisphere test, or the acoustic freeze-out discussion.
+\texttt{sections/S\_cmb\_lattice.tex} is a withdrawal note and is not input.
+The title, abstract, and conclusion contain no three-scale validation claim.
+What remains as the core empirical result is the four-anchor fit, with the limitations in Section~6.
+
+Change: entire manuscript; Supplementary Material; title and abstract.
+
+\section*{Reviewer 2}
+
+\subsection*{R2.1}
+\begin{review}
+Insufficient physical justification of the proposed cooling law.
+\end{review}
+
+Section~2 states that $1/\ln^2(t/t_{\mathrm{P}})$ is a selected phenomenological ansatz.
+The slow variation of the logarithm is the reason this shape was tried.
+The Riemann-zeta argument has been removed, and no microscopic derivation is claimed.
+Applicability is limited to the comparisons actually performed: a curve through four assigned Hubble anchors, an exploratory quasar parametrization, and the late-time $\chi^2$ values reported as fits.
+
+Change: Sections~1 and~2.
+
+\subsection*{R2.2}
+\begin{review}
+The theoretical derivation in Section~2.2 requires further mathematical justification.
+\end{review}
+
+The spectral-density derivation has been deleted rather than repaired.
+Section~2 defines $\xi(t) = 1/\ln^2(t/t_{\mathrm{P}})$, writes the normalized Hubble equation used by the notebooks, and differentiates the fine-structure parametrization.
+The dimensions of $H_\infty$, $\beta$, and the cosmological term are discussed in Section~2.1.
+No step in the revised text identifies a vacuum-energy variance with the square of a level spacing.
+
+Change: Section~2. The former Section~2.2 is gone.
+
+\subsection*{R2.3}
+\begin{review}
+Uniqueness of the logarithmic cooling law is insufficiently supported.
+\end{review}
+
+Uniqueness language has been removed from the abstract, the introduction, the ansatz section, and the conclusion.
+Section~2.3 says explicitly that other slow functions, including $1/\ln^p(t/t_{\mathrm{P}})$ for $p\neq 2$, are not excluded.
+No uniqueness theorem is offered.
+
+Change: Abstract; Sections~1, 2, and~7.
+
+\subsection*{R2.4}
+\begin{review}
+Inconsistency in the physical interpretation of the Hubble parameter, including $H_\infty = 104.5\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ and the high-redshift behavior.
+\end{review}
+
+The revised equation is $H(t) = H_\infty + \beta\,10^{5}/\ln^2(t/t_{\mathrm{P}})$.
+The factor $10^{5}$ is the normalization in \texttt{notebooks/fig19\_jwst\_h0\_anchors.ipynb} and in \texttt{notebooks/fig31\_pillar\_O\_forecast.ipynb}.
+With the quoted pair $(H_\infty,\beta) = (104.5,-6.24)$ and the submitted leverage value $10^{5}\xi\approx 5.19$ at $z\approx 2$, the same arithmetic gives $H\approx 72.1\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$, which is the quoted $H(z=2)$.
+So $H_\infty$ is the intercept at $t\to\infty$ inside this fitting function, and the values near $71$--$72$ are finite-$t$ evaluations of that function.
+Because $\beta<0$, the curve increases toward $H_\infty$.
+The submitted claim $H_\infty < H_0$ does not describe the fit.
+The identification $H_\infty = \sqrt{\Lambda_\infty/3}$ is withdrawn: $H_\infty$ is a fit coefficient in $\mathrm{km\,s^{-1}\,Mpc^{-1}}$, and that equality is not dimensionally imposed.
+
+A separate inconsistency remains.
+The submitted prose named the anchors as SH0ES, JWST, Planck, and BAO.
+The figure notebook assigns Planck $67.4\pm 0.5$ at $3.8\times 10^{5}\,\mathrm{yr}$, a TRGB point $70.4\pm 1.9$ at $1.5\times 10^{9}\,\mathrm{yr}$, a Mira point $72.37\pm 2.97$ at $6.0\times 10^{9}\,\mathrm{yr}$, and SH0ES $73.04\pm 1.04$ at $1.38\times 10^{10}\,\mathrm{yr}$.
+Several of these are present-day $H_0$ inferences placed at earlier times.
+The Planck number is a $\Lambda$CDM inference of today's Hubble constant, not the expansion rate at recombination.
+Section~4.1 states that the fit is a curve through those assigned pairs.
+
+\revtodo{Confirm which four anchors are the sample, attach a checked citation to the TRGB and Mira rows, and recompute $H(z)$ from one $t(z)$ only if the confirmed parameters change the quoted $71$--$72$ sequence. Also choose one convention for $(\Lambda_\infty,\gamma)$.}
+
+Change: Sections~2.1, 3.1, 4.1, and~5.1.
+
+\subsection*{R2.5}
+\begin{review}
+Statistical reliability of the four-anchor fit: degrees of freedom, covariance, and leave-one-anchor-out.
+\end{review}
+
+Section~3.1 records the definitions used in the notebook.
+$R^2$ is unweighted.
+$\chi^2$ uses the quoted errors.
+There are four points and two parameters, so $\mathrm{dof} = 2$.
+The notebook calls \texttt{curve\_fit} with \texttt{absolute\_sigma=True} and stores a covariance that the manuscript never printed.
+No leave-one-anchor-out loop is in the notebook.
+Section~4.1 states that an $R^2$ of $0.91$ and a reduced $\chi^2$ of $0.28$ on two degrees of freedom do not establish an expansion history.
+
+\revtodo{Print the $2\times 2$ covariance and the four leave-one-anchor-out refits after the anchor list is confirmed. Do not insert a covariance by hand.}
+
+Change: Sections~3.1 and~4.1.
+
+\subsection*{R2.6}
+\begin{review}
+A poor goodness of fit must not be treated as support.
+\end{review}
+
+This is the same change as R1.3.
+Section~4.3 and Table of late-time $\chi^2$ values present the quoted $\chi^2/\mathrm{dof}$ as goodness of fit.
+The DESI DR2 entry of order $10^{3}$, the joint entry $23.7$, the cosmic-chronometer entry $4.01$, and the Pantheon+ entry $1.27$ are worse descriptions than the quoted flat $\Lambda$CDM values.
+They are not counted as evidence for the ansatz.
+The conclusion separates that fact from the four-anchor number.
+
+Change: Sections~4.3, 4.4, and~7.
+
+\subsection*{R2.7}
+\begin{review}
+Inadequate comparison with $\Lambda$CDM and other models on the same datasets.
+\end{review}
+
+The revised text reports only the $\chi^2$ values already printed in the submitted manuscript, and it labels them as previously quoted.
+It does not treat those values as a finished model comparison.
+The submitted $\Delta\mathrm{BIC} = -2.6$ between CPL and flat $\Lambda$CDM is not reused as a comparison against the ansatz.
+
+\revtodo{On one stated dataset and covariance, report the likelihood, $\chi^2$, AIC, and BIC for the ansatz, flat $\Lambda$CDM, and CPL, with the parameter count of each. Do not invent those information criteria in the response.}
+
+Change: Sections~3.3 and~4.3; Supplementary late-time captions. The numerical comparison itself is still a to-do.
+
+\subsection*{R2.8}
+\begin{review}
+Uncertainty analysis of the fine-structure variation is insufficient.
+\end{review}
+
+Section~4.2 keeps both submitted error budgets side by side and states that the formal ratio changes between them.
+The text no longer promotes either budget to a detection.
+Instrumental calibration and absorber-to-absorber correlations beyond the two budgets already quoted are not a new error budget.
+
+\revtodo{Write one error budget that states fit error, random term, calibration systematic, and any covariance, and refit under that budget. The present table only repeats the submitted budgets.}
+
+Change: Sections~3.2 and~4.2.
+
+\subsection*{R2.9}
+\begin{review}
+Opposite signs from Keck-only and VLT-only observations.
+\end{review}
+
+This is answered with R1.2.
+The revised side-by-side table shows the opposite signs on the submitted quotations.
+The discussion cites the wavelength-calibration papers as one available reading and states that a subset fluctuation is also still available.
+The combined rows are closer to zero than the Keck-only union on those quotations.
+No cosmological interpretation is adopted.
+
+Change: Section~4.2; Discussion; Supplementary subset figure.
+
+\subsection*{R2.10}
+\begin{review}
+Atomic-clock constraints need a derivation of the present-day rate and its parameter dependence.
+\end{review}
+
+Section~2.2 differentiates $\Delta\alpha/\alpha = \Gamma\times 10^{-5}\,[\xi(t)-\xi(t_{\mathrm{now}})]$ to
+\[
+  \dot\alpha/\alpha = \Gamma\times 10^{-5}\times(-2)/\big(t\ln^3(t/t_{\mathrm{P}})\big).
+\]
+The submitted prefactor $5.25\times 10^{-22}\,\mathrm{yr}^{-1}$ per unit $\Gamma$ is the present-epoch evaluation of that derivative for $\ln(t_{\mathrm{now}}/t_{\mathrm{P}})\approx 140$.
+Dividing the Rosenband et al.\ bound $1\times 10^{-17}\,\mathrm{yr}^{-1}$ by that prefactor gives the conditional limit $|\Gamma|\lesssim 1.9\times 10^{4}$.
+The limit depends on $\Gamma$ only as the amplitude of this parametrization.
+It does not depend on $\beta$, and it does not use the unreconciled quasar value of $\Gamma$.
+No joint posterior of the laboratory bound and the quasar catalogs is constructed.
+Section~4.5 states that dependence.
+
+\revtodo{If the R1.1 refit changes the quasar $\Gamma$, update only the illustration that overlays those points on the laboratory translation. The translation itself does not need a new $\Gamma$.}
+
+Change: Sections~2.2 and~4.5.
+
+\subsection*{R2.11}
+\begin{review}
+Cosmological stability analysis is incomplete.
+\end{review}
+
+The five background checks remain only as a previously quoted scan, in the Supplementary Material, with a caption that a pass is not a stability proof.
+Perturbative stability, gradient instabilities, and the origin of the prescribed sound speed are listed as not done (Section~6).
+The main text does not claim that the ansatz is stable.
+
+\revtodo{A perturbative and gradient analysis is outside this narrowed revision. If it is added later, it needs its own calculation and should not be filled in from the five background checks.}
+
+Change: Section~4.3; Supplementary stability caption; Section~6.
+
+\subsection*{R2.12}
+\begin{review}
+The connection between lattice dynamics and cosmological observables is unclear.
+\end{review}
+
+This material has been removed from the revision.
+The lattice field is not used as a cosmological observable anywhere in the revised main text or Supplementary Material.
+
+Change: removed. Former lattice sections and \texttt{sections/S\_cmb\_lattice.tex}.
+
+\subsection*{R2.13}
+\begin{review}
+Symplecticity of the damped numerical scheme requires clarification.
+\end{review}
+
+This material has been removed from the revision.
+The revised manuscript does not describe a St\"ormer--Verlet scheme, a drag term, or a symplectic map.
+
+Change: removed.
+
+\subsection*{R2.14}
+\begin{review}
+Numerical convergence and grid-independence tests are necessary.
+\end{review}
+
+This material has been removed from the revision.
+There is no lattice resolution, time step, or grid in the revised manuscript.
+Convergence of the statistical fits is a separate item, marked under R2.19.
+
+Change: removed.
+
+\subsection*{R2.15}
+\begin{review}
+Discrepancy between simulated and observed CMB acoustic peaks.
+\end{review}
+
+This material has been removed from the revision.
+No simulated $C_\ell$, acoustic-peak table, or Planck-spectrum $\chi^2$ is reported, and none is cited as a limitation of a model that is no longer in the paper.
+
+Change: removed.
+
+\subsection*{R2.16}
+\begin{review}
+The inverse reconstruction procedure requires stronger validation.
+\end{review}
+
+This material has been removed from the revision.
+The in-sample correlation and the held-out hemisphere test are not cited.
+
+Change: removed.
+
+\subsection*{R2.17}
+\begin{review}
+The treatment of acoustic freeze-out requires further explanation.
+\end{review}
+
+This material has been removed from the revision.
+No freeze-out scale, threshold, or sound-horizon analog is defined.
+
+Change: removed.
+
+\subsection*{R2.18}
+\begin{review}
+Forecasted observational discrimination appears overly optimistic.
+\end{review}
+
+Section~3.3 documents the existing mock from the forecast notebook: a flat $\Lambda$CDM age integral with $H_0 = 67.4$ and $\Omega_m = 0.315$, independent Gaussian fractional errors, 30 realizations, Generator seed 42, and Nelder--Mead refits.
+The quoted figure of merit is $\sqrt{\Delta\chi^2}$ of the median draw.
+Section~4.6 copies the submitted table and states that these entries are not survey significances.
+The abstract and conclusion do not claim an $11\sigma$ forecast.
+The separation between the fitting function and flat $\Lambda$CDM at $z>2$ is described as a property of the two functions, and the ability of a real catalog to resolve it is left to a covariance that the mock does not have.
+
+\revtodo{Replace the table with a forecast that states the redshift sampling, the covariance, and the systematic floor. Do not keep $\gtrsim 11\sigma$ as a predicted significance.}
+
+Change: Sections~3.3, 4.6, and~7.
+
+\subsection*{R2.19}
+\begin{review}
+Reproducibility of the numerical and statistical analysis.
+\end{review}
+
+Section~3.4 names the repository and the notebooks that generate the retained figures.
+It records Python~3.12.3 from the Pillar~C notebook metadata, \texttt{scipy.optimize.curve\_fit} with \texttt{absolute\_sigma=True} for the anchor fit, and the forecast seed, realization count, and optimizer settings above.
+It also records that the anchor notebook and the forecast notebook do not share one value of $t_{\mathrm{P}}$ or one seconds-per-year conversion.
+
+\revtodo{Pin NumPy and SciPy versions, adopt one constant table, and state bounds and convergence tolerances for every quoted fit. Do not guess the unpinned versions.}
+
+Change: Section~3.4.
+
+\subsection*{R2.20}
+\begin{review}
+Statistical model selection and the conversion of likelihood ratios to a Gaussian-equivalent significance.
+\end{review}
+
+The revised manuscript stops treating $\sqrt{\Delta\chi^2}$ as a detection significance for the quasar subsets and for the forecast.
+Where a submitted ratio is still printed, the table heading says ``quoted ratio'' and the surrounding text says the row is not a measurement.
+$R^2$ and $\chi^2$ are defined separately in Section~3.1, because the notebook's $R^2$ is unweighted and its $\chi^2$ is weighted.
+AIC and BIC are not recomputed.
+
+\revtodo{The common-likelihood AIC/BIC calculation is the same to-do as R2.7. Any future $\sigma$ equivalent needs the degrees of freedom of that likelihood written next to it.}
+
+Change: Sections~3.1, 4.2, and~4.6.
+
+\subsection*{R2.21}
+\begin{review}
+Internal numerical inconsistencies, including $H_\infty$ near $104.5$ versus high-redshift values near $71$--$72$, and the leverage and significance figures.
+\end{review}
+
+The $H_\infty$ versus $71$--$72$ clash is answered under the $10^{5}$ normalization in R2.4: they are the intercept and the finite-$t$ evaluations of one curve, on the quoted inputs.
+The $\Gamma$ clash of R1.1 is not resolved.
+Quoted leverage differences ($0.84$ versus $0.10$, ratio $8.4$) are retained only as the dynamic range of $\xi(t)$.
+Quoted significances for the quasar subsets and the forecast are not adopted as results.
+One further small inconsistency is stated: a figure caption in the submitted text printed $R^2 = 0.907$ where the abstract printed $0.91$, and the notebook prints $H_\infty = 104.469\ldots$, which rounds to $104.5$.
+
+\revtodo{After the refits in R1.1, R2.5, and R2.7, search the manuscript again for any remaining pair of incompatible numbers. Do not silently average $6.42$ and $5.56$, or $0.907$ and $0.91$.}
+
+Change: Sections~2.1, 4.1, and~4.2.
+
+\subsection*{R2.22}
+\begin{review}
+Figures need clearer labels, units, uncertainty bands, and a separation of measurements from theory.
+\end{review}
+
+Captions of the retained figures were rewritten so that each caption states what is a quoted fit, what is an assigned anchor, and what is not a detection.
+The forecast caption states that the mock has no survey covariance.
+The leverage caption states that the curve is not a goodness-of-fit test.
+The plotted files themselves are the submitted PDFs.
+Font sizes, line widths, and axis units inside those PDFs were not regenerated.
+
+\revtodo{Regenerate the retained figures from the checked notebooks after the refits, with readable type, units on every axis, and a legend that separates data from the curve. Do not redraw them by hand with new data values.}
+
+Change: captions in Section~4 and in the Supplementary Material. Graphics regeneration is still a to-do.
+
+\subsection*{R2.23}
+\begin{review}
+Duplicate references and bibliographic consistency.
+\end{review}
+
+The Planck 2018 entries I, V, VI, IX, and X remain distinct papers and were not deleted.
+No exact duplicate bibliographic entry was removed.
+The two DESI entries are different papers and are now distinguished by data release (R2.24).
+
+\revtodo{A line-by-line check of every remaining DOI, author list, and page range is still open. This pass updated only the two DESI entries that the report singled out.}
+
+Change: \texttt{paper/references.bib}, DESI entries. Full audit still a to-do.
+
+\subsection*{R2.24}
+\begin{review}
+Reference accuracy, including DESI 2024 preprint versus DESI DR2, and missing DOIs.
+\end{review}
+
+\texttt{DESI2024} is now the Year-1 BAO paper, published as JCAP~02(2025)~021, doi \texttt{10.1088/1475-7516/2025/02/021}, with the arXiv identifier 2404.03002 retained.
+\texttt{DESI2025DR2} is the DR2 BAO paper, Physical Review~D \textbf{112}, 083515 (2025), doi \texttt{10.1103/tr6y-kpc6}, arXiv 2503.14738.
+The late-time DESI comparison cites the DR2 paper.
+The 2024 paper is cited as Year-1 background and is not used as the DR2 measurement.
+The prose anchor list that cited the 2024 paper as one of the four Hubble anchors is flagged in R2.4, because the figure notebook does not contain a BAO anchor.
+
+Change: \texttt{references.bib}; Sections~1, 3.3, and~4.3; Supplementary DESI caption.
+
+\subsection*{R2.25}
+\begin{review}
+Typographical errors, notation, and the journal footer.
+\end{review}
+
+The fitting function is written $1/\ln^2(t/t_{\mathrm{P}})$ wherever the dimensionless ratio is meant.
+The Hubble equation shows the $10^{5}$ normalization explicitly.
+$H_0$, $H_\infty$, $\Lambda(t)$, $\alpha(t)$, $\Gamma$, and $\chi^2/\mathrm{dof}$ are used with that notation in the revised sections.
+The paragraph heading that produced ``Slowness as a physical requirement..'' has been removed.
+The label ``Pillar~10'' has been removed; the letter labels that remain are identified as labels from the reviewed manuscript.
+The footer of \texttt{main\_elsevier.tex} is set by \verb|\journal{Next Research}|.
+The relation of $H_\infty$ to $\Lambda_\infty$ is discussed as a unit inconsistency in Section~2.1 and is not used as an equation of the fit.
+
+\revtodo{A final proofreading pass after the refits, including a check that no unscaled $1/\ln^2(t)$ remains in a regenerated figure label.}
+
+Change: throughout the revised sections; \texttt{main\_elsevier.tex} journal line.
+
+\subsection*{R2.26}
+\begin{review}
+Conclusions should reflect the strength of the evidence.
+\end{review}
+
+Section~7 is split into three paragraphs.
+The numerical paragraph lists the quoted four-anchor summary, the unresolved pair of Murphy coefficients, the opposite Keck and VLT signs, and the DESI DR2 $\chi^2/\mathrm{dof}\sim 10^{3}$.
+The phenomenological paragraph limits the expansion-history reading to what the assigned pairs actually are, and it limits the laboratory statement to the conditional translation of the Rosenband et al.\ bound.
+The last paragraph withdraws the readings of the curve as a solution of the Hubble tension, of the Keck coefficient as a detection, of the large late-time $\chi^2$ as support, and of the mock as an $11\sigma$ forecast.
+
+Change: Section~7; Abstract.
+
+\section*{What was removed, and what was kept}
+
+Removed from the main text and the Supplementary Material: Riemann-zeta motivation and citations that existed only to support it; the lattice CMB forward model; the inverse reconstruction and held-out test; acoustic freeze-out; the post-recombination lattice visualization; three-scale and uniqueness claims; detection language for the quasar subsets; the use of $\chi^2/\mathrm{dof}\sim 10^{3}$ as support.
+
+Kept, with the limits above: the four-anchor fit and its quoted summary (Pillar~C); the exploratory full-sample / Keck / VLT table; the dynamic range of $\xi(t)$ together with an explicit falsification standard; the laboratory derivative; the previously quoted late-time $\chi^2$ values, read as goodness of fit; the previously quoted forecast table, read as a diagonal-error mock.
+
+We hope the revised manuscript can be reconsidered after the marked refits are supplied.
+This letter and the manuscript draft have not been uploaded to the journal.
+
+Sincerely,
+
+Liang Wang
+\end{document}

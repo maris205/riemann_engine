@@ -1,84 +1,100 @@
-\section{Numerical Methods}
+\section{Methods}
 \label{sec:methods}
 
-\subsection{Two-dimensional weakly damped symplectic lattice}
-\label{sec:2d}
+The numerical procedures below are those already implemented in the public notebooks.
+This revision does not refit them.
+Where a referee request needs a new number, the text is marked as a to-do and no replacement value is inserted.
 
-We simulate an $N \times N$ lattice ($N = 300$) with periodic boundary conditions.
-The integrator is St\"ormer--Verlet with an optional Hubble-like drag $\eta\,\dot\phi$, which is exactly symplectic only when $\eta = 0$ and is weakly area-contracting (conformally symplectic) when $\eta > 0$.
-For the 2D Gaussianity ensemble and the acoustic-peak runs (Supplementary Material) we set $\eta = 0$, so symplectic structure is preserved exactly up to floating-point error; weak damping ($\eta \in [0.01, 0.06]$) is introduced only in the Phase~I cosmic-timeline run and in the inverse reconstruction (Supplementary Material), where it is needed to stabilize gradient flow.
-Whenever a quantitative claim in this paper depends on the symplecticity of the integrator we make this distinction explicit; all sections that combine the lattice with the inverse reconstruction or the late-time continuation should be read as ``weakly damped symplectic'', not as ``exactly symplectic''.
+\subsection{Four-anchor Hubble fit}
+\label{sec:fit-method}
 
-The initial field $\phi_0(\bm{x})$ is drawn from a scale-invariant spectrum: in Fourier space, the amplitude is $\hat{\phi}(\bm{k}) \propto |\bm{k}|^{-3/2}$, giving $P(k) \propto k^{-3}$.
-This mimics the approximately scale-invariant primordial power spectrum.
-The field is normalized to unit variance with zero mean.
-
-Evolution follows \cref{eq:sv} with a 2D isotropic Laplacian kernel:
+The notebook \path{notebooks/fig19_jwst_h0_anchors.ipynb} builds four pairs $(t_i,H_i)$ with quoted uncertainties $\sigma_i$, forms $\xi_i = 1/\ln^2(t_i/\tP)$, and fits \cref{eq:hubble} by weighted least squares (\path{scipy.optimize.curve_fit} with \path{absolute_sigma=True}).
+The reported coefficient of determination is the unweighted quantity
 \begin{equation}
-  K = \frac{1}{12}\begin{pmatrix} 1 & 2 & 1 \\ 2 & -12 & 2 \\ 1 & 2 & 1 \end{pmatrix}\,,
-  \label{eq:kernel}
+  R^2 = 1 - \frac{\sum_i (H_i-\hat H_i)^2}{\sum_i (H_i-\bar H)^2}\,,
 \end{equation}
-applied via convolution with periodic (wrapped) boundary conditions.
-Unless otherwise stated, the baseline parameters are $c^2_{\mathrm{base}} = 0.45$, $c_0 = 10$, $\eta = 0$ (no drag), and the evolution runs for 45 steps.
-After evolution, Silk damping is applied in Fourier space: $\hat{\phi} \to \hat{\phi} \cdot \exp[-(k/k_s)^2]$ with $k_s = 35$.
-
-The ``temperature'' field is defined as the normalized fluctuation $T(\bm{x}) = [\phi(\bm{x}) - \bar{\phi}] / \sigma_\phi$.
-
-\subsection{Three-dimensional lattice and sphere projection}
-\label{sec:3d}
-
-For full-sky CMB map generation, we extend to a $N^3$ cubic lattice ($N = 96$--$128$) with the 3D Laplacian:
+while
 \begin{equation}
-  \nabla^2_{\mathrm{lat}} \phi = \frac{1}{6}\sum_{i=1}^{3} (\phi_{\bm{x}+\hat{e}_i} + \phi_{\bm{x}-\hat{e}_i}) - \phi_{\bm{x}}\,,
+  \chi^2 = \sum_i \left(\frac{H_i-\hat H_i}{\sigma_i}\right)^2\,,
+  \qquad
+  \mathrm{dof} = N-2 = 2\,,
 \end{equation}
-and the St\"ormer--Verlet update \cref{eq:sv} with parameters $c^2_{\mathrm{base}} = 0.45$, $\eta = 0.01$--$0.015$, and an optional weak nonlinear term $-\alpha\,\phi^2$ ($\alpha = 0.005$) to model gravitational structure formation.
-The initial 3D field uses amplitude spectrum $|\hat{\phi}(\bm{k})| \propto k^{-3/4}$, giving $P(k) \propto k^{-3/2}$ in 3D; this corresponds to a spectral index chosen to produce scale-invariant variance per logarithmic $k$-bin in three dimensions, analogous to the $P(k) \propto k^{-3}$ used in the 2D case.
+with $N=4$ anchors and two free parameters.
+The notebook stores the parameter covariance and does not print it.
+No leave-one-anchor-out loop is present.
+\revtodo{Report the $2\times 2$ covariance and the four leave-one-anchor-out refits, using the anchor list confirmed in \cref{sec:pillarC}. Do not insert those numbers until the refit has been run and checked.}
 
-Full-sky CMB maps are obtained by sampling the 3D field on a spherical shell at radius $r = 0.35 N$ centered on the lattice midpoint.
-We use two projection methods:
-\begin{enumerate}
-  \item \textbf{Mollweide grid sampling}: a $400 \times 800$ grid in $(\theta, \varphi)$ is mapped to Cartesian indices $(x, y, z) = (N/2 + r\cos\theta\cos\varphi, N/2 + r\cos\theta\sin\varphi, N/2 + r\sin\theta)$, with nearest-neighbor lookup.
-  \item \textbf{HEALPix sampling}: using \texttt{healpy}~\citep{Gorski2005}, pixel centers at $\nside = 64$ are mapped to 3D coordinates and sampled via trilinear interpolation (\texttt{scipy.ndimage.map\_coordinates}).
-\end{enumerate}
+The four inputs coded in that notebook are listed in \cref{tab:anchors}.
+They are not a new fit.
+The submitted prose instead named SH0ES~\citep{RiessSH0ES2022}, a JWST Cepheid analysis~\citep{RiessJWST2024}, Planck~\citep{Planck2018VI}, and a DESI BAO inference~\citep{DESI2024}.
+Those citations and the notebook inputs are not the same list.
+Several of the numbers are published inferences of a present-day $H_0$, assigned in the notebook to widely different cosmic times.
+The Planck value $67.4\pm 0.5$ is a $\Lambda$CDM inference of the present-day Hubble constant~\citep{Planck2018VI}.
+It is not a measurement of the expansion rate at $t = 3.8\times 10^{5}\,\mathrm{yr}$.
+The fit is a curve through four assigned pairs.
+Reading the curve as the expansion history $H(t)$ is an additional interpretation, and it is not established by the assignment of those times.
 
-\subsection{Dissipative baseline: coupled map lattice}
-\label{sec:cml}
+\begin{table}[htbp]
+\centering
+\caption{Inputs of \texttt{fig19\_jwst\_h0\_anchors.ipynb}.
+Times are the values assigned in the notebook.
+The Hubble entries are the notebook inputs, in $\mathrm{km\,s^{-1}\,Mpc^{-1}}$.
+The submitted prose named a different quartet (SH0ES, JWST Cepheids, Planck, BAO).
+\revtodo{Confirm the bibliographic source of each row, especially the TRGB and Mira rows, before these inputs are treated as the sample.}}
+\label{tab:anchors}
+\small
+\begin{tabular}{lrrr}
+\hline
+Notebook label & $t$ (yr) & $H$ & $\sigma_H$ \\
+\hline
+Planck (CMB) & $3.8\times 10^{5}$ & $67.4$ & $0.5$ \\
+TRGB (JWST 2025) & $1.5\times 10^{9}$ & $70.4$ & $1.9$ \\
+Miras (Huang 24) & $6.0\times 10^{9}$ & $72.37$ & $2.97$ \\
+SH0ES (Cepheids) & $1.38\times 10^{10}$ & $73.04$ & $1.04$ \\
+\hline
+\end{tabular}
+\end{table}
 
-For ablation, we compare against a dissipative coupled map lattice (CML)~\citep{Kaneko1992}:
-\begin{equation}
-  \phi_{n+1}(\bm{x}) = f[\phi_n(\bm{x})] + \varepsilon\,\nabla^2_{\mathrm{lat}} f[\phi_n(\bm{x})]\,,
-  \label{eq:cml}
-\end{equation}
-where $f(x) = 1 - \mu(n) x^2$ is the logistic map with the DSC cooling schedule \cref{eq:cooling} ($\mu_c = 1.5437$, $\kopt = 1.248$), and $\varepsilon = 0.55$ is the diffusion coefficient.
-This model is first-order (no $\phi_{n-1}$ term) and dissipative ($|\det DF| < 1$), violating Assumption~2.
-We evolve for 150 steps with rescaled initial amplitude ($\sigma_0 = 0.1$) for numerical stability.
+\subsection{Quasar comparison}
+\label{sec:alpha-method}
 
-\subsection{Analysis pipeline}
-\label{sec:analysis}
+The exploratory comparison uses the Murphy, Webb, and Flambaum~(2003) Keck/HIRES table~\citep{Murphy2003} and the King et al.~(2012) Keck+VLT catalog~\citep{King2012}.
+The submitted analysis quoted two error budgets for the Murphy sample: budget~(i), the per-absorber fit error alone, and budget~(ii), that fit error added in quadrature to Murphy et al.'s published random term.
+The same manuscripts quoted Keck-only, VLT-only, and combined subsets.
+No pre-registered or blind subset protocol is described in the repository.
+The subset split is therefore exploratory.
+Both of the readings left open by Reviewer~1 remain open: a Keck-specific instrumental systematic~\citep{Whitmore2015,Wilczynska2020}, or a fluctuation of the chosen subsample.
+This revision does not adjudicate them.
+\revtodo{Reconcile the Murphy-sample coefficients $+6.42\pm 1.14$ and $+5.56\pm 0.99$ by a single refit, and quote one $\Gamma$ per row of \cref{tab:alpha} under a stated error budget. Until that refit, neither value is the result.}
 
-\paragraph{Power spectrum.}
-We compute the radially averaged 2D power spectrum $P(k) = \langle |\hat{\phi}(\bm{k})|^2 \rangle_{|\bm{k}|=k}$ and the scaled spectrum $D(k) = k^2 P(k)$.
-For HEALPix maps, we compute the angular power spectrum $C_\ell$ via \texttt{healpy.anafast} and form $D_\ell = \ell(\ell+1)C_\ell / 2\pi$.
+\subsection{Late-time samples and the forecast}
+\label{sec:late-method}
 
-\paragraph{Gaussianity metrics.}
-For each temperature field, we compute the skewness $\gamma_1 = \langle T^3 \rangle / \sigma^3$ and excess kurtosis $\gamma_2 = \langle T^4 \rangle / \sigma^4 - 3$, with theoretical standard errors $\sigma_{\gamma_1} = \sqrt{6/N_{\mathrm{pix}}}$ and $\sigma_{\gamma_2} = \sqrt{24/N_{\mathrm{pix}}}$.
-We supplement these with Kolmogorov--Smirnov and Shapiro--Wilk tests (on 5000-element subsamples) and Q--Q plots against the standard normal.
+Cosmic-chronometer, Pantheon$+$, and DESI DR2 comparisons were reported in the submitted manuscript and are summarized in \cref{sec:dense} as previously quoted $\chi^2$ values~\citep{Moresco2022,Scolnic2022,Brout2022,DESI2025DR2}.
+They were not recomputed for this revision.
+The DESI DR2 comparison uses the DR2 publication~\citep{DESI2025DR2}.
+The 2024 DESI BAO paper~\citep{DESI2024} is a Year-1 analysis and is cited only as background.
+A uniform likelihood for the ansatz, flat $\Lambda$CDM, and the Chevallier--Polarski--Linder (CPL) parametrization, with AIC and BIC on that common likelihood, is not provided.
+\revtodo{Recompute $\chi^2$, AIC, and BIC for the ansatz, flat $\Lambda$CDM, and CPL on one stated dataset and covariance. Do not reuse the submitted $\Delta\mathrm{BIC} = -2.6$ as that comparison.}
 
-\paragraph{Spectral correlation.}
-To compare DSC and $\Lambda$CDM spectral shapes, we compute the Pearson correlation coefficient between $\ln D(k)_{\mathrm{DSC}}$ and $\ln D(k)_{\Lambda\mathrm{CDM}}$ over the range $k \in [2, 60]$, after normalizing both to equal integrated power.
+The forecast notebook \path{notebooks/fig31_pillar_O_forecast.ipynb} converts redshift to age with a flat $\Lambda$CDM integral ($H_0 = 67.4$, $\Omega_m = 0.315$), evaluates \cref{eq:hubble} at the quoted $(H_\infty,\beta) = (104.5,-6.24)$, and draws mock $H(z)$ points with independent Gaussian errors equal to a constant fraction of the true $H$.
+It uses \texttt{numpy}'s Generator with seed 42, 30 realizations, and Nelder--Mead refits of both curves.
+The submitted ``significance'' is $\sqrt{\Delta\chi^2}$ of the median realization.
+That construction has no survey window, no systematic floor, and no off-diagonal covariance.
+The resulting figures are recorded in \cref{sec:pillarO} so that the calculation can be inspected, and they are not claimed as expected detection significances.
+\revtodo{Replace the forecast with a calculation that states the redshift sampling, the covariance, and the systematic floor. Do not promote the existing $\sqrt{\Delta\chi^2}$ values to a predicted significance.}
 
-\paragraph{Toy analytic reference spectrum.}
-For 2D power spectrum shape comparisons, we use a simplified analytic formula
-\begin{equation}
-  D(k)_{\mathrm{ref}} = e^{-(k/35)^2}\!\left[1 + 1.2\sin^2\!\left(\frac{\pi k}{12}\right)\right]\frac{50}{k + 10}\,,
-  \label{eq:mock}
-\end{equation}
-which captures the qualitative features of acoustic oscillation peaks and Silk damping in a simplified form.
-We stress that this is a toy reference used only for qualitative shape comparison; quantitative benchmarking against the observed CMB is performed in the Supplementary Material using the real Planck SMICA angular power spectrum~\citep{Planck2018V}.
+\subsection{Reproducibility}
+\label{sec:repro}
 
-\subsection{Simulation-based inference}
-\label{sec:sbi}
-
-To test whether the DSC lattice parameters can be inferred from observed power spectra, we perform a twin experiment using Bayesian optimization~\citep{Akiba2019}.
-A ``ground truth'' universe is simulated with hidden parameters $(c^2 = 0.650, \eta = 0.015, \kopt = 2.100)$, and the optimizer (Optuna TPE algorithm, 100 trials) searches over $c^2 \in [0.3, 0.9]$, $\eta \in [0.005, 0.05]$, $\kopt \in [1.0, 4.0]$ to minimize the mean squared error between normalized $D(k)$ spectra.
-The initial field is fixed (seed = 42) to isolate parameter effects.
+The analysis code is available at \url{https://github.com/maris205/riemann_engine}.
+The notebooks that generate the figures retained in this revision are:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.15em]
+  \item Pillar~C: \path{fig19_jwst_h0_anchors.ipynb}.
+  \item Quasar comparisons: \path{fig18_alpha_drift_quasar.ipynb}, \path{fig20_quasar_295_fit.ipynb}, \path{fig27_pillar_K_subset.ipynb}, \path{fig28_pillar_K_murphy_forest.ipynb}.
+  \item Late-time samples: \path{fig23_cc_hz_pillar_F.ipynb}, \path{fig24_pantheon_pillar_G.ipynb}, \path{fig25_desi_pillar_H.ipynb}, \path{fig26_pillar_J_joint.ipynb}.
+  \item Dynamic range, laboratory translation, and the forecast mock: \path{fig29_pillar_M_leverage.ipynb}, \path{fig30_pillar_N_atomic_clock.ipynb}, \path{fig31_pillar_O_forecast.ipynb}.
+\end{itemize}
+The Pillar~C notebook metadata records Python~3.12.3.
+The two notebooks do not share one numerical value of $\tP$ or of the seconds-per-year conversion: the anchor notebook uses $5.39\times 10^{-44}\,\mathrm{s}$ and $3.1536\times 10^{7}\,\mathrm{s\,yr^{-1}}$, while the forecast notebook uses $5.391\times 10^{-44}\,\mathrm{s}$ and a $365.25$-day year.
+\revtodo{Pin the Python, NumPy, and SciPy versions, use one constant table, and state optimizer tolerances for every fit that is quoted. The seed and tolerances above document only the forecast notebook.}

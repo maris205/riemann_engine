@@ -5,49 +5,19 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
-\bibitem{Planck2018I}
-{Planck Collaboration}, {Planck 2018 results. I. Overview and the cosmological
-  legacy of Planck}, Astronomy \& Astrophysics 641 (2020) A1.
-\newblock \href {https://doi.org/10.1051/0004-6361/201833880}
-  {\path{doi:10.1051/0004-6361/201833880}}.
-
 \bibitem{Planck2018VI}
 {Planck Collaboration}, {Planck 2018 results. VI. Cosmological parameters},
   Astronomy \& Astrophysics 641 (2020) A6.
 \newblock \href {https://doi.org/10.1051/0004-6361/201833910}
   {\path{doi:10.1051/0004-6361/201833910}}.
 
-\bibitem{Planck2018IX}
-{Planck Collaboration}, {Planck 2018 results. IX. Constraints on primordial
-  non-Gaussianity}, Astronomy \& Astrophysics 641 (2020) A9.
-\newblock \href {https://doi.org/10.1051/0004-6361/201935891}
-  {\path{doi:10.1051/0004-6361/201935891}}.
-
-\bibitem{Planck2018V}
-{Planck Collaboration}, {Planck 2018 results. V. CMB power spectra and
-  likelihoods}, Astronomy \& Astrophysics 641 (2020) A5.
-\newblock \href {https://doi.org/10.1051/0004-6361/201936386}
-  {\path{doi:10.1051/0004-6361/201936386}}.
-
-\bibitem{Dodelson2020}
-S.~Dodelson, F.~Schmidt, {Modern Cosmology}, 2nd Edition, Academic Press, 2020.
-
-\bibitem{Planck2018X}
-{Planck Collaboration}, {Planck 2018 results. X. Constraints on inflation},
-  Astronomy \& Astrophysics 641 (2020) A10.
-\newblock \href {https://doi.org/10.1051/0004-6361/201833887}
-  {\path{doi:10.1051/0004-6361/201833887}}.
-
-\bibitem{Mukhanov2005}
-V.~Mukhanov, {Physical Foundations of Cosmology}, Cambridge University Press,
-  2005.
-\newblock \href {https://doi.org/10.1017/CBO9780511790553}
-  {\path{doi:10.1017/CBO9780511790553}}.
-
-\bibitem{Durrer2008}
-R.~Durrer, {The Cosmic Microwave Background}, Cambridge University Press, 2008.
-\newblock \href {https://doi.org/10.1017/CBO9780511817205}
-  {\path{doi:10.1017/CBO9780511817205}}.
+\bibitem{RiessSH0ES2022}
+A.~G. Riess, et~al., {A Comprehensive Measurement of the Local Value of the
+  Hubble Constant with 1~km~s$^{-1}$~Mpc$^{-1}$ Uncertainty from the Hubble
+  Space Telescope and the SH0ES Team}, The Astrophysical Journal Letters 934
+  (2022) L7.
+\newblock \href {https://doi.org/10.3847/2041-8213/ac5c5b}
+  {\path{doi:10.3847/2041-8213/ac5c5b}}.
 
 \bibitem{DiValentino2021}
 E.~Di~Valentino, O.~Mena, S.~Pan, L.~Visinelli, W.~Yang, A.~Melchiorri, D.~F.
@@ -64,9 +34,45 @@ N.~Sch{\"o}neberg, G.~Franco~Abell{\'a}n, A.~P{\'e}rez~S{\'a}nchez, S.~J.
   {\path{doi:10.1016/j.physrep.2022.07.001}}.
 
 \bibitem{DESI2024}
-{DESI Collaboration}, {DESI 2024 VI: Cosmological Constraints from the
-  Measurements of Baryon Acoustic Oscillations}, arXiv preprint (2024).
-\newblock \href {http://arxiv.org/abs/2404.03002} {\path{arXiv:2404.03002}}.
+{DESI Collaboration}, {DESI 2024 VI: cosmological constraints from the
+  measurements of baryon acoustic oscillations}, Journal of Cosmology and
+  Astroparticle Physics 2025~(02) (2025) 021.
+\newblock \href {http://arxiv.org/abs/2404.03002} {\path{arXiv:2404.03002}},
+  \href {https://doi.org/10.1088/1475-7516/2025/02/021}
+  {\path{doi:10.1088/1475-7516/2025/02/021}}.
+
+\bibitem{DESI2025DR2}
+{DESI Collaboration}, {DESI DR2 results. II. Measurements of baryon acoustic
+  oscillations and cosmological constraints}, Physical Review D 112 (2025)
+  083515.
+\newblock \href {http://arxiv.org/abs/2503.14738} {\path{arXiv:2503.14738}},
+  \href {https://doi.org/10.1103/tr6y-kpc6} {\path{doi:10.1103/tr6y-kpc6}}.
+
+\bibitem{Murphy2003}
+M.~T. Murphy, J.~K. Webb, V.~V. Flambaum, {Further evidence for a variable
+  fine-structure constant from Keck/HIRES QSO absorption spectra}, Monthly
+  Notices of the Royal Astronomical Society 345 (2003) 609--638.
+\newblock \href {http://arxiv.org/abs/astro-ph/0306483}
+  {\path{arXiv:astro-ph/0306483}}, \href
+  {https://doi.org/10.1046/j.1365-8711.2003.06970.x}
+  {\path{doi:10.1046/j.1365-8711.2003.06970.x}}.
+
+\bibitem{King2012}
+J.~A. King, J.~K. Webb, M.~T. Murphy, V.~V. Flambaum, R.~F. Carswell, M.~B.
+  Bainbridge, M.~R. Wilczynska, F.~E. Koch, {Spatial variation in the
+  fine-structure constant -- new results from VLT/UVES}, Monthly Notices of the
+  Royal Astronomical Society 422 (2012) 3370--3414.
+\newblock \href {https://doi.org/10.1111/j.1365-2966.2012.20852.x}
+  {\path{doi:10.1111/j.1365-2966.2012.20852.x}}.
+
+\bibitem{Rosenband2008}
+T.~Rosenband, D.~B. Hume, P.~O. Schmidt, C.~W. Chou, A.~Brusch, L.~Lorini,
+  W.~H. Oskay, R.~E. Drullinger, T.~M. Fortier, J.~E. Stalnaker, S.~A. Diddams,
+  W.~C. Swann, N.~R. Newbury, W.~M. Itano, D.~J. Wineland, J.~C. Bergquist,
+  {Frequency ratio of Al$^+$ and Hg$^+$ single-ion optical clocks; metrology at
+  the 17th decimal place}, Science 319 (2008) 1808--1812.
+\newblock \href {https://doi.org/10.1126/science.1154622}
+  {\path{doi:10.1126/science.1154622}}.
 
 \bibitem{Uzan2003}
 J.-P. Uzan, {The fundamental constants and their variation: observational and
@@ -80,144 +86,12 @@ C.~J. A.~P. Martins, {The status of varying constants: a review of the physics,
 \newblock \href {https://doi.org/10.1088/1361-6633/aa860e}
   {\path{doi:10.1088/1361-6633/aa860e}}.
 
-\bibitem{Wang2026Prime}
-L.~Wang, The emergence of prime distribution from low-dimensional deterministic
-  chaos, Research in Mathematics 13~(1) (2026).
-\newblock \href {https://doi.org/10.1080/27684830.2026.2684334}
-  {\path{doi:10.1080/27684830.2026.2684334}}.
-
-\bibitem{Wang2026Spectral}
-L.~Wang, {Spectral Isomorphism between Renormalization Flow in Non-Autonomous
-  Quadratic Maps and Riemann Zeros}, v4.0 (2026).
-\newblock \href {https://doi.org/10.5281/zenodo.19045440}
-  {\path{doi:10.5281/zenodo.19045440}}.
-
-\bibitem{Hairer2006}
-E.~Hairer, C.~Lubich, G.~Wanner, {Geometric Numerical Integration:
-  Structure-Preserving Algorithms for Ordinary Differential Equations}, 2nd
-  Edition, Springer, 2006.
-\newblock \href {https://doi.org/10.1007/3-540-30666-8}
-  {\path{doi:10.1007/3-540-30666-8}}.
-
-\bibitem{Leimkuhler2004}
-B.~Leimkuhler, S.~Reich, {Simulating Hamiltonian Dynamics}, Cambridge
-  University Press, 2004.
-\newblock \href {https://doi.org/10.1017/CBO9780511614118}
-  {\path{doi:10.1017/CBO9780511614118}}.
-
-\bibitem{Modi2021}
-C.~Modi, F.~Lanusse, U.~Seljak, {FlowPM: Distributed TensorFlow implementation
-  of the FastPM cosmological N-body solver}, Astronomy and Computing 37 (2021)
-  100505.
-\newblock \href {https://doi.org/10.1016/j.ascom.2021.100505}
-  {\path{doi:10.1016/j.ascom.2021.100505}}.
-
-\bibitem{Li2022}
-Y.~Li, L.~Lu, U.~Seljak, {Differentiable cosmological simulation with the
-  adjoint method}, The Astrophysical Journal Supplement Series 259 (2022) 36.
-\newblock \href {https://doi.org/10.3847/1538-4365/ac5f4a}
-  {\path{doi:10.3847/1538-4365/ac5f4a}}.
-
-\bibitem{Campagne2023}
-J.-E. Campagne, F.~Lanusse, J.~Zuntz, et~al., {JAX-COSMO: An End-to-End
-  Differentiable and GPU Accelerated Cosmology Library}, The Open Journal of
-  Astrophysics 6 (2023) 15.
-\newblock \href {https://doi.org/10.21105/astro.2302.05163}
-  {\path{doi:10.21105/astro.2302.05163}}.
-
-\bibitem{Cranmer2020}
-K.~Cranmer, J.~Brehmer, G.~Louppe, {The frontier of simulation-based
-  inference}, Proceedings of the National Academy of Sciences 117 (2020)
-  30055--30062.
-\newblock \href {https://doi.org/10.1073/pnas.1912789117}
-  {\path{doi:10.1073/pnas.1912789117}}.
-
-\bibitem{Alsing2019}
-J.~Alsing, B.~Wandelt, S.~Feeney, {Massive optimal data compression and density
-  estimation for scalable, likelihood-free inference in cosmology}, Monthly
-  Notices of the Royal Astronomical Society 488 (2019) 4440--4458.
-\newblock \href {https://doi.org/10.1093/mnras/stz1960}
-  {\path{doi:10.1093/mnras/stz1960}}.
-
-\bibitem{Figueroa2021}
-D.~G. Figueroa, A.~Florio, F.~Torrenti, W.~Valkenburg, {The art of simulating
-  the early Universe. Part I. Integration techniques and canonical cases},
-  Journal of Cosmology and Astroparticle Physics 2021 (2021) 035.
-\newblock \href {https://doi.org/10.1088/1475-7516/2021/04/035}
-  {\path{doi:10.1088/1475-7516/2021/04/035}}.
-
-\bibitem{Caravano2022}
-A.~Caravano, E.~Komatsu, A.~Linde, K.~D. Lozanov, {Lattice simulations of
-  inflation}, arXiv preprint (2022).
-\newblock \href {http://arxiv.org/abs/2209.13616} {\path{arXiv:2209.13616}}.
-
-\bibitem{Rosenband2008}
-T.~Rosenband, D.~B. Hume, P.~O. Schmidt, C.~W. Chou, A.~Brusch, L.~Lorini,
-  W.~H. Oskay, R.~E. Drullinger, T.~M. Fortier, J.~E. Stalnaker, S.~A. Diddams,
-  W.~C. Swann, N.~R. Newbury, W.~M. Itano, D.~J. Wineland, J.~C. Bergquist,
-  {Frequency ratio of Al$^+$ and Hg$^+$ single-ion optical clocks; metrology at
-  the 17th decimal place}, Science 319 (2008) 1808--1812.
-\newblock \href {https://doi.org/10.1126/science.1154622}
-  {\path{doi:10.1126/science.1154622}}.
-
-\bibitem{RiessSH0ES2022}
-A.~G. Riess, et~al., {A Comprehensive Measurement of the Local Value of the
-  Hubble Constant with 1~km~s$^{-1}$~Mpc$^{-1}$ Uncertainty from the Hubble
-  Space Telescope and the SH0ES Team}, The Astrophysical Journal Letters 934
-  (2022) L7.
-\newblock \href {https://doi.org/10.3847/2041-8213/ac5c5b}
-  {\path{doi:10.3847/2041-8213/ac5c5b}}.
-
 \bibitem{RiessJWST2024}
 A.~G. Riess, et~al., {JWST Observations Reject Unrecognized Crowding of Cepheid
   Photometry as an Explanation for the Hubble Tension at 8$\sigma$ Confidence},
   The Astrophysical Journal Letters 962 (2024) L17.
 \newblock \href {https://doi.org/10.3847/2041-8213/ad1ddd}
   {\path{doi:10.3847/2041-8213/ad1ddd}}.
-
-\bibitem{Glazebrook2024}
-K.~Glazebrook, T.~Nanayakkara, C.~Schreiber, C.~Lagos, L.~Kawinwanichakij,
-  C.~Jacobs, H.~Chittenden, G.~Brammer, G.~G. Kacprzak, I.~Labb{\'e},
-  D.~Marchesini, Z.~C. Marsan, C.~Papovich, R.~F. Quadri, R.-S. Remus, K.-V.
-  Tran, J.~Esdaile, B.~Forrest, {A massive galaxy that formed its stars at
-  $z\approx 11$}, Nature 628 (2024) 277--281.
-\newblock \href {https://doi.org/10.1038/s41586-024-07191-9}
-  {\path{doi:10.1038/s41586-024-07191-9}}.
-
-\bibitem{Kloeden2011}
-P.~E. Kloeden, M.~Rasmussen, {Nonautonomous Dynamical Systems}, American
-  Mathematical Society, 2011.
-\newblock \href {https://doi.org/10.1090/surv/176}
-  {\path{doi:10.1090/surv/176}}.
-
-\bibitem{Gorski2005}
-K.~M. G{\'o}rski, E.~Hivon, A.~J. Banday, B.~D. Wandelt, F.~K. Hansen,
-  M.~Reinecke, M.~Bartelmann, {HEALPix: A Framework for High-Resolution
-  Discretization and Fast Analysis of Data Distributed on the Sphere}, The
-  Astrophysical Journal 622 (2005) 759--771.
-\newblock \href {https://doi.org/10.1086/427976} {\path{doi:10.1086/427976}}.
-
-\bibitem{Kaneko1992}
-K.~Kaneko, {Overview of coupled map lattices}, Chaos 2 (1992) 279--282.
-\newblock \href {https://doi.org/10.1063/1.165869}
-  {\path{doi:10.1063/1.165869}}.
-
-\bibitem{Akiba2019}
-T.~Akiba, S.~Sano, T.~Yanase, T.~Ohta, M.~Koyama, {Optuna: A Next-generation
-  Hyperparameter Optimization Framework}, in: Proceedings of the 25th ACM
-  SIGKDD International Conference on Knowledge Discovery \& Data Mining, 2019,
-  pp. 2623--2631.
-\newblock \href {https://doi.org/10.1145/3292500.3330701}
-  {\path{doi:10.1145/3292500.3330701}}.
-
-\bibitem{Murphy2003}
-M.~T. Murphy, J.~K. Webb, V.~V. Flambaum, {Further evidence for a variable
-  fine-structure constant from Keck/HIRES QSO absorption spectra}, Monthly
-  Notices of the Royal Astronomical Society 345 (2003) 609--638.
-\newblock \href {http://arxiv.org/abs/astro-ph/0306483}
-  {\path{arXiv:astro-ph/0306483}}, \href
-  {https://doi.org/10.1046/j.1365-8711.2003.06970.x}
-  {\path{doi:10.1046/j.1365-8711.2003.06970.x}}.
 
 \bibitem{Whitmore2015}
 J.~B. Whitmore, M.~T. Murphy, {Impact of instrumental systematic errors on
@@ -235,17 +109,27 @@ M.~R. Wilczynska, J.~K. Webb, M.~Bainbridge, J.~D. Barrow, S.~E.~I. Bosman,
 \newblock \href {https://doi.org/10.1126/sciadv.aay9672}
   {\path{doi:10.1126/sciadv.aay9672}}.
 
-\bibitem{Regge1961}
-T.~Regge, {General relativity without coordinates}, Il Nuovo Cimento 19 (1961)
-  558--571.
-\newblock \href {https://doi.org/10.1007/BF02733251}
-  {\path{doi:10.1007/BF02733251}}.
+\bibitem{Moresco2022}
+M.~Moresco, L.~Amati, L.~Amendola, S.~Birrer, J.~P. Blakeslee, M.~Cantiello,
+  A.~Cimatti, J.~Darling, M.~Della~Valle, M.~Fishbach, C.~Grillo, N.~Hamaus,
+  D.~Holz, L.~Izzo, H.~Jia, A.~Kim, L.~Lombriser, A.~Pourtsidou, I.~Tutusaus,
+  L.~Verde, {Unveiling the Universe with emerging cosmological probes}, Living
+  Reviews in Relativity 25 (2022) 6.
+\newblock \href {https://doi.org/10.1007/s41114-022-00040-z}
+  {\path{doi:10.1007/s41114-022-00040-z}}.
 
-\bibitem{Bombelli1987}
-L.~Bombelli, J.~Lee, D.~Meyer, R.~D. Sorkin, {Space-time as a causal set},
-  Physical Review Letters 59 (1987) 521--524.
-\newblock \href {https://doi.org/10.1103/PhysRevLett.59.521}
-  {\path{doi:10.1103/PhysRevLett.59.521}}.
+\bibitem{Scolnic2022}
+D.~Scolnic, D.~Brout, A.~Carr, A.~G. Riess, et~al., {The Pantheon+ Analysis:
+  The Full Data Set and Light-curve Release}, The Astrophysical Journal 938
+  (2022) 113.
+\newblock \href {https://doi.org/10.3847/1538-4357/ac8b7a}
+  {\path{doi:10.3847/1538-4357/ac8b7a}}.
+
+\bibitem{Brout2022}
+D.~Brout, D.~Scolnic, B.~Popovic, A.~G. Riess, et~al., {The Pantheon+ Analysis:
+  Cosmological Constraints}, The Astrophysical Journal 938 (2022) 110.
+\newblock \href {https://doi.org/10.3847/1538-4357/ac8e04}
+  {\path{doi:10.3847/1538-4357/ac8e04}}.
 
 \bibitem{Dainotti2021}
 M.~G. Dainotti, B.~De~Simone, T.~Schiavone, G.~Montani, E.~Rinaldi,
