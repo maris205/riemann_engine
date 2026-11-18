@@ -1,41 +1,45 @@
 \section{Limitations}
 \label{sec:limitations}
 
-Several limitations must be acknowledged.
+The following limitations apply to the revision as it stands.
 
 \begin{enumerate}
-  \item \textbf{Kurtosis tension.}
-  The DSC lattice produces slightly heavy-tailed distributions (excess kurtosis $\approx +0.3$), while the Planck SMICA map has light tails ($\approx -0.5$).
-  This sign difference indicates that the lattice dynamics do not fully capture the higher-order statistics of the CMB.
-  The weak nonlinear term ($-\alpha\phi^2$) used in 3D simulations contributes to this discrepancy; reducing $\alpha$ improves the kurtosis but at the cost of less pronounced cosmic web structure.
+  \item \textbf{Four assigned anchors.}
+  The core fit uses four points and two parameters ($\mathrm{dof}=2$).
+  The covariance and the leave-one-anchor-out tests are not yet reported.
+  The notebook inputs and the submitted prose name different quartets.
+  \revtodo{Confirm the anchor list and add the covariance and leave-one-out table.}
 
-  \item \textbf{Three free parameters.}
-  Matching the acoustic peak positions to $\Lambda$CDM requires fitting $c^2_{\mathrm{base}}$, $\eta$, and $\kopt$.
-  The DSC framework does not predict their values from first principles (beyond the conjecture $\kopt \approx \alpha_F / 2$).
-  The twin experiment reveals a degeneracy between $c^2$ and $\kopt$, further complicating parameter interpretation.
+  \item \textbf{Interpretation of the time coordinate.}
+  Present-day $H_0$ inferences are assigned to earlier cosmic times in the figure notebook.
+  The Planck entry is a $\Lambda$CDM inference of today's Hubble constant.
+  The curve is not a demonstrated expansion history.
 
-  \item \textbf{Mock $\Lambda$CDM comparison.}
-  Our power spectrum comparisons use the analytic mock \cref{eq:mock} rather than the full Planck best-fit $C_\ell$.
-  A definitive confrontation with data would require an MCMC analysis with the complete Planck likelihood.
+  \item \textbf{Normalization and units.}
+  The Hubble notebooks use $\beta\,10^{5}\xi(t)$.
+  The submitted unscaled equation does not reproduce the quoted $H(z)$.
+  The relation between $H_\infty$ and $\Lambda_\infty$ is dimensionally unsettled, and the $10^{5}$ factor has not been fixed for $\gamma$.
+  \revtodo{One constant table and one normalization for $H$, $\Lambda$, and $\alpha$.}
 
-  \item \textbf{Surrogate lattice.}
-  The 2D and 3D simulations are effective models, not direct implementations of the Planck-scale lattice $\Z^3 \times \N$.
-  The connection between lattice-unit quantities (e.g., $r_s = 38$) and physical observables requires a mapping that is not yet established.
+  \item \textbf{Quasar coefficients are not reconciled.}
+  The submitted text quotes both $+6.42\pm 1.14$ and $+5.56\pm 0.99$ for the Murphy sample, and the Keck-only and VLT-only subsets disagree in sign.
+  There is no pre-registered subset rule.
+  The comparison is exploratory.
 
-  \item \textbf{No polarization or tensor modes.}
-  We study only scalar (temperature) fluctuations.
-  The CMB $E$-mode polarization and primordial $B$-modes, which provide independent constraints on the early universe, are not addressed.
+  \item \textbf{Late-time goodness of fit.}
+  On the quoted numbers, the ansatz is a worse fit than flat $\Lambda$CDM on the samples in \cref{tab:dense}, and the DESI DR2 entry is of order $10^3$ in $\chi^2/\mathrm{dof}$.
+  A common-likelihood AIC/BIC comparison has not been rerun.
 
-  \item \textbf{Conjectural physical basis.}
-  The derivation chain from the assumed $1/\ln$ spectral density to the $1/\ln^2$ cooling law involves three conjectural steps (Assumptions 1--3 in \cref{sec:dsc}).
-  These are physically motivated but not rigorously proven.
-  The present work should be viewed as exploring the \emph{consequences} of these assumptions in a computational setting, not as establishing their validity.
+  \item \textbf{Stability.}
+  The five background checks previously reported do not cover perturbative stability, gradient instabilities, or the origin of the prescribed sound speed.
 
-  \item \textbf{Inverse reconstruction does not generalize.}
-  The held-out test (Supplementary Material) shows that the 3D reconstruction from a single hemisphere does not predict the unseen hemisphere ($r_{\mathrm{test}} = -0.17$).
-  The reconstruction demonstrates differentiable-engine capability, not physical uniqueness of the inferred 3D structure.
+  \item \textbf{Forecast.}
+  The high-redshift mock uses independent fractional errors, a $\Lambda$CDM clock, and $\sqrt{\Delta\chi^2}$ as a significance.
+  It is not a survey forecast.
 
-  \item \textbf{Quantitative $C_\ell$ mismatch.}
-  The forward simulation yields $\chi^2/\mathrm{dof} \approx 3.3$ against Planck ($\ell = 2$--$50$), far from a statistically acceptable fit.
-  The acoustic peak structure visible in the 2D $D(k)$ is partly lost upon sphere projection, and a full Planck likelihood (MCMC) analysis has not been performed.
+  \item \textbf{External clock.}
+  Evaluating $\xi(t(z))$ with a flat $\Lambda$CDM age builds a $\Lambda$CDM assumption into the time coordinate of an ansatz that is then compared with $\Lambda$CDM.
+
+  \item \textbf{Scope that was removed.}
+  No lattice CMB spectrum, inverse reconstruction, or acoustic freeze-out result is available in this revision, and none is cited as support.
 \end{enumerate}

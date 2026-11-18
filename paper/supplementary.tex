@@ -13,7 +13,6 @@
 
 \graphicspath{{../figures/}}
 
-% Supplementary numbering: S1, S2, ... and Fig. S1, ...
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\thetable}{S\arabic{table}}
@@ -25,141 +24,140 @@
 
 \begin{frontmatter}
 \title{Supplementary Material:\\
-Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a $1/\ln^2(t)$ Cooling Law}
+A Four-Anchor Phenomenological Fit of a \texorpdfstring{$1/\ln^2(t/\tP)$}{1/ln\^2(t/tP)} Hubble Relaxation}
 \author[hust]{Liang Wang}
 \ead{wangliang.f@gmail.com}
 \address[hust]{School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, 430070, P.R. China}
 \end{frontmatter}
 
-This Supplementary Material collects (i) the per-pillar figures for the Block~2
-Hubble-parameter tests whose headline statistics are tabulated in the main text
-(\cref{sec:sm_block2}), and (ii) the full report of the Block~3 CMB lattice
-forward model and differentiable inverse reconstruction (\cref{sec:sm_cmb}),
-which is methodological rather than empirical. Section, figure, table, and
-equation numbers are prefixed ``S'' throughout. References to the main-text
-pillars (A--O) use the same labels as the main manuscript.
+This Supplementary Material collects the per-sample figures for the exploratory
+quasar comparison and for the late-time samples discussed in the main text.
+The lattice CMB forward model, the inverse reconstruction, and the acoustic
+freeze-out analysis have been removed.
+Section, figure, table, and equation numbers are prefixed ``S''.
+Pillar letters match the main manuscript.
+Every $\chi^2$ below is a previously quoted value.
+A larger $\chi^2$ is a worse description of that sample.
+\revtodo{Replace the quoted $\chi^2$, $\Gamma$, and $\Delta\mathrm{BIC}$ entries after the refits marked in the main text. Do not invent replacement values in this file.}
 
-\section{Block 2 per-pillar figures}
-\label{sec:sm_block2}
+\section{Exploratory quasar figures}
+\label{sec:sm_alpha}
 
-This section reproduces the individual figures for Pillars~B, D, E, F, G, H,
-and~J, summarized in Table~2 of the main text. The accompanying numbers and
-interpretation are given in the main text; here we provide the full plots.
-
-\paragraph{Pillar B: King 2012 295-absorber three-model fit.}
-The full King \emph{et al.}~(2012) catalog gives reduced $\chi^2 = 0.881$ for the
-DSC $p=2$ model vs.\ $0.878$ for the constant null ($\Delta\chi^2 \approx 0$,
-$\Delta\mathrm{BIC} = +5.7$ favoring the null); the joint quasar + atomic-clock
-bound is $|\Gamma| < 0.30$ (\cref{fig:sm_king2012}).
+\paragraph{Full King et al.~(2012) catalog}
+The submitted comparison on the full King et al.~(2012) catalog quotes reduced $\chi^2 = 0.881$ for the ansatz and $0.878$ for a constant, with $\Delta\chi^2\approx 0$ and $\Delta\mathrm{BIC}=+5.7$ in favor of the constant (\cref{fig:sm_king2012}).
+This is the full-sample end of the side-by-side comparison.
+It is not a detection.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig20_quasar_293_fit.pdf}
-  \caption{Three-model comparison on the full King \emph{et al.}~(2012) 295-absorber sample.
-  Top: data with best-fit DSC $p = 2$ curve and constant null.
-  Bottom: $\chi^2(\Gamma)$ profile and joint clock + quasar bound $|\Gamma| < 0.30$.
-  $\Delta {\rm BIC}({\rm DSC}, {\rm null}) = +5.7$ favors the null.}
+  \caption{Exploratory three-model comparison on the full King et al.~(2012) sample, as plotted for the submitted manuscript.
+  The submitted text quotes $\Delta\mathrm{BIC}=+5.7$ in favor of a constant.
+  The joint numerical bound drawn on the figure was not recomputed.}
   \label{fig:sm_king2012}
 \end{figure}
 
-\paragraph{Pillar K (cont.): cut-by-cut sensitivity of the King 2012 catalog.}
-The Keck-only subset ($N = 141$) yields $\Gamma = +6.4 \pm 1.9$ ($3.3\sigma$),
-the VLT-only subset ($N = 154$) yields $\Gamma = -2.0 \pm 1.1$ ($1.8\sigma$,
-opposite direction), and 200 random 128-absorber subsamples give a median
-$\Delta\chi^2 = 0.4$ (16--84\% interval $[0.04, 1.27]$), none reaching $31.5$
-(\cref{fig:sm_pillar_K}).
+\paragraph{Keck-only, VLT-only, and random subsets}
+The submitted subset scan quotes a positive Keck-only coefficient and a negative VLT-only coefficient (\cref{fig:sm_pillar_K}).
+The scan is exploratory: the repository does not describe a pre-registered subset rule.
+The Murphy-sample coefficient that this scan was compared against is one of the two unreconciled values in the main text.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig27_pillar_K_subset.pdf}
-  \caption{Pillar~K (King 2012 subset scan): (a) cut-by-cut $\Delta\chi^2$ vs the constant null; the Keck-only subset gives $\Delta\chi^2 = 11.0$, while the VLT-only subset gives $\Gamma$ of opposite sign.
-  (b) 200 random 128-absorber subsamples give a median $\Delta\chi^2 = 0.4$; the headline value $31.5$ is not reproduced by any random cut.}
+  \caption{Exploratory King et al.~(2012) subset scan as plotted for the submitted manuscript.
+  Keck-only and VLT-only subsets are shown side by side with random draws of 128 absorbers.
+  The figure is a subset comparison, and it is not a detection.}
   \label{fig:sm_pillar_K}
 \end{figure}
 
-\paragraph{Pillar D: CAMB + BAO Fisher constraint.}
-The combined Fisher matrix gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$,
-leaving the DSC dark-energy correction unconstrained at present sensitivity; the
-maximum fractional change to the TT spectrum is $\sim 12.5\%$ at the largest
-scales (\cref{fig:sm_camb_fisher}).
+\section{Late-time sample figures}
+\label{sec:sm_late}
+
+The figures in this section are the plots behind the main-text summary of previously quoted late-time fits.
+Captions state the submitted $\chi^2/\mathrm{dof}$.
+They do not treat a poor fit as support for the ansatz.
+
+\paragraph{Compressed Fisher check}
+The submitted Fisher matrix, built from compressed Planck observables and DESI BAO ratios, quotes $\sigma(\gamma_{\mathrm{eff}})\sim 1.2\times 10^{4}$ (\cref{fig:sm_camb_fisher}).
+That width means the compressed data did not measure the amplitude $\gamma$.
+The check uses a Boltzmann code on background distances.
+It is not a lattice simulation, and it is not evidence that the ansatz matches the CMB spectrum.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig21_camb_fisher.pdf}
-  \caption{CAMB-based Fisher constraint on the DSC effective dark-energy parameter $\gamma_{\rm eff}$.
-  Top: $\Lambda$CDM-vs-DSC TT power spectrum residual at $\gamma_{\rm eff} = 1$.
-  Bottom: BAO $D_V/r_d$ derivatives over $z \in [0.15, 2.33]$.
-  Combined Fisher gives $\sigma(\gamma_{\rm eff}) \sim 1.2 \times 10^4$.}
+  \caption{Submitted compressed Fisher illustration for $\gamma_{\mathrm{eff}}$.
+  The quoted combined width is $\sigma(\gamma_{\mathrm{eff}})\sim 1.2\times 10^{4}$.
+  The figure does not show a lattice CMB spectrum.}
   \label{fig:sm_camb_fisher}
 \end{figure}
 
-\paragraph{Pillar E: late-time perturbation stability.}
-All five stability criteria (C1: $H^2 > 0$; C2: $\dot H < 0$; C3: monotone growth
-$D(a)$; C4: $c_s^2 = 0$; C5: $\Lambda$CDM-consistent $w_{\rm eff}(z=0)$) pass over
-$a \in [10^{-10}, 1]$ and $\gamma_{\rm eff} \in [0, 10]$ (\cref{fig:sm_late_stability}).
+\paragraph{Background checks}
+The submitted scan reports that five background inequalities pass for $\gamma_{\mathrm{eff}}\in[0,10]$ and $a\in[10^{-10},1]$ (\cref{fig:sm_late_stability}).
+The scan does not test perturbative stability or gradient instabilities.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig22_late_stability.pdf}
-  \caption{Late-time stability scan for the DSC $\Lambda(t)$.
-  All five stability criteria (C1--C5) pass over $a \in [10^{-10}, 1]$ and $\gamma_{\rm eff} \in [0, 10]$.}
+  \caption{Submitted background-check scan.
+  A pass of these five inequalities is not a stability proof for the ansatz.}
   \label{fig:sm_late_stability}
 \end{figure}
 
-\paragraph{Pillar F: cosmic chronometer $H(z)$.}
-$\Lambda$CDM gives $\chi^2/{\rm dof} = 0.49$; DSC gives $4.01$ and is degenerate
-with constant $H_0$ over $z \in [0.07, 1.97]$ (\cref{fig:sm_cc}), because $\xi(z)$
-varies by only $\Delta\xi \approx 0.11$ across this band vs.\ $0.86$ at anchor
-scale (Pillar~M).
+\paragraph{Cosmic chronometers}
+The submitted comparison quotes $\chi^2/\mathrm{dof}=0.49$ for flat $\Lambda$CDM and $4.01$ for the ansatz (\cref{fig:sm_cc}).
+The ansatz value is a worse goodness of fit on this sample.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig23_cc_hz_pillar_F.pdf}
-  \caption{Pillar~F: cosmic chronometer $H(z)$.
-  $\Lambda$CDM ($\chi^2/{\rm dof} = 0.49$) describes the data; the DSC ansatz ($\chi^2/{\rm dof} = 4.01$) is degenerate with constant $H_0$ over $z \in [0.07, 1.97]$.}
+  \caption{Cosmic-chronometer $H(z)$ figure from the submitted manuscript.
+  The quoted $\chi^2/\mathrm{dof}$ is $0.49$ for flat $\Lambda$CDM and $4.01$ for the ansatz.}
   \label{fig:sm_cc}
 \end{figure}
 
-\paragraph{Pillar G: Pantheon+ Type Ia supernovae.}
-The 1580-SN Pantheon+ sample with full covariance gives $\Lambda$CDM
-$\chi^2/{\rm dof} = 0.88$ and DSC $1.27$ ($\Delta\chi^2 = +617$, $\sim 25\sigma$
-preference for $\Lambda$CDM; \cref{fig:sm_pantheon}).
+\paragraph{Pantheon+}
+The submitted Pantheon+ comparison quotes $\chi^2/\mathrm{dof}=0.88$ for flat $\Lambda$CDM and $1.27$ for the ansatz, with $\Delta\chi^2=+617$ (\cref{fig:sm_pantheon}).
+The Gaussian-equivalent conversion of that $\Delta\chi^2$ is not used.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig24_pantheon_pillar_G.pdf}
-  \caption{Pillar~G: Pantheon+ Hubble diagram and binned residuals.
-  $\Lambda$CDM achieves $\chi^2/{\rm dof} = 0.88$, DSC achieves $1.27$ ($\Delta\chi^2 = +617$).}
+  \caption{Pantheon+ figure from the submitted manuscript.
+  The quoted $\chi^2/\mathrm{dof}$ is $0.88$ for flat $\Lambda$CDM and $1.27$ for the ansatz.}
   \label{fig:sm_pantheon}
 \end{figure}
 
-\paragraph{Pillar H: DESI DR2 BAO.}
-$\Lambda$CDM gives $\chi^2/{\rm dof} = 1.07$, CPL $1.16$, DSC $\chi^2 = 14036$
-(catastrophic): DSC predicts approximately constant $D_M/r_d$ and $D_H/r_d$,
-contrary to the observed monotone trends (\cref{fig:sm_desi}).
+\paragraph{DESI DR2}
+The submitted DESI DR2 comparison quotes $\chi^2/\mathrm{dof}=1.07$ for flat $\Lambda$CDM and a $\chi^2$ of order $10^{4}$ for the ansatz (\cref{fig:sm_desi})~\citep{DESI2025DR2}.
+The corresponding $\chi^2/\mathrm{dof}$ quoted in the main text is $\sim 10^{3}$.
+This is a poor fit of the DESI DR2 sample.
+The citation is the DR2 paper, not the 2024 Year-1 analysis.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\columnwidth]{fig25_desi_pillar_H.pdf}
-  \caption{Pillar~H: DESI DR2 BAO. $\Lambda$CDM ($\chi^2/{\rm dof}=1.07$) and CPL ($\chi^2/{\rm dof}=1.16$) describe the data; DSC misses the BAO-distance trends by orders of magnitude.}
+  \caption{DESI DR2 BAO figure from the submitted manuscript~\citep{DESI2025DR2}.
+  The quoted ansatz $\chi^2$ is far above the flat $\Lambda$CDM value.
+  That discrepancy is a poor fit.}
   \label{fig:sm_desi}
 \end{figure}
 
-\paragraph{Pillar J: joint 1623-constraint dataset.}
-Combining DESI + Pantheon$+$ + cosmic chronometers, $\Lambda$CDM gives
-$\chi^2/{\rm dof} = 0.96$; CPL ($w_0w_a$) gives $0.95$ and is mildly preferred
-($\Delta {\rm BIC} = -2.6$); DSC gives $23.7$ ($\Delta\chi^2 = +36{,}878$ vs.\
-$\Lambda$CDM; \cref{fig:sm_pillar_J}).
+\paragraph{Joint late-time set}
+The submitted joint comparison quotes $\chi^2/\mathrm{dof}=0.96$ for flat $\Lambda$CDM and $23.7$ for the ansatz (\cref{fig:sm_pillar_J}).
+A submitted $\Delta\mathrm{BIC}=-2.6$ between CPL and flat $\Lambda$CDM is a statement about those two parametrizations in the submitted analysis.
+It is not a completed comparison against the main-text Hubble equation.
+\revtodo{Recompute AIC and BIC for the ansatz, flat $\Lambda$CDM, and CPL on this sample before quoting a model-selection number.}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\columnwidth]{fig26_pillar_J_joint.pdf}
-  \caption{Pillar~J: joint $\Delta {\rm BIC}$ vs $\Lambda$CDM on 1623 late-time constraints.
-  CPL is mildly preferred ($\Delta {\rm BIC} = -2.6$); the simple DSC ansatz is ruled out at $\Delta {\rm BIC} \sim 4\times 10^4$.}
+  \caption{Joint late-time figure from the submitted manuscript.
+  The quoted ansatz $\chi^2/\mathrm{dof}$ is $23.7$.
+  The figure is not evidence that the ansatz is preferred.}
   \label{fig:sm_pillar_J}
 \end{figure}
-
-\input{sections/S_cmb_lattice}
 
 \bibliographystyle{elsarticle-num}
 \bibliography{references}

@@ -8,27 +8,24 @@
 
 \begin{document}
 
-\begin{letter}{Editorial Office\\Next Research}
+\begin{letter}{Dr Animesh Biswas\\Scientific Handling Editor\\Next Research}
 
-\opening{Dear Editor,}
+\opening{Dear Dr Biswas,}
 
-I am pleased to submit my manuscript entitled \textbf{``Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a $1/\ln^2(t)$ Cooling Law''} for consideration in \textit{Next Research}.
+This draft accompanies a narrowed revision of manuscript NEXRES-D-26-02183.
+It is not a journal submission.
+The resubmission deadline is 27 November 2026, and the files in this repository have not been uploaded to Editorial Manager.
 
-This manuscript is transferred from \textit{Physics of the Dark Universe} (manuscript DARK-D-26-00549R1), where the Scientific Handling Editor issued a ``Transfer Recommended Accept'' decision recommending \textit{Next Research} as a more suitable venue. I am grateful for that recommendation and believe the work is indeed a strong fit for a journal that evaluates technical soundness and methodological rigor across disciplines.
+The revised title is \textbf{``A Four-Anchor Phenomenological Fit of a $1/\ln^2(t/t_P)$ Hubble Relaxation.''}
+The journal line of the Elsevier wrapper is Next Research.
+Following Reviewer 1, the revision keeps the four-anchor Hubble fit as the core empirical result, removes the Riemann-zeta motivation, and removes the lattice CMB forward model, the inverse reconstruction, and the acoustic freeze-out discussion.
+The Keck/VLT and full-sample quasar comparison is presented as exploratory.
+The function $1/\ln^2(t/t_P)$ is described as a selected phenomenological ansatz.
 
-The paper studies a single, definite hypothesis---a $1/\ln^2(t)$ adiabatic cooling law, motivated by the spectral statistics of the Riemann zeta zeros---and subjects it to fourteen independent empirical, computational, and forecast tests (Pillars A--O) spanning three observational regimes:
-
-\begin{itemize}
-\item \textbf{Fine-structure-constant drift.} On the Murphy 2003 Keck/HIRES quasar sample the $1/\ln^2(t)$ drift is detected at $5.6\sigma$, cross-validated on the independent King 2012 Keck-only sample ($+8.6\sigma$ in the union); a Keck/VLT instrument decomposition shows the signal is consistent with documented wavelength-calibration systematics.
-\item \textbf{Hubble-parameter relaxation.} A four-anchor $H_0$ relaxation (SH0ES, JWST, Planck, BAO) gives $R^2 = 0.91$; dense late-time data (cosmic chronometers, Pantheon$+$, DESI DR2) are shown to be \emph{predictably} unresolvable, and a leverage diagnostic explains this quantitatively. An atomic-clock-consistency analysis and a JWST-class forecast ($\gtrsim 11\sigma$ discrimination within $\sim 5$ years) complete this regime.
-\item \textbf{CMB lattice forward model.} A differentiable JAX implementation of weakly damped St\"ormer--Verlet lattice dynamics is presented as a methodological building block; we explicitly retract any quantitative claim of reproducing the Planck angular power spectrum.
-\end{itemize}
-
-In response to the transfer editor's comments, I have (i) retitled the manuscript to reflect that the load-bearing results are the cross-scale empirical tests rather than the CMB forward model, so the paper's title and identity are now self-consistent; (ii) condensed the main text to a focused 17-page article by relocating the methodological CMB lattice study (forward model, inverse reconstruction, and all associated robustness checks) to a separate Supplementary Material, directly addressing the length and scope concerns; and (iii) added a Declaration of Generative AI and AI-Assisted Technologies, transparently documenting that an AI coding assistant was used for manuscript drafting, analysis code, and figure generation, while all scientific content and verification remain the author's sole responsibility. All quantitative tests use publicly available, peer-reviewed datasets, and the complete code and Jupyter notebooks are openly available at \url{https://github.com/maris205/riemann_engine}.
-
-The manuscript has not been published elsewhere and is not under consideration by any other journal. I confirm I am the sole author and have no competing interests to declare.
-
-Thank you for your consideration.
+Several referee requests need a refit.
+Those items are marked TODO in the manuscript and in the point-by-point response (\texttt{response\_to\_reviewers.tex}).
+No new fitted value has been inserted for them.
+In particular, the Murphy-sample coefficients $+6.42\pm 1.14$ and $+5.56\pm 0.99$ are both still on the page, the leave-one-anchor-out table is absent, and the common-likelihood AIC/BIC comparison has not been rerun.
 
 \closing{Sincerely,}
 
