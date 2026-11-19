@@ -1,0 +1,296 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\title{Response to reviewers\\
+\large Manuscript NEXRES-D-26-02183}
+\author{Liang Wang}
+\date{Revised manuscript, for the 27 November 2026 deadline}
+
+\begin{document}
+\maketitle
+
+\noindent
+Dear Dr Biswas,
+
+Thank you for the decision of 6 November 2026 inviting a major revision of NEXRES-D-26-02183.
+The revised manuscript follows the narrower form requested by Reviewer~1.
+The four-anchor Hubble regression is kept.
+The Riemann-zeta motivation and the lattice CMB material, including the inverse reconstruction, are deleted.
+The Keck/VLT comparison is reported as exploratory.
+The coefficient $\Gamma$ is defined once, the four-anchor fit is repeated with leave-one-anchor-out, flat $\Lambda$CDM and CPL are fitted to the same cosmic-chronometer sample, and the atomic-clock relation is derived and evaluated.
+Every number below is taken from \texttt{analysis/outputs/revision\_results.json}, produced by \texttt{analysis/revision\_nexres.py}.
+The title is now \emph{Phenomenological Fits of a $1/\ln^{2}(t/t_{*})$ Form to the Hubble Constant and the Fine-Structure Constant}.
+It names the two quantities that are fitted, the Hubble constant and the fine-structure constant, and it describes a phenomenological form rather than a named cooling law.
+The submitted title had described a lattice calculation that is no longer in the paper.
+The running header is Next Research.
+
+\section*{Reviewer 1}
+
+\subsection*{R1.1. Internal inconsistency in $\Gamma$}
+
+\textit{The coefficient $\Gamma$ for Pillar~A is reported as $+6.42\pm1.14$ in Section~4.2 but as $+5.56\pm0.99$ in the abstract, conclusion, and Table~1, apparently from the same fit on the same dataset.}
+
+The two quotations were the same Murphy et al.\ (2003) table of 128 absorbers, read with two different age maps and then copied into different parts of the manuscript.
+Recomputing both maps on the tabulated fit errors gives $\Delta\chi^{2}=31.541$ for the flat $\Lambda$CDM age and $\Delta\chi^{2}=31.832$ for the Einstein--de~Sitter age $t\propto(1+z)^{-3/2}$.
+The central values are $-6.422\pm1.143$ and $-5.562\pm0.986$ in the sign convention of the revised Eq.~(2), where positive $\Gamma$ means that $\alpha$ was larger in the past.
+The old manuscript used the opposite sign, so those two numbers appeared as $+6.42\pm1.14$ and $+5.56\pm0.99$.
+The significance looked the same because a change of clock mostly rescales $\Gamma$ and its error together.
+The revision keeps only the flat-universe age.
+The Einstein--de~Sitter row is printed in Table~2 solely as this diagnostic and is marked as unused.
+A second, separate inconsistency is described under R2.10: an extra factor of $10^{-5}$ had been inserted into the present-day drift, which is why the old atomic-clock bound on $\Gamma$ did not match the quasar coefficient.
+
+\subsection*{R1.2. Subset dependence of the quasar signal}
+
+\textit{The reported $5.6\sigma$ detection is present only in the Keck-only subsample, vanishes on the full King 2012 catalog, and reverses sign in the VLT-only subset. The instrumental interpretation is not distinguished from a subsample fluctuation. No pre-registered subset protocol is provided.}
+
+Agreed.
+The revised Table~2 is labelled exploratory.
+On the author-retained King sample of 293 rows, the weighted-mean fit gives $\Gamma=-1.700\pm0.969$, $\Delta\chi^{2}=3.08$, $p=0.079$.
+With tabulated fit errors alone the same rows give $\Gamma=+0.160\pm0.613$, $\Delta\chi^{2}=0.068$.
+The Keck subset prefers $\Gamma\approx-7$ and the VLT subset prefers $\Gamma\approx+3$.
+The opposite signs are stable under both error budgets.
+The text lists instrumental calibration, redshift weighting, and model failure as open readings and does not choose among them.
+There is no pre-registered cut.
+In addition, 126 of the 128 Murphy absorption redshifts match a King Keck redshift to better than $5\times10^{-6}$, so the previous ``independent Keck confirmation'' is withdrawn.
+The Murphy and King likelihoods are not multiplied.
+
+\subsection*{R1.3. Non-falsifiable leverage, and $\chi^{2}$ read as resolvability}
+
+\textit{The leverage argument accommodates either a detection or a null in the dense low-redshift data. Table~2 reports $\chi^{2}/\mathrm{dof}$ values as high as $\sim10^{3}$ and describes them as resolvability from a constant, which is a poor fit.}
+
+Agreed.
+The ratio $\Delta\xi(\mathrm{anchors})/\Delta\xi(0<z<2)=8.08$ is stated as a property of $\xi(t)$, and the text says explicitly that a non-detection in a short interval of $\xi$ does not support the model.
+The large-$\chi^{2}$ late-time fits are not repeated, and a large $\chi^{2}$ is not called a confirmation.
+On the chronometer sample the relaxation form is simply a worse fit than flat $\Lambda$CDM ($\chi^{2}=20.14$ against $14.57$, same parameter count).
+The anchor parameters scored on those points, without refitting, give $\chi^{2}=175.1$.
+That number is reported as a poor description of $H(z)$.
+
+\subsection*{R1.4. Narrower resubmission}
+
+\textit{Retain the four-anchor $H_{0}$ fit, remove the Riemann-zeta motivation and the CMB lattice material, resolve the $\Gamma$ inconsistency, and present the Keck/VLT comparison as exploratory rather than confirmatory.}
+
+This is the revision that was made.
+The four-anchor regression is Section~4.1, with the anchors named correctly: Planck, CCHP/JWST TRGB, the Huang et al.\ (2024) Mira calibration, and SH0ES.
+The previous list ``SH0ES, JWST, Planck, BAO'' did not describe the sample that had been fitted.
+There is no BAO anchor, and the Mira measurement is an HST result.
+The zeta motivation and the lattice material are deleted, including from the supplementary file, which is now a withdrawal note.
+$\Gamma$ is handled in R1.1 and R2.10.
+The quasar section is exploratory, as in R1.2.
+
+\section*{Reviewer 2}
+
+\subsection*{R2.1. Physical justification of the cooling law}
+
+The cooling law is now stated as a phenomenological ansatz.
+The manuscript no longer derives it from the spectral statistics of the Riemann zeros, and it no longer claims that those statistics supply a cosmological mechanism.
+The question the paper asks is whether this fixed shape describes the anchor table and the chronometer $H(z)$ sample.
+
+\subsection*{R2.2. Derivation in the old Section 2.2}
+
+The spectral-density argument, the level-spacing step, and the passage from that spacing to a vacuum energy have been removed.
+There is therefore no remaining derivation whose dimensions need to be repaired.
+The only differential relation that is derived is the atomic-clock identity in R2.10, which follows by differentiating the adopted $\alpha(t)$ and does not pass through a Hamiltonian spectrum.
+
+\subsection*{R2.3. Uniqueness}
+
+The words ``unique'' and ``the unique smooth family'' have been removed.
+The text says that $1/\ln^{2}$ is one slowly varying function, that other exponents would change the clock transfer, and that four anchors cannot select the exponent.
+No uniqueness theorem is offered.
+
+\subsection*{R2.4. Meaning of $H_{\infty}$}
+
+The fitted equation is $H(t)=H_{\infty}+\beta\,\xi(t)$ with $\xi=10^{5}/\ln^{2}(t/t_{*})$.
+The previous text wrote $H=H_{\infty}+\beta/\ln^{2}$ while quoting $\beta\approx-6.24$.
+Those two expressions differ by the factor $10^{5}$ inside $\xi$.
+Substituting $\beta=-6.24$ into $1/\ln^{2}$ does not reproduce the regression.
+The coefficient of $1/\ln^{2}$ is $10^{5}\beta=-6.243\times10^{5}$.
+$H_{\infty}=104.47\pm7.05\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ is the limit $t\to\infty$.
+At the assigned present epoch the line gives $72.73$.
+At an assigned age of $1\,\mathrm{Tyr}$ it still gives only $74.58$.
+$H_{\infty}$ is not the present Hubble constant and it is not the high-redshift value of the line.
+With $\beta<0$, early times have larger $\xi$ and smaller $H$.
+
+\subsection*{R2.5. Statistical reliability of the four-anchor fit, including leave-one-out}
+
+The fit has four points and two parameters, so $\nu=2$.
+The result is $H_{\infty}=104.47\pm7.05$, $\beta=-6.243\pm1.226$, $\chi^{2}=0.559$, unweighted $R^{2}=0.907$.
+The constant null on the same four numbers is $H=68.64\pm0.43$ with $\chi^{2}=26.485$.
+The nested $\Delta\chi^{2}=25.926$ has a $\chi^{2}_{1}$ probability $3.55\times10^{-7}$ under the assumptions stated in the methods: independent Gaussian errors and the assigned epochs.
+The paper does not call this a detection.
+The errors are the weighted-least-squares covariance.
+They do not include epoch uncertainty or dependence among the local ladders.
+Leave-one-out is Table~1.
+Removing the Mira point does not move the line.
+Removing TRGB or SH0ES moves the parameters within the original errors, with held-out pulls of $-0.74$ and $0.62$ once prediction variance is included.
+Removing Planck moves the fit to $H_{\infty}=153.9\pm67.0$ and $\beta=-15.89\pm13.08$.
+The Planck prediction from the other three is $59.5\pm10.7$ against $67.4\pm0.5$.
+The pull is $0.74$ if the prediction error is kept, and $15.9$ if it is discarded.
+The slope is leveraged by the Planck anchor.
+That limitation is stated in the results and again in the limitations.
+
+\subsection*{R2.6. A poor fit is not supporting evidence}
+
+Agreed.
+The revision separates three statements that the previous text ran together: the geometric lever arm of $\xi$, a degeneracy with a constant over a short interval of $\xi$, and a goodness-of-fit comparison.
+Only the third can support or reject the shape as a model of $H(z)$.
+On the chronometers the shape is worse than $\Lambda$CDM.
+The conclusions no longer treat a null, or a large $\chi^{2}$, as confirmation.
+
+\subsection*{R2.7. Comparison with $\Lambda$CDM and CPL on the same dataset}
+
+The dataset on which all three models predict the same observable is the 32 cosmic chronometers, not the four anchors.
+The four anchors are published inferences of present-day $H_{0}$.
+Flat $\Lambda$CDM predicts one value for all four, which is the constant model of R2.5.
+CPL does not, by itself, assign four different present-day values to four local ladders, and this revision does not invent a CMB likelihood in order to make it do so.
+On the chronometers the fits are:
+flat $\Lambda$CDM, $\chi^{2}=14.57$, $k=2$, AIC $=18.57$, BIC $=21.50$, $H_{0}=68.2\pm3.1$, $\Omega_{m}=0.318\pm0.059$;
+flat CPL, $\chi^{2}=14.33$, $k=4$, AIC $=22.33$, BIC $=28.20$;
+the $1/\ln^{2}$ form refitted, $\chi^{2}=20.14$, $k=2$, AIC $=24.14$, BIC $=27.07$.
+CPL improves $\chi^{2}$ by $0.232$ for two extra parameters ($p=0.891$ on $\chi^{2}_{2}$).
+AIC and BIC prefer $\Lambda$CDM.
+The CPL parameter errors returned by the fit are $\sigma(H_{0})=25$, $\sigma(\Omega_{m})=3.2$, $\sigma(w_{0})=2.6$ and $\sigma(w_{a})=39$.
+The sample does not measure the CPL parameters.
+The ranking is a statement about this compilation and these diagonal errors.
+
+\subsection*{R2.8. Uncertainty budget for the fine-structure fits}
+
+The Murphy table is reported twice.
+Fit errors alone give $\Gamma=-6.422\pm1.143$, $\Delta\chi^{2}=31.541$.
+The catalogue's own fiducial rule, adding $2.09\times10^{-5}$ in quadrature to the 22 starred rows only, gives $\Gamma=-6.708\pm1.441$, $\Delta\chi^{2}=21.671$.
+The previous draft's reduction from about $5.6\sigma$ to about $2.8\sigma$ used a different assignment of those floors and is not repeated.
+The King table is reported with fit errors and with the authors' weighted-mean extra variances.
+The combined sample is consistent with $\Gamma=0$ at $p=0.79$ or $p=0.079$ depending on that choice.
+The text does not promote the smaller error budget to a detection.
+No spectral covariance is available in the files used here, and the limitations say so.
+
+\subsection*{R2.9. Opposite Keck and VLT signs}
+
+This is the same fact as R1.2.
+Weighted-mean subset fits give $\Gamma=-7.041\pm1.420$ (Keck, $N=140$) and $\Gamma=+2.949\pm1.325$ (VLT, $N=153$).
+The signs are unchanged if the extra variances are omitted.
+The combined evidence is described as inconclusive.
+The paper does not identify a specific instrumental mechanism.
+
+\subsection*{R2.10. Atomic-clock derivation}
+
+The adopted history is
+$\delta_{\alpha}(t)=\Gamma\big[L(t)^{-2}-L(t_{0})^{-2}\big]$,
+$L=\ln(t/t_{*})$.
+Differentiating and setting $t=t_{0}$ gives
+$D_{0}=-2\Gamma/(t_{0} L_{0}^{3})=\kappa\Gamma$.
+With $t_{*}=5.391247\times10^{-44}\,\mathrm{s}$, a Julian year, and the fiducial age $t_{0}=13.796\,\mathrm{Gyr}$ at $H_{0}=67.4$, $\Omega_{m}=0.315$, the calculation gives $L_{0}=140.244$ and $\kappa=-5.256\times10^{-17}\,\mathrm{yr}^{-1}$.
+The Murphy fit-error amplitude then predicts $D_{0}=+3.375\times10^{-16}\,\mathrm{yr}^{-1}$.
+The published Filzinger et al.\ (2023) summary $D_{0}=(1.8\pm2.5)\times10^{-19}\,\mathrm{yr}^{-1}$ translates to $\Gamma=-0.00342\pm0.00476$.
+The published Rosenband et al.\ (2008) summary $D_{0}=(-1.6\pm2.3)\times10^{-17}\,\mathrm{yr}^{-1}$ translates to $\Gamma=+0.304\pm0.438$.
+These are published central values, not a new reduction of clock ratios.
+If the Murphy estimate and the Filzinger translation are two Gaussian measurements of one $\Gamma$, they differ by $5.61$ standard deviations.
+The inverse-variance combination is dominated by the clock.
+The previous claim of a factor $\sim3000$ of headroom, and the bound $|\Gamma|\lesssim2\times10^{4}$, came from multiplying the drift by an extra $10^{-5}$ that is not in the definition of $\Gamma$.
+Both are withdrawn.
+The joint statement $|\Gamma|<0.30$ is also withdrawn.
+It did not correspond to either the corrected Rosenband translation or a joint likelihood.
+The shared-$\Gamma$ step is an assumption, and the paper says that dropping it separates the two datasets rather than combining them.
+
+\subsection*{R2.11. Stability}
+
+The previous stability checklist has been removed.
+It did not address perturbative or gradient stability, and the revised paper does not claim either.
+The ansatz is not presented as a completed cosmological model.
+No sound speed is assumed.
+
+\subsection*{R2.12--R2.17. Lattice dynamics, symplecticity, convergence, acoustic peaks, inverse reconstruction, and freeze-out}
+
+These six comments concerned the lattice forward model and the inverse reconstruction.
+That material has been deleted from the revised manuscript, including from the supplementary file.
+The running text no longer describes a St\"ormer--Verlet scheme, a damped symplectic map, a lattice power spectrum, a held-out hemisphere reconstruction, or an acoustic freeze-out scale.
+No revised claim is made about them, and no partial lattice result is retained as support for the phenomenological fits.
+
+\subsection*{R2.18. Forecast}
+
+The previous forecast that five future chronometers would separate the models at $\gtrsim11\sigma$ has been removed.
+The paper does not replace it with another survey forecast.
+It records the plain divergence between the anchor-parameter line, which stays near $72\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ out to $z=10$ on the fiducial clock, and flat $\Lambda$CDM, which does not.
+That comparison is an evaluation of two functions.
+It is not a significance for a future sample.
+
+\subsection*{R2.19. Reproducibility}
+
+The revision's regressions are one script, \texttt{analysis/revision\_nexres.py}, with its output in \texttt{analysis/outputs/revision\_results.json} and \texttt{revision\_log.txt}.
+The script records $t_{*}$, the Julian year, $H_{0}$, $\Omega_{m}$, the four anchors, the 32 chronometer rows, and the quasar parsing rules.
+The anchor and $\Gamma$ fits are linear weighted least squares, so there is no optimiser seed and no convergence tolerance in those fits.
+The $\Lambda$CDM and CPL fits use \texttt{scipy.optimize.curve\_fit} with absolute $\sigma$ and the bounds written in the script.
+The software versions used for the logged run are those installed in the environment that produced the JSON file.
+The main figures are written by the same script.
+
+\subsection*{R2.20. Model-selection statistics}
+
+$R^{2}$ is reported only for the anchor line, and it is the unweighted coefficient of determination.
+It is labelled as a description, not as a likelihood.
+$\chi^{2}$ uses the published Gaussian errors as absolute $\sigma$.
+AIC and BIC are $\chi^{2}+2k$ and $\chi^{2}+k\ln N$, with the data-dependent normalisation omitted because the errors are held fixed.
+For one extra nested parameter, $z=\sqrt{\Delta\chi^{2}}$ and the $p$-value is the $\chi^{2}_{1}$ survival function.
+That identity is used for the constant-versus-line comparison and for each one-parameter $\Gamma$ fit.
+For CPL versus $\Lambda$CDM the survival function has two degrees of freedom.
+The anchor $\Delta\chi^{2}$ is not converted into a detection claim, for the reasons in R2.5.
+
+\subsection*{R2.21. Numerical consistency of $H_{\infty}$, the leverage, and the significances}
+
+The relation between $H_{\infty}=104.47$ and the values near $71$--$73$ is the content of R2.4.
+The line at $z=2$, $5$ and $10$, using the fiducial age, is $72.07$, $71.58$ and $71.14$.
+Those are not approximations to $H_{\infty}$.
+The leverage ratio recomputed with this age is $8.08$ ($\Delta\xi=0.856$ across the anchors and $0.106$ from $z=0$ to $z=2$), replacing the previous $8.4$.
+Significances that depended on the old $\Gamma$ values or on multiplied Keck samples are not reused.
+Where a Gaussian-equivalent $z$ is still printed, the $\chi^{2}$ and the $p$-value are printed with it.
+
+\subsection*{R2.22. Figures}
+
+The revised figures are \texttt{figures/rev\_fig\_anchors.pdf}, \texttt{rev\_fig\_loo.pdf}, \texttt{rev\_fig\_cc\_models.pdf} and \texttt{rev\_fig\_gamma.pdf}.
+They are generated by the analysis script.
+Axes are labelled with the plotted quantity.
+The chronometer figure distinguishes the data, the three fits, and the anchor-parameter curve that is not a fit to those data.
+The $\Gamma$ figure states that the Filzinger translation lies off the quasar scale.
+The previous multi-panel lattice figures are not included.
+
+\subsection*{R2.23. References}
+
+The reference list was checked for repeated DOI strings.
+The Planck 2018 entries remain distinct papers in one results series (I, V, VI, IX, X), as the review asked, and only those still cited by the revised text are pulled into the bibliography by Bib\TeX.
+No exact duplicate DOI was found.
+Entries that belonged only to the deleted lattice discussion are no longer cited.
+
+\subsection*{R2.24. Citation accuracy, including DESI}
+
+The revised text cites the anchor papers that supply the four numbers (Planck 2018 VI, Freedman et al.\ 2025, Huang et al.\ 2024, Riess et al.\ 2022), the chronometer review named by the compilation, Chevallier \& Polarski (2001) and Linder (2003) for CPL, Murphy et al.\ (2003), King et al.\ (2012), Whitmore \& Murphy (2015), Rosenband et al.\ (2008) and Filzinger et al.\ (2023).
+The previous DESI DR2 comparison is not part of this revision, so the manuscript no longer cites a 2024 DESI preprint for a DR2 result.
+The zeta-function citations have been removed with the zeta motivation.
+
+\subsection*{R2.25. Notation, punctuation, and the running header}
+
+The cooling law is written $1/\ln^{2}(t/t_{*})$ when the dimensionless ratio is meant, and the fitted Hubble relation is written with $\xi$ so that the factor $10^{5}$ is visible.
+$H_{\infty}$, $H(t)$, $\alpha(t)$, $\Gamma$ and $\chi^{2}$ are used with the definitions in Sections~2 and~3.
+The duplicated punctuation and the stray ``Pillar~10'' label belonged to passages that have been removed.
+The relation between $H_{\infty}$ and a vacuum density $\Lambda_{\infty}$ has been dropped rather than repaired, because that relation was part of the deleted mechanism and is not required by the fits.
+The footer and running header use Next Research.
+
+\subsection*{R2.26. Strength of the conclusions}
+
+The conclusion now states the numerical results and then states what they do not show.
+The anchor line is a fit under an epoch assignment.
+It is not a solution of the Hubble tension.
+The chronometer comparison favours flat $\Lambda$CDM over the two-parameter cooling law on this sample, and does not favour CPL over $\Lambda$CDM after an information penalty.
+The quasar subsets disagree in sign, and the Murphy fit-error amplitude is in tension with the Filzinger clock summary if one $\Gamma$ is shared.
+The paper does not claim a detection of evolving $H_{0}$ or of a cosmological drift of $\alpha$.
+
+\vspace{1.2em}
+\noindent
+I hope the revised manuscript addresses the reports.
+The calculations can be rerun from the script above.
+
+\vspace{1em}
+\noindent
+Sincerely,\\
+Liang Wang
+\end{document}

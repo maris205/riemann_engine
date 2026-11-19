@@ -1,3 +1,11 @@
+# Revision note (NEXRES-D-26-02183)
+
+The manuscript under revision is `paper/main_elsevier.tex`.
+The resubmission narrows the paper to a phenomenological $1/\ln^2(t/t_*)$ test: the four-anchor Hubble fit, leave-one-anchor-out, a $\Lambda$CDM/CPL comparison on the cosmic-chronometer sample, and an atomic-clock derivative.
+The Riemann-zeta motivation and the CMB lattice material have been removed from that manuscript.
+Numbers quoted in the revision come from `analysis/revision_nexres.py`.
+The narrative below describes the previous draft and its notebooks. It is not the revised paper.
+
 # DSC-CMB: Differentiable Discrete Symplectic Cosmology
 
 Code and experiments for the paper:

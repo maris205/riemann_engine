@@ -1,107 +1,37 @@
 \section{Introduction}
 \label{sec:intro}
 
-The temperature anisotropies of the cosmic microwave background (CMB), as mapped by the Planck satellite~\citep{Planck2018I,Planck2018VI}, encode a remarkably simple statistical portrait of the early universe: the fluctuations are nearly Gaussian~\citep{Planck2018IX}, their angular power spectrum exhibits a series of acoustic peaks at multipoles $\ell \sim 220, 540, 810, \ldots$~\citep{Planck2018V}, and the comoving sound horizon at recombination is finite~\citep{Dodelson2020}.
-In the standard $\Lambda$CDM paradigm, these features arise from quantum fluctuations amplified by inflation~\citep{Planck2018X,Mukhanov2005} and processed by the baryon--photon plasma prior to decoupling~\citep{Durrer2008}.
+Local and early-Universe inferences of the Hubble constant disagree when they are interpreted as measurements of one constant~\citep{DiValentino2021,Schoneberg2022}.
+Planck, analysed in flat $\Lambda$CDM, gives $67.4\pm0.5\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{Planck2018VI}.
+The SH0ES Cepheid ladder gives $73.04\pm1.04\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{RiessSH0ES2022}.
+A separate literature asks whether an effective $H_{0}$ estimated in redshift bins declines with redshift~\citep{Krishnan2020,Dainotti2021,Colgain2022}.
+Those trends are not, by themselves, a model-independent detection of new physics.
 
-Despite its remarkable success, $\Lambda$CDM faces persistent tensions.
-The Hubble constant inferred from the CMB ($H_0 = 67.4 \pm 0.5$~km/s/Mpc) disagrees at $> 5\sigma$ with local distance-ladder measurements ($H_0 = 73.0 \pm 1.0$~km/s/Mpc), a discrepancy that has resisted resolution within the standard framework~\citep{DiValentino2021,Schoneberg2022}.
-Recent baryon acoustic oscillation data from DESI provide independent evidence for dynamical dark energy ($w \neq -1$), suggesting that the cosmological ``constant'' may evolve with cosmic time~\citep{DESI2024}.
-More broadly, the possibility that fundamental constants---including the fine-structure constant $\alpha$ and the gravitational coupling---vary over cosmological timescales has been a subject of sustained theoretical and observational investigation~\citep{Uzan2003,Martins2017}.
-
-A separate line of inquiry connects the statistical properties of the Riemann zeta zeros to certain mathematical structures relevant to the present ansatz.
-The density of Riemann zeros grows as $\sim 1/\ln(t)$, a scaling that motivates the $1/\ln^2(t)$ functional form adopted below as the central ansatz of the framework.
-A companion line of work shows that the prime distribution itself can emerge from low-dimensional deterministic chaos~\citep{Wang2026Prime}, and that the spectrum of the renormalization-group flow of non-autonomous quadratic maps is in detailed correspondence with the Riemann zero spectrum~\citep{Wang2026Spectral} --- together providing an independent mathematical motivation for the logarithmic level density that underlies the cooling law of this paper.
-We stress that this connection is purely \emph{motivational} for the cooling-law functional form: we make no claim about a physical correspondence between the Riemann zeros and any cosmological observable, and we do not engage with experimental or laboratory programs that aim to realize the Riemann spectrum in physical systems.
-
-Inspired by these threads, the DSC framework explores the working hypothesis that the time-dependence of cosmological parameters might share the same $1/\ln^2(t)$ structure that arises in Riemann zero statistics, and models cosmic evolution as a non-autonomous dynamical system on a Planck-scale lattice $\Z^3 \times \N$.
-Three structural assumptions---discrete spacetime, weakly damped symplectic evolution (area-preserving up to a small drag), and a $1/\ln^2$ functional form for the cooling law---motivate the adiabatic cooling expression
+This paper asks a narrower question.
+Suppose one adopts the two-parameter form
 \begin{equation}
-  \mu(n) = \mudyn + \frac{\kopt}{\ln^2(n + c_0)}\,,
-  \label{eq:cooling}
+  H(t)=H_{\infty}+\beta\,\xi(t),
+  \qquad
+  \xi(t)\equiv\frac{10^{5}}{\ln^{2}(t/t_{*})},
+  \label{eq:H}
 \end{equation}
-where $n$ is the discrete Planck time, $\mudyn$ is the asymptotic critical value, $\kopt$ is related to Feigenbaum scaling, and $c_0$ regularizes small $n$.
-The $1/\ln^2$ functional form is slower than any power law and is the form picked out by the Riemann-zero analogy~\citep{Wang2026Spectral}; we use it as a definite ansatz to study, rather than as a derived prediction.
-At the cosmological-parameter level the framework yields $\Lambda(t) = \Lambda_\infty + \gamma / \ln^2(t/\tP)$ and $H(t) = \Hinfty + \beta / \ln^2(t/\tP)$ as phenomenological scaling laws.
+with a fixed reference scale $t_{*}$ and with $\beta$ multiplying $\xi$, not $1/\ln^{2}$.
+Does this form describe four published $H_{0}$ inferences once each is assigned an epoch, and does the same shape describe the expansion rate $H(z)$ measured by cosmic chronometers?
+The two questions are different.
+The first uses an epoch assignment that is an assumption of the fit.
+The second uses $H(z)$ measurements and does not use that assignment.
 
-The original DSC work validates the cooling law only through one-dimensional H\'enon map surrogates.
-The question of whether spatially-extended lattice dynamics---evolving under the DSC cooling law---can reproduce the \emph{spatial} statistical features of the CMB remains open.
-We emphasize that the present work is \emph{exploratory}: the lattice simulations are effective surrogate models, not direct implementations of Planck-scale quantum gravity, and we use weakly damped St\"ormer--Verlet integration with a small drag $\eta \in [0, 0.06]$, which is exactly symplectic only when $\eta = 0$.
-The goal is to investigate what phenomenological features emerge from the DSC dynamical assumptions, not to claim a complete alternative to $\Lambda$CDM.
+Equation~\eqref{eq:H} is a phenomenological ansatz.
+The previous version of this manuscript motivated the exponent by the spectral statistics of the Riemann zeta zeros and accompanied the fit with a lattice model of the cosmic microwave background.
+Both of those developments have been removed.
+No uniqueness of $1/\ln^{2}$ is claimed.
+A power of $\ln(t/t_{*})$ is one slowly varying function among others, and the anchor sample is too small to select it.
 
-In this paper, we address these questions by implementing weakly damped St\"ormer--Verlet integrators~\citep{Hairer2006,Leimkuhler2004} on two- and three-dimensional lattices with DSC-motivated cooling.
-This approach connects to the growing field of differentiable cosmological simulations~\citep{Modi2021,Li2022,Campagne2023} and simulation-based inference~\citep{Cranmer2020,Alsing2019}, as well as lattice field theory methods applied to early-universe dynamics~\citep{Figueroa2021,Caravano2022}.
-\paragraph{Slowness as a physical requirement.}
-A central physical observation that motivates our choice of functional form is this: any time variation of fundamental constants must be \emph{very} slow.
-The atomic-clock bound from Rosenband \emph{et al.}~2008~\citep{Rosenband2008}, $|\dot\alpha/\alpha| < 1 \times 10^{-17}\,{\rm yr}^{-1}$, integrates over the age of the universe to a constraint $|\Delta\alpha/\alpha|_{\rm cumulative} \lesssim 1.4 \times 10^{-7}$.
-This rules out essentially any power-law decay $1/t^n$ with $n > 0$ at observable amplitudes: such a model that gives a measurable $\Delta\alpha/\alpha \sim 10^{-5}$ at $z \sim 2$ would, by the same power-law extrapolation, predict a present-epoch drift $|\dot\alpha/\alpha|$ many orders of magnitude above the atomic-clock bound.
-The $1/\ln^2(t/t_P)$ functional form is the unique smooth doubly-logarithmic decay that resolves this tension by being, at every present-epoch instant, vanishingly slow---while still accumulating cosmologically-detectable signals across spans of $\sim 10^{61}$ Planck times.
-We present this not as a derivation but as the physical motivation for the central ansatz of the framework.
-The Riemann-zeta-zero spectral density $\rho(E) \sim (1/2\pi)\ln(E/2\pi)$ provides an independent and qualitatively different motivation for the same $1/\ln^2$ structure: it is the unique density that, when used in the Riemann--von Mangoldt counting formula, returns a $1/\ln^2$ adiabatic cooling law via the standard symplectic-action / partition-function identity (\cref{sec:dsc}).
-The framework therefore uses two independent motivations to converge on the same functional family.
+The same shape is used for a second, independent amplitude in the fine-structure constant.
+Section~\ref{sec:clock} derives the present-day drift from that amplitude.
+The derivation fixes the relation between a cosmological difference and a laboratory derivative.
+It does not by itself make a quasar best fit compatible with atomic clocks.
 
-Our main findings, organized into cross-scale empirical pillars and CMB lattice diagnostics, are:
-
-\begin{enumerate}
-  \item \textbf{Pillar~C: $H_0$ as a smooth $1/\ln^2(t)$ relaxation.}
-  Fitting the four anchor $H_0$ measurements (SH0ES~\citep{RiessSH0ES2022}, JWST~\citep{RiessJWST2024}, Planck CMB~\citep{Planck2018VI}, BAO~\citep{DESI2024}) by $H(t) = H_\infty + \beta/\ln^2(t/t_P)$ yields $H_\infty = 104.5$, $\beta = -6.24$, $R^2 = 0.91$, reduced $\chi^2 = 0.28$ (\cref{sec:block_H0}).
-  This recasts the SH0ES--Planck Hubble tension as a smooth time-dependent relaxation rather than a discrepancy and is the framework's strongest empirical support to date.
-
-  \item \textbf{Pillar~D: CMB+BAO Fisher leaves $\gamma_{\rm eff}$ unconstrained.}
-  A Fisher analysis combining CAMB Planck-2018 compressed observables ($R$, $\ell_A$) with DESI BAO ratios at $z \in \{0.15, \ldots, 2.33\}$ gives $\sigma(\gamma_{\rm eff}) \sim 1.2\times 10^4$, so the DSC dark-energy correction is currently \emph{indistinguishable from} $\Lambda$CDM at present sensitivity.
-
-  \item \textbf{Pillar~E: late-time stability.}
-  Five basic stability criteria (positive $H^2$, $\dot H < 0$, monotone growth $D(a)$, vanishing $c_s^2$ in the prescribed vacuum sector, $\Lambda$CDM-consistent $w_{\rm eff}(z=0)$) are satisfied for $\gamma_{\rm eff} \in [0, 10]$ over $a \in [10^{-10}, 1]$, ruling out internal pathologies.
-
-  \item \textbf{Pillars~A and~B: subset-dependent quasar $\Delta\alpha/\alpha$ tension.}
-  On the Murphy~2003 128-absorber Keck/HIRES sample (Pillar~A) the DSC $1/\ln^2(t)$ model achieves $\Delta\chi^2 = 31.5$ ($5.6\sigma$) over the constant null under fit-error-only weighting, reducing to $\Delta\chi^2 = 7.8$ ($2.8\sigma$) under Murphy's published $\sigma_{\rm rand}$-augmented budget; we report both side by side.
-  On the full King~\emph{et al.}~(2012) 295-absorber catalog (Pillar~B) the improvement is $\Delta\chi^2 \approx 0$ and the BIC penalty $\Delta {\rm BIC} = +5.7$ favors the null.
-  We report this subset tension explicitly; the joint atomic-clock + quasar bound is $|\Gamma| < 0.30$.
-
-  \item \textbf{Pillars M, N: the $1/\ln^2$ ansatz is internally self-consistent across regimes.}
-  Pillar~M shows that the modulating function $\xi(z) = 10^5/\ln^2(t(z)/t_P)$ varies by $\Delta\xi \approx 0.84$ across recombination-to-present but only by $\Delta\xi \approx 0.10$ within $z < 2$, an 8.4$\times$ leverage difference.
-  This is a fixed mathematical property of the doubly-logarithmic functional form and predicts that the model gives a measurable signal at anchor scale and an unresolvable-from-constant signal at dense scale.
-  Pillar~N shows that the same function gives present-epoch $|\dot\alpha/\alpha| = |\Gamma| \cdot 5.25 \times 10^{-22}$ yr$^{-1}$, four orders of magnitude below the Rosenband 2008 atomic-clock bound for any $|\Gamma|$ that might be supported by Pillar~A.
-  These two diagnostics (\cref{sec:pillarM,sec:pillarN}) reframe Pillars~F--J: the $\chi^2/{\rm dof}$ values at $z<2$ are not falsifications, but confirmations that the model behaves as predicted.
-
-  \item \textbf{Pillars F, G, H, J: dense-scale unresolvability confirms the model's prediction.}
-  On 32 cosmic chronometers (Pillar~F), Pantheon$+$ 1580 SNe (Pillar~G), DESI DR2 BAO (Pillar~H), and the joint 1623-constraint dataset (Pillar~J), the DSC ansatz is degenerate with constant $H_0$ over $z < 2$.
-  $\Lambda$CDM and CPL ($w_0w_a$) both achieve $\chi^2/{\rm dof} \sim 1$, while DSC gives $\chi^2/{\rm dof}$ in the tens.
-  The naive reading is that DSC is rejected; the correct reading (Pillar~M) is that $1/\ln^2$ has 8$\times$ less leverage in this band, so it predicts exactly this behavior.
-  CPL is mildly preferred over $\Lambda$CDM at $\Delta {\rm BIC} = -2.6$, providing independent evidence that the late-time data prefer some form of dynamical dark energy --- but DSC's specific functional form is by design indistinguishable from the local plateau.
-
-  \item \textbf{Pillar O: DSC as a candidate solution to the modern dark clouds, sharply testable in $\sim 5$ years.}
-  The SH0ES--Planck $H_0$ tension and the DESI BAO preference for time-varying dark energy are, in our view, the modern dark clouds over $\Lambda$CDM cosmology.
-  We do not claim DSC is the cloud --- we offer it as a candidate \emph{solution}: a specific, atomic-clock-consistent prediction (Pillar~N) for what the underlying time-dependence of the cosmic expansion looks like.
-  The DSC and $\Lambda$CDM Hubble curves diverge sharply at $z > 2$: DSC asymptotes to $H_\infty \sim 105$ km/s/Mpc, while $\Lambda$CDM grows as $(1+z)^{3/2}$, reaching $\sim 1400$ km/s/Mpc at $z = 10$.
-  A mock-data forecast (\cref{sec:pillarO}) shows that as few as five JWST-class cosmic-chronometer points over $z \in [2, 5]$ at $10\%$ precision are sufficient to distinguish the two models at $\gtrsim 11\sigma$, with $\gtrsim 100\sigma$ achievable for 10 points at $z_{\max} = 10$.
-  JWST is now actively delivering this data~\citep{Glazebrook2024}; within $\sim 5$ years the framework will receive a clean verdict.
-
-  \item \textbf{CMB lattice forward model: poor quantitative fit (genuinely retracted).}
-  The weakly damped St\"ormer--Verlet lattice (Supplementary Material), evaluated against the CAMB Planck-2018 best-fit $D_\ell^{\rm TT}$, yields $\chi^2/{\rm dof} \approx 80$ over $\ell \in [30, 256]$ with a 20\% per-$\ell$ error budget.
-  Lattice $D(k)$-peaks map under $\ell \approx 2\pi R_{\rm shell}\,k$ to $\ell \approx 30, 60, 90$, far from the observed $\ell \approx 220, 540, 810$, and their predicted positions drift with the projection radius and lattice size, supporting the standing-wave interpretation.
-  We retract any quantitative claim of reproducing the Planck $C_\ell$; this is a limitation of the forward implementation, not the $1/\ln^2$ ansatz.
-
-  \item \textbf{Held-out hemisphere test of the inverse reconstruction.}
-  The differentiable DSC engine attains $r = 0.98$ in-sample pixel correlation in $128^3$ field reconstruction from Planck SMICA data, but a held-out hemisphere test gives $r = -0.17$.
-  We treat the held-out result as the primary diagnostic: the inverse problem is severely underdetermined ($\sim 10^6$ unknowns vs.\ $\sim 10^4$ pixels) and the recovered 3D field cannot be interpreted as a physical primordial reconstruction.
-  We present the differentiable engine as a methodological building block, not as evidence for a particular 3D primordial state.
-
-  \item \textbf{Approximate Gaussianity: a consistency check, not an emergence claim.}
-  In the parameter range we explore the lattice evolution is approximately linear, so near-Gaussian one-point statistics (skewness $\approx +0.07$, excess kurtosis $\approx -0.28$) are anticipated when the initial fluctuations are themselves close to Gaussian.
-  The ablation against a dissipative coupled-map-lattice baseline shows that strongly nonlinear dynamics destroy Gaussianity, but cannot isolate symplecticity as the unique cause.
-
-  \item \textbf{Effective freeze-out scale (threshold-defined, not a sound horizon).}
-  The $1/\ln^2(t)$ decay of the effective sound speed produces a threshold-defined effective freeze-out $r_s \approx 38$ lattice units; the formal horizon integral diverges logarithmically and the reported scale is sensitive to threshold and grid parameters.
-
-  \item \textbf{Phenomenological visualization: continuing past the CMB-epoch step.}
-  Continuing the reconstructed field with an Allen--Cahn toy nonlinearity (\emph{not} gravity) produces a V-shape transition in field variance.
-  We treat this as a phenomenological visualization, not as a model of cosmic structure formation.
-\end{enumerate}
-
-The remainder of this paper is organized as follows.
-\Cref{sec:background} summarizes the DSC theoretical framework.
-\Cref{sec:methods} describes the numerical methods.
-\Cref{sec:results} presents the simulation results.
-\Cref{sec:discussion} discusses the physical interpretation and relation to standard cosmology.
-\Cref{sec:limitations} lists limitations, and \Cref{sec:conclusion} concludes.
+The quasar material is exploratory.
+Keck and VLT subsets of \citep{King2012} prefer amplitudes of opposite sign, the Murphy and King Keck rows are largely the same absorbers, and no pre-registered subset protocol is claimed.
+The conclusions in \cref{sec:conclusion} are limited to what the calculations show.

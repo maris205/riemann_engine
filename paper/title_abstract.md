@@ -1,8 +1,10 @@
-# Title & Abstract (plain text, for Editorial Manager fields)
+# Title and abstract (plain text, for Editorial Manager)
 
 ## Title
 
-Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a 1/ln^2(t) Cooling Law
+Phenomenological Fits of a 1/ln^2(t/t_*) Form to the Hubble Constant and the Fine-Structure Constant
+
+The submitted title was "Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a 1/ln^2(t) Cooling Law". The approved title names the two fitted quantities, the Hubble constant and the fine-structure constant, and describes a phenomenological form rather than a named cooling law.
 
 ## Author
 
@@ -12,10 +14,8 @@ wangliang.f@gmail.com
 
 ## Abstract
 
-We present fourteen empirical, computational, and forecast tests of the Discrete Symplectic Cosmology (DSC) framework: a non-autonomous, weakly damped lattice cosmology in which a 1/ln^2(t) adiabatic cooling law -- inspired by Riemann zeta zero spectral statistics -- ties microscopic dynamics to time-dependent H(t), Lambda(t), and alpha(t). This unique smooth doubly-logarithmic decay satisfies the Rosenband 2008 atomic-clock bound for |Gamma| <~ 2x10^4 (Pillar N) while accumulating 8.4x more leverage between recombination and the present than within z < 2 (Pillar M).
-
-Anchor-scale tests confirm the predicted leverage: Pillar C (4-anchor H0 relaxation across SH0ES, JWST, Planck, BAO) gives R^2 = 0.91; Pillar A (Murphy 2003 Keck/HIRES, 128 absorbers) gives Gamma = +5.56 +/- 0.99 (5.6 sigma under fit-error weighting, 2.8 sigma under Murphy's sigma_rand budget); Pillar K cross-validates on King 2012 Keck-only (+6.5 sigma, union +8.6 sigma). Dense-scale tests confirm the predicted unresolvability: on cosmic chronometers, Pantheon+, DESI DR2, and the 1623-constraint joint set (Pillars F-J), DSC is degenerate with constant H0 over z < 2 -- a fixed property of 1/ln^2, not a tunable feature. The King 2012 VLT-only subset gives Gamma of opposite sign (-3.7 sigma), reducing the Keck+VLT union to +3.0 sigma, an instrumental systematic. A Stormer-Verlet lattice surrogate of CMB anisotropies yields chi^2/dof ~ 80 against Planck-2018; we retract any quantitative C_l claim. Pillar O: five JWST chronometers at z in [2, 5] distinguish DSC from LambdaCDM at >~ 11 sigma.
+We fit a phenomenological form H(t) = H_infinity + beta * xi(t), with xi(t) = 10^5 / ln^2(t/t_*), to four published inferences of the Hubble constant placed at assigned epochs, and we compare that form with flat LambdaCDM and the Chevallier-Polarski-Linder (CPL) parameterization on one cosmic-chronometer sample. The same 1/ln^2 shape is applied, with an independent amplitude, to the fractional variation of the fine-structure constant. The amplitude Gamma is defined once, by delta_alpha(t) = Gamma [L(t)^{-2} - L(t_0)^{-2}], and the present drift follows by differentiation, D_0 = -2 Gamma / (t_0 L_0^3). On the four anchors the relaxation fit gives H_infinity = 104.47 +/- 7.05 km s^-1 Mpc^-1, beta = -6.243 +/- 1.226, an unweighted R^2 = 0.907 and chi^2 = 0.559 for two degrees of freedom. Leave-one-anchor-out shows that the slope is not stable when the Planck anchor is removed. On 32 cosmic chronometers the same functional form, refitted, has chi^2 = 20.14, against chi^2 = 14.57 for flat LambdaCDM and chi^2 = 14.33 for flat CPL; CPL is not preferred once its two extra parameters are penalized. A quasar comparison is reported only as an exploratory check. Under one shared Gamma, the Murphy et al. (2003) fit-error amplitude is in tension with the Filzinger et al. (2023) atomic-clock constraint. This paper does not claim a detection of evolving H_0 or of a cosmological drift of alpha.
 
 ## Keywords
 
-cosmic microwave background; symplectic dynamics; differentiable physics; adiabatic cooling
+Hubble constant; cosmological parameters; fine-structure constant; atomic clocks

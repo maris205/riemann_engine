@@ -1,41 +1,32 @@
 \section{Limitations}
-\label{sec:limitations}
+\label{sec:limits}
 
-Several limitations must be acknowledged.
+The anchor epochs for the stellar calibrators are assumptions.
+If those calibrators all measure the present-day expansion rate, Eq.~\eqref{eq:H} is the wrong model of the four numbers and the constant fit is the relevant summary.
+The Planck number is an inference inside flat $\Lambda$CDM, not a measurement of $H$ at recombination.
+Using it as an anchor at $3.8\times10^{5}\,\mathrm{yr}$ imports the background it was derived in.
 
-\begin{enumerate}
-  \item \textbf{Kurtosis tension.}
-  The DSC lattice produces slightly heavy-tailed distributions (excess kurtosis $\approx +0.3$), while the Planck SMICA map has light tails ($\approx -0.5$).
-  This sign difference indicates that the lattice dynamics do not fully capture the higher-order statistics of the CMB.
-  The weak nonlinear term ($-\alpha\phi^2$) used in 3D simulations contributes to this discrepancy; reducing $\alpha$ improves the kurtosis but at the cost of less pronounced cosmic web structure.
+Four points and two parameters leave two degrees of freedom.
+Leave-one-out shows that $\beta$ moves by much more than its four-point uncertainty when Planck is removed.
+The quoted parameter errors do not include uncertainty in the assigned epochs, in $t_{*}$, or in dependence among the local ladders.
+SH0ES, the Mira calibration and the TRGB calibration are not fully independent determinations of $H_{0}$.
 
-  \item \textbf{Three free parameters.}
-  Matching the acoustic peak positions to $\Lambda$CDM requires fitting $c^2_{\mathrm{base}}$, $\eta$, and $\kopt$.
-  The DSC framework does not predict their values from first principles (beyond the conjecture $\kopt \approx \alpha_F / 2$).
-  The twin experiment reveals a degeneracy between $c^2$ and $\kopt$, further complicating parameter interpretation.
+The chronometer errors are the diagonal uncertainties transcribed with the compilation.
+No full covariance is fitted.
+CPL's formal parameter errors show that this sample does not constrain dark-energy dynamics.
+The relaxation age is taken from a fiducial $\Lambda$CDM clock when $\xi(z)$ is formed.
+A self-consistent re-evaluation at the refit parameters changes $\chi^{2}$ by $0.3$, which does not alter the ranking, but a fully free background is not sampled.
 
-  \item \textbf{Mock $\Lambda$CDM comparison.}
-  Our power spectrum comparisons use the analytic mock \cref{eq:mock} rather than the full Planck best-fit $C_\ell$.
-  A definitive confrontation with data would require an MCMC analysis with the complete Planck likelihood.
+The quasar fits use published absorber summaries and extra variances taken from the source papers.
+They are not a re-reduction of the spectra, and they do not include a wavelength-distortion covariance~\citep{Whitmore2015}.
+The opposite instrument signs may be sky coverage, selection, or calibration.
+The overlap of 126 redshifts means the Murphy table is not an independent replication of the King Keck subset.
+The clock translation assumes one unscreened $\Gamma$.
+Screening, a spatial dipole, or a drift that is not Eq.~\eqref{eq:alpha} would change the comparison.
+The Filzinger and Rosenband numbers are published summaries, not a new clock analysis.
 
-  \item \textbf{Surrogate lattice.}
-  The 2D and 3D simulations are effective models, not direct implementations of the Planck-scale lattice $\Z^3 \times \N$.
-  The connection between lattice-unit quantities (e.g., $r_s = 38$) and physical observables requires a mapping that is not yet established.
-
-  \item \textbf{No polarization or tensor modes.}
-  We study only scalar (temperature) fluctuations.
-  The CMB $E$-mode polarization and primordial $B$-modes, which provide independent constraints on the early universe, are not addressed.
-
-  \item \textbf{Conjectural physical basis.}
-  The derivation chain from the assumed $1/\ln$ spectral density to the $1/\ln^2$ cooling law involves three conjectural steps (Assumptions 1--3 in \cref{sec:dsc}).
-  These are physically motivated but not rigorously proven.
-  The present work should be viewed as exploring the \emph{consequences} of these assumptions in a computational setting, not as establishing their validity.
-
-  \item \textbf{Inverse reconstruction does not generalize.}
-  The held-out test (Supplementary Material) shows that the 3D reconstruction from a single hemisphere does not predict the unseen hemisphere ($r_{\mathrm{test}} = -0.17$).
-  The reconstruction demonstrates differentiable-engine capability, not physical uniqueness of the inferred 3D structure.
-
-  \item \textbf{Quantitative $C_\ell$ mismatch.}
-  The forward simulation yields $\chi^2/\mathrm{dof} \approx 3.3$ against Planck ($\ell = 2$--$50$), far from a statistically acceptable fit.
-  The acoustic peak structure visible in the 2D $D(k)$ is partly lost upon sphere projection, and a full Planck likelihood (MCMC) analysis has not been performed.
-\end{enumerate}
+No perturbative stability analysis is provided, and none is implied by the fits.
+The ansatz is not a completed cosmological model.
+It specifies no perturbation equations, no sound speed, and no relation between $\beta$ and $\Gamma$.
+The previous identification of $H_{\infty}$ with a vacuum density is not used.
+That identification is dimensionally a separate assumption, and this paper does not make it.
