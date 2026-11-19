@@ -5,6 +5,20 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
+\bibitem{DiValentino2021}
+E.~Di~Valentino, O.~Mena, S.~Pan, L.~Visinelli, W.~Yang, A.~Melchiorri, D.~F.
+  Mota, A.~G. Riess, J.~Silk, {In the realm of the Hubble tension---a review of
+  solutions}, Classical and Quantum Gravity 38 (2021) 153001.
+\newblock \href {https://doi.org/10.1088/1361-6382/ac086d}
+  {\path{doi:10.1088/1361-6382/ac086d}}.
+
+\bibitem{Schoneberg2022}
+N.~Sch{\"o}neberg, G.~Franco~Abell{\'a}n, A.~P{\'e}rez~S{\'a}nchez, S.~J.
+  Witte, V.~Poulin, J.~Lesgourgues, {The H0 Olympics: A fair ranking of
+  proposed models}, Physics Reports 984 (2022) 1--55.
+\newblock \href {https://doi.org/10.1016/j.physrep.2022.07.001}
+  {\path{doi:10.1016/j.physrep.2022.07.001}}.
+
 \bibitem{Planck2018VI}
 {Planck Collaboration}, {Planck 2018 results. VI. Cosmological parameters},
   Astronomy \& Astrophysics 641 (2020) A6.
@@ -49,6 +63,25 @@ J.~A. King, J.~K. Webb, M.~T. Murphy, V.~V. Flambaum, R.~F. Carswell, M.~B.
 \newblock \href {https://doi.org/10.1111/j.1365-2966.2012.20852.x}
   {\path{doi:10.1111/j.1365-2966.2012.20852.x}}.
 
+\bibitem{Tiesinga2021}
+E.~Tiesinga, P.~J. Mohr, D.~B. Newell, B.~N. Taylor, {CODATA Recommended Values
+  of the Fundamental Physical Constants: 2018}, Reviews of Modern Physics 93
+  (2021) 025010.
+\newblock \href {https://doi.org/10.1103/RevModPhys.93.025010}
+  {\path{doi:10.1103/RevModPhys.93.025010}}.
+
+\bibitem{Uzan2003}
+J.-P. Uzan, {The fundamental constants and their variation: observational and
+  theoretical status}, Reviews of Modern Physics 75 (2003) 403--455.
+\newblock \href {https://doi.org/10.1103/RevModPhys.75.403}
+  {\path{doi:10.1103/RevModPhys.75.403}}.
+
+\bibitem{Martins2017}
+C.~J. A.~P. Martins, {The status of varying constants: a review of the physics,
+  searches and implications}, Reports on Progress in Physics 80 (2017) 126902.
+\newblock \href {https://doi.org/10.1088/1361-6633/aa860e}
+  {\path{doi:10.1088/1361-6633/aa860e}}.
+
 \bibitem{Murphy2003}
 M.~T. Murphy, J.~K. Webb, V.~V. Flambaum, {Further evidence for a variable
   fine-structure constant from Keck/HIRES QSO absorption spectra}, Monthly
@@ -85,6 +118,18 @@ C.~D. Huang, W.~Yuan, A.~G. Riess, W.~Hack, P.~A. Whitelock, N.~L. Zakamska,
   \href {https://doi.org/10.3847/1538-4357/ad1ff8}
   {\path{doi:10.3847/1538-4357/ad1ff8}}.
 
+\bibitem{RiessJWST2024}
+A.~G. Riess, et~al., {JWST Observations Reject Unrecognized Crowding of Cepheid
+  Photometry as an Explanation for the Hubble Tension at 8$\sigma$ Confidence},
+  The Astrophysical Journal Letters 962 (2024) L17.
+\newblock \href {https://doi.org/10.3847/2041-8213/ad1ddd}
+  {\path{doi:10.3847/2041-8213/ad1ddd}}.
+
+\bibitem{JimenezLoeb2002}
+R.~Jimenez, A.~Loeb, {Constraining Cosmological Parameters Based on Relative
+  Galaxy Ages}, The Astrophysical Journal 573 (2002) 37.
+\newblock \href {https://doi.org/10.1086/340549} {\path{doi:10.1086/340549}}.
+
 \bibitem{Moresco2022}
 M.~Moresco, L.~Amati, L.~Amendola, S.~Birrer, J.~P. Blakeslee, M.~Cantiello,
   A.~Cimatti, J.~Darling, M.~Della~Valle, M.~Fishbach, C.~Grillo, N.~Hamaus,
@@ -93,6 +138,69 @@ M.~Moresco, L.~Amati, L.~Amendola, S.~Birrer, J.~P. Blakeslee, M.~Cantiello,
   Reviews in Relativity 25 (2022) 6.
 \newblock \href {https://doi.org/10.1007/s41114-022-00040-z}
   {\path{doi:10.1007/s41114-022-00040-z}}.
+
+\bibitem{Jimenez2003}
+R.~Jimenez, L.~Verde, T.~Treu, D.~Stern, {Constraints on the Equation of State
+  of Dark Energy and the Hubble Constant from Stellar Ages and the Cosmic
+  Microwave Background}, The Astrophysical Journal 593 (2003) 622--629.
+\newblock \href {http://arxiv.org/abs/astro-ph/0302560}
+  {\path{arXiv:astro-ph/0302560}}, \href {https://doi.org/10.1086/376595}
+  {\path{doi:10.1086/376595}}.
+
+\bibitem{Simon2005}
+J.~Simon, L.~Verde, R.~Jimenez, {Constraints on the Redshift Dependence of the
+  Dark Energy Potential}, Physical Review D 71 (2005) 123001.
+\newblock \href {http://arxiv.org/abs/astro-ph/0412269}
+  {\path{arXiv:astro-ph/0412269}}, \href
+  {https://doi.org/10.1103/PhysRevD.71.123001}
+  {\path{doi:10.1103/PhysRevD.71.123001}}.
+
+\bibitem{Stern2010}
+D.~Stern, R.~Jimenez, L.~Verde, M.~Kamionkowski, S.~A. Stanford, {Cosmic
+  Chronometers: Constraining the Equation of State of Dark Energy. {I}:
+  {$H(z)$} Measurements}, Journal of Cosmology and Astroparticle Physics
+  2010~(02) (2010) 008.
+\newblock \href {https://doi.org/10.1088/1475-7516/2010/02/008}
+  {\path{doi:10.1088/1475-7516/2010/02/008}}.
+
+\bibitem{Moresco2012}
+M.~Moresco, et~al., {Improved Constraints on the Expansion Rate of the Universe
+  up to $z\sim1.1$ from the Spectroscopic Evolution of Cosmic Chronometers},
+  Journal of Cosmology and Astroparticle Physics 2012~(08) (2012) 006.
+\newblock \href {https://doi.org/10.1088/1475-7516/2012/08/006}
+  {\path{doi:10.1088/1475-7516/2012/08/006}}.
+
+\bibitem{Zhang2014}
+C.~Zhang, H.~Zhang, S.~Yuan, S.~Liu, T.-J. Zhang, Y.-C. Sun, {Four New
+  Observational {$H(z)$} Data from Luminous Red Galaxies in the Sloan Digital
+  Sky Survey Data Release Seven}, Research in Astronomy and Astrophysics 14
+  (2014) 1221--1233.
+\newblock \href {https://doi.org/10.1088/1674-4527/14/10/002}
+  {\path{doi:10.1088/1674-4527/14/10/002}}.
+
+\bibitem{Moresco2015}
+M.~Moresco, {Raising the Bar: New Constraints on the Hubble Parameter with
+  Cosmic Chronometers at $z\sim2$}, Monthly Notices of the Royal Astronomical
+  Society 450 (2015) L16.
+\newblock \href {http://arxiv.org/abs/1503.01116} {\path{arXiv:1503.01116}},
+  \href {https://doi.org/10.1093/mnrasl/slv037}
+  {\path{doi:10.1093/mnrasl/slv037}}.
+
+\bibitem{Moresco2016}
+M.~Moresco, L.~Pozzetti, A.~Cimatti, R.~Jimenez, C.~Maraston, L.~Verde,
+  D.~Thomas, A.~Citro, R.~Tojeiro, D.~Wilkinson, {A 6\% Measurement of the
+  Hubble Parameter at $z\sim0.45$: Direct Evidence of the Epoch of Cosmic
+  Re-acceleration}, Journal of Cosmology and Astroparticle Physics 2016~(05)
+  (2016) 014.
+\newblock \href {https://doi.org/10.1088/1475-7516/2016/05/014}
+  {\path{doi:10.1088/1475-7516/2016/05/014}}.
+
+\bibitem{Borghi2022}
+N.~Borghi, M.~Moresco, A.~Cimatti, {Toward a Better Understanding of Cosmic
+  Chronometers: A New Measurement of {$H(z)$} at $z\sim0.7$}, The Astrophysical
+  Journal Letters 928 (2022) L4.
+\newblock \href {https://doi.org/10.3847/2041-8213/ac3fb2}
+  {\path{doi:10.3847/2041-8213/ac3fb2}}.
 
 \bibitem{Chevallier2001}
 M.~Chevallier, D.~Polarski, {Accelerating Universes with Scaling Dark Matter},
@@ -105,6 +213,30 @@ E.~V. Linder, {Exploring the Expansion History of the Universe}, Physical
   Review Letters 90 (2003) 091301.
 \newblock \href {https://doi.org/10.1103/PhysRevLett.90.091301}
   {\path{doi:10.1103/PhysRevLett.90.091301}}.
+
+\bibitem{Akaike1974}
+H.~Akaike, {A New Look at the Statistical Model Identification}, IEEE
+  Transactions on Automatic Control 19 (1974) 716--723.
+\newblock \href {https://doi.org/10.1109/TAC.1974.1100705}
+  {\path{doi:10.1109/TAC.1974.1100705}}.
+
+\bibitem{Schwarz1978}
+G.~Schwarz, {Estimating the Dimension of a Model}, The Annals of Statistics 6
+  (1978) 461--464.
+\newblock \href {https://doi.org/10.1214/aos/1176344136}
+  {\path{doi:10.1214/aos/1176344136}}.
+
+\bibitem{Dodelson2020}
+S.~Dodelson, F.~Schmidt, {Modern Cosmology}, 2nd Edition, Academic Press, 2020.
+
+\bibitem{Wilczynska2020}
+M.~R. Wilczynska, J.~K. Webb, M.~Bainbridge, J.~D. Barrow, S.~E.~I. Bosman,
+  R.~F. Carswell, M.~P. Dabrowski, V.~Dumont, C.-C. Lee, A.~C. Leite,
+  K.~Leszczyńska, J.~Liske, K.~Marosek, C.~J. A.~P. Martins, D.~Milaković,
+  P.~Molaro, L.~Pasquini, {Four direct measurements of the fine-structure
+  constant 13 billion years ago}, Science Advances 6 (2020) eaay9672.
+\newblock \href {https://doi.org/10.1126/sciadv.aay9672}
+  {\path{doi:10.1126/sciadv.aay9672}}.
 
 \bibitem{Filzinger2023}
 M.~Filzinger, S.~D{\"o}rscher, R.~Lange, J.~Klose, M.~Steinel, E.~Benkler,

@@ -15,6 +15,7 @@ The epoch attached to it is assigned for this fit.
   \item Mira calibration, $72.37\pm2.97\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{Huang2024Miras}, assigned to $t=6.0\,\mathrm{Gyr}$.
         This measurement uses HST WFC3/IR.
         It is not a JWST determination, and the previous text should not be read as calling it one.
+        A separate JWST test of Cepheid crowding~\citep{RiessJWST2024} is not one of these four anchors.
   \item SH0ES Cepheids, $73.04\pm1.04\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\citep{RiessSH0ES2022}, assigned to $t=13.8\,\mathrm{Gyr}$.
 \end{enumerate}
 There is no BAO anchor in this fit.
@@ -35,7 +36,13 @@ A residual divided by the measurement error alone is not a measure of stability 
 \subsection{Cosmic chronometers}
 \label{sec:cc-data}
 
-The expansion-rate comparison uses 32 cosmic-chronometer $H(z)$ values transcribed in the analysis script from the compilation used in the previous draft and attributed there to \citep{Moresco2022} and the source papers named in the script.
+The expansion-rate comparison uses 32 cosmic-chronometer $H(z)$ values.
+Cosmic chronometers estimate $H(z)$ from the differential age of passively evolving galaxies~\citep{JimenezLoeb2002}.
+The numbers are those transcribed in the analysis script from the compilation discussed by \citep{Moresco2022}.
+Thirty-one rows are the measurements of \citep{Jimenez2003,Simon2005,Stern2010,Moresco2012,Zhang2014,Moresco2015,Moresco2016,Borghi2022}, and the script labels each of those redshifts.
+The remaining row, $z=1.465$ with $H=150\pm50\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$, is kept as it stood in the previous compilation.
+It is not a row of Stern et al.\ Table~2, which an earlier notebook comment had named, and it was not replaced, so the fit is unchanged.
+No baryon-acoustic-oscillation measurement is in this sample.
 Flat $\Lambda$CDM and flat CPL are fitted to these points with the same Gaussian errors.
 \begin{align}
   E_{\Lambda}^{2}(z)&=\Omega_{m}(1+z)^{3}+(1-\Omega_{m}),
@@ -53,7 +60,7 @@ The relaxation form on the same points is Eq.~\eqref{eq:H} evaluated at the cosm
 That background is a clock for $\xi(z)$.
 Scoring the anchor-fitted parameters on the chronometers, without refitting, is reported separately and is not given a parameter penalty.
 
-Information criteria use $\mathrm{AIC}=\chi^{2}+2k$ and $\mathrm{BIC}=\chi^{2}+k\ln N$, with the data-dependent normalisation omitted because it cancels in a comparison at fixed errors.
+Information criteria use $\mathrm{AIC}=\chi^{2}+2k$~\citep{Akaike1974} and $\mathrm{BIC}=\chi^{2}+k\ln N$~\citep{Schwarz1978}, with the data-dependent normalisation omitted because it cancels in a comparison at fixed errors.
 For one extra nested parameter the likelihood-ratio $p$-value is the survival function of $\chi^{2}$ with one degree of freedom, and $z=\sqrt{\Delta\chi^{2}}$ equals $|\mathrm{estimate}|/\sigma$ when the estimate is Gaussian.
 For CPL versus $\Lambda$CDM the extra count is two, and the $p$-value uses $\chi^{2}$ with two degrees of freedom.
 These conversions are not quoted as detection significances for the anchor regression.
@@ -72,8 +79,9 @@ King et al.\ Table~A1 contains 295 rows~\citep{King2012}.
 Two rows are removed because the authors' outlier flag is set, leaving 293, of which 140 are Keck and 153 are VLT.
 The weighted-mean extra variances used here are the combined-dipole values in that paper: $0$, $1.743\times10^{-5}$ and $0.905\times10^{-5}$ for Keck low-contrast, Keck high-contrast and VLT.
 A fit that uses only the tabulated fit errors is reported as a sensitivity check.
-Redshifts are converted to age with the same flat integral as in \cref{sec:clock}.
+Redshifts are converted to age with the same flat matter-plus-$\Lambda$ integral as in \cref{sec:clock}~\citep{Dodelson2020}.
 The design column is $L(t)^{-2}-L_{0}^{-2}$, and $\Gamma$ is the through-origin weighted least-squares coefficient.
 
+The later ESPRESSO absorbers of \citep{Wilczynska2020} are not in either table and are not fitted.
 Of the 128 Murphy absorption redshifts, 126 match a King Keck redshift to better than $5\times10^{-6}$.
 The two catalogues are not independent Keck samples, and their likelihoods are not multiplied.
