@@ -2,9 +2,9 @@
 
 ## Title
 
-Phenomenological Tests of a 1/ln^2(t/t_*) Cooling Law
+Phenomenological Fits of a 1/ln^2(t/t_*) Form to the Hubble Constant and the Fine-Structure Constant
 
-The previous title was "Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a 1/ln^2(t) Cooling Law". It was changed because the lattice CMB material has been removed.
+The submitted title was "Differentiable Discrete Symplectic Cosmology: Cross-Scale Empirical Tests of a 1/ln^2(t) Cooling Law". The approved title names the two fitted quantities, the Hubble constant and the fine-structure constant, and describes a phenomenological form rather than a named cooling law.
 
 ## Author
 
